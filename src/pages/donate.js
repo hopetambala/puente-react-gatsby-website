@@ -3,14 +3,14 @@ import React from "react"
 // Component Imports
 import Layout from "../components/layout"
 
-const BlogPage = () => {
+const DonatePage = () => {
   return (
     <div>
       <Layout>
-        <h1>Our Blog</h1>
+        <h1>Donate</h1>
       </Layout>
     </div>
   )
 }
 
-export default BlogPage
+export default DonatePage

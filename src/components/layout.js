@@ -1,19 +1,41 @@
 import React from 'react'
-import './base.css'
-import Container from './container'
-import Navigation from './navigation'
+import Helmet from "react-helmet"
+import {
+  graphql,
+  useStaticQuery,
+} from "gatsby"
 
-class Template extends React.Component {
-  render() {
-    const { children } = this.props
+// Component Imports
+import Header from './header'
+import Footer from './footer'
 
-    return (
-      <Container>
-        <Navigation />
-        {children}
-      </Container>
-    )
-  }
+//Style Imports
+import '../styles/styles.scss'
+import layoutStyles from './layout.module.scss'
+
+const Layout = (props) => {
+  const data = useStaticQuery(
+    graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
+  return (
+    <div className={layoutStyles.container}>
+      <Helmet>
+        <title>{data.site.siteMetadata.title}</title>
+      </Helmet>
+      <div className={layoutStyles.content}>
+        <Header />
+        {props.children}
+      </div>
+      <Footer />
+    </div>
+  )
 }
 
-export default Template
+export default Layout
