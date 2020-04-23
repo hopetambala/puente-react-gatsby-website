@@ -14,7 +14,32 @@ const IndexPage = () => {
       contentfulLandingPage {
         hero
         firstSectionTitle
+        firstSectionParagaph {
+          content {
+            content {
+              value
+            }
+          }
+          firstSectionParagaph
+        }
         secondSectionTitle
+        secondSectionParagraph {
+          content {
+            content {
+              value
+            }
+          }
+          secondSectionParagraph
+        }
+        thirdSectionTitle
+        thirdSectionParagraph {
+          content {
+            content {
+              value
+            }
+          }
+          thirdSectionParagraph
+        }
       }
     }
   `)
@@ -23,7 +48,10 @@ const IndexPage = () => {
       <Layout>
         <h1>{data.contentfulLandingPage.hero}</h1>
         <h1>{data.contentfulLandingPage.firstSectionTitle}</h1>
+        <p>{data.contentfulLandingPage.firstSectionParagaph.content[0].content[0].value}</p>
         <h1>{data.contentfulLandingPage.secondSectionTitle}</h1>
+        <h1>{data.contentfulLandingPage.thirdSectionTitle}</h1>
+        {/* <p>{data.contentfulLandingPage.secondSectionParagraph}</p> */}
       </Layout>
     </div>
   )
