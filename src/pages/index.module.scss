@@ -1,0 +1,139 @@
+$font: "Roboto", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+$white: #fff;
+$black: #000;
+$off-white: #F7F7F7;
+$yellow: #FFE680;
+$blue: #3D80FC;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: $off-white;
+  .banner{
+    width: 100%;
+    height: 825px;
+    align-items: center;
+    justify-content: center;
+    background-color: $yellow;
+    padding: 50px 0px;
+    .hero-image {
+      width: 82.5%;
+    }
+    .hero {
+      height: 30%;  
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      position: relative; 
+      top: -700px; 
+      z-index: 3;
+      padding-right: 150px;
+      h1 {
+        width: 850px;
+        font-size: 72px;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
+        color: $black;
+        text-shadow: 3px 3px $off-white;
+        margin: 0;
+      }
+    }
+  }
+  .section, .section-odd, .section-blue, .section-partners, .section-impact {
+    padding: 50px 150px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    &.section-odd {
+      background-color: $white;
+    }
+    &.section-partners {
+      width: 100%;
+      background-color: $white;
+      h2 {
+        color: $black;
+        font-size: 40px;
+        text-shadow: 2.5px 2.5px $yellow;
+        text-transform: uppercase;
+        text-align: center;
+      }
+    }
+    &.section-impact {
+      padding: 50px 0 50px 150px;
+      .section-text {
+        width: 42.5%;
+        margin-right: 70px;
+      }
+      .section-impact-numbers {
+        width: 57.5%;
+        height: 400px;
+        padding-right: 150px;
+        background-color: $yellow;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        h2 {
+          color: $black;
+          font-size: 40px;
+          text-shadow: 2.5px 2.5px $off-white;
+          text-transform: uppercase;
+          margin: 0;
+        }
+      }
+    }
+    &.section-blue {
+      background-color: $blue;
+      flex-direction: column;
+      h2 {
+        color: $yellow;
+        font-size: 40px;
+        text-shadow: 2.5px 2.5px $black;
+        text-transform: uppercase;
+        text-align: center;
+      }
+      p {
+        color: $off-white;
+        text-align: center;
+      }
+      .button {
+        text-decoration: none;
+        .button-background {
+          background-color: $yellow;
+          height: 50px;
+          width: 150px; 
+          border-radius: 5px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          p {
+            color: $black;
+            font-size: 20px;
+            font-weight: 500;
+            margin: 0;
+          }
+        }
+      }
+    }
+    .section-image {
+      width: 50%;
+    }
+    .section-text {
+      width: 50%;
+      h2 {
+        color: $black;
+        font-size: 40px;
+        text-shadow: 2.5px 2.5px $yellow;
+        text-transform: uppercase;
+        text-align: center;
+      }
+      p {
+        margin: 0;
+      }
+    }
+  }
+}
