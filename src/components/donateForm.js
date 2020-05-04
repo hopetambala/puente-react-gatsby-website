@@ -1,7 +1,7 @@
 import React from "react"
-import {
-  Link,
-} from "gatsby"
+// import {
+//   Link,
+// } from "gatsby"
 import { loadStripe } from "@stripe/stripe-js"
 import Button from 'react-bootstrap/Button'
 

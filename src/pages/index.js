@@ -58,7 +58,8 @@ const IndexPage = () => {
           }
         }
         partnerships {
-          fluid {
+          title
+          resize (height: 200) {
             src
           }
         }
@@ -78,21 +79,21 @@ const IndexPage = () => {
             </div>
           </div>
           <div className={styles.sectionOdd}>
-            <div className={styles.sectionImage}>
-              <Img fluid={data.image.childImageSharp.fluid} />
-            </div>
             <div className={styles.sectionText}>
               <h2>{data.contentfulLandingPage.firstSectionTitle}</h2>
               <p>{data.contentfulLandingPage.firstSectionParagaph.content[0].content[0].value}</p>
             </div>
+            <div className={styles.sectionImage}>
+              <Img fluid={data.image.childImageSharp.fluid} />
+            </div>
           </div>
           <div className={styles.sectionImpact}>
+            <div className={styles.sectionImpactNumbers}>
+              <h2>Impact Numbers</h2>
+            </div>
             <div className={styles.sectionText}>
               <h2>{data.contentfulLandingPage.secondSectionTitle}</h2>
               <p>{data.contentfulLandingPage.secondSectionParagraph.content[0].content[0].value}</p>
-            </div>
-            <div className={styles.sectionImpactNumbers}>
-              <h2>Impact Numbers</h2>
             </div>
           </div>
           <div className={styles.sectionBlue}>
@@ -111,25 +112,33 @@ const IndexPage = () => {
             </Link>
           </div>
           <div className={styles.sectionOdd}>
-            <div className={styles.sectionImage}>
-              <Img fluid={data.image.childImageSharp.fluid} />
-            </div>
             <div className={styles.sectionText}>
               <h2>{data.contentfulLandingPage.thirdSectionTitle}</h2>
               <p>{data.contentfulLandingPage.thirdSectionParagraph.content[0].content[0].value}</p>
             </div>
-          </div>
-          <div className={styles.section}>
-            <div className={styles.sectionText}>
-              <h2>{data.contentfulLandingPage.fourthSectionTitle}</h2>
-              <p>{data.contentfulLandingPage.fourthSectionParagraph.content[0].content[0].value}</p>
-            </div>
             <div className={styles.sectionImage}>
               <Img fluid={data.image.childImageSharp.fluid} />
             </div>
           </div>
+          <div className={styles.section}>
+            <div className={styles.sectionImage}>
+              <Img fluid={data.image.childImageSharp.fluid} />
+            </div>
+            <div className={styles.sectionText}>
+              <h2>{data.contentfulLandingPage.fourthSectionTitle}</h2>
+              <p>{data.contentfulLandingPage.fourthSectionParagraph.content[0].content[0].value}</p>
+            </div>
+          </div>
           <div className={styles.sectionPartners}>
             <h2>Our Partners</h2>
+            <div className={styles.partnerImages}>
+              {data.contentfulLandingPage.partnerships.map((partnerships) => {
+                return (
+                  <img alt={partnerships.title} src={partnerships.resize.src} />
+                )
+              })}
+              {/* <img alt={data.contentfulLandingPage.partnerships[0].title} src={data.contentfulLandingPage.partnerships[0].resize.src} /> */}
+            </div>
           </div>
         </div>
       </Layout>
