@@ -8,6 +8,7 @@ import Img from "gatsby-image"
 
 // Component Imports
 import Layout from "../components/layout"
+import DonateForm from "../components/donateForm"
 
 // Style Imports
 import donateStyles from "./donate.module.scss"
@@ -52,6 +53,7 @@ const DonatePage = () => {
             </p>
             <div className={donateStyles.donateSection}>
               <h2>Donation Amount</h2>
+              <DonateForm />
             </div>
           </div>
         </div>

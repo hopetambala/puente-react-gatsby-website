@@ -25,16 +25,14 @@ $blue: #3D80FC;
     .button-background {
       background-color: $yellow;
       height: 50px;
-      width: 300px; 
+      width: 250px; 
       border-radius: 5px;
       display: flex;
       align-items: center;
       justify-content: center;
-      p {
-        font-size: 20px;
-        font-weight: 500;
-        margin: 0;
-      }
+      color: $black;
+      font-size: 20px;
+      font-weight: 500;
     }
   }
 }

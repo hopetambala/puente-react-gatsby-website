@@ -4,6 +4,7 @@ import {
   // graphql,
   // useStaticQuery,
 } from "gatsby"
+import Button from 'react-bootstrap/Button'
 
 // Style Imports
 import styles from './volunteerCTA.module.scss'
@@ -23,9 +24,9 @@ const VolunteerCTA = () => {
     <div className={styles.container}>
       <h2>Interested in Volunteering?</h2>
       <Link className={styles.button} to="/contact">
-        <div className={styles.buttonBackground}>
-          <p>Get Started</p>
-        </div>
+        <Button className={styles.buttonBackground}>
+          Get Started
+        </Button>
       </Link>
     </div>
   )

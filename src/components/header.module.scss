@@ -31,6 +31,9 @@ $blue: #3D80FC;
       nav {
         .nav-list {
           display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
           list-style-type: none;
           margin: 10px 0;
           li {
@@ -58,6 +61,14 @@ $blue: #3D80FC;
           }
           .active-nav-item {
             font-weight: 700;
+          }
+          .buttonBackground {
+            background-color: $black;
+            width: 110px;
+            border-width: 0;
+            border-radius: 50px;
+            color: $off-white;
+            font-weight: 500;
           }
         }
       }

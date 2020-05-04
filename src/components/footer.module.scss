@@ -46,14 +46,20 @@ $blue: #3D80FC;
             display: flex;
             align-items: center;
             justify-content: center;
+            cursor: pointer;
             p {
               margin: 0;
               padding: 0;
               text-align: center;
               color: $white;
               font-weight: 500;
+              cursor: pointer;
             }
           }
+        }
+        .message {
+          font-size: 12px;
+          padding-top: 5px;
         }
       }
     }

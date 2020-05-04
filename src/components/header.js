@@ -5,6 +5,7 @@ import {
   graphql
  } from "gatsby"
 import Img from "gatsby-image"
+import Button from 'react-bootstrap/Button'
 
 // Style Imports
 import headerStyles from './header.module.scss'
@@ -58,7 +59,11 @@ const Header = () => {
                 <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to="/faq">FAQs</Link>
               </li>
               <li>
-                <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to="/donate">Donate</Link>
+                <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to="/donate">
+                  <Button className={headerStyles.buttonBackground}>
+                    Donate
+                  </Button>
+                </Link>
               </li>
             </ul>
           </nav>
