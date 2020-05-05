@@ -36,6 +36,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    'react-bootstrap',
     `gatsby-transformer-sharp`,
     'gatsby-plugin-sharp',
     'gatsby-plugin-sass',
@@ -46,6 +47,20 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
         // contentfulConfig,
       }
-    }
+    },
+    {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+        endpoint: 'https://puente-dr.us18.list-manage.com/subscribe/post?u=a315d09ff9101146e276cb12a&amp;id=af3190932c', // add your MC list endpoint here; see instructions below
+      },
+    },
+    {
+      resolve: `gatsby-source-stripe`,
+      options: {
+        objects: ['Balance', 'BalanceTransaction', 'Product', 'ApplicationFee', 'Sku', 'Subscription'],
+        secretKey: process.env.STRIPE_SECRET_KEY,
+        downloadFiles: true,
+      }
+    },
   ],
 }
