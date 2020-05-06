@@ -37,7 +37,7 @@ const Header = () => {
                 <Link className={headerStyles.secondaryNavItem} activeClassName={headerStyles.activeNavItem} to="/community">Community Empowerment</Link>
               </li>
               <li>
-                <Link className={headerStyles.secondaryNavItem} activeClassName={headerStyles.activeNavItem} to="/volunteers">Volunteers</Link>
+                <Link className={headerStyles.secondaryNavItem} activeClassName={headerStyles.activeNavItem} to="/volunteer">Volunteers</Link>
               </li>
               <li>
                 <Link className={headerStyles.secondaryNavItem} activeClassName={headerStyles.activeNavItem} to="/reports">Annual Report</Link>
