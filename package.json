@@ -3,7 +3,7 @@
   "description": "Puente Website Built with Gatsby an Contentful",
   "private": true,
   "version": "0.0.1",
-  "author": "Hope Tambala <hope@puente-dr.com.com>",
+  "author": "Hope Tambala <hope@puente-dr.com>",
   "bugs": {
     "url": "https://github.com/contentful/starter-gatsby-blog/issues"
   },
@@ -15,6 +15,7 @@
     "gatsby-image": "^2.0.13",
     "gatsby-plugin-mailchimp": "^5.1.2",
     "gatsby-plugin-react-helmet": "^3.0.0",
+    "gatsby-plugin-s3": "^0.3.3",
     "gatsby-plugin-sass": "^2.2.3",
     "gatsby-plugin-sharp": "^2.5.6",
     "gatsby-source-contentful": "^2.1.78",
@@ -43,8 +44,9 @@
   },
   "scripts": {
     "develop": "env-cmd -f .env.development gatsby develop",
+    "deploy": "npm run build && gatsby-plugin-s3 deploy",
     "start": "npm run develop",
-    "build": "gatsby build",
+    "build": "env-cmd -f .env.development gatsby build",
     "heroku-postbuild": "gatsby build",
     "serve": "gatsby serve",
     "setup": "npm install --no-save contentful-import yargs-parser axios chalk && node ./setup.js"

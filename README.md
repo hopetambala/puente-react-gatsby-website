@@ -25,7 +25,7 @@ This project is a bootstrapped using Gatsby
 Here are some quick commands to get started:
 
 - `npm install`: Install Node dependencies
-- `npm dev`: Start the gatsby development server.
+- `npm run develop`: Start the gatsby development server.
 - `npm setup`: Run's a setup script that connects this application to the Contentful CMS. Needs system arguments
 - `npm build`: Build a production optimized bundle of the app.
 
