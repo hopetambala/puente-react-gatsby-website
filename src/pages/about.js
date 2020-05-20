@@ -35,9 +35,9 @@ const AboutPage = () => {
           <div className={aboutStyles.banner}>
             <div className={aboutStyles.bannerImage}>
               <Img fluid={data.image.childImageSharp.fluid} />
-            </div>
-            <div className={aboutStyles.title}>
-              <h1>Who We Are</h1>
+              <div className={aboutStyles.title}>
+                <h1>Who We Are</h1>
+              </div>
             </div>
           </div>
           <div className={aboutStyles.body}>
@@ -61,59 +61,39 @@ const AboutPage = () => {
             </div>
             <AboutCTA />
             <div className={aboutStyles.bioSection}>
-              <div className={aboutStyles.flipCard}>
-                <div className={aboutStyles.flipCardInner}>
-                  <div className={aboutStyles.flipCardFront}>
-                    <Img fluid={data.image.childImageSharp.fluid} />
+              <div className={aboutStyles.employeeRow}>
+                <div className={aboutStyles.employee}>
+                  <Img fluid={data.image.childImageSharp.fluid} />
+                  <div>
                     <h2>Scott Coppa</h2>
                     <h3>Co Founder / CEO</h3>
-                  </div>
-                  <div className={aboutStyles.flipCardBack}>
-                    <h2>Scott Coppa</h2>
-                    <h3>Co Founder / CEO</h3>
-                    <a href="https://www.linkedin.com/company/18499313/admin/"><Icon size={40} color icon={linkedin} /></a>
+                    <a href="https://www.linkedin.com/company/18499313/admin/"><Icon className={aboutStyles.icon} size={32} color icon={linkedin} /></a>
                   </div>
                 </div>
-              </div>
-              <div className={aboutStyles.flipCard}>
-                <div className={aboutStyles.flipCardInner}>
-                  <div className={aboutStyles.flipCardFront}>
-                    <Img fluid={data.image.childImageSharp.fluid} />
+                <div className={aboutStyles.employee}>
+                  <Img fluid={data.image.childImageSharp.fluid} />
+                  <div>
                     <h2>Paul Anthony</h2>
                     <h3>Co Founder / CFO</h3>
-                  </div>
-                  <div className={aboutStyles.flipCardBack}>
-                    <h2>Paul Anthony</h2>
-                    <h3>Co Founder / CFO</h3>
-                    <a href="https://www.linkedin.com/company/18499313/admin/"><Icon size={40} icon={linkedin} /></a>
+                    <a href="https://www.linkedin.com/company/18499313/admin/"><Icon className={aboutStyles.icon} size={32} icon={linkedin} /></a>
                   </div>
                 </div>
               </div>
-              <div className={aboutStyles.flipCard}>
-                <div className={aboutStyles.flipCardInner}>
-                  <div className={aboutStyles.flipCardFront}>
-                    <Img fluid={data.image.childImageSharp.fluid} />
+              <div className={aboutStyles.employeeRow}>
+                <div className={aboutStyles.employee}>
+                  <Img fluid={data.image.childImageSharp.fluid} />
+                  <div>
                     <h2>Hope Tambala</h2>
                     <h3>Co Founder / CTO</h3>
-                  </div>
-                  <div className={aboutStyles.flipCardBack}>
-                    <h2>Hope Tambala</h2>
-                    <h3>Co Founder / CTO</h3>
-                    <a href="https://www.linkedin.com/company/18499313/admin/"><Icon size={40} icon={linkedin} /></a>
+                    <a href="https://www.linkedin.com/company/18499313/admin/"><Icon className={aboutStyles.icon} size={32} icon={linkedin} /></a>
                   </div>
                 </div>
-              </div>
-              <div className={aboutStyles.flipCard}>
-                <div className={aboutStyles.flipCardInner}>
-                  <div className={aboutStyles.flipCardFront}>
-                    <Img fluid={data.image.childImageSharp.fluid} />
-                    <h2>First Last</h2>
-                    <h3>Position</h3>
-                  </div>
-                  <div className={aboutStyles.flipCardBack}>
-                    <h2>First Last</h2>
-                    <h3>Position</h3>
-                    <a href="https://www.linkedin.com/company/18499313/admin/"><Icon size={40} icon={linkedin} /></a>
+                <div className={aboutStyles.employee}>
+                  <Img fluid={data.image.childImageSharp.fluid} />
+                  <div>
+                    <h2>Crismary Gutierrez</h2>
+                    <h3>Community Outreach Coordinator</h3>
+                    <a href="https://www.linkedin.com/company/18499313/admin/"><Icon className={aboutStyles.icon} size={32} icon={linkedin} /></a>
                   </div>
                 </div>
               </div>

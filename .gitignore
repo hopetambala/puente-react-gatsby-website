@@ -69,3 +69,6 @@ setup_command.txt
 
 # Env files
 .env.development
+
+# Test Files
+test.js
