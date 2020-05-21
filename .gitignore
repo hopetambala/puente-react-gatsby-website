@@ -66,8 +66,6 @@ public
 # contentful config file
 .contentful.json
 setup_command.txt
-
-# Env files
 .env.development
 
 # Test Files

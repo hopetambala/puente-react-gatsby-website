@@ -27,6 +27,12 @@ module.exports = {
   },
   pathPrefix: '/gatsby-contentful-starter',
   plugins: [
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: "website-react-gatsby",
+      },
+    },
     'gatsby-transformer-remark',
     'gatsby-plugin-react-helmet',
     {
