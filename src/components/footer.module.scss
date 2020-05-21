@@ -17,6 +17,7 @@ $blue: #3D80FC;
     .section {
       width: 22.5%;
       .logo {
+        margin-top: 2vh;
         width: 75%;
       }
       p {
@@ -136,6 +137,9 @@ $blue: #3D80FC;
       justify-content: flex-start;
       .section {
         width: 100%;
+        .logo {
+          width: 40%;
+        }
         h1 {
           margin-top: 25px;
         }

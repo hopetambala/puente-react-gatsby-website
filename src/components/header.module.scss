@@ -84,12 +84,6 @@ $blue: #3D80FC;
     }
     .burger {
       display: none;
-      div {
-        width: 25px;
-        height: 3px;
-        background-color: $black;
-        margin: 5px;
-      }
     }
   }
 }
@@ -153,12 +147,6 @@ $blue: #3D80FC;
     }
     .burger {
       display: block !important;
-      div {
-        width: 25px;
-        height: 3px;
-        background-color: $black;
-        margin: 5px;
-      }
     }
   }
 }
