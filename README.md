@@ -25,9 +25,10 @@ This project is a bootstrapped using Gatsby
 Here are some quick commands to get started:
 
 - `npm install`: Install Node dependencies
-- `npm dev`: Start the gatsby development server.
+- `npm run develop`: Start the gatsby development server.
 - `npm setup`: Run's a setup script that connects this application to the Contentful CMS. Needs system arguments
-- `npm build`: Build a production optimized bundle of the app.
+- `npm run build`: Build a production optimized bundle of the app.
+- `npm run deploy`: Deploy a production optimized bundle of the app to AWS s3
 
 ### AWS + s3
 
@@ -35,19 +36,8 @@ Get this React App working on AWS by [installing the AWS CLI](https://docs.aws.a
 
 #### Deploy in your terminal
 
-Create a s3 bucket
 ```
-$ aws s3 mb s3://your-bucket-name
-```
-
-List to see your s3 buckets.
-```
-$ aws s3 ls
-```
-
-Build and deploy your app!
-```
-$ npm run build && aws s3 sync build/ s3://your-bucket-name
+$ AWS_PROFILE=<NAME-OF-PROFILE> npm run deploy
 ```
 
 #### Permissions and Settings
