@@ -7,8 +7,7 @@ $yellow: #FFE680;
 $blue: #3D80FC;
 
 .footer {
-  padding: 50px 150px 0;
-  height: 475px;
+  padding: 1.5vmax 8vmax;
   background-color: $yellow;
   .footer-main {
     display: flex;
@@ -16,31 +15,73 @@ $blue: #3D80FC;
     align-items: flex-start;
     justify-content: space-between;
     .section {
-      width: 25%;
+      width: 22.5%;
       .logo {
+        margin-top: 2vh;
         width: 75%;
       }
       p {
-        padding-top: 15px;
+        margin: 1vmin 0;
         color: $black;
         font-size: 14px;
       }
-      Form {
-        h2 {
-          margin-top: 15px;
-          margin-bottom: 0;
+      h1 {
+        // background-color: $blue;
+        border-bottom: 1px solid $black;
+        width: 100%;
+        color: $black;
+        font-size: 18px;
+        line-height: 36px;
+        font-weight: 600;
+        margin: 0 0 10px 0;
+        padding: 0;
+      }
+      h2 {
+        color: $black;
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0 0 10px 0;
+        padding: 0;
+      }
+      .icons {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        a {
+          color: $black;
+          margin: 0 10px 0 0;
         }
+      }
+      nav {
+        .nav-list {
+          list-style-type: none;
+          li {
+            padding: 0;
+            margin: 0 0 10px 0;
+            .nav-item {
+              color: $black;
+              font-size: 16px;
+              font-weight: 500;
+              text-decoration: none;
+            }
+          }
+          .nav-item:hover{
+            text-decoration: underline;
+          }     
+        }
+      }
+      Form {
         .newsletter {
           display: flex;
-          flex-direction: row;
-          align-items: center;
+          flex-direction: column;
+          align-items: flex-start;
           justify-content: space-between;
-          .email {
-            width: 225px;
+          .input {
+            width: 100%;
+            margin-bottom: 10px;
           }
           .button {
-            width: 90px;
-            height: 30px;
+            width: 35%;
             border-radius: 5px;
             background-color: $black;
             display: flex;
@@ -48,7 +89,7 @@ $blue: #3D80FC;
             justify-content: center;
             cursor: pointer;
             p {
-              margin: 0;
+              margin: 5px 0;
               padding: 0;
               text-align: center;
               color: $white;
@@ -58,46 +99,8 @@ $blue: #3D80FC;
           }
         }
         .message {
-          font-size: 12px;
+          font-size: 10px;
           padding-top: 5px;
-        }
-      }
-    }
-    nav {
-      .nav-list {
-        list-style-type: none;
-        .nav-item {
-          color: $black;
-          font-size: 18px;
-          font-weight: 700;
-          text-decoration: none;
-        }
-        .nav-item:hover{
-          text-decoration: underline;
-        }     
-      }
-    }
-    div {
-      h2 {
-        color: $black;
-        font-size: 18px;
-        margin-bottom: 10px;
-      }
-      p {
-        color: $black;
-        font-size: 17px;
-        margin-bottom: 2px;
-        &.last-item {
-          margin-bottom: 5px;
-        }
-      }
-      .icons {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-top: 15px;
-        a {
-          color: $black;
         }
       }
     }
@@ -106,16 +109,47 @@ $blue: #3D80FC;
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    margin-top: 25px;
-    .tos-text, p {
+    padding: 0;
+    margin: 10px 0 0 0;
+    .tos-text, .tos-text-last {
       color: $black;
       text-decoration: none;
+      text-align: center;
       font-weight: 600;
-      font-size: 14px;
-      margin: 0 7.5px;
+      font-size: 10px;
+      padding: 0 7.5px;
+      border-right: 1px solid $black;
+      &.tos-text-last {
+        border: none;
+      }
     }
     .tos-text:hover{
       text-decoration: underline;
     }
   }
-} 
+}
+
+@media (max-width: 1024px) {
+  .footer {
+    .footer-main {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      .section {
+        width: 100%;
+        .logo {
+          width: 40%;
+        }
+        h1 {
+          margin-top: 25px;
+        }
+        nav {
+          ul {
+            padding: 0;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}

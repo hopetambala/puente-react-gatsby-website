@@ -1,39 +1,33 @@
-import React from "react"
+import React from 'react'
 import {
   Link,
-  useStaticQuery,
-  graphql
+  // useStaticQuery,
+  // graphql
 } from "gatsby"
 // import Img from "gatsby-image"
 import Form from 'react-bootstrap/Form'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
 
-// Style/Icon Imports
+// Component/Icon Imports
+import Logo from './footerLogo'
 import { Icon } from 'react-icons-kit'
 import { facebook } from 'react-icons-kit/fa/facebook'
 import { instagram } from 'react-icons-kit/fa/instagram'
 import { youtubePlay } from 'react-icons-kit/fa/youtubePlay'
 import { linkedin } from 'react-icons-kit/fa/linkedin'
-import footerStyles from './footer.module.scss'
 
-// const data = useStaticQuery(graphql`
-//   query {
-//     logo: file(relativePath: { eq: "logo-black.png" }) {
-//       childImageSharp {
-//         fluid(maxWidth: 300) {
-//           ...GatsbyImageSharpFluid
-//         }
-//       }
-//     }
-//   }
-// `)
+// Style Imports
+import '../styles/styles.scss'
+import footerStyles from './footer.module.scss'
 
 class Footer extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      email: '',
+      fName: '',
+      lName: '',
+      email: '', 
       message: '',
     }
   }
@@ -43,86 +37,77 @@ class Footer extends React.Component {
   }
 
   handleSubmit = () => {
-    const { email } = this.state;
-    addToMailchimp(email)
-    .then( data => {
-      console.log(data)
-      this.setState({ message: data.msg })
-    })
+    const {
+      fName,
+      lName,
+      email,
+    } = this.state;
+
+    addToMailchimp(email,
+      {
+        FNAME: fName,
+        LNAME: lName,
+      })
+      .then(data => {
+        console.log(data)
+        this.setState({ message: data.msg })
+      }
+    )
   }
 
-  render () {
-    const { message } = this.state
+  render() {
+    const {
+      message,
+    } = this.state;
     return (
       <footer className={footerStyles.footer}>
         <div className={footerStyles.footerMain}>
           <div className={footerStyles.section}>
             <Link to="/">
-              {/* <Img className={footerStyles.logo} fluid={logo.logo.childImageSharp.fluid} /> */}
+              <Logo className={footerStyles.logo}/>
             </Link>
             <p>
               Puente is a 501(c)(3) nonprofit corporation fueled by forward-thinking,
               passionate individuals. Founded in 2018, and based in Constanza, Dominican Republic,
               with offices in Indiana.
-          </p>
-            <Form>
-              <Form.Group controlId="formBasicEmail">
-                <Form.Label>
-                  <h2>Newsletter Sign-Up</h2>
-                </Form.Label>
-                <div className={footerStyles.newsletter}>
-                  <Form.Control 
-                  size="sm" 
-                  className={footerStyles.email} 
-                  type="email" 
-                  placeholder={"Enter email..."}
-                  onChange={this.handleChange} />
-                  <div tabIndex={0} onClick={this.handleSubmit} onKeyDown={this.handleSubmit} role="button" className={footerStyles.button}>
-                    <p>Sign Up</p>
-                  </div>
-                </div>
-                <p className={footerStyles.message} dangerouslySetInnerHTML={{ __html: message }}></p>
-              </Form.Group>
-            </Form>
+            </p>
           </div>
-          <nav>
-            <ul className={footerStyles.navList}>
-              <li>
-                <Link className={footerStyles.navItem} to="/about">About Us</Link>
-              </li>
-              <li>
-                <Link className={footerStyles.navItem} to="/technology">Our Technology</Link>
-              </li>
-              <li>
-                <Link className={footerStyles.navItem} to="/projects">Past Projects</Link>
-              </li>
-              <li>
-                <Link className={footerStyles.navItem} to="/faq">FAQs</Link>
-              </li>
-            </ul>
-          </nav>
-          <nav>
-            <ul className={footerStyles.navList}>
-              <li>
-                <Link className={footerStyles.navItem} to="/community">Community Empowerment</Link>
-              </li>
-              <li>
-                <Link className={footerStyles.navItem} to="/volunteers">Volunteers</Link>
-              </li>
-              <li>
-                <Link className={footerStyles.navItem} to="/reports">Annual Report</Link>
-              </li>
-            </ul>
-          </nav>
-          <div>
+          <div className={footerStyles.section}>
+            <nav>
+              <ul className={footerStyles.navList}>
+                <h1>Menu</h1>
+                <li>
+                  <Link className={footerStyles.navItem} to="/about">About Us</Link>
+                </li>
+                <li>
+                  <Link className={footerStyles.navItem} to="/technology">Technology</Link>
+                </li>
+                <li>
+                  <Link className={footerStyles.navItem} to="/programs">Programs</Link>
+                </li>
+                <li>
+                  <Link className={footerStyles.navItem} to="/donate">Donate</Link>
+                </li>
+                <li>
+                  <Link className={footerStyles.navItem} to="/volunteer">Volunteer</Link>
+                </li>
+                <li>
+                  <Link className={footerStyles.navItem} to="/news">News</Link>
+                </li>
+                <li>
+                  <Link className={footerStyles.navItem} to="/faq">FAQs</Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div className={footerStyles.section}>
+            <h1>Contact</h1>
             <h2>Address:</h2>
             <p>51181 Whitewater Ln.</p>
             <p>South Bend, IN</p>
-            <p className={footerStyles.lastItem}>46628</p>
+            <p>46628</p>
             <h2>Phone:</h2>
-            <p className={footerStyles.lastItem}>
-              1-574-302-7756
-        </p>
+            <p>1-574-302-7756</p>
             <div className={footerStyles.icons}>
               <a href="https://www.facebook.com/puentedr/"><Icon size={25} icon={facebook} /></a>
               <a href="https://www.instagram.com/puentedr/"><Icon size={25} icon={instagram} /></a>
@@ -130,13 +115,45 @@ class Footer extends React.Component {
               <a href="https://www.linkedin.com/company/18499313/admin/"><Icon size={25} icon={linkedin} /></a>
             </div>
           </div>
+          <div className={footerStyles.section}>
+            <h1>Newsletter Sign-Up</h1>
+            <Form>
+              <Form.Group controlId="formBasicEmail">
+                <div className={footerStyles.newsletter}>
+                  <Form.Control
+                    size="sm"
+                    className={footerStyles.input}
+                    type="textarea"
+                    placeholder={"First Name"}
+                    onChange={(e) => this.setState({ fName: e.target.value })}
+                  />
+                  <Form.Control
+                    size="sm"
+                    className={footerStyles.input}
+                    type="textarea"
+                    placeholder={"Last Name"}
+                    onChange={(e) => this.setState({ lName: e.target.value })}
+                  />
+                  <Form.Control
+                    size="sm"
+                    className={footerStyles.input}
+                    type="email"
+                    placeholder={"Enter email..."}
+                    onChange={(e) => this.setState({ email: e.target.value })} />
+                  <div tabIndex={0} onClick={this.handleSubmit} onKeyDown={this.handleSubmit}
+                    role="button" className={footerStyles.button}>
+                    <p>Sign Up</p>
+                  </div>
+                </div>
+                <p className={footerStyles.message} dangerouslySetInnerHTML={{ __html: message }}></p>
+              </Form.Group>
+            </Form>
+          </div>
         </div>
         <div className={footerStyles.tos}>
           <Link className={footerStyles.tosText} to="/service">Terms of Service</Link>
-          <p>|</p>
           <Link className={footerStyles.tosText} to="/acknowledgements">Acknowledgement of Use</Link>
-          <p>|</p>
-          <Link className={footerStyles.tosText} to="/privacy">Privacy Policy</Link>
+          <Link className={footerStyles.tosTextLast} to="/privacy">Privacy Policy</Link>
         </div>
       </footer>
     )

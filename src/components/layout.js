@@ -29,8 +29,8 @@ const Layout = (props) => {
       <Helmet>
         <title>{data.site.siteMetadata.title}</title>
       </Helmet>
+      <Header />
       <div className={layoutStyles.content}>
-        <Header />
         {props.children}
       </div>
       <Footer />

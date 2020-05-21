@@ -7,13 +7,17 @@ import {
 import Img from "gatsby-image"
 import Button from 'react-bootstrap/Button'
 
-// Style Imports
+// Style / Icon Imports
 import headerStyles from './header.module.scss'
+import { Icon } from 'react-icons-kit'
+import { phone } from 'react-icons-kit/fa/phone'
+import { envelope } from 'react-icons-kit/fa/envelope'
+import { bars } from 'react-icons-kit/fa/bars'
 
 const Header = () => {
   const logo = useStaticQuery(graphql`
     query {
-      logo: file(relativePath: { eq: "alt-logo-black.png" }) {
+      logo: file(relativePath: { eq: "logo-black.png" }) {
         childImageSharp {
           fluid(maxWidth: 200) {
             ...GatsbyImageSharpFluid
@@ -23,7 +27,7 @@ const Header = () => {
     }
   `)
   return (
-    <header className={headerStyles.header}>
+    <div className={headerStyles.header}>
       <div className={headerStyles.headerMain}>
         <div className={headerStyles.logoSection}>
           <Link to="/">
@@ -31,20 +35,13 @@ const Header = () => {
           </Link>
         </div>
         <div className={headerStyles.navSection}>
-          <nav>
-            <ul className={headerStyles.navList}>
-              <li>
-                <Link className={headerStyles.secondaryNavItem} activeClassName={headerStyles.activeNavItem} to="/community">Community Empowerment</Link>
-              </li>
-              <li>
-                <Link className={headerStyles.secondaryNavItem} activeClassName={headerStyles.activeNavItem} to="/volunteer">Volunteers</Link>
-              </li>
-              <li>
-                <Link className={headerStyles.secondaryNavItem} activeClassName={headerStyles.activeNavItem} to="/reports">Annual Report</Link>
-              </li>
-            </ul>
-          </nav>
-          <nav>
+          <div className={headerStyles.navContact}>
+            <Icon className={headerStyles.icon} size={20} icon={phone} />
+            <p>1-574-302-7756</p>
+            <Icon className={headerStyles.icon} size={20} icon={envelope} />
+            <p>info@punete-dr.com</p>
+          </div>
+          <div>
             <ul className={headerStyles.navList}>
               <li>
                 <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to="/about">About Us</Link>
@@ -53,10 +50,13 @@ const Header = () => {
                 <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to="/technology">Our Technology</Link>
               </li>
               <li>
-                <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to="/projects">Past Projects</Link>
+                <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to="/programs">Programs</Link>
               </li>
               <li>
-                <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to="/faq">FAQs</Link>
+                <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to="/volunteer">Volunteers</Link>
+              </li>
+              <li>
+                <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to="/news">News</Link>
               </li>
               <li>
                 <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to="/donate">
@@ -66,10 +66,13 @@ const Header = () => {
                 </Link>
               </li>
             </ul>
-          </nav>
+          </div>
+        </div>
+        <div className={headerStyles.burger}>
+          <Icon className={headerStyles.icon} size={24} icon={bars} />
         </div>
       </div>
-    </header> 
+    </div> 
   )
 }
 export default Header

@@ -33,9 +33,9 @@ const DonatePage = () => {
           <div className={donateStyles.banner}>
             <div className={donateStyles.bannerImage}>
               <Img fluid={data.image.childImageSharp.fluid} />
-            </div>
-            <div className={donateStyles.title}>
-              <h1>Make a Donation</h1>
+              <div className={donateStyles.title}>
+                <h1>Make A Donation</h1>
+              </div>
             </div>
           </div>
           <div className={donateStyles.body}>

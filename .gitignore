@@ -67,3 +67,6 @@ public
 .contentful.json
 setup_command.txt
 .env.development
+
+# Test Files
+test.js

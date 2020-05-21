@@ -35,9 +35,9 @@ const FAQPage = () => {
           <div className={faqStyles.banner}>
             <div className={faqStyles.bannerImage}>
               <Img fluid={data.image.childImageSharp.fluid} />
-            </div>
-            <div className={faqStyles.title}>
-              <h1>Frequently Asked Questions</h1>
+              <div className={faqStyles.title}>
+                <h1>Frequently Asked Questions</h1>
+              </div>
             </div>
           </div>
           <div className={faqStyles.body}>

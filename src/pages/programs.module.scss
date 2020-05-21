@@ -20,34 +20,14 @@ $blue: #3D80FC;
         height: auto;
         display: block;
       }
-      .title {
-        h1 {
-          padding: 2vmax 8vmax 0;
-          font-size: 56px;
-          font-weight: 700;
-          text-transform: uppercase;
-          color: $black;
-          text-shadow: 2.5px 2.5px $yellow;
-          margin: 0;
-        }
-      }
-    }
-  }
-  .body {
-    padding: 2vmax 0 0;
-    p {
-      padding: 0 8vmax 2vmax;
-      margin: 0;
-    }
-    .donate-section {
-      padding: 2vmax 0;
-      background-color: $white;
-      h2 {
-        font-size: 40px;
-        color: $black;
+      h1 {
+        padding: 2vmax 8vmax;
+        font-size: 56px;
+        font-weight: 700;
         text-transform: uppercase;
+        color: $black;
         text-shadow: 2.5px 2.5px $yellow;
-        padding-left: 8vmax;
+        margin: 0;
       }
     }
   }

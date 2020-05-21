@@ -34,9 +34,9 @@ const VolunteerPage = () => {
           <div className={volunteerStyles.banner}>
             <div className={volunteerStyles.bannerImage}>
               <Img fluid={data.image.childImageSharp.fluid} />
-            </div>
-            <div className={volunteerStyles.title}>
-              <h1>Volunteer With Puente</h1>
+              <div className={volunteerStyles.title}>
+                <h1>Voluneer With Puente</h1>
+              </div>
             </div>
           </div>
           <div className={volunteerStyles.body}>
@@ -82,9 +82,6 @@ const VolunteerPage = () => {
               </div>
             </div>
             <div className={volunteerStyles.volunteer}>
-              <div className={volunteerStyles.volunteerImage}>
-                <Img fluid={data.image.childImageSharp.fluid} />
-              </div>
               <div className={volunteerStyles.volunteerBio}>
                 <h2>Volunteer Name</h2>
                 <p>
