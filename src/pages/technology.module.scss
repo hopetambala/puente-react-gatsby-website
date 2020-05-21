@@ -7,19 +7,23 @@ $off-white: #f7f7f7;
 $yellow: #ffe680;
 $blue: #3d80fc;
 
-h1 {
-  padding: 2vmax 8vmax;
-  font-size: 100px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: $black;
-  text-shadow: 2.5px 2.5px $yellow;
-  margin: 0;
+div {
+    h1 {
+      padding: 2vmax 8vmax;
+      font-size: 100px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: $black;
+      text-shadow: 2.5px 2.5px $yellow;
+      margin: 0;
+    }
 }
 
 
 @media (max-width: 1024px) {
-  h1 {
-    font-size: 12px;
+  div {
+    h1 {
+      font-size: 12px;
+  }
   }
 }
