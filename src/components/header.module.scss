@@ -9,9 +9,9 @@ $blue: #3D80FC;
 
 // Browser 
 .header {
-  width: 100%;
   padding: 1.5vmax 8vmax;
   background-color: $yellow;
+  z-index: 100;
   .header-main {
     display: flex;
     flex-direction: row;

@@ -24,6 +24,24 @@ const DonatePage = () => {
           }
         }
       }
+      contentfulDonationPage {
+        title
+        paragraph1 {
+          content {
+            content {
+              value
+            }
+          }
+        }
+        title2
+        address {
+          content {
+            content {
+              value
+            }
+          }
+        }
+      }
     }
   `)
   return (
@@ -34,22 +52,21 @@ const DonatePage = () => {
             <div className={donateStyles.bannerImage}>
               <Img fluid={data.image.childImageSharp.fluid} />
               <div className={donateStyles.title}>
-                <h1>Make A Donation</h1>
+                <h1>{data.contentfulDonationPage.title}</h1>
               </div>
             </div>
           </div>
           <div className={donateStyles.body}>
             <p>
-              Puente is a 501(c)(3) nonprofit. All donations are  deemed tax-deductible under IRC Section 170. Our EIN  is 82-4237540 and Puente’s 
-              IRS confirmation letter is  available upon request. No goods or services were provided in exchange for your contribution.
+              {data.contentfulDonationPage.paragraph1.content[0].content[0].value}
               <br /><br />
-              Checks and cash donations may be mailed to:
+              {data.contentfulDonationPage.title2}
               <br /><br />
-              Puente Desarrollo Internacional
+              {data.contentfulDonationPage.address.content[0].content[0].value}
               <br />
-              51181 Whitewater Lane
+              {data.contentfulDonationPage.address.content[1].content[0].value}
               <br />
-              South Bend, IN 46628
+              {data.contentfulDonationPage.address.content[2].content[0].value}
             </p>
             <div className={donateStyles.donateSection}>
               <h2>Donation Amount</h2>

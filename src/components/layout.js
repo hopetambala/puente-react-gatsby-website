@@ -29,7 +29,7 @@ const Layout = (props) => {
       <Helmet>
         <title>{data.site.siteMetadata.title}</title>
       </Helmet>
-      <Header />
+      <Header className={layoutStyles.header} />
       <div className={layoutStyles.content}>
         {props.children}
       </div>

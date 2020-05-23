@@ -7,23 +7,41 @@ $off-white: #f7f7f7;
 $yellow: #ffe680;
 $blue: #3d80fc;
 
-div {
-    h1 {
-      padding: 2vmax 8vmax;
-      font-size: 100px;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: $black;
-      text-shadow: 2.5px 2.5px $yellow;
-      margin: 0;
+.container {
+  .row {
+    padding: 2vmax 0;
+    align-items: center;
+    justify-content: space-around;
+    .col {
+      align-items: center;
+      justify-content: center;
+      h1 {
+        padding: 2vmax 8vmax;
+        font-size: 4vmax;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $black;
+        text-shadow: 2.5px 2.5px $yellow;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+      p {
+        text-align: center;
+      }
+      img {
+        width: 100%;
+      }
     }
-}
-
-
-@media (max-width: 1024px) {
-  div {
-    h1 {
-      font-size: 12px;
-  }
   }
 }
+// h1 {
+//   padding: 2vmax 8vmax;
+//   font-size: 40px;
+//   font-weight: 700;
+//   text-transform: uppercase;
+//   color: $black;
+//   text-shadow: 2.5px 2.5px $yellow;
+//   margin: 0;
+//   padding: 2vmax 0 2vmax 8vmax;
+// }
