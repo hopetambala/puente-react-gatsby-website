@@ -20,6 +20,7 @@ $blue: #3d80fc;
         max-width: 100%;
         height: auto;
         display: block;
+        margin: 0;
       }
       .title {
         h1 {
@@ -70,11 +71,14 @@ $blue: #3d80fc;
         justify-content: space-around;
         .employee-image {
           width: 45%;
+          img {
+            margin: 0;
+          }
         }
         .employee-info {
           width: 50%;
           h2 {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 600;
             text-transform: uppercase;
             color: $black;
@@ -83,7 +87,7 @@ $blue: #3d80fc;
             padding: 1vh 0;
           }
           h3 {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 600;
             text-transform: uppercase;
             color: $black;
@@ -133,10 +137,10 @@ $blue: #3d80fc;
         .employee {
           .employee-info {
             h2 {
-              font-size: 28px;
+              font-size: 24px;
             }
             h3 {
-              font-size: 24px;
+              font-size: 20px;
             }
           }
         }

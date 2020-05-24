@@ -4,7 +4,6 @@ import {
   graphql,
   useStaticQuery,
 } from "gatsby"
-import Img from "gatsby-image"
 
 // Component Imports
 import Layout from "../components/layout"
@@ -17,14 +16,13 @@ const DonatePage = () => {
   const data = useStaticQuery(
     graphql`
     query {
-      image: file(relativePath: { eq: "placeholder-image.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 2000) {
-            ...GatsbyImageSharpFluid
+      contentfulDonationPage {
+        logo {
+          title
+          resize (height: 1000) {
+            src            
           }
         }
-      }
-      contentfulDonationPage {
         title
         paragraph1 {
           content {
@@ -50,7 +48,7 @@ const DonatePage = () => {
         <div className={donateStyles.container}>
           <div className={donateStyles.banner}>
             <div className={donateStyles.bannerImage}>
-              <Img fluid={data.image.childImageSharp.fluid} />
+              <img alt={data.contentfulDonationPage.logo.title} src={data.contentfulDonationPage.logo.resize.src} fluid />
               <div className={donateStyles.title}>
                 <h1>{data.contentfulDonationPage.title}</h1>
               </div>

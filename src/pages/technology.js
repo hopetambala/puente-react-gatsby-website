@@ -4,7 +4,6 @@ import {
   graphql,
   useStaticQuery,
 } from "gatsby"
-import Img from "gatsby-image"
 
 // Component Imports
 import Layout from "../components/layout"
@@ -26,6 +25,12 @@ const TechnologyPage = () => {
       }
       contentfulTechnologyPage {
         pageHeroText
+        heroImage {
+          title
+          resize (height: 1000) {
+            src            
+          }
+        }
         heroSubText
         dividerText
         sectionOneHeader
@@ -71,7 +76,7 @@ const TechnologyPage = () => {
           </div>
           <div className={styles.col}>
             <div>
-              <Img fluid={data.image.childImageSharp.fluid} />
+              <img alt={data.contentfulTechnologyPage.heroImage.title} src={data.contentfulTechnologyPage.heroImage.resize.src} fluid />
             </div>
           </div>
         </div>

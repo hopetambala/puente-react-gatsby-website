@@ -4,7 +4,6 @@ import {
   graphql,
   useStaticQuery,
 } from "gatsby"
-import Img from "gatsby-image"
 import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'
 
@@ -26,6 +25,12 @@ const ReportsPage = () => {
         }
       }
       contentfulNewsPage {
+        headerImage {
+          title
+          resize (height: 1000) {
+            src            
+          }
+        }
         headerText
         articlesMenuItem
         newslettersMenuItem
@@ -40,7 +45,7 @@ const ReportsPage = () => {
         <div className={styles.container}>
           <div className={styles.banner}>
             <div className={styles.bannerImage}>
-              <Img fluid={data.image.childImageSharp.fluid} />
+              <img alt={data.contentfulNewsPage.headerImage.title} src={data.contentfulNewsPage.headerImage.resize.src} fluid />
               <h1>{data.contentfulNewsPage.headerText}</h1>
             </div>
           </div>

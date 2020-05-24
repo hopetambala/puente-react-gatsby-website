@@ -16,10 +16,10 @@ $blue: #3d80fc;
   .banner {
     width: 100%;
     .banner-image {
-      Img {
+      width: 100%;
+      img {
         max-width: 100%;
-        height: auto;
-        display: block;
+        margin: 0;
       }
       .title {
         h1 {
@@ -67,6 +67,9 @@ $blue: #3d80fc;
       .section-image {
         width: 45%;
         padding: 4vmax 4vmax 4vmax 0;
+        img {
+          margin: 0;
+        }
       }
       .section-impact-numbers {
         width: 45%;
@@ -103,6 +106,9 @@ $blue: #3d80fc;
       .section-image {
         width: 45%;
         padding: 4vmax 0 4vmax 4vmax;
+        img {
+          margin: 0;
+        }
       }
     }
     .volunteer {
