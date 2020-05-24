@@ -75,6 +75,7 @@ $blue: #3D80FC;
     }
     &.section-blue {
       padding: 4vmax 8vmax;
+      width: 100%;
       background-color: $blue;
       flex-direction: column;
       h2 {

@@ -9,15 +9,20 @@ $blue: #3d80fc;
 
 .container {
   .row {
-    padding: 2vmax 0;
+    padding: 2vmax 8vmax;
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     .col {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       h1 {
         padding: 2vmax 8vmax;
-        font-size: 4vmax;
+        font-size: 56px;
         font-weight: 700;
         text-transform: uppercase;
         color: $black;
@@ -27,21 +32,238 @@ $blue: #3d80fc;
         text-align: center;
       }
       p {
+        font-size: 17px;
+        width: 75%;
+        margin: 0;
+        padding: 0;
         text-align: center;
       }
-      img {
+      div {
         width: 100%;
       }
     }
   }
+  .divider {
+    background-color: $off-white;
+    padding: 2vmax 8vmax;
+    text-align: center;
+  }
+  .section-one {
+    padding: 2vmax 8vmax;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h2 {
+      font-size: 40px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: $black;
+      text-shadow: 2.5px 2.5px $yellow;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    .collection-content {
+      padding-top: 2vmax;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      .collection-image {
+        width: 47.5%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        .placeholder {
+          background-color: $yellow;
+          width: 325px;
+          height: 60vh;
+          text-align: center;
+        }
+      }
+      .collection-text {
+        width: 47.5%;
+        h3 {
+          font-size: 28px;
+          font-weight: 600;
+          text-transform: uppercase;
+          color: $black;
+          text-shadow: 2.5px 2.5px $yellow;
+          margin: 0;
+          margin-top: 2vh;
+          padding: 0;
+        }
+        p {
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+  }
+  .section-two {
+    background-color: $off-white;
+    padding: 2vmax 8vmax;
+    h2 {
+      font-size: 40px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: $black;
+      text-shadow: 2.5px 2.5px $yellow;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    .analysis-content {
+      padding-top: 2vmax;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: space-between;
+      .analysis-image {
+        width: 47.5%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        .placeholder {
+          background-color: $yellow;
+          width: 500px;
+          height: 40vh;
+          text-align: center;
+        }
+      }
+      .analysis-text {
+        width: 47.5%;
+        h3 {
+          font-size: 28px;
+          font-weight: 600;
+          text-transform: uppercase;
+          color: $black;
+          text-shadow: 2.5px 2.5px $yellow;
+          margin: 0;
+          margin-top: 2vh;
+          padding: 0;
+        }
+        p {
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+  }
 }
-// h1 {
-//   padding: 2vmax 8vmax;
-//   font-size: 40px;
-//   font-weight: 700;
-//   text-transform: uppercase;
-//   color: $black;
-//   text-shadow: 2.5px 2.5px $yellow;
-//   margin: 0;
-//   padding: 2vmax 0 2vmax 8vmax;
-// }
+
+@media (max-width: 1024px) {
+  .container {
+    .row {
+      .col {
+        h1 {
+          font-size: 40px;
+          text-shadow: 2.5px 2.5px $yellow;
+          margin: 2vmax;
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+    .divider {
+      p {
+        font-size: 14px;
+      }
+    }
+    .section-one {
+      h2 {
+        font-size: 32px;
+        text-shadow: 2.5px 2.5px $yellow;
+      }
+      .collection-content {
+        .collection-text {
+          h3 {
+            font-size: 24px;
+            text-shadow: 2.5px 2.5px $yellow;
+          }
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    .section-two {
+      h2 {
+        font-size: 32px;
+        text-shadow: 2.5px 2.5px $yellow;
+      }
+      .analysis-content {
+        .analysis-text {
+          h3 {
+            font-size: 24px;
+            text-shadow: 2.5px 2.5px $yellow;
+          }
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    .row {
+      flex-direction: column-reverse;
+      .col {
+        width: 100%;
+        h1 {
+          width: 100%;
+          font-size: 32px;
+          text-shadow: 2px 2px $yellow;
+        }
+        p {
+          width: 100%;
+          font-size: 14px;
+        }
+      }
+    }
+    .divider {
+      p {
+        font-size: 14px;
+      }
+    }
+    .section-one {
+      h2 {
+        font-size: 24px;
+        text-shadow: 2.5px 2.5px $yellow;
+      }
+      .collection-content {
+        flex-direction: column;
+        .collection-text {
+          width: 100%;
+          h3 {
+            font-size: 20px;
+            text-shadow: 2.5px 2.5px $yellow;
+          }
+        }
+      }
+    }
+    .section-two {
+      h2 {
+        font-size: 24px;
+        text-shadow: 2.5px 2.5px $yellow;
+      }
+      .analysis-content {
+        flex-direction: column;
+        .analysis-text {
+          width: 100%;
+          h3 {
+            font-size: 20px;
+            text-shadow: 2.5px 2.5px $yellow;
+          }
+        }
+      }
+    }
+  }
+}

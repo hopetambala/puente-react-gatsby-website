@@ -23,7 +23,7 @@ $blue: #3d80fc;
       }
       .title {
         h1 {
-          padding: 2vmax 8vmax;
+          padding: 2vmax 4vmax;
           font-size: 56px;
           font-weight: 700;
           text-transform: uppercase;
@@ -35,83 +35,76 @@ $blue: #3d80fc;
     }
   }
   .body {
-    padding: 0;
+    background-color: $white;
     p {
-      padding: 0 8vmax 4vmax;
+      padding: 2vmax 4vmax;
       margin: 0;
     }
     .section {
-      padding: 4vmax 0 4vmax 8vmax;
-      background-color: $white;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      .section-text {
-        width: 45%;
-        margin-right: 2vmax;
-        h2 {
-          color: $black;
-          font-size: 40px;
-          font-weight: 600;
-          text-shadow: 2.5px 2.5px $yellow;
-          text-transform: uppercase;
-        }
-        p {
-          padding: 0;
-        }
-      }
-      .section-image {
-        width: 55%;
-      }
-      .section-impact-numbers {
-        width: 55%;
-        height: 300px;
-        overflow: hidden;
-        background-color: $yellow;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        h2 {
-          color: $black;
-          font-size: 40px;
-          font-weight: 600;
-          text-shadow: 2.5px 2.5px $off-white;
-          text-transform: uppercase;
-          margin: 0;
-        }
-      }
-    }
-    .section-even {
-      padding: 4vmax 8vmax 4vmax 0;
       background-color: $off-white;
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: center;
       .section-text {
-        width: 45%;
-        margin-left: 2vmax;
+        width: 55%;
         h2 {
           color: $black;
           font-size: 40px;
           font-weight: 600;
           text-shadow: 2.5px 2.5px $yellow;
           text-transform: uppercase;
+          margin: 0;
+          padding: 2vmax 4vmax 0;
         }
         p {
-          padding: 0;
+          margin: 0;
         }
       }
       .section-image {
+        width: 45%;
+        padding: 2vmax 4vmax 2vmax 0;
+      }
+      .section-impact-numbers {
+        width: 45%;
+        background-color: $yellow;
+        height: 300px;
+        margin-top: 2vmax;
+        margin-bottom: 2vmax;
+      }
+    }
+    .section-even {
+      background-color: $off-white;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: center;
+      .section-text {
         width: 55%;
+        h2 {
+          color: $black;
+          font-size: 40px;
+          font-weight: 600;
+          text-shadow: 2.5px 2.5px $yellow;
+          text-transform: uppercase;
+          margin: 0;
+          padding: 2vmax 4vmax 0;
+          padding-left: 4vmax;
+        }
+        p {
+          margin: 0;
+        }
+      }
+      .section-image {
+        width: 45%;
+        padding: 2vmax 0 2vmax 4vmax;
       }
     }
     .volunteer {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 4vmax 8vmax;
+      padding: 4vmax 4vmax;
       background-color: $blue;
       .volunteer-bio {
         width: 100%;
@@ -137,7 +130,7 @@ $blue: #3d80fc;
   }
 }
 
-@media (max-width: 896px) {
+@media (max-width: 1024px) {
   .container {
     .banner {
       .banner-image {
@@ -147,85 +140,104 @@ $blue: #3d80fc;
           }
         }
       }
-      .body {
-        .section {
-          .section-text {
-            width: 100%;
-            h2 {
-              font-size: 40px;
-              text-align: center;
-            }
-            p {
-              padding: 0;
-            }
-          }
-          .section-image {
-            width: 55%;
-          }
-          .section-impact-numbers {
-            width: 55%;
-            height: 300px;
-            overflow: hidden;
-            background-color: $yellow;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            h2 {
-              color: $black;
-              font-size: 40px;
-              font-weight: 600;
-              text-shadow: 2.5px 2.5px $off-white;
-              text-transform: uppercase;
-              margin: 0;
-            }
+    }
+    .body {
+      .section {
+        .section-text {
+          h2 {
+            font-size: 32px;
           }
         }
-        .section-even {
-          flex-direction: column;
-          .section-text {
-            width: 45%;
-            margin-left: 2vmax;
-            h2 {
-              color: $black;
-              font-size: 40px;
-              font-weight: 600;
-              text-shadow: 2.5px 2.5px $yellow;
-              text-transform: uppercase;
-            }
-            p {
-              padding: 0;
-            }
-          }
-          .section-image {
-            width: 55%;
+        .section-impact-numbers {
+          height: 250px;
+        }
+      }
+      .section-even {
+        .section-text {
+          h2 {
+            font-size: 32px;
           }
         }
-        .volunteer {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: space-between;
-          padding: 4vmax 8vmax;
-          background-color: $blue;
-          .volunteer-bio {
-            width: 100%;
-            h2 {
-              color: $yellow;
-              font-size: 40px;
-              font-weight: 600;
-              text-shadow: 2.5px 2.5px $black;
-              text-transform: uppercase;
-              text-align: center;
-              padding: 0;
-              margin: 0;
-              margin-bottom: 1vmax;
-            }
-            p {
-              color: $off-white;
-              padding: 0;
-              margin-top: 1vmax;
-              margin: 0;
-            }
+      }
+      .volunteer {
+        .volunteer-bio {
+          h2 {
+            font-size: 32px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    .banner {
+      .banner-image {
+        .title {
+          h1 {
+            font-size: 32px;
+            text-shadow: 2px 2px $yellow;
+          }
+        }
+      }
+    }
+    .body {
+      p {
+        font-size: 14px;
+      }
+      .section {
+        flex-direction: column-reverse;
+        .section-text {
+          width: 100%;
+          padding: 2vmax 4vmax;
+          h2 {
+            font-size: 24px;
+            padding-top: 0;
+            padding-left: 0;
+          }
+          p {
+            padding-left: 0;
+            padding-right: 0;
+          }
+        }
+        .section-image {
+          width: 100%;
+          padding: 2vmax 4vmax;
+        }
+        .section-impact-numbers {
+          width: 100%;
+          text-align: center;
+          height: 200px;
+        }
+      }
+      .section-even {
+        flex-direction: column-reverse;
+        .section-text {
+          width: 100%;
+          padding: 2vmax 4vmax;
+          h2 {
+            font-size: 24px;
+            padding-top: 0;
+            padding-left: 0;
+          }
+          p {
+            padding-left: 0;
+            padding-right: 0;
+          }
+        }
+        .section-image {
+          width: 100%;
+          padding: 2vmax 4vmax;
+        }
+      }
+      .volunteer {
+        .volunteer-bio {
+          h2 {
+            font-size: 24px;
+          }
+          p {
+            font-size: 14px;
           }
         }
       }

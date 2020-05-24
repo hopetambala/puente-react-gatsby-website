@@ -26,6 +26,12 @@ const Header = () => {
       }
     }
   `)
+
+  const handleClick = () => {
+    console.log("test")
+    // ReactDOM.findDOMNode.getElementsByClassName('navSection')
+  }
+
   return (
     <div className={headerStyles.header}>
       <div className={headerStyles.headerMain}>
@@ -36,10 +42,14 @@ const Header = () => {
         </div>
         <div className={headerStyles.navSection}>
           <div className={headerStyles.navContact}>
-            <Icon className={headerStyles.icon} size={20} icon={phone} />
-            <p>1-574-302-7756</p>
-            <Icon className={headerStyles.icon} size={20} icon={envelope} />
-            <p>info@punete-dr.com</p>
+            <div>
+              <Icon className={headerStyles.icon} size={20} icon={phone} />
+              <p>1-574-302-7756</p>
+            </div>
+            <div>
+              <Icon className={headerStyles.icon} size={20} icon={envelope} />
+              <p>info@punete-dr.com</p>
+            </div>
           </div>
           <div>
             <ul className={headerStyles.navList}>
@@ -69,7 +79,7 @@ const Header = () => {
           </div>
         </div>
         <div className={headerStyles.burger}>
-          <Icon className={headerStyles.icon} size={24} icon={bars} />
+          <Icon className={headerStyles.icon} onClick={handleClick} size={24} icon={bars} />
         </div>
       </div>
     </div> 

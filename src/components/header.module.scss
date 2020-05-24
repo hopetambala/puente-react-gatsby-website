@@ -1,15 +1,15 @@
-$font: "Roboto", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+$font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+  "Helvetica Neue", sans-serif;
 
 $white: #fff;
 $black: #000;
-$off-white: #F7F7F7;
-$yellow: #FFE680;
-$blue: #3D80FC;
+$off-white: #f7f7f7;
+$yellow: #ffe680;
+$blue: #3d80fc;
 
-
-// Browser 
+// Browser
 .header {
-  padding: 1.5vmax 8vmax;
+  padding: 1.5vmax 4vmax;
   background-color: $yellow;
   z-index: 100;
   .header-main {
@@ -30,18 +30,24 @@ $blue: #3D80FC;
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: center;
         margin-bottom: 10px;
-        width: 100%;
-        .icon {
-          margin-left: 1vw;
-          margin-right: .5vw;
-          padding: 0;
-        }
-        p {
-          font-size: 14px;
-          margin: 0;
-          padding: 0;
+        border-bottom: 1px solid $black;
+        div {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          .icon {
+            margin-left: 1vw;
+            margin-right: 0.5vw;
+            padding: 0;
+          }
+          p {
+            font-size: 14px;
+            margin: 0;
+            padding: 0;
+          }
         }
       }
       div {
@@ -102,7 +108,8 @@ $blue: #3D80FC;
         div {
           .nav-list {
             .nav-item {
-              margin-left: 2vw;
+              font-size: 14px;
+              margin-left: 1.5vw;
             }
           }
         }
@@ -111,13 +118,14 @@ $blue: #3D80FC;
   }
 }
 
-// Phone 
+// Phone
 
-@media (max-width: 896px) {
+@media (max-width: 796px) {
   .header {
     .header-main {
       .nav-section {
-        width: 40%;
+        display: none;
+        width: 35%;
         background-color: $yellow;
         position: absolute;
         right: 0;
@@ -125,21 +133,27 @@ $blue: #3D80FC;
         top: 8vh;
         justify-content: flex-start;
         align-items: center;
-        transform: translateX(100%);
         .nav-contact {
-          display: flex;
           flex-direction: column;
-          p {
-            padding: 0;
+          width: 75%;
+          div {
+            padding-top: 1vh;
+            padding-bottom: 1vh;
+            p {
+              padding: 0;
+            }
           }
         }
         div {
           .nav-list {
             display: flex;
             flex-direction: column;
-            .nav-item {
+            li {
+              margin-top: 1vh;
             }
-            .buttonBackground {
+            .nav-item {
+              font-size: 16px;
+              margin-left: 1.5vw;
             }
           }
         }

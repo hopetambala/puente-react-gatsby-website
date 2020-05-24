@@ -5,6 +5,7 @@ import {
   useStaticQuery,
 } from "gatsby"
 import Img from "gatsby-image"
+import Carousel from 'react-bootstrap/Carousel'
 
 // Component Imports
 import Layout from "../components/layout"
@@ -64,6 +65,36 @@ const IndexPage = () => {
           }
         }
       }
+      contentfulProjectTypes {
+        projectTypeOne
+        projectOneShortDescription {
+          projectOneShortDescription
+        }
+        projectTypeTwo
+        projectTwoShortDescription {
+          projectTwoShortDescription
+        }
+        projectTypeThree
+        projectThreeShortDescription {
+          projectThreeShortDescription
+        }
+        projectTypeFour
+        projectFourShortDescription {
+          projectFourShortDescription
+        }
+        projectTypeFive
+        projectFiveShortDescription {
+          projectFiveShortDescription
+        }
+        projectTypeSix
+        projectSixShortDescription {
+          projectSixShortDescription
+        }
+        projectTypeSeven
+        projectSevenShortDescription {
+          projectSevenShortDescription
+        }
+      }
     }
   `)
   return (
@@ -97,14 +128,36 @@ const IndexPage = () => {
             </div>
           </div>
           <div className={styles.sectionBlue}>
-            <h2>Case Studies</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-              labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
-              voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              LINKS TO PROJECTS PAGE
-            </p>
+            <Carousel controls={false} indicators={false}>
+              <Carousel.Item>
+                <h2>{data.contentfulProjectTypes.projectTypeOne}</h2>
+                <p>{data.contentfulProjectTypes.projectOneShortDescription.projectOneShortDescription}</p>
+              </Carousel.Item>
+              <Carousel.Item>
+                <h2>{data.contentfulProjectTypes.projectTypeTwo}</h2>
+                <p>{data.contentfulProjectTypes.projectTwoShortDescription.projectTwoShortDescription}</p>
+              </Carousel.Item>
+              <Carousel.Item>
+                <h2>{data.contentfulProjectTypes.projectTypeThree}</h2>
+                <p>{data.contentfulProjectTypes.projectThreeShortDescription.projectThreeShortDescription}</p>
+              </Carousel.Item>
+              <Carousel.Item>
+                <h2>{data.contentfulProjectTypes.projectTypeFour}</h2>
+                <p>{data.contentfulProjectTypes.projectFourShortDescription.projectFourShortDescription}</p>
+              </Carousel.Item>
+              <Carousel.Item>
+                <h2>{data.contentfulProjectTypes.projectTypeFive}</h2>
+                <p>{data.contentfulProjectTypes.projectFiveShortDescription.projectFiveShortDescription}</p>
+              </Carousel.Item>
+              <Carousel.Item>
+                <h2>{data.contentfulProjectTypes.projectTypeSix}</h2>
+                <p>{data.contentfulProjectTypes.projectSixShortDescription.projectSixShortDescription}</p>
+              </Carousel.Item>
+              <Carousel.Item>
+                <h2>{data.contentfulProjectTypes.projectTypeSeven}</h2>
+                <p>{data.contentfulProjectTypes.projectSevenShortDescription.projectSevenShortDescription}</p>
+              </Carousel.Item>
+            </Carousel>
             <Link className={styles.button} to="/projects">
               <div className={styles.buttonBackground}>
                 <p>Read More</p>
