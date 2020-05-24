@@ -132,9 +132,16 @@ $blue: #3d80fc;
   }
 }
 
+// Tablet styles
 @media (max-width: 1024px) {
   .footer {
     padding: 2vmax 4vmax;
+  }
+}
+
+// Phone styles
+@media (max-width: 768px) {
+  .footer {
     .footer-main {
       flex-direction: column;
       align-items: flex-start;
