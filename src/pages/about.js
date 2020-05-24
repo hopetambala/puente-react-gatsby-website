@@ -19,11 +19,32 @@ const AboutPage = () => {
   const data = useStaticQuery(
     graphql`
     query {
-      image: file(relativePath: { eq: "placeholder-image.jpg" }) {
+      hero: file(relativePath: { eq: "placeholder-image.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 2000) {
             ...GatsbyImageSharpFluid
           }
+        }
+      }
+      image: file(relativePath: { eq: "1200x800.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 2000) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      contentfulAboutPage {
+        heroText
+        heroSubText {
+          heroSubText
+        }
+        missionHeader
+        missionText {
+          missionText
+        }
+        visionHeader
+        visionText {
+          visionText
         }
       }
     }
@@ -34,45 +55,38 @@ const AboutPage = () => {
         <div className={aboutStyles.container}>
           <div className={aboutStyles.banner}>
             <div className={aboutStyles.bannerImage}>
-              <Img fluid={data.image.childImageSharp.fluid} />
+              <Img fluid={data.hero.childImageSharp.fluid} />
               <div className={aboutStyles.title}>
-                <h1>Who We Are</h1>
+                <h1>{data.contentfulAboutPage.heroText}</h1>
               </div>
             </div>
           </div>
           <div className={aboutStyles.body}>
-            <p>
-              Puente is a 501(c)(3) nonprofit organization using proprietary 
-              technology and community-led development initiatives to improve 
-              the standard of living in the Dominican Republic
-            </p>
+            <p>{data.contentfulAboutPage.heroSubText.heroSubText}</p>
             <div className={aboutStyles.section}>
-              <h2>Our Mission</h2>
-              <p>Our mission is to connect international development organizations 
-                and local institutions with underserved communities more efficiently 
-                to make development work more collaborative, impactful and sustainable.
-              </p>
-              <h2>Our Vision</h2>
-              <p>
-                Our vision is a world where development organizations collaborate smartly 
-                and selflessly to maximize their collective impact on the individuals 
-                and communities being served.
-              </p>
+              <h2>{data.contentfulAboutPage.missionHeader}</h2>
+              <p>{data.contentfulAboutPage.missionText.missionText}</p>
+              <h2>{data.contentfulAboutPage.visionHeader}</h2>
+              <p>{data.contentfulAboutPage.visionText.visionText}</p>
             </div>
             <AboutCTA />
             <div className={aboutStyles.bioSection}>
               <div className={aboutStyles.employeeRow}>
                 <div className={aboutStyles.employee}>
-                  <Img fluid={data.image.childImageSharp.fluid} />
-                  <div>
+                  <div className={aboutStyles.employeeImage}>
+                    <Img fluid={data.image.childImageSharp.fluid} />
+                  </div>
+                  <div className={aboutStyles.employeeInfo}>
                     <h2>Scott Coppa</h2>
                     <h3>Co Founder / CEO</h3>
                     <a href="https://www.linkedin.com/company/18499313/admin/"><Icon className={aboutStyles.icon} size={32} color icon={linkedin} /></a>
                   </div>
                 </div>
                 <div className={aboutStyles.employee}>
-                  <Img fluid={data.image.childImageSharp.fluid} />
-                  <div>
+                  <div className={aboutStyles.employeeImage}>
+                    <Img fluid={data.image.childImageSharp.fluid} />
+                  </div>
+                  <div className={aboutStyles.employeeInfo}>
                     <h2>Paul Anthony</h2>
                     <h3>Co Founder / CFO</h3>
                     <a href="https://www.linkedin.com/company/18499313/admin/"><Icon className={aboutStyles.icon} size={32} icon={linkedin} /></a>
@@ -81,16 +95,20 @@ const AboutPage = () => {
               </div>
               <div className={aboutStyles.employeeRow}>
                 <div className={aboutStyles.employee}>
-                  <Img fluid={data.image.childImageSharp.fluid} />
-                  <div>
+                  <div className={aboutStyles.employeeImage}>
+                    <Img fluid={data.image.childImageSharp.fluid} />
+                  </div>
+                  <div className={aboutStyles.employeeInfo}>
                     <h2>Hope Tambala</h2>
                     <h3>Co Founder / CTO</h3>
                     <a href="https://www.linkedin.com/company/18499313/admin/"><Icon className={aboutStyles.icon} size={32} icon={linkedin} /></a>
                   </div>
                 </div>
                 <div className={aboutStyles.employee}>
-                  <Img fluid={data.image.childImageSharp.fluid} />
-                  <div>
+                  <div className={aboutStyles.employeeImage}>
+                    <Img fluid={data.image.childImageSharp.fluid} />
+                  </div>
+                  <div className={aboutStyles.employeeInfo}>
                     <h2>Crismary Gutierrez</h2>
                     <h3>Community Outreach Coordinator</h3>
                     <a href="https://www.linkedin.com/company/18499313/admin/"><Icon className={aboutStyles.icon} size={32} icon={linkedin} /></a>

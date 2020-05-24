@@ -152,7 +152,7 @@ class Footer extends React.Component {
         </div>
         <div className={footerStyles.tos}>
           <Link className={footerStyles.tosText} to="/service">Terms of Service</Link>
-          <Link className={footerStyles.tosText} to="/acknowledgements">Acknowledgement of Use</Link>
+          <Link className={footerStyles.tosText} to="/acceptable-use">Acceptable Use</Link>
           <Link className={footerStyles.tosTextLast} to="/privacy">Privacy Policy</Link>
         </div>
       </footer>
