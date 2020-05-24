@@ -23,7 +23,7 @@ $blue: #3d80fc;
       }
       .title {
         h1 {
-          padding: 2vmax 4vmax;
+          padding: 4vmax 6vmax;
           font-size: 56px;
           font-weight: 700;
           text-transform: uppercase;
@@ -37,7 +37,7 @@ $blue: #3d80fc;
   .body {
     background-color: $white;
     p {
-      padding: 2vmax 4vmax;
+      padding: 4vmax 6vmax;
       margin: 0;
     }
     .section {
@@ -49,14 +49,14 @@ $blue: #3d80fc;
         color: $black;
         text-shadow: 2.5px 2.5px $yellow;
         margin: 0;
-        padding: 2vmax 4vmax 0;
+        padding: 4vmax 6vmax 0;
       }
       p {
-        padding: 2vmax 4vmax;
+        padding: 4vmax 6vmax;
       }
     }
     .employee-row {
-      padding: 2vmax 4vmax;
+      padding: 4vmax 6vmax;
       width: 100%;
       display: flex;
       flex-direction: row;
@@ -107,6 +107,7 @@ $blue: #3d80fc;
       .banner-image {
         .title {
           h1 {
+            padding: 4vmax 4vmax;
             font-size: 48px;
           }
         }
@@ -115,14 +116,20 @@ $blue: #3d80fc;
     .body {
       background-color: $white;
       p {
+        padding: 4vmax 4vmax;
         font-size: 14px;
       }
       .section {
         h2 {
+          padding: 4vmax 4vmax 0;
           font-size: 32px;
+        }
+        p {
+          padding: 4vmax 4vmax;
         }
       }
       .employee-row {
+        padding: 4vmax 4vmax;
         .employee {
           .employee-info {
             h2 {
@@ -143,8 +150,6 @@ $blue: #3d80fc;
   .container {
     .banner {
       .banner-image {
-        Img {
-        }
         .title {
           h1 {
             font-size: 40px;
@@ -164,19 +169,20 @@ $blue: #3d80fc;
         }
       }
       .employee-row {
-        padding: 2vmax 4vmax 0;
+        padding: 4vmax 4vmax 0;
         flex-direction: column;
         .employee {
-          padding: 2vmax 0;
+          padding: 4vmax 0;
           flex-direction: row;
           justify-content: space-around;
           .employee-info {
             h2 {
-              font-size: 24px;
+              font-size: 20px;
+              text-shadow: 1.5px 1.5px $yellow;
             }
             h3 {
-              font-size: 18px;
-              text-shadow: 1.5px 1.5px $yellow;
+              font-size: 14px;
+              text-shadow: 1px 1px $yellow;
             }
           }
         }

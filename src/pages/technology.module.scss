@@ -9,7 +9,7 @@ $blue: #3d80fc;
 
 .container {
   .row {
-    padding: 2vmax 4vmax;
+    padding: 4vmax 6vmax;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -21,7 +21,7 @@ $blue: #3d80fc;
       align-items: center;
       justify-content: center;
       h1 {
-        padding: 2vmax 4vmax;
+        padding: 4vmax 6vmax;
         font-size: 56px;
         font-weight: 700;
         text-transform: uppercase;
@@ -45,11 +45,11 @@ $blue: #3d80fc;
   }
   .divider {
     background-color: $off-white;
-    padding: 2vmax 4vmax;
+    padding: 4vmax 6vmax;
     text-align: center;
   }
   .section-one {
-    padding: 2vmax 4vmax;
+    padding: 4vmax 6vmax;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -65,7 +65,7 @@ $blue: #3d80fc;
       text-align: center;
     }
     .collection-content {
-      padding-top: 2vmax;
+      padding-top: 4vmax;
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -104,7 +104,7 @@ $blue: #3d80fc;
   }
   .section-two {
     background-color: $off-white;
-    padding: 2vmax 4vmax;
+    padding: 4vmax 6vmax;
     h2 {
       font-size: 40px;
       font-weight: 600;
@@ -116,7 +116,7 @@ $blue: #3d80fc;
       text-align: center;
     }
     .analysis-content {
-      padding-top: 2vmax;
+      padding-top: 4vmax;
       display: flex;
       flex-direction: row-reverse;
       align-items: center;
@@ -158,11 +158,13 @@ $blue: #3d80fc;
 @media (max-width: 1024px) {
   .container {
     .row {
+      padding: 4vmax;
       .col {
         h1 {
+          padding: 4vmax;
           font-size: 40px;
           text-shadow: 2.5px 2.5px $yellow;
-          margin: 2vmax;
+          margin: 4vmax;
         }
         p {
           font-size: 14px;
@@ -192,6 +194,7 @@ $blue: #3d80fc;
       }
     }
     .section-two {
+      padding: 4vmax;
       h2 {
         font-size: 32px;
         text-shadow: 2.5px 2.5px $yellow;
@@ -229,11 +232,13 @@ $blue: #3d80fc;
       }
     }
     .divider {
+      padding: 4vmax;
       p {
         font-size: 14px;
       }
     }
     .section-one {
+      padding: 4vmax;
       h2 {
         font-size: 24px;
         text-shadow: 2.5px 2.5px $yellow;

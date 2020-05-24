@@ -151,9 +151,9 @@ class Footer extends React.Component {
           </div>
         </div>
         <div className={footerStyles.tos}>
-          <Link className={footerStyles.tosText} to="/service">Terms of Service</Link>
+          <Link className={footerStyles.tosText} to="/terms-of-service">Terms of Service</Link>
           <Link className={footerStyles.tosText} to="/acceptable-use">Acceptable Use</Link>
-          <Link className={footerStyles.tosTextLast} to="/privacy">Privacy Policy</Link>
+          <Link className={footerStyles.tosTextLast} to="/privacy-policy">Privacy Policy</Link>
         </div>
       </footer>
     )

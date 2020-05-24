@@ -11,5 +11,11 @@ $blue: #3D80FC;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 2vmax 8vmax;
+  padding: 2vmax 6vmax;
+}
+
+@media (max-width: 1024px) {
+  .container {
+  padding: 2vmax 4vmax;
+}
 }

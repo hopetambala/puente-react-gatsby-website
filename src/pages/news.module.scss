@@ -22,7 +22,7 @@ $blue: #3d80fc;
         display: block;
       }
       h1 {
-        padding: 4vmax 4vmax;
+        padding: 4vmax 6vmax;
         font-size: 56px;
         font-weight: 700;
         text-transform: uppercase;
@@ -33,7 +33,7 @@ $blue: #3d80fc;
     }
   }
   .section {
-    padding: 4vmax 4vmax;
+    padding: 4vmax 6vmax;
     width: 100%;
     background-color: $white;
     h2 {
@@ -48,16 +48,18 @@ $blue: #3d80fc;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .container {
     .banner {
       .banner-image {
         h1 {
+          padding: 4vmax;
           font-size: 48px;
         }
       }
     }
     .section {
+      padding: 4vmax;
       h2 {
         font-size: 32px;
       }

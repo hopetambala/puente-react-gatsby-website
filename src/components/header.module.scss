@@ -9,7 +9,7 @@ $blue: #3d80fc;
 
 // Browser
 .header {
-  padding: 1.5vmax 4vmax;
+  padding: 2vmax 6vmax;
   background-color: $yellow;
   z-index: 100;
   .header-main {
@@ -98,6 +98,7 @@ $blue: #3d80fc;
 
 @media (max-width: 1024px) {
   .header {
+    padding: 2vmax 4vmax;
     .header-main {
       .nav-section {
         .nav-contact {

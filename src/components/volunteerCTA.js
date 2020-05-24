@@ -23,7 +23,7 @@ const VolunteerCTA = () => {
   return (
     <div className={styles.container}>
       <h2>Interested in Volunteering?</h2>
-      <Link className={styles.button} to="/contact">
+      <Link className={styles.button} to="/volunteer">
         <Button className={styles.buttonBackground}>
           Get Started
         </Button>

@@ -158,7 +158,7 @@ const IndexPage = () => {
                 <p>{data.contentfulProjectTypes.projectSevenShortDescription.projectSevenShortDescription}</p>
               </Carousel.Item>
             </Carousel>
-            <Link className={styles.button} to="/projects">
+            <Link className={styles.button} to="/programs">
               <div className={styles.buttonBackground}>
                 <p>Read More</p>
               </div>

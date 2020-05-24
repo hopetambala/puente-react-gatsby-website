@@ -23,7 +23,7 @@ const AboutCTA = () => {
   return (
     <div className={styles.container}>
       <h2>Learn About What We Have Been Up To</h2>
-      <Link className={styles.button} to="/report">
+      <Link className={styles.button} to="/news">
         <Button className={styles.buttonBackground}>
           Annual Report
         </Button>

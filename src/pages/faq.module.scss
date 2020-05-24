@@ -23,7 +23,7 @@ $blue: #3d80fc;
       }
       .title {
         h1 {
-          padding: 2vmax 8vmax 0;
+          padding: 4vmax 6vmax 0;
           font-size: 56px;
           font-weight: 700;
           text-transform: uppercase;
@@ -35,13 +35,13 @@ $blue: #3d80fc;
     }
   }
   .body {
-    padding: 2vmax 8vmax 4vmax;
+    padding: 4vmax 6vmax 4vmax;
     p {
       margin: 0;
     }
     .accordion {
       width: 100%;
-      padding-top: 2vmax;
+      padding-top: 4vmax;
       .accordion-header {
         background-color: $blue;
         h2 {
@@ -68,12 +68,14 @@ $blue: #3d80fc;
       .banner-image {
         .title {
           h1 {
-            font-size: 40px;
+            padding: 4vmax 4vmax 0;
+            font-size: 48px;
           }
         }
       }
     }
     .body {
+      padding: 4vmax;
       p {
         margin: 0;
       }
@@ -85,6 +87,37 @@ $blue: #3d80fc;
         }
         h3 {
           font-size: 24px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    .banner {
+      .banner-image {
+        .title {
+          h1 {
+            padding: 4vmax 4vmax 0;
+            font-size: 40px;
+          }
+        }
+      }
+    }
+    .body {
+      padding: 4vmax;
+      p {
+        margin: 0;
+      }
+      .accordion {
+        .accordion-header {
+          h2 {
+            font-size: 28px;
+          }
+        }
+        h3 {
+          font-size: 20px;
         }
       }
     }

@@ -71,19 +71,22 @@ const VolunteerPage = () => {
         impactNumbers
         impactDescriptions
       }
-      contentfulProjectTypes {
-        projectTypeOne
-        projectOneShortDescription {
-          projectOneShortDescription
+      contentfulFeaturedVolunteers {
+        volunteerName
+        volunteerOneRole
+        volunteerOneBio {
+          volunteerOneBio
         }
-        projectTypeTwo
-        projectTwoShortDescription {
-          projectTwoShortDescription
+        volunteerTwoName
+        volunteerTwoRole
+        volunteerTwoBio {
+          volunteerTwoBio
         }
-        projectTypeThree
-        projectThreeShortDescription {
-          projectThreeShortDescription
-        }
+        volunteerThreeName
+        volunteerThreeRole
+        volunteerThreeBio {
+          volunteerThreeBio
+        } 
       }
     }
   `)
@@ -124,16 +127,19 @@ const VolunteerPage = () => {
               <div className={volunteerStyles.volunteerBio}>
                 <Carousel controls={false} indicators={false}>
                   <Carousel.Item>
-                    <h2>{data.contentfulProjectTypes.projectTypeOne}</h2>
-                    <p>{data.contentfulProjectTypes.projectOneShortDescription.projectOneShortDescription}</p>
+                    <h2>{data.contentfulFeaturedVolunteers.volunteerName}</h2>
+                    <h3>{data.contentfulFeaturedVolunteers.volunteerOneRole}</h3>
+                    <p>{data.contentfulFeaturedVolunteers.volunteerOneBio.volunteerOneBio}</p>
                   </Carousel.Item>
                   <Carousel.Item>
-                    <h2>{data.contentfulProjectTypes.projectTypeTwo}</h2>
-                    <p>{data.contentfulProjectTypes.projectTwoShortDescription.projectTwoShortDescription}</p>
+                    <h2>{data.contentfulFeaturedVolunteers.volunteerTwoName}</h2>
+                    <h3>{data.contentfulFeaturedVolunteers.volunteerTwoRole}</h3>
+                    <p>{data.contentfulFeaturedVolunteers.volunteerTwoBio.volunteerTwoBio}</p>
                   </Carousel.Item>
                   <Carousel.Item>
-                    <h2>{data.contentfulProjectTypes.projectTypeThree}</h2>
-                    <p>{data.contentfulProjectTypes.projectThreeShortDescription.projectThreeShortDescription}</p>
+                    <h2>{data.contentfulFeaturedVolunteers.volunteerThreeName}</h2>
+                    <h3>{data.contentfulFeaturedVolunteers.volunteerTwoRole}</h3>
+                    <p>{data.contentfulFeaturedVolunteers.volunteerThreeBio.volunteerThreeBio}</p>
                   </Carousel.Item>
                 </Carousel>
               </div>

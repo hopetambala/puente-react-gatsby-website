@@ -119,6 +119,14 @@ $blue: #3d80fc;
           margin: 0;
           margin-bottom: 1vmax;
         }
+        h3 {
+          color: $yellow;
+          font-size: 20px;
+          font-weight: 500;
+          text-shadow: 2px 2px $black;
+          text-transform: uppercase;
+          text-align: center;
+        }
         p {
           color: $off-white;
           padding: 0;
@@ -170,7 +178,7 @@ $blue: #3d80fc;
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .container {
     .banner {
       .banner-image {
@@ -192,7 +200,7 @@ $blue: #3d80fc;
           width: 100%;
           padding: 4vmax 4vmax;
           h2 {
-            font-size: 24px;
+            font-size: 28px;
             padding-top: 0;
             padding-left: 0;
           }
@@ -217,7 +225,7 @@ $blue: #3d80fc;
           width: 100%;
           padding: 4vmax 4vmax;
           h2 {
-            font-size: 24px;
+            font-size: 28px;
             padding-top: 0;
             padding-left: 0;
           }
@@ -234,7 +242,7 @@ $blue: #3d80fc;
       .volunteer {
         .volunteer-bio {
           h2 {
-            font-size: 24px;
+            font-size: 28px;
           }
           p {
             font-size: 14px;
