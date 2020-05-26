@@ -4,7 +4,6 @@ import {
   graphql,
   useStaticQuery,
 } from "gatsby"
-import Img from "gatsby-image"
 import Carousel from 'react-bootstrap/Carousel'
 
 // Component Imports
@@ -36,7 +35,7 @@ const VolunteerPage = () => {
       contentfulVolunteerPage {
         heroImage {
           title
-          resize {
+          resize (height: 1000) {
             src            
           }
         }
@@ -50,7 +49,7 @@ const VolunteerPage = () => {
         }
         sectionOneImage {
           title
-          resize {
+          resize (height: 500){
             src
           }
         }
@@ -60,7 +59,7 @@ const VolunteerPage = () => {
         }
         sectionTwoImage {
           title
-          resize {
+          resize (height: 500){
              src
           }
         }
@@ -96,7 +95,7 @@ const VolunteerPage = () => {
         <div className={volunteerStyles.container}>
           <div className={volunteerStyles.banner}>
             <div className={volunteerStyles.bannerImage}>
-              <Img fluid={data.hero.childImageSharp.fluid} />
+              <img alt={data.contentfulVolunteerPage.heroImage.title} src={data.contentfulVolunteerPage.heroImage.resize.src} fluid />
               <div className={volunteerStyles.title}>
                 <h1>{data.contentfulVolunteerPage.heroText}</h1>
               </div>
@@ -110,7 +109,7 @@ const VolunteerPage = () => {
                 <p>{data.contentfulVolunteerPage.sectionOneParagraph.sectionOneParagraph}</p>
               </div>
               <div className={volunteerStyles.sectionImage}>
-                <Img fluid={data.image.childImageSharp.fluid} />
+                <img alt={data.contentfulVolunteerPage.sectionOneImage.title} src={data.contentfulVolunteerPage.sectionOneImage.resize.src} fluid />
               </div>
             </div>
             <VolunteerCTA />
@@ -120,7 +119,7 @@ const VolunteerPage = () => {
                 <p>{data.contentfulVolunteerPage.sectionTwoParagraph.sectionTwoParagraph}</p>
               </div>
               <div className={volunteerStyles.sectionImage}>
-                <Img fluid={data.image.childImageSharp.fluid} />
+                <img alt={data.contentfulVolunteerPage.sectionTwoImage.title} src={data.contentfulVolunteerPage.sectionTwoImage.resize.src} fluid />
               </div>
             </div>
             <div className={volunteerStyles.volunteer}>

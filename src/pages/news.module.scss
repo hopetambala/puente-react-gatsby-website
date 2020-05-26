@@ -16,10 +16,11 @@ $blue: #3d80fc;
   .banner {
     width: 100%;
     .banner-image {
-      Img {
+      img {
         max-width: 100%;
         height: auto;
         display: block;
+        margin: 0;
       }
       h1 {
         padding: 4vmax 6vmax;

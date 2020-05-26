@@ -16,10 +16,11 @@ $blue: #3d80fc;
   .banner {
     width: 100%;
     .banner-image {
-      Img {
+      img {
         max-width: 100%;
         height: auto;
         display: block;
+        margin: 0;
       }
       h1 {
         padding: 4vmax 6vmax;
@@ -43,7 +44,7 @@ $blue: #3d80fc;
   }
   .section {
     width: 100%;
-    padding: 4vmax 0 0;
+    padding: 4vmax 0;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -51,7 +52,8 @@ $blue: #3d80fc;
     .section-text {
       width: 55%;
       h2 {
-        padding: 0 4vmax 0 6vmax;
+        padding: 0 6vmax;
+        padding-bottom: 2vh;
         font-size: 40px;
         font-weight: 700;
         text-transform: uppercase;
@@ -60,7 +62,7 @@ $blue: #3d80fc;
         margin: 0;
       }
       p {
-        padding: 4vmax 6vmax;
+        padding: 0 6vmax;
         margin: 0;
       }
     }
@@ -130,12 +132,13 @@ $blue: #3d80fc;
     .section {
       .section-text {
         h2 {
-          padding: 4vmax 0 4vmax 0;
+          padding: 0 4vmax;
+          padding-bottom: 2vh;
           font-size: 32px;
           text-shadow: 2px 2px $yellow;
         }
         p {
-          padding: 4vmax;
+          padding: 0 4vmax;
           font-size: 14px;
         }
       }
@@ -176,6 +179,7 @@ $blue: #3d80fc;
       }
     }
     .section {
+      padding-bottom: 0;
       flex-direction: column;
       .section-text {
         width: 100%;

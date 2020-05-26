@@ -4,7 +4,6 @@ import {
   graphql,
   useStaticQuery,
 } from "gatsby"
-import Img from "gatsby-image"
 import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'
 
@@ -18,13 +17,6 @@ const ProgramsPage = () => {
   const data = useStaticQuery(
     graphql`
     query {
-      image: file(relativePath: { eq: "placeholder-image.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 2000) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
        contentfulProjectTypes {
         projectTypeOne
         projectOneLongDescription {
@@ -56,6 +48,12 @@ const ProgramsPage = () => {
         }
       }
       contentfulProjectPage {
+        heroImage {
+          title
+          resize (height: 1000) {
+            src            
+          }
+        }
         heroText
         heroSubText {
           heroSubText
@@ -76,7 +74,7 @@ const ProgramsPage = () => {
         <div className={styles.container}>
           <div className={styles.banner}>
             <div className={styles.bannerImage}>
-              <Img fluid={data.image.childImageSharp.fluid} />
+              <img alt={data.contentfulProjectPage.heroImage.title} src={data.contentfulProjectPage.heroImage.resize.src} fluid />
               <h1>{data.contentfulProjectPage.heroText}</h1>
             </div>
           </div>

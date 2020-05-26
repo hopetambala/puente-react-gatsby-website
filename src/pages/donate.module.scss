@@ -16,14 +16,15 @@ $blue: #3d80fc;
   .banner {
     width: 100%;
     .banner-image {
-      Img {
+      img {
         max-width: 100%;
         height: auto;
         display: block;
+        margin: 0;
       }
       .title {
         h1 {
-          padding: 4vmax 6vmax 0;
+          padding: 4vmax 6vmax;
           font-size: 56px;
           font-weight: 700;
           text-transform: uppercase;
@@ -36,13 +37,14 @@ $blue: #3d80fc;
   }
   .body {
     padding: 4vmax 0 0;
+    background-color: $white;
     p {
       padding: 0 6vmax 4vmax;
       margin: 0;
     }
     .donate-section {
       padding: 4vmax 0;
-      background-color: $white;
+      background-color: $off-white;
       h2 {
         font-size: 40px;
         color: $black;

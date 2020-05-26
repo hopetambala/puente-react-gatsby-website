@@ -1,33 +1,26 @@
-import React from "react"
-import {
-  Link,
-  // graphql,
-  // useStaticQuery,
-} from "gatsby"
+import React, { useState } from "react"
 import Button from 'react-bootstrap/Button'
 
 // Style Imports
 import styles from './faqCTA.module.scss'
 
+// Component Imports
+import ContactModal from './contactModule'
+
 const FaqCTA = () => {
-  // const data = useStaticQuery(
-  //   graphql`
-  //   query {
-  //     contentfulLandingPage {
-  //       hero
-  //       firstSectionTitle
-  //       secondSectionTitle
-  //     }
-  //   }
-  // `)
+  const [modalShow, setModalShow] = useState(false);
   return (
     <div className={styles.container}>
       <h2>Have a question that's not listed?</h2>
-      <Link className={styles.button} to="/contact">
-        <Button className={styles.buttonBackground}>
+      <div className={styles.button}>
+        <Button onClick={() => setModalShow(true)} className={styles.buttonBackground}>
           Contact Us
         </Button>
-      </Link>
+        <ContactModal
+          show={modalShow}
+          onHide={() => setModalShow(false)}
+        />
+      </div>
     </div>
   )
 }
