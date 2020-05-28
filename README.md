@@ -11,7 +11,6 @@ Puente Website is a modern, responsive website built using Gatsby.js and Content
 ## Project Layout
 | Key Folder | Parent Folder | Description |
 | - | - | - |
-| templates | src | Holds the modules for retrieving data and custom functions | 
 | pages | src | Holds the main layout folders for content | 
 | components | src | Holds the smaller components that are within layouts | 
 
