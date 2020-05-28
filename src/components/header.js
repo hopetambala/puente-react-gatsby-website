@@ -34,11 +34,15 @@ const Header = () => {
         <Nav className="ml-auto">
           <Nav.Item className={styles.navContact}>
             <Icon className={styles.iconHeader} size={18} icon={ic_local_phone} />
-            1-574-302-7756
+            <Nav.Link href="tel:+15743027756">
+              1-574-302-7756
+            </Nav.Link>
           </Nav.Item>
           <Nav.Item className={styles.navContact}>
             <Icon className={styles.iconHeader} size={18} icon={ic_email} />
-            info@puente-dr.com
+            <Nav.Link href="mailto:info@puente-dr.com">
+              info@puente-dr.com
+            </Nav.Link>
           </Nav.Item>
         </Nav>
         <Nav className="ml-auto">

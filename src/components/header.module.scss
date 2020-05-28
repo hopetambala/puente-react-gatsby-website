@@ -27,7 +27,7 @@ $blue: #3d80fc;
       font-size: 14px;
       margin-bottom: 2vh;
       display: flex;
-      align-items: flex-end;
+      align-items: center;
       justify-content: center;
       .iconHeader {
         color: $black;
@@ -35,6 +35,9 @@ $blue: #3d80fc;
         padding: 0;
         margin-left: 2vw;
         margin-right: 1vw;
+      }
+      a {
+        color: $black;
       }
     }
     .nav {
