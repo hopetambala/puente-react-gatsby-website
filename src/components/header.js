@@ -56,7 +56,7 @@ const Header = () => {
             <Nav.Link className={styles.navItem} href="/programs">Programs</Nav.Link>
           </Nav.Item>
           <Nav.Item className={styles.nav}>
-            <Nav.Link className={styles.navItem} href="/volunteers">Volunteers</Nav.Link>
+            <Nav.Link className={styles.navItem} href="/volunteer">Volunteers</Nav.Link>
           </Nav.Item>
           <Nav.Item className={styles.nav}>
             <Nav.Link className={styles.navItem} href="/news">News</Nav.Link>
