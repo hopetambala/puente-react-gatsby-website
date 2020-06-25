@@ -1,4 +1,6 @@
-import React from "react"
+import React, {useEffect, createRef} from "react"
+import lottie from "lottie-web"
+import animation from '../animations/puente_hero.json'
 import {
   Link,
   graphql,
@@ -97,13 +99,27 @@ const IndexPage = () => {
       }
     }
   `)
+  
+  let animationContainer = createRef();
+
+  useEffect(() => {
+    const anim = lottie.loadAnimation({
+      container: animationContainer.current,
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      animationData: animation
+    });
+    return () => anim.destroy(); // optional clean up for unmounting
+  }, []);
   return (
     <div>
       <Layout>
         <div className={styles.container}>
           <div className={styles.banner}>
             <div className = {styles.heroImage}>
-              <Img fluid={data.image.childImageSharp.fluid} />
+              {/* <Img fluid={data.image.childImageSharp.fluid} /> */}
+              <div className="animation-container" ref={animationContainer} />
             </div>
             <div className={styles.hero}>
               <h1>{data.contentfulLandingPage.hero}</h1>
