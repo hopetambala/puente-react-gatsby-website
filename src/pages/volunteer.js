@@ -98,11 +98,11 @@ const VolunteerPage = () => {
               <img alt={data.contentfulVolunteerPage.heroImage.title} src={data.contentfulVolunteerPage.heroImage.resize.src} fluid />
               <div className={volunteerStyles.title}>
                 <h1>{data.contentfulVolunteerPage.heroText}</h1>
+                <p>{data.contentfulVolunteerPage.heroSubText.heroSubText}</p>
               </div>
             </div>
           </div>
           <div className={volunteerStyles.body}>
-            <p>{data.contentfulVolunteerPage.heroSubText.heroSubText}</p>
             <div className={volunteerStyles.section}>
               <div className={volunteerStyles.sectionText}>
                 <h2>{data.contentfulVolunteerPage.sectionOneHeader}</h2>
@@ -122,7 +122,7 @@ const VolunteerPage = () => {
                 <img alt={data.contentfulVolunteerPage.sectionTwoImage.title} src={data.contentfulVolunteerPage.sectionTwoImage.resize.src} fluid />
               </div>
             </div>
-            <div className={volunteerStyles.volunteer}>
+            {/* <div className={volunteerStyles.volunteer}>
               <div className={volunteerStyles.volunteerBio}>
                 <Carousel controls={false} indicators={false}>
                   <Carousel.Item>
@@ -142,7 +142,7 @@ const VolunteerPage = () => {
                   </Carousel.Item>
                 </Carousel>
               </div>
-            </div>
+            </div> */}
             <div className={volunteerStyles.section}>
               <div className={volunteerStyles.sectionText}>
                 <h2>{data.contentfulVolunteerPage.sectionThreeHeader}</h2>

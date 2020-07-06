@@ -20,9 +20,7 @@ $blue: #3d80fc;
     height: auto;
     background-color: $yellow;
     .hero-image {
-      // margin-top: 5vh;
       width: 100vw;
-      // height: 90vh;
     }
     .hero {
       height: 30%;
@@ -245,10 +243,12 @@ $blue: #3d80fc;
 @media (max-width: 768px) {
   .container {
     // .banner {
-    //   .hero {
-    //     h1 {
-    //       font-size: 32px;
-    //     }
+    //   height: 100vh;
+    //   overflow: hidden;
+    //   .hero-image {
+    //     width: 350vw;
+    //     right: 50%;
+    //     position: relative;
     //   }
     // }
     .section,

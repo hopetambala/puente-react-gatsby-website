@@ -22,16 +22,9 @@ $blue: #3d80fc;
         display: block;
         margin: 0;
       }
-    }
-    .body {
-      background-color: $white;
-      width: 100%;
-      display: flex;
-      flex-direction: row;
       .title {
-        width: 50%;
         h1 {
-          padding: 4vmax 6vmax 0;
+          padding: 4vmax 6vmax;
           font-size: 56px;
           font-weight: 700;
           text-transform: uppercase;
@@ -39,27 +32,14 @@ $blue: #3d80fc;
           text-shadow: 2.5px 2.5px $yellow;
           margin: 0;
         }
-        p {
-          padding: 4vmax 6vmax;
-          margin: 0;
-        }
       }
-      .donate-section {
-        width: 50%;
-        // padding: 4vmax 0;
-        // h2 {
-        //   font-size: 40px;
-        //   color: $black;
-        //   text-transform: uppercase;
-        //   text-shadow: 2.5px 2.5px $yellow;
-        //   padding-left: 6vmax;
-        // }
-        .donate-form {
-          width: 100%;
-          padding: 4vmax 6vmax;
-          margin: 0;
-        }
-      }
+    }
+  }
+  .body {
+    padding: 4vmax 6vmax 4vmax;
+    background-color: $white;
+    p {
+      margin: 0;
     }
   }
 }
@@ -77,36 +57,30 @@ $blue: #3d80fc;
       }
     }
     .body {
+      padding: 4vmax;
       p {
-        padding: 0 4vmax 4vmax;
-        font-size: 14px;
-      }
-      .donate-section {
-        h2 {
-          font-size: 32px;
-          padding-left: 4vmax;
-        }
+        margin: 0;
       }
     }
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .container {
     .banner {
       .banner-image {
         .title {
           h1 {
+            padding: 4vmax 4vmax 0;
             font-size: 40px;
           }
         }
       }
     }
     .body {
-      .donate-section {
-        h2 {
-          font-size: 28px;
-        }
+      padding: 4vmax;
+      p {
+        margin: 0;
       }
     }
   }
