@@ -1,6 +1,6 @@
 import React from "react"
 import {
-  Link,
+  // Link,
   graphql,
   useStaticQuery,
 } from "gatsby"
@@ -113,7 +113,7 @@ const AboutPage = () => {
           <div className={aboutStyles.banner}>
             <div className={aboutStyles.bannerImage}>
               <img alt={data.contentfulAboutPage.heroImage.title} src={data.contentfulAboutPage.heroImage.resize.src} fluid />
-              <div className={aboutStyles.title}>
+              <div id="who-we-are" className={aboutStyles.title}>
                 <h1>{data.contentfulAboutPage.heroText}</h1>
                 <p>{data.contentfulAboutPage.heroSubText.heroSubText}</p>
               </div>
@@ -129,7 +129,7 @@ const AboutPage = () => {
               <p>{data.contentfulAboutPage.visionText.visionText}</p>
             </div>
             <AboutCTA />
-            <div className={aboutStyles.bioSection}>
+            <div id="staff" className={aboutStyles.bioSection}>
               <h2>Our Staff</h2>
               <div className={aboutStyles.employeeRow}>
                 <div className={aboutStyles.employee}>
@@ -139,7 +139,7 @@ const AboutPage = () => {
                   <div className={aboutStyles.employeeInfo}>
                     <h2>{data.contentfulAboutPage.employeeOneName}</h2>
                     <h3>{data.contentfulAboutPage.employeeOnePosition}</h3>
-                    <a href={data.contentfulAboutPage.employeeOneLinkedIn}><Icon className={aboutStyles.icon} size={32} color icon={linkedin} /></a>
+                    <a href={data.contentfulAboutPage.employeeOneLinkedIn}><Icon className={aboutStyles.icon} size={32} icon={linkedin} /></a>
                   </div>
                 </div>
                 <div className={aboutStyles.employee}>
@@ -176,7 +176,7 @@ const AboutPage = () => {
                 </div>
               </div>
             </div>
-            <div className={aboutStyles.volunteer}>
+            <div id="volunteers" className={aboutStyles.volunteer}>
               <div className={aboutStyles.volunteerBio}>
                 <Carousel controls={false} indicators={false}>
                   <Carousel.Item>
@@ -197,7 +197,7 @@ const AboutPage = () => {
                 </Carousel>
               </div>
             </div>
-            <div className={aboutStyles.sectionPartners}>
+            <div id="partners" className={aboutStyles.sectionPartners}>
               <h2>Our Partners</h2>
               <div className={aboutStyles.partnerImages}>
                 {data.contentfulLandingPage.partnerships.map((partnerships) => {
@@ -208,7 +208,7 @@ const AboutPage = () => {
               </div>
             </div>
             <div className={aboutStyles.sectionReport}>
-              <h2>{data.contentfulAboutPage.annualReport}</h2>
+              <h2 id="report">{data.contentfulAboutPage.annualReport}</h2>
               <p>{data.contentfulAboutPage.annualReportText.annualReportText}</p>
               <p className={aboutStyles.reportLink}>Read 2019 Report</p>
             </div>

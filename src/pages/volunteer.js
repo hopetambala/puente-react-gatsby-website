@@ -4,7 +4,6 @@ import {
   graphql,
   useStaticQuery,
 } from "gatsby"
-import Carousel from 'react-bootstrap/Carousel'
 
 // Component Imports
 import Layout from "../components/layout"
@@ -103,7 +102,7 @@ const VolunteerPage = () => {
             </div>
           </div>
           <div className={volunteerStyles.body}>
-            <div className={volunteerStyles.section}>
+            <div id="volunteer" className={volunteerStyles.section}>
               <div className={volunteerStyles.sectionText}>
                 <h2>{data.contentfulVolunteerPage.sectionOneHeader}</h2>
                 <p>{data.contentfulVolunteerPage.sectionOneParagraph.sectionOneParagraph}</p>
@@ -113,7 +112,7 @@ const VolunteerPage = () => {
               </div>
             </div>
             <VolunteerCTA />
-            <div className={volunteerStyles.sectionEven}>
+            <div id="partner" className={volunteerStyles.sectionEven}>
               <div className={volunteerStyles.sectionText}>
                 <h2>{data.contentfulVolunteerPage.sectionTwoHeader}</h2>
                 <p>{data.contentfulVolunteerPage.sectionTwoParagraph.sectionTwoParagraph}</p>
@@ -122,37 +121,17 @@ const VolunteerPage = () => {
                 <img alt={data.contentfulVolunteerPage.sectionTwoImage.title} src={data.contentfulVolunteerPage.sectionTwoImage.resize.src} fluid />
               </div>
             </div>
-            {/* <div className={volunteerStyles.volunteer}>
-              <div className={volunteerStyles.volunteerBio}>
-                <Carousel controls={false} indicators={false}>
-                  <Carousel.Item>
-                    <h2>{data.contentfulFeaturedVolunteers.volunteerName}</h2>
-                    <h3>{data.contentfulFeaturedVolunteers.volunteerOneRole}</h3>
-                    <p>{data.contentfulFeaturedVolunteers.volunteerOneBio.volunteerOneBio}</p>
-                  </Carousel.Item>
-                  <Carousel.Item>
-                    <h2>{data.contentfulFeaturedVolunteers.volunteerTwoName}</h2>
-                    <h3>{data.contentfulFeaturedVolunteers.volunteerTwoRole}</h3>
-                    <p>{data.contentfulFeaturedVolunteers.volunteerTwoBio.volunteerTwoBio}</p>
-                  </Carousel.Item>
-                  <Carousel.Item>
-                    <h2>{data.contentfulFeaturedVolunteers.volunteerThreeName}</h2>
-                    <h3>{data.contentfulFeaturedVolunteers.volunteerTwoRole}</h3>
-                    <p>{data.contentfulFeaturedVolunteers.volunteerThreeBio.volunteerThreeBio}</p>
-                  </Carousel.Item>
-                </Carousel>
-              </div>
-            </div> */}
+            <VolunteerContactCTA />
             <div className={volunteerStyles.section}>
-              <div className={volunteerStyles.sectionText}>
+              <div id="newsletter" className={volunteerStyles.sectionText}>
                 <h2>{data.contentfulVolunteerPage.sectionThreeHeader}</h2>
                 <p>{data.contentfulVolunteerPage.sectionThreeParagraph.sectionThreeParagraph}</p>
               </div>
-              <div className={volunteerStyles.sectionImpactNumbers}>
-                <h2>Impact Numbers</h2>
+              <div id="donate" className={volunteerStyles.donateSection}>
+                <h2>Donate</h2>
+                <iframe title="donate" src="https://givebutter.com/embed/c/8vtwH6" className={volunteerStyles.donateForm} name="givebutter" frameborder="0" scrolling="no" seamless allowpaymentrequest />
               </div>
             </div>
-            <VolunteerContactCTA />
           </div>
         </div>
       </Layout>

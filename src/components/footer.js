@@ -80,22 +80,19 @@ class Footer extends React.Component {
                   <Link className={footerStyles.navItem} to="/about">About Us</Link>
                 </li>
                 <li>
-                  <Link className={footerStyles.navItem} to="/technology">Technology</Link>
+                  <Link className={footerStyles.navItem} to="/technology">Our Technology</Link>
                 </li>
                 <li>
-                  <Link className={footerStyles.navItem} to="/programs">Programs</Link>
+                  <Link className={footerStyles.navItem} to="/programs">Our Work</Link>
                 </li>
                 <li>
-                  <Link className={footerStyles.navItem} to="/donate">Donate</Link>
-                </li>
-                <li>
-                  <Link className={footerStyles.navItem} to="/volunteer">Volunteer</Link>
+                  <Link className={footerStyles.navItem} to="/volunteer">Get Involved</Link>
                 </li>
                 <li>
                   <Link className={footerStyles.navItem} to="/news">News</Link>
                 </li>
                 <li>
-                  <Link className={footerStyles.navItem} to="/faq">FAQs</Link>
+                  <Link className={footerStyles.navItem} to="/donate">Donate</Link>
                 </li>
               </ul>
             </nav>

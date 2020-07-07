@@ -7,7 +7,7 @@ import {
 
 // Component Imports
 import Layout from "../components/layout"
-import DonateForm from "../components/donateForm"
+// import DonateForm from "../components/donateForm"
 
 // Style Imports
 import donateStyles from "./donate.module.scss"
@@ -65,7 +65,7 @@ const DonatePage = () => {
                   </p>
                 </div>
                 <div className={donateStyles.donateSection}>
-                  <iframe src="https://givebutter.com/embed/c/8vtwH6" className={donateStyles.donateForm} name="givebutter" frameborder="0" scrolling="no" seamless allowpaymentrequest />
+                  <iframe title="donate" src="https://givebutter.com/embed/c/8vtwH6" className={donateStyles.donateForm} name="givebutter" frameborder="0" scrolling="no" seamless allowpaymentrequest />
                 </div>
               </div>
             </div>

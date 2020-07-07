@@ -33,7 +33,7 @@ $blue: #3d80fc;
           margin: 0;
         }
         p {
-          padding: 4vmax 6vmax;
+          padding: 2vmax 6vmax 4vmax 6vmax;
           margin: 0;
         }
       }
@@ -52,7 +52,7 @@ $blue: #3d80fc;
         padding: 4vmax 6vmax 0;
       }
       p {
-        padding: 4vmax 6vmax;
+        padding: 2vmax 6vmax 4vmax 6vmax;
         margin: 0;
       }
     }
@@ -68,7 +68,7 @@ $blue: #3d80fc;
         padding: 4vmax 6vmax 0;
       }
       p {
-        padding: 4vmax 6vmax;
+        padding: 2vmax 6vmax 4vmax 6vmax;
         margin: 0;
       }
     }
@@ -99,6 +99,7 @@ $blue: #3d80fc;
             width: 45%;
             img {
               margin: 0;
+              box-shadow: 5px 5px $yellow;
             }
           }
           .employee-info {
@@ -123,6 +124,9 @@ $blue: #3d80fc;
             }
             a {
               color: $black;
+              .icon {
+                filter: drop-shadow(2px 2px $yellow);
+              }
             }
           }
         }

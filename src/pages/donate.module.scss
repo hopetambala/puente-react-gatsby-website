@@ -46,14 +46,6 @@ $blue: #3d80fc;
       }
       .donate-section {
         width: 50%;
-        // padding: 4vmax 0;
-        // h2 {
-        //   font-size: 40px;
-        //   color: $black;
-        //   text-transform: uppercase;
-        //   text-shadow: 2.5px 2.5px $yellow;
-        //   padding-left: 6vmax;
-        // }
         .donate-form {
           width: 100%;
           padding: 4vmax 6vmax;
@@ -67,45 +59,32 @@ $blue: #3d80fc;
 @media (max-width: 1024px) {
   .container {
     .banner {
-      .banner-image {
+      .body {
         .title {
           h1 {
+            font-size: 40px;
             padding: 4vmax 4vmax 0;
-            font-size: 48px;
           }
-        }
-      }
-    }
-    .body {
-      p {
-        padding: 0 4vmax 4vmax;
-        font-size: 14px;
-      }
-      .donate-section {
-        h2 {
-          font-size: 32px;
-          padding-left: 4vmax;
+          p {
+            padding: 4vmax 4vmax;
+            font-size: 14px;
+          }
         }
       }
     }
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .container {
     .banner {
-      .banner-image {
+      .body {
+        flex-direction: column;
         .title {
-          h1 {
-            font-size: 40px;
-          }
+          width: 100%;
         }
-      }
-    }
-    .body {
-      .donate-section {
-        h2 {
-          font-size: 28px;
+        .donate-section {
+          width: 100%;
         }
       }
     }
