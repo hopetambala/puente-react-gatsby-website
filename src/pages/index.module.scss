@@ -153,6 +153,7 @@ $blue: #3d80fc;
     }
     .section-image {
       width: 55%;
+      padding-right: 2vmax;
     }
   }
   .section-odd {
@@ -299,6 +300,9 @@ $blue: #3d80fc;
             font-size: 14px;
             padding: 0;
           }
+        }
+        .section-image {
+          padding: 0;
         }
       }
       &.section-blue {
