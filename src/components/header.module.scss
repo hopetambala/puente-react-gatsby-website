@@ -41,9 +41,12 @@ $blue: #3d80fc;
     .nav {
       .nav-item {
         color: $black;
-        text-transform: uppercase;
-        font-size: 16px;
+        // text-transform: uppercase;
+        font-size: 18px;
         text-decoration: none;
+        .dropdown-item {
+          font-size: 16px;
+        }
         .dropdown-item:hover {
           background-color: $off-white;
         }
@@ -62,7 +65,7 @@ $blue: #3d80fc;
         border-radius: 50px;
         width: 100px;
         text-align: center;
-        text-transform: uppercase;
+        // text-transform: uppercase;
         font-size: 16px;
         text-decoration: none;
         margin-left: 1vw;
