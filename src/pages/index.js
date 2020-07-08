@@ -1,6 +1,9 @@
 import React, {useEffect, createRef} from "react"
 import lottie from "lottie-web"
-import animation from '../animations/puente_hero.json'
+import heroAnimation from '../animations/puente_hero.json'
+import bridgeAnimation from '../animations/bridge.json'
+import dataAnimation from '../animations/data.json'
+import serviceAnimation from '../animations/service.json'
 import {
   Link,
   graphql,
@@ -108,7 +111,43 @@ const IndexPage = () => {
       renderer: "svg",
       loop: true,
       autoplay: true,
-      animationData: animation
+      animationData: heroAnimation
+    });
+    return () => anim.destroy(); // optional clean up for unmounting
+  }, []);
+
+  let bridgeContainer = createRef();
+  useEffect(() => {
+    const anim = lottie.loadAnimation({
+      container: bridgeContainer.current,
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      animationData: bridgeAnimation
+    });
+    return () => anim.destroy(); // optional clean up for unmounting
+  }, []);
+  
+  let dataContainer = createRef();
+  useEffect(() => {
+    const anim = lottie.loadAnimation({
+      container: dataContainer.current,
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      animationData: dataAnimation
+    });
+    return () => anim.destroy(); // optional clean up for unmounting
+  }, []);
+  
+  let serviceContainer = createRef();
+  useEffect(() => {
+    const anim = lottie.loadAnimation({
+      container: serviceContainer.current,
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      animationData: serviceAnimation
     });
     return () => anim.destroy(); // optional clean up for unmounting
   }, []);
@@ -131,7 +170,8 @@ const IndexPage = () => {
               <p>{data.contentfulLandingPage.firstSectionParagaph.content[0].content[0].value}</p>
             </div>
             <div className={styles.sectionImage}>
-              <Img fluid={data.image.childImageSharp.fluid} />
+              {/* <Img fluid={data.image.childImageSharp.fluid} /> */}
+              <div className="data-container" ref={dataContainer} />
             </div>
           </div>
           <div className={styles.sectionImpact}>
@@ -186,12 +226,14 @@ const IndexPage = () => {
               <p>{data.contentfulLandingPage.thirdSectionParagraph.content[0].content[0].value}</p>
             </div>
             <div className={styles.sectionImage}>
-              <Img fluid={data.image.childImageSharp.fluid} />
+              {/* <Img fluid={data.image.childImageSharp.fluid} /> */}
+              <div className="service-container" ref={serviceContainer} />
             </div>
           </div>
           <div className={styles.section}>
             <div className={styles.sectionImage}>
-              <Img fluid={data.image.childImageSharp.fluid} />
+              {/* <Img fluid={data.image.childImageSharp.fluid} /> */}
+              <div className="bridge-container" ref={bridgeContainer} />
             </div>
             <div className={styles.sectionText}>
               <h2>{data.contentfulLandingPage.fourthSectionTitle}</h2>
@@ -206,7 +248,6 @@ const IndexPage = () => {
                   <img alt={partnerships.title} src={partnerships.resize.src} />
                 )
               })}
-              {/* <img alt={data.contentfulLandingPage.partnerships[0].title} src={data.contentfulLandingPage.partnerships[0].resize.src} /> */}
             </div>
           </div>
         </div>
