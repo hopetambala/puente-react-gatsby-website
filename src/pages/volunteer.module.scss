@@ -23,7 +23,7 @@ $blue: #3d80fc;
       }
       .title {
         h1 {
-          padding: 4vmax 4vmax;
+          padding: 4vmax 6vmax 0;
           font-size: 56px;
           font-weight: 700;
           text-transform: uppercase;
@@ -31,20 +31,20 @@ $blue: #3d80fc;
           text-shadow: 2.5px 2.5px $yellow;
           margin: 0;
         }
+        p {
+          padding: 2vmax 6vmax 4vmax 6vmax;
+          margin: 0;
+        }
       }
     }
   }
   .body {
     background-color: $white;
-    p {
-      padding: 4vmax 4vmax;
-      margin: 0;
-    }
     .section {
-      background-color: $off-white;
+      background-color: $white;
       display: flex;
       flex-direction: row;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
       .section-text {
         width: 55%;
@@ -55,29 +55,46 @@ $blue: #3d80fc;
           text-shadow: 2.5px 2.5px $yellow;
           text-transform: uppercase;
           margin: 0;
-          padding: 4vmax;
+          padding: 4vmax 6vmax;
           padding-bottom: 2vh;
         }
         p {
-          padding: 0 4vmax;
-          padding-bottom: 4vmax;
+          padding: 0 6vmax 4vmax 6vmax;
           margin: 0;
         }
       }
       .section-image {
         width: 45%;
-        padding: 4vmax 4vmax 4vmax 0;
+        padding: 2vmax 6vmax 4vmax 0;
         img {
           margin: 0;
         }
       }
-      .section-impact-numbers {
+      .donate-section {
         width: 45%;
-        background-color: $yellow;
-        height: 300px;
-        margin-top: 4vmax;
-        margin-bottom: 4vmax;
+        h2 {
+          color: $black;
+          font-size: 40px;
+          font-weight: 600;
+          text-shadow: 2.5px 2.5px $yellow;
+          text-transform: uppercase;
+          margin: 0;
+          padding: 4vmax 6vmax 0 0;
+          padding-bottom: 2vh;
+        }
+        .donate-form {
+          width: 100%;
+          padding: 0 6vmax 4vmax 0;
+          margin: 0;
+        }
       }
+      // .section-impact-numbers {
+      //   width: 45%;
+      //   background-color: $yellow;
+      //   height: 300px;
+      //   margin-top: 4vmax;
+      //   margin-bottom: 4vmax;
+      // }
     }
     .section-even {
       background-color: $off-white;
@@ -94,18 +111,17 @@ $blue: #3d80fc;
           text-shadow: 2.5px 2.5px $yellow;
           text-transform: uppercase;
           margin: 0;
-          padding: 4vmax;
+          padding: 4vmax 6vmax 4vmax 6vmax;
           padding-bottom: 2vh;
         }
         p {
-          padding: 0 4vmax;
-          padding-bottom: 4vmax;
+          padding: 0 6vmax 4vmax 6vmax;
           margin: 0;
         }
       }
       .section-image {
         width: 45%;
-        padding: 4vmax 0 4vmax 4vmax;
+        padding: 4vmax 0 4vmax 6vmax;
         img {
           margin: 0;
         }

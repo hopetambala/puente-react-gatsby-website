@@ -28,6 +28,7 @@ const Layout = (props) => {
     <div className={layoutStyles.container}>
       <Helmet>
         <title>{data.site.siteMetadata.title}</title>
+        <script src="https://givebutter.com/js/widget.js" />
       </Helmet>
       <Header className={layoutStyles.header} />
       <div className={layoutStyles.content}>

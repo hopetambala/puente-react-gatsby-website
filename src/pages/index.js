@@ -206,7 +206,6 @@ const IndexPage = () => {
                   <img alt={partnerships.title} src={partnerships.resize.src} />
                 )
               })}
-              {/* <img alt={data.contentfulLandingPage.partnerships[0].title} src={data.contentfulLandingPage.partnerships[0].resize.src} /> */}
             </div>
           </div>
         </div>
