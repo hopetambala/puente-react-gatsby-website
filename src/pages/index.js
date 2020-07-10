@@ -9,7 +9,7 @@ import {
   graphql,
   useStaticQuery,
 } from "gatsby"
-import Img from "gatsby-image"
+// import Img from "gatsby-image"
 import Carousel from 'react-bootstrap/Carousel'
 
 // Component Imports

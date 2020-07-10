@@ -112,16 +112,16 @@ const Header = () => {
               } id="menu-nav-dropdown"
               >
                 <NavDropdown.Item className={styles.dropdownItem}>
-                  <Link style={{ color: "#000" }} to="/about#who-we-are">The Puente Model</Link>
+                  <Link style={{ color: "#000" }} to="/programs#model">The Puente Model</Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item className={styles.dropdownItem}>
-                  <Link style={{ color: "#000" }} to="/about#staff">Signature Projects</Link>
+                  <Link style={{ color: "#000" }} to="/programs#signature">Signature Projects</Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item className={styles.dropdownItem}>
-                  <Link style={{ color: "#000" }} to="/about#volunteers">Our Impact</Link>
+                  <Link style={{ color: "#000" }} to="/programs#impact">Our Impact</Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item className={styles.dropdownItem}>
-                  <Link style={{ color: "#000" }} to="/about#partners">COVID-19 Response</Link>
+                  <Link style={{ color: "#000" }} to="/programs#covid">COVID-19 Response</Link>
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav.Item>

@@ -20,6 +20,9 @@ const FAQPage = () => {
       contentfulFaqPage {
         heroImage {
           title
+          resize (height: 1000) {
+            src            
+          }
         }
       }
     }
@@ -33,14 +36,17 @@ const FAQPage = () => {
               <img alt={data.contentfulFaqPage.heroImage.title} src={data.contentfulFaqPage.heroImage.resize.src} fluid />
               <div className={merchStyles.title}>
                 <h1>Merchandise</h1>
+                <p>
+                  Support our work in style by purchasing gear through the links below. All
+                  proceeds go towards furthering Puente's misison and catalyzing data driven
+                  development in undererved communites.
+                </p>
               </div>
             </div>
           </div>
           <div className={merchStyles.body}>
             <p>
-              Support our work in style by purchasing gear through the links below. All
-              proceeds go towards furthering Puente's misison and catalyzing data driven
-              development in undererved communites. 
+              placeholder 
             </p>
           </div>
         </div>

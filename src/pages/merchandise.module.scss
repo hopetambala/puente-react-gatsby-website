@@ -24,7 +24,7 @@ $blue: #3d80fc;
       }
       .title {
         h1 {
-          padding: 4vmax 6vmax;
+          padding: 4vmax 6vmax 0;
           font-size: 56px;
           font-weight: 700;
           text-transform: uppercase;
@@ -32,15 +32,17 @@ $blue: #3d80fc;
           text-shadow: 2.5px 2.5px $yellow;
           margin: 0;
         }
+        p {
+          padding: 2vmax 6vmax 4vmax 6vmax;
+          margin: 0;
+        }
       }
     }
   }
   .body {
+    width: 100%;
     padding: 4vmax 6vmax 4vmax;
     background-color: $white;
-    p {
-      margin: 0;
-    }
   }
 }
 
