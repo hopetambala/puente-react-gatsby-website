@@ -23,7 +23,7 @@ $blue: #3d80fc;
         margin: 0;
       }
       h1 {
-        padding: 4vmax 6vmax;
+        padding: 4vmax 6vmax 0;
         font-size: 56px;
         font-weight: 700;
         text-transform: uppercase;
@@ -31,15 +31,10 @@ $blue: #3d80fc;
         text-shadow: 2.5px 2.5px $yellow;
         margin: 0;
       }
-    }
-  }
-  .divider {
-    padding: 4vmax 6vmax;
-    width: 100%;
-    background-color: $white;
-    p {
-      padding: 0;
-      margin: 0;
+      p {
+        padding: 2vmax 6vmax 4vmax 6vmax;
+        margin: 0;
+      }
     }
   }
   .section {
@@ -50,10 +45,9 @@ $blue: #3d80fc;
     align-items: center;
     justify-content: center;
     .section-text {
-      width: 55%;
+      width: 60%;
       h2 {
-        padding: 0 6vmax;
-        padding-bottom: 2vh;
+        padding: 2vmax 6vmax 0 6vmax;
         font-size: 40px;
         font-weight: 700;
         text-transform: uppercase;
@@ -62,12 +56,12 @@ $blue: #3d80fc;
         margin: 0;
       }
       p {
-        padding: 0 6vmax;
+        padding: 2vmax 6vmax 2vmax 6vmax;
         margin: 0;
       }
     }
     .section-impact {
-      width: 45%;
+      width: 40%;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -101,7 +95,7 @@ $blue: #3d80fc;
     }
   }
   .projects {
-    padding: 4vmax 6vmax;
+    padding: 2vmax 6vmax;
     background-color: $white;
     h2 {
       font-size: 28px;
@@ -112,6 +106,34 @@ $blue: #3d80fc;
       margin: 2vh 0;
       padding: 0;
     }
+    p {
+      margin: 0;
+    }
+  }
+  .covid {
+    width: 100%;
+    padding: 4vmax 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: $white;
+    .covid-text {
+      width: 100%;
+      h2 {
+        padding: 2vmax 6vmax 0 6vmax;
+        font-size: 40px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $black;
+        text-shadow: 2.5px 2.5px $yellow;
+        margin: 0;
+      }
+      p {
+        padding: 2vmax 6vmax 2vmax 6vmax;
+        margin: 0;
+      }
+    }
   }
 }
 // Tablet styles
@@ -120,35 +142,36 @@ $blue: #3d80fc;
     .banner {
       .banner-image {
         h1 {
-          padding: 4vmax;
-          font-size: 48px;
+          padding: 4vmax 4vmax 0;
+          font-size: 40px;
           text-shadow: 2.5px 2.5px $yellow;
         }
+        p {
+          padding: 2vmax 4vmax 2vmax 4vmax;
+          font-size: 14px;
+        }
       }
-    }
-    .divider {
-      padding: 4vmax;
     }
     .section {
       .section-text {
         h2 {
-          padding: 0 4vmax;
-          padding-bottom: 2vh;
+          padding: 2vmax 4vmax 0 4vmax;
           font-size: 32px;
           text-shadow: 2px 2px $yellow;
         }
         p {
-          padding: 0 4vmax;
+          padding: 2vmax 4vmax 2vmax 4vmax;
           font-size: 14px;
         }
       }
       .section-impact {
         .section-impact-numbers {
           h2 {
-            font-size: 40px;
+            font-size: 32px;
+            text-shadow: 2px 2px $yellow;
           }
           h3 {
-            font-size: 17px;
+            font-size: 14px;
           }
         }
       }
@@ -156,7 +179,20 @@ $blue: #3d80fc;
     .projects {
       padding: 4vmax;
       p {
-        font-size: 17px;
+        font-size: 14px;
+      }
+    }
+  }
+  .covid {
+    .covid-text {
+      h2 {
+        padding: 2vmax 4vmax 0 4vmax;
+        font-size: 32px;
+        text-shadow: 2px 2px $yellow;
+      }
+      p {
+        padding: 2vmax 4vmax 2vmax 4vmax;
+        font-size: 14px;
       }
     }
   }
@@ -171,11 +207,9 @@ $blue: #3d80fc;
           font-size: 40px;
           text-shadow: 2.5px 2.5px $yellow;
         }
-      }
-    }
-    .divider {
-      p {
-        font-size: 14px;
+        p {
+          font-size: 14px;
+        }
       }
     }
     .section {
