@@ -1,11 +1,8 @@
 import React from "react"
 import {
-  // Link,
   graphql,
   useStaticQuery,
 } from "gatsby"
-// import Accordion from 'react-bootstrap/Accordion'
-// import Card from 'react-bootstrap/Card'
 
 // Component Imports
 import Layout from "../components/layout"
@@ -13,7 +10,7 @@ import Layout from "../components/layout"
 // Style Imports
 import merchStyles from "./merchandise.module.scss"
 
-const FAQPage = () => {
+const MerchandisePage = () => {
   const data = useStaticQuery(
     graphql`
     query {
@@ -30,7 +27,7 @@ const FAQPage = () => {
   return (
     <div>
       <Layout>
-        <div className={merchStyles.container}>
+        {/* <div className={merchStyles.container}>
           <div className={merchStyles.banner}>
             <div className={merchStyles.bannerImage}>
               <img alt={data.contentfulFaqPage.heroImage.title} src={data.contentfulFaqPage.heroImage.resize.src} fluid />
@@ -49,10 +46,10 @@ const FAQPage = () => {
               placeholder 
             </p>
           </div>
-        </div>
+        </div> */}
       </Layout>
     </div>
   )
 }
 
-export default FAQPage
+export default MerchandisePage
