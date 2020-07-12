@@ -27,8 +27,10 @@ const AboutPage = () => {
           }
         }
         heroText
-        heroSubText {
-          heroSubText
+        heroSubText{
+          childMarkdownRemark{
+            html
+          }
         }
         missionHeader
         missionText {
@@ -115,7 +117,12 @@ const AboutPage = () => {
               <img alt={data.contentfulAboutPage.heroImage.title} src={data.contentfulAboutPage.heroImage.resize.src} fluid />
               <div id="who-we-are" className={aboutStyles.title}>
                 <h1>{data.contentfulAboutPage.heroText}</h1>
-                <p>{data.contentfulAboutPage.heroSubText.heroSubText}</p>
+                {/* <p>{data.contentfulAboutPage.heroSubText.heroSubText}</p> */}
+                <div
+                    dangerouslySetInnerHTML={{
+                      __html: data.contentfulAboutPage.heroSubText.childMarkdownRemark.html,
+                    }}
+                  />
               </div>
             </div>
           </div>
