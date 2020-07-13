@@ -4,17 +4,20 @@ import {
   graphql,
   useStaticQuery,
 } from "gatsby"
+import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
 
 // Component Imports
 import Layout from "../components/layout"
-import DemoCTA from "../components/DemoCTA"
+import Carousel from 'react-bootstrap/Carousel'
+// import DemoCTA from "../components/DemoCTA"
 
 // Styles Import
 import styles from './technology.module.scss'
 
 const TechnologyPage = () => {
   const data = useStaticQuery(
-  graphql`
+    graphql`
     query {
       image: file(relativePath: { eq: "1650x1165.jpg" }) {
         childImageSharp {
@@ -64,6 +67,23 @@ const TechnologyPage = () => {
         sectionTwoKeyFeatures
         sectionTwoKeyFeaturesList
       }
+      contentfulFeaturedVolunteers {
+        volunteerName
+        volunteerOneRole
+        volunteerOneBio {
+          volunteerOneBio
+        }
+        volunteerTwoName
+        volunteerTwoRole
+        volunteerTwoBio {
+          volunteerTwoBio
+        }
+        volunteerThreeName
+        volunteerThreeRole
+        volunteerThreeBio {
+          volunteerThreeBio
+        } 
+      }
     }
   `)
   return (
@@ -83,7 +103,7 @@ const TechnologyPage = () => {
         <div className={styles.divider}>
           <p>{data.contentfulTechnologyPage.dividerText}</p>
         </div>
-        <div className={styles.sectionOne}>
+        <div id="mobile-data-collection" className={styles.sectionOne}>
           <h2>{data.contentfulTechnologyPage.sectionOneHeader}</h2>
           <div className={styles.collectionContent}>
             <div className={styles.collectionImage}>
@@ -107,7 +127,7 @@ const TechnologyPage = () => {
             </div>
           </div>
         </div>
-        <div className={styles.sectionTwo}>
+        <div id="data-analysis" className={styles.sectionTwo}>
           <h2>{data.contentfulTechnologyPage.sectionTwoHeader}</h2>
           <div className={styles.analysisContent}>
             <div className={styles.analysisImage}>
@@ -131,8 +151,45 @@ const TechnologyPage = () => {
             </div>
           </div>
         </div>
-      </div>
-      <DemoCTA />
+        <div id="testimonials" className={styles.volunteer}>
+          <div className={styles.volunteerBio}>
+            <Carousel controls={false} indicators={false}>
+              <Carousel.Item>
+                <h2>{data.contentfulFeaturedVolunteers.volunteerName}</h2>
+                <p>{data.contentfulFeaturedVolunteers.volunteerOneBio.volunteerOneBio}</p>
+              </Carousel.Item>
+              <Carousel.Item>
+                <h2>{data.contentfulFeaturedVolunteers.volunteerTwoName}</h2>
+                <p>{data.contentfulFeaturedVolunteers.volunteerTwoBio.volunteerTwoBio}</p>
+              </Carousel.Item>
+              <Carousel.Item>
+                <h2>{data.contentfulFeaturedVolunteers.volunteerThreeName}</h2>
+                <p>{data.contentfulFeaturedVolunteers.volunteerThreeBio.volunteerThreeBio}</p>
+              </Carousel.Item>
+            </Carousel>
+          </div>
+        </div>
+        <div id="request-demo" className={styles.demo} >
+          <h2>Request a Demo</h2>
+          <Form className={styles.requestForm}>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label>Name</Form.Label>
+              <Form.Control type="text" placeholder="Name..." />
+            </Form.Group>
+            <Form.Group controlId="formBasicPassword">
+              <Form.Label>Email</Form.Label>
+              <Form.Control type="email" placeholder="Email..." />
+            </Form.Group>
+            <Form.Group controlId="formBasicPassword">
+              <Form.Label>What can we do for you?</Form.Label>
+              <Form.Control as="textarea" rows="4" placeholder="Message..." />
+            </Form.Group>
+            <Button variant="primary" type="submit">
+              Submit
+          </Button>
+          </Form>
+        </div>
+      </div >
     </Layout>
   )
 }

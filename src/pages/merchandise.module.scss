@@ -22,14 +22,7 @@ $blue: #3d80fc;
         display: block;
         margin: 0;
       }
-    }
-    .body {
-      background-color: $white;
-      width: 100%;
-      display: flex;
-      flex-direction: row;
       .title {
-        width: 50%;
         h1 {
           padding: 4vmax 6vmax 0;
           font-size: 56px;
@@ -40,36 +33,35 @@ $blue: #3d80fc;
           margin: 0;
         }
         p {
-          padding: 4vmax 6vmax;
-          margin: 0;
-        }
-      }
-      .donate-section {
-        width: 50%;
-        .donate-form {
-          width: 100%;
-          padding: 4vmax 6vmax;
+          padding: 2vmax 6vmax 4vmax 6vmax;
           margin: 0;
         }
       }
     }
+  }
+  .body {
+    width: 100%;
+    padding: 4vmax 6vmax 4vmax;
+    background-color: $white;
   }
 }
 
 @media (max-width: 1024px) {
   .container {
     .banner {
-      .body {
+      .banner-image {
         .title {
           h1 {
-            font-size: 40px;
             padding: 4vmax 4vmax 0;
-          }
-          p {
-            padding: 4vmax 4vmax;
-            font-size: 14px;
+            font-size: 48px;
           }
         }
+      }
+    }
+    .body {
+      padding: 4vmax;
+      p {
+        margin: 0;
       }
     }
   }
@@ -78,14 +70,19 @@ $blue: #3d80fc;
 @media (max-width: 768px) {
   .container {
     .banner {
-      .body {
-        flex-direction: column;
+      .banner-image {
         .title {
-          width: 100%;
+          h1 {
+            padding: 4vmax 4vmax 0;
+            font-size: 40px;
+          }
         }
-        .donate-section {
-          width: 100%;
-        }
+      }
+    }
+    .body {
+      padding: 4vmax;
+      p {
+        margin: 0;
       }
     }
   }

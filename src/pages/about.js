@@ -4,6 +4,7 @@ import {
   graphql,
   useStaticQuery,
 } from "gatsby"
+import Carousel from 'react-bootstrap/Carousel'
 
 // Component Imports
 import Layout from "../components/layout"
@@ -26,8 +27,10 @@ const AboutPage = () => {
           }
         }
         heroText
-        heroSubText {
-          heroSubText
+        heroSubText{
+          childMarkdownRemark{
+            html
+          }
         }
         missionHeader
         missionText {
@@ -37,44 +40,73 @@ const AboutPage = () => {
         visionText {
           visionText
         }
-            employeeOneImage {
-      title
-      resize (height: 250) {
-      	src
+        employeeOneImage {
+        title
+        resize (height: 250) {
+      	  src
+        }
+      }
+      employeeOneName
+      employeeOnePosition
+      employeeOneLinkedIn
+      employeeTwoImage {
+        title
+        resize (height: 250) {
+      	  src
+        }
+      }
+      employeeTwoName
+      employeeTwoPosition
+      employeeTwoLinkedIn
+      employeeThreeImage {
+        title
+        resize (height: 250) {
+      	  src
+        }
+      }
+      employeeThreeName
+      employeeThreePosition
+      employeeThreeLinkedIn
+      employeeFourImage {
+        title
+        resize (height: 250) {
+      	  src
+        }
+      }
+      employeeFourName
+      employeeFourPosition
+      employeeFourLinkedIn
+      annualReport
+      annualReportText {
+        annualReportText
       }
     }
-    employeeOneName
-    employeeOnePosition
-    employeeOneLinkedIn
-    employeeTwoImage {
-      title
-      resize (height: 250) {
-      	src
+    contentfulFeaturedVolunteers {
+      volunteerName
+      volunteerOneRole
+      volunteerOneBio {
+        volunteerOneBio
+      }
+      volunteerTwoName
+      volunteerTwoRole
+      volunteerTwoBio {
+        volunteerTwoBio
+      }
+      volunteerThreeName
+      volunteerThreeRole
+      volunteerThreeBio {
+        volunteerThreeBio
+      } 
+    }
+    contentfulLandingPage {
+      partnerships {
+        title
+        resize (height: 200) {
+          src
+        }
       }
     }
-    employeeTwoName
-    employeeTwoPosition
-    employeeTwoLinkedIn
-    employeeThreeImage {
-      title
-      resize (height: 250) {
-      	src
-      }
-    }
-    employeeThreeName
-    employeeThreePosition
-    employeeThreeLinkedIn
-    employeeFourImage {
-      title
-      resize (height: 250) {
-      	src
-      }
-    }
-    employeeFourName
-    employeeFourPosition
-    employeeFourLinkedIn
-      }
-    }
+  }
   `)
   return (
     <div>
@@ -83,21 +115,29 @@ const AboutPage = () => {
           <div className={aboutStyles.banner}>
             <div className={aboutStyles.bannerImage}>
               <img alt={data.contentfulAboutPage.heroImage.title} src={data.contentfulAboutPage.heroImage.resize.src} fluid />
-              <div className={aboutStyles.title}>
+              <div id="who-we-are" className={aboutStyles.title}>
                 <h1>{data.contentfulAboutPage.heroText}</h1>
+                {/* <p>{data.contentfulAboutPage.heroSubText.heroSubText}</p> */}
+                <div
+                    dangerouslySetInnerHTML={{
+                      __html: data.contentfulAboutPage.heroSubText.childMarkdownRemark.html,
+                    }}
+                  />
               </div>
             </div>
           </div>
           <div className={aboutStyles.body}>
-            <p>{data.contentfulAboutPage.heroSubText.heroSubText}</p>
-            <div className={aboutStyles.section}>
+            <div className={aboutStyles.missionSection}>
               <h2>{data.contentfulAboutPage.missionHeader}</h2>
               <p>{data.contentfulAboutPage.missionText.missionText}</p>
+            </div>
+            <div className={aboutStyles.visionSection}>
               <h2>{data.contentfulAboutPage.visionHeader}</h2>
               <p>{data.contentfulAboutPage.visionText.visionText}</p>
             </div>
             <AboutCTA />
-            <div className={aboutStyles.bioSection}>
+            <div id="staff" className={aboutStyles.bioSection}>
+              <h2>Our Staff</h2>
               <div className={aboutStyles.employeeRow}>
                 <div className={aboutStyles.employee}>
                   <div className={aboutStyles.employeeImage}>
@@ -106,7 +146,7 @@ const AboutPage = () => {
                   <div className={aboutStyles.employeeInfo}>
                     <h2>{data.contentfulAboutPage.employeeOneName}</h2>
                     <h3>{data.contentfulAboutPage.employeeOnePosition}</h3>
-                    <a href={data.contentfulAboutPage.employeeOneLinkedIn}><Icon className={aboutStyles.icon} size={32} color icon={linkedin} /></a>
+                    <a href={data.contentfulAboutPage.employeeOneLinkedIn}><Icon className={aboutStyles.icon} size={32} icon={linkedin} /></a>
                   </div>
                 </div>
                 <div className={aboutStyles.employee}>
@@ -142,6 +182,42 @@ const AboutPage = () => {
                   </div>
                 </div>
               </div>
+            </div>
+            <div id="volunteers" className={aboutStyles.volunteer}>
+              <div className={aboutStyles.volunteerBio}>
+                <Carousel controls={false} indicators={false}>
+                  <Carousel.Item>
+                    <h2>{data.contentfulFeaturedVolunteers.volunteerName}</h2>
+                    <h3>{data.contentfulFeaturedVolunteers.volunteerOneRole}</h3>
+                    <p>{data.contentfulFeaturedVolunteers.volunteerOneBio.volunteerOneBio}</p>
+                  </Carousel.Item>
+                  <Carousel.Item>
+                    <h2>{data.contentfulFeaturedVolunteers.volunteerTwoName}</h2>
+                    <h3>{data.contentfulFeaturedVolunteers.volunteerTwoRole}</h3>
+                    <p>{data.contentfulFeaturedVolunteers.volunteerTwoBio.volunteerTwoBio}</p>
+                  </Carousel.Item>
+                  <Carousel.Item>
+                    <h2>{data.contentfulFeaturedVolunteers.volunteerThreeName}</h2>
+                    <h3>{data.contentfulFeaturedVolunteers.volunteerTwoRole}</h3>
+                    <p>{data.contentfulFeaturedVolunteers.volunteerThreeBio.volunteerThreeBio}</p>
+                  </Carousel.Item>
+                </Carousel>
+              </div>
+            </div>
+            <div id="partners" className={aboutStyles.sectionPartners}>
+              <h2>Our Partners</h2>
+              <div className={aboutStyles.partnerImages}>
+                {data.contentfulLandingPage.partnerships.map((partnerships) => {
+                  return (
+                    <img alt={partnerships.title} src={partnerships.resize.src} />
+                  )
+                })}
+              </div>
+            </div>
+            <div className={aboutStyles.sectionReport}>
+              <h2 id="report">{data.contentfulAboutPage.annualReport}</h2>
+              <p>{data.contentfulAboutPage.annualReportText.annualReportText}</p>
+              <p className={aboutStyles.reportLink}>Read 2019 Report</p>
             </div>
           </div>
         </div>

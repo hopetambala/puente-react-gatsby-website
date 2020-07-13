@@ -4,6 +4,7 @@ import {
   graphql,
   useStaticQuery,
 } from "gatsby"
+import favicon from '../images/favicon.ico'
 
 // Component Imports
 import Header from './header'
@@ -28,6 +29,8 @@ const Layout = (props) => {
     <div className={layoutStyles.container}>
       <Helmet>
         <title>{data.site.siteMetadata.title}</title>
+        <link rel="icon" href={favicon} />
+        <script src="https://givebutter.com/js/widget.js" type="text/javascript" />
       </Helmet>
       <Header className={layoutStyles.header} />
       <div className={layoutStyles.content}>
