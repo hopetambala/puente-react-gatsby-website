@@ -18,10 +18,8 @@ const AcceptableUse = () => {
       contentfulAcceptableUsePage {
         heroText
         bodyText {
-          content {
-            content {
-              value
-            }
+          childMarkdownRemark {
+            html
           }
         }
       }
@@ -34,12 +32,11 @@ const AcceptableUse = () => {
           <h1>{data.contentfulAcceptableUsePage.heroText}</h1>
         </div>
         <div className={styles.body}>
-          <p>{data.contentfulAcceptableUsePage.bodyText.content[0].content[0].value}</p>
-          {data.contentfulAcceptableUsePage.bodyText.content.slice(1).map((bullet) => {
-            return (
-              <li>{bullet.content[0].value}</li>
-            )
-          })}
+          <div
+            dangerouslySetInnerHTML={{
+              __html: data.contentfulAcceptableUsePage.bodyText.childMarkdownRemark.html,
+            }}
+          />
         </div>
       </div>
     </Layout>

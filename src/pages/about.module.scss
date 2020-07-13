@@ -23,8 +23,8 @@ $blue: #3d80fc;
         margin: 0;
       }
       .title {
+        padding: 3vmax 6vmax;
         h1 {
-          padding: 4vmax 6vmax 0;
           font-size: 56px;
           font-weight: 700;
           text-transform: uppercase;
@@ -33,7 +33,7 @@ $blue: #3d80fc;
           margin: 0;
         }
         p {
-          padding: 2vmax 6vmax 4vmax 6vmax;
+          padding-top: 1vmax;
           margin: 0;
         }
       }
@@ -42,6 +42,7 @@ $blue: #3d80fc;
   .body {
     background-color: $white;
     .missionSection {
+      padding: 3vmax 6vmax;
       h2 {
         font-size: 40px;
         font-weight: 600;
@@ -49,15 +50,15 @@ $blue: #3d80fc;
         color: $black;
         text-shadow: 2.5px 2.5px $yellow;
         margin: 0;
-        padding: 4vmax 6vmax 0;
       }
       p {
-        padding: 2vmax 6vmax 4vmax 6vmax;
+        padding-top: 1vmax;
         margin: 0;
       }
     }
     .visionSection {
       background-color: $off-white;
+      padding: 3vmax 6vmax;
       h2 {
         font-size: 40px;
         font-weight: 600;
@@ -65,10 +66,9 @@ $blue: #3d80fc;
         color: $black;
         text-shadow: 2.5px 2.5px $yellow;
         margin: 0;
-        padding: 4vmax 6vmax 0;
       }
       p {
-        padding: 2vmax 6vmax 4vmax 6vmax;
+        padding-top: 1vmax;
         margin: 0;
       }
     }
@@ -168,7 +168,7 @@ $blue: #3d80fc;
       }
     }
     .section-partners {
-      padding: 4vmax 0 4vmax 6vmax;
+      padding: 3vmax 0 3vmax 6vmax;
       background-color: $white;
       display: flex;
       flex-direction: row;
@@ -195,6 +195,7 @@ $blue: #3d80fc;
       }
     }
     .section-report {
+      padding: 3vmax 6vmax;
       background-color: $off-white;
       h2 {
         font-size: 40px;
@@ -203,14 +204,13 @@ $blue: #3d80fc;
         color: $black;
         text-shadow: 2.5px 2.5px $yellow;
         margin: 0;
-        padding: 4vmax 6vmax 0;
       }
       p {
-        padding: 4vmax 6vmax 0;
+        padding: 1vmax 0 0 0;
         margin: 0;
       }
       .report-link {
-        padding: 4vmax 6vmax;
+        padding: 1vmax 0 0 0;
         margin: 0;
         color: $blue;
         text-decoration: underline;

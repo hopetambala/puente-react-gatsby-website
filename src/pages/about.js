@@ -8,7 +8,7 @@ import Carousel from 'react-bootstrap/Carousel'
 
 // Component Imports
 import Layout from "../components/layout"
-import AboutCTA from "../components/aboutCTA"
+// import AboutCTA from "../components/aboutCTA"
 
 // Style/Icon Imports
 import aboutStyles from "./about.module.scss"
@@ -28,17 +28,21 @@ const AboutPage = () => {
         }
         heroText
         heroSubText{
-          childMarkdownRemark{
+          childMarkdownRemark {
             html
           }
         }
         missionHeader
         missionText {
-          missionText
+          childMarkdownRemark {
+            html
+          }
         }
         visionHeader
         visionText {
-          visionText
+          childMarkdownRemark {
+            html
+          }
         }
         employeeOneImage {
         title
@@ -78,7 +82,9 @@ const AboutPage = () => {
       employeeFourLinkedIn
       annualReport
       annualReportText {
-        annualReportText
+        childMarkdownRemark {
+          html
+        }
       }
     }
     contentfulFeaturedVolunteers {
@@ -117,25 +123,31 @@ const AboutPage = () => {
               <img alt={data.contentfulAboutPage.heroImage.title} src={data.contentfulAboutPage.heroImage.resize.src} fluid />
               <div id="who-we-are" className={aboutStyles.title}>
                 <h1>{data.contentfulAboutPage.heroText}</h1>
-                {/* <p>{data.contentfulAboutPage.heroSubText.heroSubText}</p> */}
                 <div
-                    dangerouslySetInnerHTML={{
-                      __html: data.contentfulAboutPage.heroSubText.childMarkdownRemark.html,
-                    }}
-                  />
+                  dangerouslySetInnerHTML={{
+                    __html: data.contentfulAboutPage.heroSubText.childMarkdownRemark.html,
+                  }}
+                />
               </div>
             </div>
           </div>
           <div className={aboutStyles.body}>
             <div className={aboutStyles.missionSection}>
               <h2>{data.contentfulAboutPage.missionHeader}</h2>
-              <p>{data.contentfulAboutPage.missionText.missionText}</p>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: data.contentfulAboutPage.missionText.childMarkdownRemark.html,
+                }}
+              />
             </div>
             <div className={aboutStyles.visionSection}>
               <h2>{data.contentfulAboutPage.visionHeader}</h2>
-              <p>{data.contentfulAboutPage.visionText.visionText}</p>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: data.contentfulAboutPage.visionText.childMarkdownRemark.html,
+                }}
+              />
             </div>
-            <AboutCTA />
             <div id="staff" className={aboutStyles.bioSection}>
               <h2>Our Staff</h2>
               <div className={aboutStyles.employeeRow}>
@@ -216,7 +228,11 @@ const AboutPage = () => {
             </div>
             <div className={aboutStyles.sectionReport}>
               <h2 id="report">{data.contentfulAboutPage.annualReport}</h2>
-              <p>{data.contentfulAboutPage.annualReportText.annualReportText}</p>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: data.contentfulAboutPage.annualReportText.childMarkdownRemark.html,
+                }}
+              />
               <p className={aboutStyles.reportLink}>Read 2019 Report</p>
             </div>
           </div>

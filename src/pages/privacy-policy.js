@@ -9,7 +9,7 @@ import {
 import Layout from "../components/layout"
 
 // Style imports
-import styles from "./acceptable-use.module.scss"
+import styles from "./privacy-policy.module.scss"
 
 const AcceptableUse = () => {
   const data = useStaticQuery(
@@ -18,10 +18,8 @@ const AcceptableUse = () => {
       contentfulPrivacyPolicy {
         heroText
         bodyText {
-          content {
-            content {
-              value
-            }
+          childMarkdownRemark {
+            html
           }
         }
       }
@@ -34,12 +32,11 @@ const AcceptableUse = () => {
           <h1>{data.contentfulPrivacyPolicy.heroText}</h1>
         </div>
         <div className={styles.body}>
-          <p>{data.contentfulPrivacyPolicy.bodyText.content[0].content[0].value}</p>
-          {data.contentfulPrivacyPolicy.bodyText.content.slice(1).map((bullet) => {
-            return (
-              <li>{bullet.content[0].value}</li>
-            )
-          })}
+          <div
+            dangerouslySetInnerHTML={{
+              __html: data.contentfulPrivacyPolicy.bodyText.childMarkdownRemark.html,
+            }}
+          />
         </div>
       </div>
     </Layout>
