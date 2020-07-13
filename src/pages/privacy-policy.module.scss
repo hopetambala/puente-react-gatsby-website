@@ -11,10 +11,10 @@ $blue: #3d80fc;
   width: 100%;
   margin: 0;
   .header {
-    padding: 4vmax 6vmax;
+    padding: 3vmax 6vmax;
     background-color: $off-white;
     h1 {
-      font-size: 56px;
+      font-size: 48px;
       font-weight: 700;
       text-transform: uppercase;
       color: $black;
@@ -23,7 +23,10 @@ $blue: #3d80fc;
     }
   }
   .body {
-    padding: 2vmax 6vmax;
+    padding: 3vmax 6vmax;
+    p {
+      font-size: 17px;
+    }
   }
 }
 
@@ -31,19 +34,14 @@ $blue: #3d80fc;
 @media (max-width: 1024px) {
   .container {
     .header {
-      padding: 4vmax;
+      padding: 3vmax 4vmax;
       h1 {
-        font-size: 48px;
+        font-size: 40px;
+        text-shadow: 2px 2px $yellow;
       }
     }
     .body {
-      padding: 2vmax 4vmax;
-      p {
-        font-size: 14px;
-      }
-      li {
-        font-size: 14px;
-      }
+      padding: 3vmax 4vmax;
     }
   }
 }
@@ -53,7 +51,12 @@ $blue: #3d80fc;
   .container {
     .header {
       h1 {
-        font-size: 40px;
+        font-size: 32px;
+      }
+    }
+    .body {
+      p {
+        font-size: 14px;
       }
     }
   }

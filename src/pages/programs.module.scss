@@ -22,24 +22,25 @@ $blue: #3d80fc;
         display: block;
         margin: 0;
       }
-      h1 {
-        padding: 4vmax 6vmax 0;
-        font-size: 56px;
-        font-weight: 700;
-        text-transform: uppercase;
-        color: $black;
-        text-shadow: 2.5px 2.5px $yellow;
-        margin: 0;
-      }
-      p {
-        padding: 2vmax 6vmax 4vmax 6vmax;
-        margin: 0;
+      .title {
+        padding: 3vmax 6vmax;
+        h1 {
+          font-size: 56px;
+          font-weight: 700;
+          text-transform: uppercase;
+          color: $black;
+          text-shadow: 2.5px 2.5px $yellow;
+          margin: 0;
+        }
+        p {
+          padding-top: 1vmax;
+          margin: 0;
+        }
       }
     }
   }
   .section {
     width: 100%;
-    padding: 4vmax 0;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -47,7 +48,7 @@ $blue: #3d80fc;
     .section-text {
       width: 60%;
       h2 {
-        padding: 2vmax 6vmax 0 6vmax;
+        padding: 3vmax 6vmax 0 6vmax;
         font-size: 40px;
         font-weight: 700;
         text-transform: uppercase;
@@ -56,7 +57,7 @@ $blue: #3d80fc;
         margin: 0;
       }
       p {
-        padding: 2vmax 6vmax 2vmax 6vmax;
+        padding: 1vmax 6vmax 3vmax 6vmax;
         margin: 0;
       }
     }
@@ -95,7 +96,7 @@ $blue: #3d80fc;
     }
   }
   .projects {
-    padding: 2vmax 6vmax;
+    padding: 3vmax 6vmax;
     background-color: $white;
     h2 {
       font-size: 28px;
@@ -103,16 +104,18 @@ $blue: #3d80fc;
       text-transform: uppercase;
       color: $black;
       text-shadow: 2px 2px $yellow;
-      margin: 2vh 0;
+      margin: 0;
       padding: 0;
+      padding-top: 1vmax;
     }
     p {
+      padding-top: 1vmax;
       margin: 0;
     }
   }
   .covid {
     width: 100%;
-    padding: 4vmax 0;
+    padding: 3vmax 6vmax;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -121,7 +124,6 @@ $blue: #3d80fc;
     .covid-text {
       width: 100%;
       h2 {
-        padding: 2vmax 6vmax 0 6vmax;
         font-size: 40px;
         font-weight: 700;
         text-transform: uppercase;
@@ -130,7 +132,7 @@ $blue: #3d80fc;
         margin: 0;
       }
       p {
-        padding: 2vmax 6vmax 2vmax 6vmax;
+        padding-top: 1vmax;
         margin: 0;
       }
     }
