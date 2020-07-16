@@ -14,11 +14,21 @@ const MerchandisePage = () => {
   const data = useStaticQuery(
     graphql`
     query {
-      contentfulFaqPage {
-        heroImage {
+      contentfulMerchandisePage {
+        headerText
+        headerSubText {
+          childMarkdownRemark {
+            html
+          }
+        }
+        sectionSubText
+        sectionOne
+        sectionTwo
+        sectionThree
+        snapbackImage {
           title
-          resize (height: 1000) {
-            src            
+          resize (height: 250) {
+      	    src
           }
         }
       }
@@ -27,26 +37,35 @@ const MerchandisePage = () => {
   return (
     <div>
       <Layout>
-        {/* <div className={merchStyles.container}>
-          <div className={merchStyles.banner}>
-            <div className={merchStyles.bannerImage}>
-              <img alt={data.contentfulFaqPage.heroImage.title} src={data.contentfulFaqPage.heroImage.resize.src} fluid />
-              <div className={merchStyles.title}>
-                <h1>Merchandise</h1>
-                <p>
-                  Support our work in style by purchasing gear through the links below. All
-                  proceeds go towards furthering Puente's misison and catalyzing data driven
-                  development in undererved communites.
-                </p>
+        <div className={merchStyles.container}>
+          <div className={merchStyles.title}>
+            <h1>{data.contentfulMerchandisePage.headerText}</h1>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: data.contentfulMerchandisePage.headerSubText.childMarkdownRemark.html,
+              }}
+            />
+          </div>
+          <div className={merchStyles.body}>
+            <div className={merchStyles.section}>
+              <div className={merchStyles.sectionHeader}>
+                <h2>{data.contentfulMerchandisePage.sectionThree}</h2>
+                <p>{data.contentfulMerchandisePage.sectionSubText}</p>
+              </div>
+              <div className={merchStyles.sectionProducts}>
+                <div className={merchStyles.product}>
+                  <a className={merchStyles.img} href="https://www.bonfire.com/puente-snapbacks/" >
+                    <img alt={data.contentfulMerchandisePage.snapbackImage.title} src={data.contentfulMerchandisePage.snapbackImage.resize.src} />
+                  </a>
+                  <div className={merchStyles.productInfo}>
+                    <h3>Puente Snapback</h3>
+                    <h4>$25.00</h4>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div className={merchStyles.body}>
-            <p>
-              placeholder 
-            </p>
-          </div>
-        </div> */}
+        </div>
       </Layout>
     </div>
   )

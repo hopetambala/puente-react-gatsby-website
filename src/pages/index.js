@@ -32,35 +32,27 @@ const IndexPage = () => {
       contentfulLandingPage {
         hero
         firstSectionTitle
-        firstSectionParagaph {
-          content {
-            content {
-              value
-            }
+        firstSectionParagraph {
+          childMarkdownRemark {
+            html
           }
         }
         secondSectionTitle
         secondSectionParagraph {
-          content {
-            content {
-              value
-            }
+          childMarkdownRemark {
+            html
           }
         }
         thirdSectionTitle
         thirdSectionParagraph {
-          content {
-            content {
-              value
-            }
+          childMarkdownRemark {
+            html
           }
         }
         fourthSectionTitle
         fourthSectionParagraph {
-          content {
-            content {
-              value
-            }
+          childMarkdownRemark {
+            html
           }
         }
         partnerships {
@@ -73,31 +65,33 @@ const IndexPage = () => {
       contentfulProjectTypes {
         projectTypeOne
         projectOneShortDescription {
-          projectOneShortDescription
+          childMarkdownRemark {
+            html
+          }
         }
         projectTypeTwo
         projectTwoShortDescription {
-          projectTwoShortDescription
+          childMarkdownRemark {
+            html
+          }
         }
         projectTypeThree
         projectThreeShortDescription {
-          projectThreeShortDescription
+          childMarkdownRemark {
+            html
+          }
         }
         projectTypeFour
         projectFourShortDescription {
-          projectFourShortDescription
+          childMarkdownRemark {
+            html
+          }
         }
         projectTypeFive
         projectFiveShortDescription {
-          projectFiveShortDescription
-        }
-        projectTypeSix
-        projectSixShortDescription {
-          projectSixShortDescription
-        }
-        projectTypeSeven
-        projectSevenShortDescription {
-          projectSevenShortDescription
+          childMarkdownRemark {
+            html
+          }
         }
       }
     }
@@ -114,7 +108,7 @@ const IndexPage = () => {
       animationData: heroAnimation
     });
     return () => anim.destroy(); // optional clean up for unmounting
-  }, []);
+  }, []); // eslint-disable-line
 
   let bridgeContainer = createRef();
   useEffect(() => {
@@ -126,7 +120,7 @@ const IndexPage = () => {
       animationData: bridgeAnimation
     });
     return () => anim.destroy(); // optional clean up for unmounting
-  }, []);
+  }, []); // eslint-disable-line
   
   let dataContainer = createRef();
   useEffect(() => {
@@ -138,7 +132,7 @@ const IndexPage = () => {
       animationData: dataAnimation
     });
     return () => anim.destroy(); // optional clean up for unmounting
-  }, []);
+  }, []); // eslint-disable-line
   
   let serviceContainer = createRef();
   useEffect(() => {
@@ -150,7 +144,8 @@ const IndexPage = () => {
       animationData: serviceAnimation
     });
     return () => anim.destroy(); // optional clean up for unmounting
-  }, []);
+  }, []); // eslint-disable-line
+  
   return (
     <div>
       <Layout>
@@ -167,7 +162,11 @@ const IndexPage = () => {
           <div className={styles.sectionOdd}>
             <div className={styles.sectionText}>
               <h2>{data.contentfulLandingPage.firstSectionTitle}</h2>
-              <p>{data.contentfulLandingPage.firstSectionParagaph.content[0].content[0].value}</p>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: data.contentfulLandingPage.firstSectionParagraph.childMarkdownRemark.html,
+                }}
+              />
             </div>
             <div className={styles.sectionImage}>
               {/* <Img fluid={data.image.childImageSharp.fluid} /> */}
@@ -180,38 +179,54 @@ const IndexPage = () => {
             </div>
             <div className={styles.sectionText}>
               <h2>{data.contentfulLandingPage.secondSectionTitle}</h2>
-              <p>{data.contentfulLandingPage.secondSectionParagraph.content[0].content[0].value}</p>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: data.contentfulLandingPage.secondSectionParagraph.childMarkdownRemark.html,
+                }}
+              />
             </div>
           </div>
           <div className={styles.sectionBlue}>
             <Carousel controls={false} indicators={false}>
               <Carousel.Item>
                 <h2>{data.contentfulProjectTypes.projectTypeOne}</h2>
-                <p>{data.contentfulProjectTypes.projectOneShortDescription.projectOneShortDescription}</p>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: data.contentfulProjectTypes.projectOneShortDescription.childMarkdownRemark.html,
+                  }}
+                />
               </Carousel.Item>
               <Carousel.Item>
                 <h2>{data.contentfulProjectTypes.projectTypeTwo}</h2>
-                <p>{data.contentfulProjectTypes.projectTwoShortDescription.projectTwoShortDescription}</p>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: data.contentfulProjectTypes.projectTwoShortDescription.childMarkdownRemark.html,
+                  }}
+                />
               </Carousel.Item>
               <Carousel.Item>
                 <h2>{data.contentfulProjectTypes.projectTypeThree}</h2>
-                <p>{data.contentfulProjectTypes.projectThreeShortDescription.projectThreeShortDescription}</p>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: data.contentfulProjectTypes.projectThreeShortDescription.childMarkdownRemark.html,
+                  }}
+                />
               </Carousel.Item>
               <Carousel.Item>
                 <h2>{data.contentfulProjectTypes.projectTypeFour}</h2>
-                <p>{data.contentfulProjectTypes.projectFourShortDescription.projectFourShortDescription}</p>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: data.contentfulProjectTypes.projectFourShortDescription.childMarkdownRemark.html,
+                  }}
+                />
               </Carousel.Item>
               <Carousel.Item>
                 <h2>{data.contentfulProjectTypes.projectTypeFive}</h2>
-                <p>{data.contentfulProjectTypes.projectFiveShortDescription.projectFiveShortDescription}</p>
-              </Carousel.Item>
-              <Carousel.Item>
-                <h2>{data.contentfulProjectTypes.projectTypeSix}</h2>
-                <p>{data.contentfulProjectTypes.projectSixShortDescription.projectSixShortDescription}</p>
-              </Carousel.Item>
-              <Carousel.Item>
-                <h2>{data.contentfulProjectTypes.projectTypeSeven}</h2>
-                <p>{data.contentfulProjectTypes.projectSevenShortDescription.projectSevenShortDescription}</p>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: data.contentfulProjectTypes.projectFiveShortDescription.childMarkdownRemark.html,
+                  }}
+                />
               </Carousel.Item>
             </Carousel>
             <Link className={styles.button} to="/programs">
@@ -223,7 +238,11 @@ const IndexPage = () => {
           <div className={styles.sectionOdd}>
             <div className={styles.sectionText}>
               <h2>{data.contentfulLandingPage.thirdSectionTitle}</h2>
-              <p>{data.contentfulLandingPage.thirdSectionParagraph.content[0].content[0].value}</p>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: data.contentfulLandingPage.thirdSectionParagraph.childMarkdownRemark.html,
+                }}
+              />
             </div>
             <div className={styles.sectionImage}>
               {/* <Img fluid={data.image.childImageSharp.fluid} /> */}
@@ -237,7 +256,11 @@ const IndexPage = () => {
             </div>
             <div className={styles.sectionText}>
               <h2>{data.contentfulLandingPage.fourthSectionTitle}</h2>
-              <p>{data.contentfulLandingPage.fourthSectionParagraph.content[0].content[0].value}</p>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: data.contentfulLandingPage.fourthSectionParagraph.childMarkdownRemark.html,
+                }}
+              />
             </div>
           </div>
           <div className={styles.sectionPartners}>
