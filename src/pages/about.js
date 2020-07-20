@@ -241,7 +241,7 @@ const AboutPage = () => {
               </div>
             </div>
             <div className={aboutStyles.sectionReport}>
-              <h2 id="report">{data.contentfulAboutPage.annualReport}</h2>
+              <h2 id="reports">{data.contentfulAboutPage.annualReport}</h2>
               <div
                 dangerouslySetInnerHTML={{
                   __html: data.contentfulAboutPage.annualReportText.childMarkdownRemark.html,

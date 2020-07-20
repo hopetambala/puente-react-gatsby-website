@@ -55,6 +55,11 @@ const IndexPage = () => {
             html
           }
         }
+        ourPartnersText {
+          childMarkdownRemark {
+            html
+          }
+        }
         partnerships {
           title
           resize (height: 200) {
@@ -265,6 +270,11 @@ const IndexPage = () => {
           </div>
           <div className={styles.sectionPartners}>
             <h2>Our Partners</h2>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: data.contentfulLandingPage.ourPartnersText.childMarkdownRemark.html,
+              }}
+            />
             <div className={styles.partnerImages}>
               {data.contentfulLandingPage.partnerships.map((partnerships) => {
                 return (

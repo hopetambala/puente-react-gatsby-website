@@ -54,7 +54,7 @@ const MerchandisePage = () => {
               </div>
               <div className={merchStyles.sectionProducts}>
                 <div className={merchStyles.product}>
-                  <a className={merchStyles.img} href="https://www.bonfire.com/puente-snapbacks/" >
+                  <a className={merchStyles.img} href="https://www.bonfire.com/puente-snapbacks/" target="_blank" rel="noopener noreferrer" >
                     <img alt={data.contentfulMerchandisePage.snapbackImage.title} src={data.contentfulMerchandisePage.snapbackImage.resize.src} />
                   </a>
                   <div className={merchStyles.productInfo}>
