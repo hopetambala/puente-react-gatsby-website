@@ -122,7 +122,7 @@ const VolunteerPage = () => {
               </div>
             </div>
             <VolunteerContactCTA />
-            <div className={volunteerStyles.section}>
+            <div className={volunteerStyles.sectionDonate}>
               <div id="newsletter" className={volunteerStyles.sectionText}>
                 <h2>{data.contentfulVolunteerPage.sectionThreeHeader}</h2>
                 <p>{data.contentfulVolunteerPage.sectionThreeParagraph.sectionThreeParagraph}</p>

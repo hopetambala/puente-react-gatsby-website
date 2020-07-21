@@ -4,6 +4,7 @@ import {
   graphql,
   useStaticQuery,
 } from "gatsby"
+import ReactPlayer from 'react-player/youtube'
 // import Carousel from 'react-bootstrap/Carousel'
 
 // Component Imports
@@ -105,6 +106,11 @@ const AboutPage = () => {
       } 
     }
     contentfulLandingPage {
+      ourPartnersText {
+        childMarkdownRemark {
+          html
+        }
+      }
       partnerships {
         title
         resize (height: 200) {
@@ -122,12 +128,19 @@ const AboutPage = () => {
             <div className={aboutStyles.bannerImage}>
               <img alt={data.contentfulAboutPage.heroImage.title} src={data.contentfulAboutPage.heroImage.resize.src} fluid />
               <div id="who-we-are" className={aboutStyles.title}>
-                <h1>{data.contentfulAboutPage.heroText}</h1>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: data.contentfulAboutPage.heroSubText.childMarkdownRemark.html,
-                  }}
-                />
+                <div className={aboutStyles.about}>
+                  <div className={aboutStyles.aboutText}>
+                    <h1>{data.contentfulAboutPage.heroText}</h1>
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: data.contentfulAboutPage.heroSubText.childMarkdownRemark.html,
+                      }}
+                    />
+                  </div>
+                  <div className={aboutStyles.aboutVideo}>
+                    <ReactPlayer width='100%' controls='true' url='https://www.youtube.com/watch?v=0XwQzkQjF1s.' />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
