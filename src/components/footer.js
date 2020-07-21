@@ -92,6 +92,9 @@ class Footer extends React.Component {
                   <Link className={footerStyles.navItem} to="/news">News</Link>
                 </li>
                 <li>
+                  <Link className={footerStyles.navItem} to="/merchandise">Merchandise</Link>
+                </li>
+                <li>
                   <Link className={footerStyles.navItem} to="/donate">Donate</Link>
                 </li>
               </ul>

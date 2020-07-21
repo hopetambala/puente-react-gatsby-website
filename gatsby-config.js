@@ -47,6 +47,13 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-plugin-sass',
     {
+      resolve: 'gatsby-plugin-i18n',
+      options: {
+        langKeyDefault: 'en',
+        useLangKeyLayout: false
+      }
+    },
+    {
       resolve: 'gatsby-source-contentful',
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,

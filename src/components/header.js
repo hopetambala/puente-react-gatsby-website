@@ -40,7 +40,7 @@ const Header = () => {
 
   if (width > 768) {
     return (
-      <Navbar className={styles.navBackground} collapseOnSelect expand="lg">
+      <Navbar className={styles.navBackground} collapseOnSelect expand="lg" onScroll>
         <Navbar.Brand className={styles.logo}>
           <Link to="/">
             <Logo />

@@ -9,7 +9,6 @@ import Form from 'react-bootstrap/Form'
 
 // Component Imports
 import Layout from "../components/layout"
-import Carousel from 'react-bootstrap/Carousel'
 // import DemoCTA from "../components/DemoCTA"
 
 // Styles Import
@@ -90,29 +89,16 @@ const TechnologyPage = () => {
         }
         sectionTwoKeyFeatures
         sectionTwoKeyFeaturesList
-      }
-      contentfulFeaturedVolunteers {
-        volunteerName
-        volunteerOneRole
-        volunteerOneBio {
+        testimonialOne {
           childMarkdownRemark {
             html
           }
         }
-        volunteerTwoName
-        volunteerTwoRole
-        volunteerTwoBio {
+        testimonialTwo {
           childMarkdownRemark {
             html
           }
         }
-        volunteerThreeName
-        volunteerThreeRole
-        volunteerThreeBio {
-          childMarkdownRemark {
-            html
-          }
-        } 
       }
     }
   `)
@@ -205,34 +191,24 @@ const TechnologyPage = () => {
             </div>
           </div>
         </div>
-        <div id="testimonials" className={styles.volunteer}>
-          <div className={styles.volunteerBio}>
-            <Carousel controls={false} indicators={false}>
-              <Carousel.Item>
-                <h2>{data.contentfulFeaturedVolunteers.volunteerName}</h2>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: data.contentfulFeaturedVolunteers.volunteerOneBio.childMarkdownRemark.html,
-                  }}
-                />
-              </Carousel.Item>
-              <Carousel.Item>
-                <h2>{data.contentfulFeaturedVolunteers.volunteerTwoName}</h2>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: data.contentfulFeaturedVolunteers.volunteerTwoBio.childMarkdownRemark.html,
-                  }}
-                />
-              </Carousel.Item>
-              <Carousel.Item>
-                <h2>{data.contentfulFeaturedVolunteers.volunteerThreeName}</h2>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: data.contentfulFeaturedVolunteers.volunteerThreeBio.childMarkdownRemark.html,
-                  }}
-                />
-              </Carousel.Item>
-            </Carousel>
+        <div id="testimonials" className={styles.testimonials}>
+          <div className={styles.testimonial}>
+            <h3 className={styles.openQuote}>"</h3>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: data.contentfulTechnologyPage.testimonialOne.childMarkdownRemark.html,
+              }}
+            />
+            <h3 className={styles.closeQuote}>"</h3>
+          </div>
+          <div className={styles.testimonial}>
+            <h3 className={styles.openQuote}>"</h3>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: data.contentfulTechnologyPage.testimonialTwo.childMarkdownRemark.html,
+              }}
+            />
+            <h3 className={styles.closeQuote}>"</h3>
           </div>
         </div>
         <div id="request-demo" className={styles.demo} >
