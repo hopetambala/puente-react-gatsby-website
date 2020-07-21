@@ -23,8 +23,8 @@ $blue: #3d80fc;
       }
       .title {
         h1 {
-          padding: 4vmax 6vmax 0;
-          font-size: 56px;
+          padding: 3vmax 6vmax 0;
+          font-size: 48px;
           font-weight: 700;
           text-transform: uppercase;
           color: $black;
@@ -32,7 +32,7 @@ $blue: #3d80fc;
           margin: 0;
         }
         p {
-          padding: 2vmax 6vmax 4vmax 6vmax;
+          padding: 2vmax 6vmax 3vmax 6vmax;
           margin: 0;
         }
       }
@@ -40,61 +40,56 @@ $blue: #3d80fc;
   }
   .body {
     background-color: $white;
-    .section {
+    .section,
+    .section-donate {
       background-color: $white;
       display: flex;
       flex-direction: row;
-      align-items: flex-start;
+      align-items: center;
       justify-content: center;
+      &.section-donate {
+        align-items: flex-start;
+      }
       .section-text {
+        padding: 3vmax 6vmax;
         width: 55%;
         h2 {
-          color: $black;
-          font-size: 40px;
+          font-size: 32px;
           font-weight: 600;
-          text-shadow: 2.5px 2.5px $yellow;
           text-transform: uppercase;
+          color: $black;
+          text-shadow: 2px 2px $yellow;
+          padding-bottom: 1vmax;
           margin: 0;
-          padding: 4vmax 6vmax;
-          padding-bottom: 2vh;
         }
         p {
-          padding: 0 6vmax 4vmax 6vmax;
           margin: 0;
         }
       }
       .section-image {
         width: 45%;
-        padding: 2vmax 6vmax 4vmax 0;
+        padding: 3vmax 6vmax 3vmax 0;
         img {
           margin: 0;
         }
       }
       .donate-section {
+        padding: 3vmax 6vmax 3vmax 0;
         width: 45%;
         h2 {
-          color: $black;
-          font-size: 40px;
+          font-size: 32px;
           font-weight: 600;
-          text-shadow: 2.5px 2.5px $yellow;
           text-transform: uppercase;
+          color: $black;
+          text-shadow: 2px 2px $yellow;
+          padding-bottom: 1vmax;
           margin: 0;
-          padding: 4vmax 6vmax 0 0;
-          padding-bottom: 2vh;
         }
         .donate-form {
           width: 100%;
-          padding: 0 6vmax 4vmax 0;
           margin: 0;
         }
       }
-      // .section-impact-numbers {
-      //   width: 45%;
-      //   background-color: $yellow;
-      //   height: 300px;
-      //   margin-top: 4vmax;
-      //   margin-bottom: 4vmax;
-      // }
     }
     .section-even {
       background-color: $off-white;
@@ -103,61 +98,25 @@ $blue: #3d80fc;
       align-items: center;
       justify-content: center;
       .section-text {
+        padding: 3vmax 6vmax;
         width: 55%;
         h2 {
-          color: $black;
-          font-size: 40px;
+          font-size: 32px;
           font-weight: 600;
-          text-shadow: 2.5px 2.5px $yellow;
           text-transform: uppercase;
+          color: $black;
+          text-shadow: 2px 2px $yellow;
+          padding-bottom: 1vmax;
           margin: 0;
-          padding: 4vmax 6vmax 4vmax 6vmax;
-          padding-bottom: 2vh;
         }
         p {
-          padding: 0 6vmax 4vmax 6vmax;
           margin: 0;
         }
       }
       .section-image {
         width: 45%;
-        padding: 4vmax 0 4vmax 6vmax;
+        padding: 3vmax 0 3vmax 6vmax;
         img {
-          margin: 0;
-        }
-      }
-    }
-    .volunteer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 4vmax 4vmax;
-      background-color: $blue;
-      .volunteer-bio {
-        width: 100%;
-        h2 {
-          color: $yellow;
-          font-size: 40px;
-          font-weight: 600;
-          text-shadow: 2.5px 2.5px $black;
-          text-transform: uppercase;
-          text-align: center;
-          padding: 0;
-          margin: 0;
-          margin-bottom: 1vmax;
-        }
-        h3 {
-          color: $yellow;
-          font-size: 20px;
-          font-weight: 500;
-          text-shadow: 2px 2px $black;
-          text-transform: uppercase;
-          text-align: center;
-        }
-        p {
-          color: $off-white;
-          padding: 0;
-          margin-top: 1vmax;
           margin: 0;
         }
       }
@@ -171,7 +130,12 @@ $blue: #3d80fc;
       .banner-image {
         .title {
           h1 {
+            padding: 3vmax 4vmax 0;
             font-size: 40px;
+            text-shadow: 2px 2px $yellow;
+          }
+          p {
+            padding: 2vmax 4vmax 3vmax 4vmax;
           }
         }
       }
@@ -179,101 +143,97 @@ $blue: #3d80fc;
     .body {
       .section {
         .section-text {
+          padding: 3vmax 4vmax;
           h2 {
-            font-size: 32px;
+            font-size: 28px;
+          }
+          .section-image {
+            padding: 3vmax 4vmax 3vmax 0;
+            img {
+              margin: 0;
+            }
+          }
+          .donate-section {
+            padding: 3vmax 4vmax 3vmax 0;
+            h2 {
+              font-size: 28px;
+            }
           }
         }
-        .section-impact-numbers {
-          height: 250px;
-        }
-      }
-      .section-even {
-        .section-text {
-          h2 {
-            font-size: 32px;
+        .section-even {
+          .section-text {
+            padding: 3vmax 4vmax;
+            h2 {
+              font-size: 28px;
+            }
           }
-        }
-      }
-      .volunteer {
-        .volunteer-bio {
-          h2 {
-            font-size: 32px;
+          .section-image {
+            padding: 3vmax 0 3vmax 4vmax;
           }
         }
       }
     }
   }
-}
 
-@media (max-width: 768px) {
-  .container {
-    .banner {
-      .banner-image {
-        .title {
-          h1 {
-            font-size: 32px;
-            text-shadow: 2px 2px $yellow;
+  @media (max-width: 768px) {
+    .container {
+      .banner {
+        .banner-image {
+          .title {
+            h1 {
+              font-size: 32px;
+            }
+            p {
+              font-size: 14px;
+            }
           }
         }
       }
-    }
-    .body {
-      p {
-        font-size: 14px;
-      }
-      .section {
-        flex-direction: column-reverse;
-        .section-text {
-          width: 100%;
-          padding: 4vmax 4vmax;
-          h2 {
-            font-size: 28px;
-            padding-top: 0;
-            padding-left: 0;
+      .body {
+        .section,
+        .section-donate {
+          flex-direction: column-reverse;
+          &.section-donate {
+            flex-direction: column;
+            align-items: center;
           }
-          p {
-            padding-left: 0;
-            padding-right: 0;
+          .section-text {
+            padding: 3vmax 4vmax;
+            width: 100%;
+            h2 {
+              font-size: 28px;
+            }
+            p {
+              font-size: 14px;
+            }
           }
-        }
-        .section-image {
-          width: 100%;
-          padding: 4vmax 4vmax;
-        }
-        .section-impact-numbers {
-          width: 100%;
-          text-align: center;
-          height: 200px;
-          margin-top: 0;
-        }
-      }
-      .section-even {
-        flex-direction: column-reverse;
-        .section-text {
-          width: 100%;
-          padding: 4vmax 4vmax;
-          h2 {
-            font-size: 28px;
-            padding-top: 0;
-            padding-left: 0;
+          .section-image {
+            padding: 3vmax 4vmax 0;
+            width: 100%;
           }
-          p {
-            padding-left: 0;
-            padding-right: 0;
+          .donate-section {
+            padding: 3vmax 4vmax 0;
+            width: 100%;
+            h2 {
+              font-size: 28px;
+            }
           }
         }
-        .section-image {
-          width: 100%;
-          padding: 4vmax 4vmax;
-        }
-      }
-      .volunteer {
-        .volunteer-bio {
-          h2 {
-            font-size: 28px;
+        .section-even {
+          flex-direction: column-reverse;
+          .section-text {
+            padding: 3vmax 4vmax;
+            width: 100%;
+            h2 {
+              font-size: 28px;
+            }
+            p {
+              font-size: 14px;
+            }
           }
-          p {
-            font-size: 14px;
+          .section-image {
+            width: 100%;
+            padding: 3vmax 4vmax 0;
           }
         }
       }

@@ -22,8 +22,48 @@ $blue: #3d80fc;
         display: block;
         margin: 0;
       }
+      .puente-model {
+        padding: 3vmax 6vmax 0;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        img {
+          width: 45%;
+        }
+        h2 {
+          padding: 1vmax 0 1vmax 6vmax;
+          font-size: 24px;
+          font-weight: 700;
+          text-transform: uppercase;
+          color: $black;
+          text-shadow: 2px 2px $yellow;
+          margin: 0;
+        }
+      }
       .title {
         padding: 3vmax 6vmax;
+        // .puente-model {
+        //   padding: 2vmax 0;
+        //   width: 100%;
+        //   display: flex;
+        //   flex-direction: row;
+        //   align-items: center;
+        //   justify-content: center;
+        //   img {
+        //     width: 45%;
+        //   }
+        //   h2 {
+        //     padding: 1vmax 0 1vmax 6vmax;
+        //     font-size: 24px;
+        //     font-weight: 700;
+        //     text-transform: uppercase;
+        //     color: $black;
+        //     text-shadow: 2px 2px $yellow;
+        //     margin: 0;
+        //   }
+        // }
         h1 {
           font-size: 56px;
           font-weight: 700;
@@ -99,14 +139,13 @@ $blue: #3d80fc;
     padding: 3vmax 6vmax;
     background-color: $white;
     h2 {
-      font-size: 28px;
+      font-size: 40px;
       font-weight: 700;
       text-transform: uppercase;
       color: $black;
       text-shadow: 2px 2px $yellow;
       margin: 0;
       padding: 0;
-      padding-top: 1vmax;
     }
     p {
       padding-top: 1vmax;
@@ -114,6 +153,27 @@ $blue: #3d80fc;
     }
     .tabs {
       padding-top: 2vmax;
+    }
+    .project {
+      padding: 3vmax 0 0;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      .project-info {
+        width: 65%;
+        h2 {
+          font-size: 28px;
+        }
+      }
+      .project-image {
+        width: 30%;
+        img {
+          margin: 0;
+          box-shadow: -5px 5px $yellow;
+        }
+      }
     }
   }
   .covid {

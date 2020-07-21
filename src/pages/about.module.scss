@@ -24,17 +24,30 @@ $blue: #3d80fc;
       }
       .title {
         padding: 3vmax 6vmax;
-        h1 {
-          font-size: 48px;
-          font-weight: 700;
-          text-transform: uppercase;
-          color: $black;
-          text-shadow: 2.5px 2.5px $yellow;
-          margin: 0;
-        }
-        p {
-          padding-top: 1vmax;
-          margin: 0;
+        .about {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          .about-text {
+            width: 55%;
+            h1 {
+              font-size: 48px;
+              font-weight: 700;
+              text-transform: uppercase;
+              color: $black;
+              text-shadow: 2.5px 2.5px $yellow;
+              margin: 0;
+            }
+            p {
+              padding-top: 1vmax;
+              margin: 0;
+            }
+          }
+          .about-video {
+            width: 42.5%;
+          }
         }
       }
     }
@@ -137,7 +150,7 @@ $blue: #3d80fc;
               color: $black;
               text-shadow: 2px 2px $yellow;
               margin: 0;
-              padding: 1vmax 0 .5vmax 10px;
+              padding: 1vmax 0 0.5vmax 10px;
             }
             h3 {
               padding-left: 10px;
@@ -209,9 +222,21 @@ $blue: #3d80fc;
       .banner-image {
         .title {
           padding: 3vmax 4vmax;
-          h1 {
-            font-size: 40px;
-            text-shadow: 2px 2px $yellow;
+          .about {
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            .about-text {
+              width: 100%;
+              h1 {
+                font-size: 40px;
+                text-shadow: 2px 2px $yellow;
+              }
+            }
+            .about-video {
+              padding-top: 3vmax;
+              width: 100%;
+            }
           }
         }
       }
@@ -257,11 +282,15 @@ $blue: #3d80fc;
     .banner {
       .banner-image {
         .title {
-          h1 {
-            font-size: 32px;
-          }
-          p {
-            font-size: 14px;
+          .about {
+            .about-text {
+              h1 {
+                font-size: 32px;
+              }
+              p {
+                font-size: 14px;
+              }
+            }
           }
         }
       }
@@ -305,7 +334,7 @@ $blue: #3d80fc;
               }
               h2 {
                 font-size: 16px;
-                padding: 1vmax 0 .5vmax 6.5px;
+                padding: 1vmax 0 0.5vmax 6.5px;
               }
               h3 {
                 padding-left: 6.5px;

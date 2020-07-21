@@ -24,10 +24,22 @@ const ProgramsPage = () => {
             html
           }
         }
+        projectOneImage {
+          title
+          resize (height: 1000) {
+            src            
+          }
+        }
         projectTypeTwo
         projectTwoLongDescription {
           childMarkdownRemark {
             html
+          }
+        }
+        projectTwoImage {
+          title
+          resize (height: 1000) {
+            src            
           }
         }
         projectTypeThree
@@ -36,16 +48,34 @@ const ProgramsPage = () => {
             html
           }
         }
+        projectThreeImage {
+          title
+          resize (height: 1000) {
+            src            
+          }
+        }
         projectTypeFour
         projectFourLongDescription {
           childMarkdownRemark {
             html
           }
         }
+        projectFourImage {
+          title
+          resize (height: 1000) {
+            src            
+          }
+        }
         projectTypeFive
         projectFiveLongDescription {
           childMarkdownRemark {
             html
+          }
+        }
+        projectFiveImage {
+          title
+          resize (height: 1000) {
+            src            
           }
         }
       }
@@ -82,6 +112,17 @@ const ProgramsPage = () => {
             html
           }
         }
+        puenteModelImage {
+          title
+          resize (height: 1000) {
+            src            
+          }
+        }
+        puenteModelText {
+          childMarkdownRemark {
+            html
+          }
+        }
       }
     }
   `)
@@ -100,6 +141,14 @@ const ProgramsPage = () => {
                     __html: data.contentfulProjectPage.heroSubText.childMarkdownRemark.html,
                   }}
                 />
+                <div className={styles.puenteModel}>
+                  <img alt={data.contentfulProjectPage.puenteModelImage.title} src={data.contentfulProjectPage.puenteModelImage.resize.src} fluid />
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: data.contentfulProjectPage.puenteModelText.childMarkdownRemark.html,
+                    }}
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -117,44 +166,79 @@ const ProgramsPage = () => {
               onSelect={(k) => setKey(k)}
             >
               <Tab eventKey="one" title={data.contentfulProjectTypes.projectTypeOne}>
-                <h2>{data.contentfulProjectTypes.projectTypeOne}</h2>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: data.contentfulProjectTypes.projectOneLongDescription.childMarkdownRemark.html,
-                  }}
-                />
+                <div className={styles.project}>
+                  <div className={styles.projectInfo}>
+                    <h2>{data.contentfulProjectTypes.projectTypeOne}</h2>
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: data.contentfulProjectTypes.projectOneLongDescription.childMarkdownRemark.html,
+                      }}
+                    />
+                  </div>
+                  <div className={styles.projectImage}>
+                    <img alt={data.contentfulProjectTypes.projectOneImage.title} src={data.contentfulProjectTypes.projectOneImage.resize.src} fluid />
+                  </div>
+                </div>
               </Tab>
               <Tab eventKey="two" title={data.contentfulProjectTypes.projectTypeTwo}>
-                <h2>{data.contentfulProjectTypes.projectTypeTwo}</h2>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: data.contentfulProjectTypes.projectTwoLongDescription.childMarkdownRemark.html,
-                  }}
-                />
+                <div className={styles.project}>
+                  <div className={styles.projectInfo}>
+                    <h2>{data.contentfulProjectTypes.projectTypeTwo}</h2>
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: data.contentfulProjectTypes.projectTwoLongDescription.childMarkdownRemark.html,
+                      }}
+                    />
+                  </div>
+                  <div className={styles.projectImage}>
+                    <img alt={data.contentfulProjectTypes.projectTwoImage.title} src={data.contentfulProjectTypes.projectTwoImage.resize.src} fluid />
+                  </div>
+                </div>
               </Tab>
               <Tab eventKey="three" title={data.contentfulProjectTypes.projectTypeThree}>
-                <h2>{data.contentfulProjectTypes.projectTypeThree}</h2>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: data.contentfulProjectTypes.projectThreeLongDescription.childMarkdownRemark.html,
-                  }}
-                />
+                <div className={styles.project}>
+                  <div className={styles.projectInfo}>
+                    <h2>{data.contentfulProjectTypes.projectTypeThree}</h2>
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: data.contentfulProjectTypes.projectThreeLongDescription.childMarkdownRemark.html,
+                      }}
+                    />
+                  </div>
+                  <div className={styles.projectImage}>
+                    <img alt={data.contentfulProjectTypes.projectThreeImage.title} src={data.contentfulProjectTypes.projectThreeImage.resize.src} fluid />
+                  </div>
+                </div>
               </Tab>
               <Tab eventKey="four" title={data.contentfulProjectTypes.projectTypeFour}>
-                <h2>{data.contentfulProjectTypes.projectTypeFour}</h2>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: data.contentfulProjectTypes.projectFourLongDescription.childMarkdownRemark.html,
-                  }}
-                />
+                <div className={styles.project}>
+                  <div className={styles.projectInfo}>
+                    <h2>{data.contentfulProjectTypes.projectTypeFour}</h2>
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: data.contentfulProjectTypes.projectFourLongDescription.childMarkdownRemark.html,
+                      }}
+                    />
+                  </div>
+                  <div className={styles.projectImage}>
+                    <img alt={data.contentfulProjectTypes.projectFourImage.title} src={data.contentfulProjectTypes.projectFourImage.resize.src} fluid />
+                  </div>
+                </div>
               </Tab>
               <Tab eventKey="five" title={data.contentfulProjectTypes.projectTypeFive}>
-                <h2>{data.contentfulProjectTypes.projectTypeFive}</h2>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: data.contentfulProjectTypes.projectFiveLongDescription.childMarkdownRemark.html,
-                  }}
-                />
+                <div className={styles.project}>
+                  <div className={styles.projectInfo}>
+                    <h2>{data.contentfulProjectTypes.projectTypeFive}</h2>
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: data.contentfulProjectTypes.projectFiveLongDescription.childMarkdownRemark.html,
+                      }}
+                    />
+                  </div>
+                  <div className={styles.projectImage}>
+                    <img alt={data.contentfulProjectTypes.projectFiveImage.title} src={data.contentfulProjectTypes.projectFiveImage.resize.src} fluid />
+                  </div>
+                </div>
               </Tab>
             </Tabs>
           </div>

@@ -69,31 +69,31 @@ const IndexPage = () => {
       }
       contentfulProjectTypes {
         projectTypeOne
-        projectOneShortDescription {
+        projectOneLongDescription {
           childMarkdownRemark {
             html
           }
         }
         projectTypeTwo
-        projectTwoShortDescription {
+        projectTwoLongDescription {
           childMarkdownRemark {
             html
           }
         }
         projectTypeThree
-        projectThreeShortDescription {
+        projectThreeLongDescription {
           childMarkdownRemark {
             html
           }
         }
         projectTypeFour
-        projectFourShortDescription {
+        projectFourLongDescription {
           childMarkdownRemark {
             html
           }
         }
         projectTypeFive
-        projectFiveShortDescription {
+        projectFiveLongDescription {
           childMarkdownRemark {
             html
           }
@@ -196,7 +196,7 @@ const IndexPage = () => {
                 <h2>{data.contentfulProjectTypes.projectTypeOne}</h2>
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: data.contentfulProjectTypes.projectOneShortDescription.childMarkdownRemark.html,
+                    __html: data.contentfulProjectTypes.projectOneLongDescription.childMarkdownRemark.html,
                   }}
                 />
               </Carousel.Item>
@@ -204,7 +204,7 @@ const IndexPage = () => {
                 <h2>{data.contentfulProjectTypes.projectTypeTwo}</h2>
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: data.contentfulProjectTypes.projectTwoShortDescription.childMarkdownRemark.html,
+                    __html: data.contentfulProjectTypes.projectTwoLongDescription.childMarkdownRemark.html,
                   }}
                 />
               </Carousel.Item>
@@ -212,7 +212,7 @@ const IndexPage = () => {
                 <h2>{data.contentfulProjectTypes.projectTypeThree}</h2>
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: data.contentfulProjectTypes.projectThreeShortDescription.childMarkdownRemark.html,
+                    __html: data.contentfulProjectTypes.projectThreeLongDescription.childMarkdownRemark.html,
                   }}
                 />
               </Carousel.Item>
@@ -220,7 +220,7 @@ const IndexPage = () => {
                 <h2>{data.contentfulProjectTypes.projectTypeFour}</h2>
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: data.contentfulProjectTypes.projectFourShortDescription.childMarkdownRemark.html,
+                    __html: data.contentfulProjectTypes.projectFourLongDescription.childMarkdownRemark.html,
                   }}
                 />
               </Carousel.Item>
@@ -228,7 +228,7 @@ const IndexPage = () => {
                 <h2>{data.contentfulProjectTypes.projectTypeFive}</h2>
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: data.contentfulProjectTypes.projectFiveShortDescription.childMarkdownRemark.html,
+                    __html: data.contentfulProjectTypes.projectFiveLongDescription.childMarkdownRemark.html,
                   }}
                 />
               </Carousel.Item>
