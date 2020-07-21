@@ -32,6 +32,12 @@ const ReportsPage = () => {
           }
         }
         headerText
+        latestNewsMenuItem
+        latestNewsList {
+          childMarkdownRemark {
+            html
+          }
+        }
         articlesMenuItem
         articleList {
           childMarkdownRemark {
@@ -70,6 +76,13 @@ const ReportsPage = () => {
               activeKey={key}
               onSelect={(k) => setKey(k)}
             >
+              <Tab eventKey="one" title={data.contentfulNewsPage.latestNewMenuItem}>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: data.contentfulNewsPage.latestNewsList.childMarkdownRemark.html,
+                  }}
+                />
+              </Tab>
               <Tab eventKey="one" title={data.contentfulNewsPage.articlesMenuItem}>
                 <div
                   dangerouslySetInnerHTML={{
