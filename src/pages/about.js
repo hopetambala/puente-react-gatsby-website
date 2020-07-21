@@ -232,11 +232,6 @@ const AboutPage = () => {
             </div>
             <div id="partners" className={aboutStyles.sectionPartners}>
               <h2>Our Partners</h2>
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: data.contentfulLandingPage.ourPartnersText.childMarkdownRemark.html,
-                }}
-              />
               <div className={aboutStyles.partnerImages}>
                 {data.contentfulLandingPage.partnerships.map((partnerships) => {
                   return (
@@ -246,7 +241,7 @@ const AboutPage = () => {
               </div>
             </div>
             <div className={aboutStyles.sectionReport}>
-              <h2 id="reports">{data.contentfulAboutPage.annualReport}</h2>
+              <h2 id="report">{data.contentfulAboutPage.annualReport}</h2>
               <div
                 dangerouslySetInnerHTML={{
                   __html: data.contentfulAboutPage.annualReportText.childMarkdownRemark.html,
