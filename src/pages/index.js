@@ -157,7 +157,6 @@ const IndexPage = () => {
         <div className={styles.container}>
           <div className={styles.banner}>
             <div className = {styles.heroImage}>
-              {/* <Img fluid={data.image.childImageSharp.fluid} /> */}
               <div className="animation-container" ref={animationContainer} />
             </div>
             <div className={styles.hero}>

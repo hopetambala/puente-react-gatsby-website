@@ -232,6 +232,11 @@ const AboutPage = () => {
             </div>
             <div id="partners" className={aboutStyles.sectionPartners}>
               <h2>Our Partners</h2>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: data.contentfulLandingPage.ourPartnersText.childMarkdownRemark.html,
+                }}
+              />
               <div className={aboutStyles.partnerImages}>
                 {data.contentfulLandingPage.partnerships.map((partnerships) => {
                   return (
