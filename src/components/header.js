@@ -136,12 +136,12 @@ const Header = () => {
                 <NavDropdown.Item className={styles.dropdownItem}>
                   <Link style={{ color: "#000" }} to="/volunteer#partner">Become a Partner</Link>
                 </NavDropdown.Item>
-                <NavDropdown.Item className={styles.dropdownItem}>
+                {/* <NavDropdown.Item className={styles.dropdownItem}>
                   <Link style={{ color: "#000" }} to="/volunteer#newsletter">Newsletter</Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item className={styles.dropdownItem}>
                   <Link style={{ color: "#000" }} to="/volunteer#donate">Donate</Link>
-                </NavDropdown.Item>
+                </NavDropdown.Item> */}
               </NavDropdown>
             </Nav.Item>
             <Nav.Item className={styles.nav}>

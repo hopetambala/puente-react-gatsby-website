@@ -121,7 +121,7 @@ const VolunteerPage = () => {
                 <img alt={data.contentfulVolunteerPage.sectionTwoImage.title} src={data.contentfulVolunteerPage.sectionTwoImage.resize.src} fluid />
               </div>
             </div>
-            <VolunteerContactCTA />
+            {/* <VolunteerContactCTA />
             <div className={volunteerStyles.sectionDonate}>
               <div id="newsletter" className={volunteerStyles.sectionText}>
                 <h2>{data.contentfulVolunteerPage.sectionThreeHeader}</h2>
@@ -131,7 +131,7 @@ const VolunteerPage = () => {
                 <h2>Donate</h2>
                 <iframe title="donate" src="https://givebutter.com/embed/c/8vtwH6" className={volunteerStyles.donateForm} name="givebutter" frameborder="0" scrolling="no" seamless allowpaymentrequest />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </Layout>
