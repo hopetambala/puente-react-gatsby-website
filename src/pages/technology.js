@@ -36,33 +36,57 @@ const TechnologyPage = () => {
         }
         heroSubText
         dividerText
+        sectionOneGif {
+          title
+          resize (height: 1000) {
+            src            
+          }
+        }
         sectionOneHeader
         sectionOneHeaderOne
         sectionOneParagraphOne {
-          sectionOneParagraphOne
+          childMarkdownRemark {
+            html
+          }
         }
         sectionOneHeaderTwo
         sectionOneParagraphTwo {
-          sectionOneParagraphTwo
+          childMarkdownRemark {
+            html
+          }
         }
         sectionOneHeaderThree
         sectionOneParagraphThree {
-          sectionOneParagraphThree
+          childMarkdownRemark {
+            html
+          }
         }
         sectionOneKeyFeatures
         sectionOneKeyFeaturesList
+        sectionTwoGif {
+          title
+          resize (height: 1000) {
+            src            
+          }
+        }
         sectionTwoHeader
         sectionTwoHeaderOne
         sectionTwoParagraphOne {
-          sectionTwoParagraphOne
+          childMarkdownRemark {
+            html
+          }
         }
         sectionTwoHeaderTwo
         sectionTwoParagraphTwo {
-          sectionTwoParagraphTwo
+          childMarkdownRemark {
+            html
+          }
         }
         sectionTwoHeaderThree
         sectionTwoParagraphThree {
-          sectionTwoParagraphThree
+          childMarkdownRemark {
+            html
+          }
         }
         sectionTwoKeyFeatures
         sectionTwoKeyFeaturesList
@@ -71,17 +95,23 @@ const TechnologyPage = () => {
         volunteerName
         volunteerOneRole
         volunteerOneBio {
-          volunteerOneBio
+          childMarkdownRemark {
+            html
+          }
         }
         volunteerTwoName
         volunteerTwoRole
         volunteerTwoBio {
-          volunteerTwoBio
+          childMarkdownRemark {
+            html
+          }
         }
         volunteerThreeName
         volunteerThreeRole
         volunteerThreeBio {
-          volunteerThreeBio
+          childMarkdownRemark {
+            html
+          }
         } 
       }
     }
@@ -108,16 +138,28 @@ const TechnologyPage = () => {
           <div className={styles.collectionContent}>
             <div className={styles.collectionImage}>
               <div className={styles.placeholder}>
-                gif of cell phone running app
+                <img alt={data.contentfulTechnologyPage.sectionOneGif.title} src={data.contentfulTechnologyPage.sectionOneGif.resize.src} fluid />
               </div>
             </div>
             <div className={styles.collectionText}>
               <h3>{data.contentfulTechnologyPage.sectionOneHeaderOne}</h3>
-              <p>{data.contentfulTechnologyPage.sectionOneParagraphOne.sectionOneParagraphOne}</p>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: data.contentfulTechnologyPage.sectionOneParagraphOne.childMarkdownRemark.html,
+                }}
+              />
               <h3>{data.contentfulTechnologyPage.sectionOneHeaderTwo}</h3>
-              <p>{data.contentfulTechnologyPage.sectionOneParagraphTwo.sectionOneParagraphTwo}</p>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: data.contentfulTechnologyPage.sectionOneParagraphTwo.childMarkdownRemark.html,
+                }}
+              />
               <h3>{data.contentfulTechnologyPage.sectionOneHeaderThree}</h3>
-              <p>{data.contentfulTechnologyPage.sectionOneParagraphThree.sectionOneParagraphThree}</p>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: data.contentfulTechnologyPage.sectionOneParagraphThree.childMarkdownRemark.html,
+                }}
+              />
               <h3>{data.contentfulTechnologyPage.sectionOneKeyFeatures}</h3>
               {data.contentfulTechnologyPage.sectionOneKeyFeaturesList.map((feature) => {
                 return (
@@ -132,16 +174,28 @@ const TechnologyPage = () => {
           <div className={styles.analysisContent}>
             <div className={styles.analysisImage}>
               <div className={styles.placeholder}>
-                gif of computer analyzing data
+                <img alt={data.contentfulTechnologyPage.sectionTwoGif.title} src={data.contentfulTechnologyPage.sectionTwoGif.resize.src} fluid />
               </div>
             </div>
             <div className={styles.analysisText}>
               <h3>{data.contentfulTechnologyPage.sectionTwoHeaderOne}</h3>
-              <p>{data.contentfulTechnologyPage.sectionTwoParagraphOne.sectionTwoParagraphOne}</p>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: data.contentfulTechnologyPage.sectionTwoParagraphOne.childMarkdownRemark.html,
+                }}
+              />
               <h3>{data.contentfulTechnologyPage.sectionTwoHeaderTwo}</h3>
-              <p>{data.contentfulTechnologyPage.sectionTwoParagraphTwo.sectionTwoParagraphTwo}</p>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: data.contentfulTechnologyPage.sectionTwoParagraphTwo.childMarkdownRemark.html,
+                }}
+              />
               <h3>{data.contentfulTechnologyPage.sectionTwoHeaderThree}</h3>
-              <p>{data.contentfulTechnologyPage.sectionTwoParagraphThree.sectionTwoParagraphThree}</p>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: data.contentfulTechnologyPage.sectionTwoParagraphThree.childMarkdownRemark.html,
+                }}
+              />
               <h3>{data.contentfulTechnologyPage.sectionTwoKeyFeatures}</h3>
               {data.contentfulTechnologyPage.sectionTwoKeyFeaturesList.map((feature) => {
                 return (
@@ -156,15 +210,27 @@ const TechnologyPage = () => {
             <Carousel controls={false} indicators={false}>
               <Carousel.Item>
                 <h2>{data.contentfulFeaturedVolunteers.volunteerName}</h2>
-                <p>{data.contentfulFeaturedVolunteers.volunteerOneBio.volunteerOneBio}</p>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: data.contentfulFeaturedVolunteers.volunteerOneBio.childMarkdownRemark.html,
+                  }}
+                />
               </Carousel.Item>
               <Carousel.Item>
                 <h2>{data.contentfulFeaturedVolunteers.volunteerTwoName}</h2>
-                <p>{data.contentfulFeaturedVolunteers.volunteerTwoBio.volunteerTwoBio}</p>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: data.contentfulFeaturedVolunteers.volunteerTwoBio.childMarkdownRemark.html,
+                  }}
+                />
               </Carousel.Item>
               <Carousel.Item>
                 <h2>{data.contentfulFeaturedVolunteers.volunteerThreeName}</h2>
-                <p>{data.contentfulFeaturedVolunteers.volunteerThreeBio.volunteerThreeBio}</p>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: data.contentfulFeaturedVolunteers.volunteerThreeBio.childMarkdownRemark.html,
+                  }}
+                />
               </Carousel.Item>
             </Carousel>
           </div>

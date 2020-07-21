@@ -4,7 +4,7 @@ import {
   graphql,
   useStaticQuery,
 } from "gatsby"
-import Carousel from 'react-bootstrap/Carousel'
+// import Carousel from 'react-bootstrap/Carousel'
 
 // Component Imports
 import Layout from "../components/layout"
@@ -148,72 +148,86 @@ const AboutPage = () => {
                 }}
               />
             </div>
-            <div id="staff" className={aboutStyles.bioSection}>
+            <div id="staff" className={aboutStyles.staffSection}>
               <h2>Our Staff</h2>
               <div className={aboutStyles.employeeRow}>
-                <div className={aboutStyles.employee}>
-                  <div className={aboutStyles.employeeImage}>
-                    <img alt={data.contentfulAboutPage.employeeOneImage.title} src={data.contentfulAboutPage.employeeOneImage.resize.src} fluid />
-                  </div>
-                  <div className={aboutStyles.employeeInfo}>
+                <div className={aboutStyles.employees}>
+                  <div className={aboutStyles.employee}>
+                    <div className={aboutStyles.imgContainer}>
+                      <img alt={data.contentfulAboutPage.employeeOneImage.title} src={data.contentfulAboutPage.employeeOneImage.resize.src} fluid />
+                      <a href={data.contentfulAboutPage.employeeOneLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
+                    </div>
                     <h2>{data.contentfulAboutPage.employeeOneName}</h2>
                     <h3>{data.contentfulAboutPage.employeeOnePosition}</h3>
-                    <a href={data.contentfulAboutPage.employeeOneLinkedIn}><Icon className={aboutStyles.icon} size={32} icon={linkedin} /></a>
                   </div>
-                </div>
-                <div className={aboutStyles.employee}>
-                  <div className={aboutStyles.employeeImage}>
-                    <img alt={data.contentfulAboutPage.employeeTwoImage.title} src={data.contentfulAboutPage.employeeTwoImage.resize.src} fluid />
-                  </div>
-                  <div className={aboutStyles.employeeInfo}>
+                  <div className={aboutStyles.employee}>
+                    <div className={aboutStyles.imgContainer}>
+                      <img alt={data.contentfulAboutPage.employeeTwoImage.title} src={data.contentfulAboutPage.employeeTwoImage.resize.src} fluid />
+                      <a href={data.contentfulAboutPage.employeeTwoLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
+                    </div>
                     <h2>{data.contentfulAboutPage.employeeTwoName}</h2>
                     <h3>{data.contentfulAboutPage.employeeTwoPosition}</h3>
-                    <a href={data.contentfulAboutPage.employeeTwoLinkedIn}><Icon className={aboutStyles.icon} size={32} icon={linkedin} /></a>
                   </div>
                 </div>
-              </div>
-              <div className={aboutStyles.employeeRow}>
-                <div className={aboutStyles.employee}>
-                  <div className={aboutStyles.employeeImage}>
-                    <img alt={data.contentfulAboutPage.employeeThreeImage.title} src={data.contentfulAboutPage.employeeThreeImage.resize.src} fluid />
-                  </div>
-                  <div className={aboutStyles.employeeInfo}>
+                <div className={aboutStyles.employees}>
+                  <div className={aboutStyles.employee}>
+                    <div className={aboutStyles.imgContainer}>
+                      <img alt={data.contentfulAboutPage.employeeThreeImage.title} src={data.contentfulAboutPage.employeeThreeImage.resize.src} fluid />
+                      <a href={data.contentfulAboutPage.employeeThreeLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
+                    </div>
                     <h2>{data.contentfulAboutPage.employeeThreeName}</h2>
                     <h3>{data.contentfulAboutPage.employeeThreePosition}</h3>
-                    <a href={data.contentfulAboutPage.employeeThreeLinkedIn}><Icon className={aboutStyles.icon} size={32} icon={linkedin} /></a>
                   </div>
-                </div>
-                <div className={aboutStyles.employee}>
-                  <div className={aboutStyles.employeeImage}>
-                    <img alt={data.contentfulAboutPage.employeeFourImage.title} src={data.contentfulAboutPage.employeeFourImage.resize.src} fluid />
-                  </div>
-                  <div className={aboutStyles.employeeInfo}>
+                  <div className={aboutStyles.employee}>
+                    <div className={aboutStyles.imgContainer}>
+                      <img alt={data.contentfulAboutPage.employeeFourImage.title} src={data.contentfulAboutPage.employeeFourImage.resize.src} fluid />
+                      <a href={data.contentfulAboutPage.employeeFourLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
+                    </div>
                     <h2>{data.contentfulAboutPage.employeeFourName}</h2>
                     <h3>{data.contentfulAboutPage.employeeFourPosition}</h3>
-                    <a href={data.contentfulAboutPage.employeeFourLinkedIn}><Icon className={aboutStyles.icon} size={32} icon={linkedin} /></a>
                   </div>
                 </div>
               </div>
             </div>
-            <div id="volunteers" className={aboutStyles.volunteer}>
-              <div className={aboutStyles.volunteerBio}>
-                <Carousel controls={false} indicators={false}>
-                  <Carousel.Item>
+            <div id="volunteers" className={aboutStyles.volunteerSection}>
+              <h2>Our Volunteers</h2>
+              <div className={aboutStyles.employeeRow}>
+                <div className={aboutStyles.employees}>
+                  <div className={aboutStyles.employee}>
+                    <div className={aboutStyles.imgContainer}>
+                      <img alt={data.contentfulAboutPage.employeeOneImage.title} src={data.contentfulAboutPage.employeeOneImage.resize.src} fluid />
+                      <a href={data.contentfulAboutPage.employeeOneLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
+                    </div>
                     <h2>{data.contentfulFeaturedVolunteers.volunteerName}</h2>
                     <h3>{data.contentfulFeaturedVolunteers.volunteerOneRole}</h3>
-                    <p>{data.contentfulFeaturedVolunteers.volunteerOneBio.volunteerOneBio}</p>
-                  </Carousel.Item>
-                  <Carousel.Item>
+                  </div>
+                  <div className={aboutStyles.employee}>
+                    <div className={aboutStyles.imgContainer}>
+                      <img alt={data.contentfulAboutPage.employeeTwoImage.title} src={data.contentfulAboutPage.employeeTwoImage.resize.src} fluid />
+                      <a href={data.contentfulAboutPage.employeeTwoLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
+                    </div>
                     <h2>{data.contentfulFeaturedVolunteers.volunteerTwoName}</h2>
                     <h3>{data.contentfulFeaturedVolunteers.volunteerTwoRole}</h3>
-                    <p>{data.contentfulFeaturedVolunteers.volunteerTwoBio.volunteerTwoBio}</p>
-                  </Carousel.Item>
-                  <Carousel.Item>
+                  </div>
+                </div>
+                <div className={aboutStyles.employees}>
+                  <div className={aboutStyles.employee}>
+                    <div className={aboutStyles.imgContainer}>
+                      <img alt={data.contentfulAboutPage.employeeThreeImage.title} src={data.contentfulAboutPage.employeeThreeImage.resize.src} fluid />
+                      <a href={data.contentfulAboutPage.employeeThreeLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
+                    </div>
                     <h2>{data.contentfulFeaturedVolunteers.volunteerThreeName}</h2>
-                    <h3>{data.contentfulFeaturedVolunteers.volunteerTwoRole}</h3>
-                    <p>{data.contentfulFeaturedVolunteers.volunteerThreeBio.volunteerThreeBio}</p>
-                  </Carousel.Item>
-                </Carousel>
+                    <h3>{data.contentfulFeaturedVolunteers.volunteerThreeRole}</h3>
+                  </div>
+                  <div className={aboutStyles.employee}>
+                    <div className={aboutStyles.imgContainer}>
+                      <img alt={data.contentfulAboutPage.employeeFourImage.title} src={data.contentfulAboutPage.employeeFourImage.resize.src} fluid />
+                      <a href={data.contentfulAboutPage.employeeFourLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
+                    </div>
+                    <h2>{data.contentfulFeaturedVolunteers.volunteerName}</h2>
+                    <h3>{data.contentfulFeaturedVolunteers.volunteerOneRole}</h3>
+                  </div>
+                </div>
               </div>
             </div>
             <div id="partners" className={aboutStyles.sectionPartners}>

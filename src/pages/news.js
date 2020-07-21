@@ -33,8 +33,23 @@ const ReportsPage = () => {
         }
         headerText
         articlesMenuItem
+        articleList {
+          childMarkdownRemark {
+            html
+          }
+        }
         newslettersMenuItem
+        newsletters {
+          childMarkdownRemark {
+            html
+          }
+        }
         reportsMenuItem
+        reportsList {
+          childMarkdownRemark {
+            html
+          }
+        }
       }
     }
   `)
@@ -56,16 +71,25 @@ const ReportsPage = () => {
               onSelect={(k) => setKey(k)}
             >
               <Tab eventKey="one" title={data.contentfulNewsPage.articlesMenuItem}>
-                <h2>Test</h2>
-                <p>Test</p>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: data.contentfulNewsPage.articleList.childMarkdownRemark.html,
+                  }}
+                />
               </Tab>
               <Tab eventKey="two" title={data.contentfulNewsPage.newslettersMenuItem}>
-                <h2>Test</h2>
-                <p>Test</p>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: data.contentfulNewsPage.newsletters.childMarkdownRemark.html,
+                  }}
+                />
               </Tab>
               <Tab eventKey="three" title={data.contentfulNewsPage.reportsMenuItem}>
-                <h2>Test</h2>
-                <p>Test</p>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: data.contentfulNewsPage.reportsList.childMarkdownRemark.html,
+                  }}
+                />
               </Tab>
             </Tabs>
           </div>

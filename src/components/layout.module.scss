@@ -14,5 +14,22 @@ $blue: #3d80fc;
   flex-direction: column;
   .content {
     flex-grow: 1;
+    // margin-top: 7vmax;
   }
 }
+
+// @media (max-width: 1024px) {
+//   .container {
+//     .content {
+//       margin-top: 7vmax;
+//     }
+//   }
+// }
+
+// @media (max-width: 768px) {
+//   .container {
+//     .content {
+//       margin-top: 7vmax;
+//     }
+//   }
+// }

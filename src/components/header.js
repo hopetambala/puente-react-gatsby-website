@@ -148,6 +148,9 @@ const Header = () => {
               <Nav.Link className={styles.navItem} href="/news">News</Nav.Link>
             </Nav.Item>
             <Nav.Item className={styles.nav}>
+              <Nav.Link className={styles.navItem} href="/merchandise">Merchandise</Nav.Link>
+            </Nav.Item>
+            <Nav.Item className={styles.nav}>
               <Nav.Link className={styles.navDonate} href="/donate">Donate</Nav.Link>
             </Nav.Item>
           </Nav>
@@ -195,6 +198,9 @@ const Header = () => {
             </Nav.Item>
             <Nav.Item className={styles.nav}>
               <Nav.Link className={styles.navItem} href="/news">News</Nav.Link>
+            </Nav.Item>
+            <Nav.Item className={styles.nav}>
+              <Nav.Link className={styles.navItem} href="/merchandise">Merchandise</Nav.Link>
             </Nav.Item>
             <Nav.Item className={styles.nav}>
               <Nav.Link className={styles.navDonate} href="/donate">Donate</Nav.Link>
