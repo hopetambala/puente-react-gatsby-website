@@ -16,11 +16,14 @@ import aboutStyles from "./about.module.scss"
 import { Icon } from 'react-icons-kit'
 import { linkedin } from 'react-icons-kit/fa/linkedin'
 
+import { LANGUAGESETTINGS } from '../constants/language'
+
+
 const AboutPage = () => {
   const data = useStaticQuery(
     graphql`
     query {
-      contentfulAboutPage {
+      enUS_contentfulAboutPage: contentfulAboutPage(node_locale: { eq: "en-US" }) {
         heroImage {
           title
           resize (height: 1000) {
@@ -46,49 +49,119 @@ const AboutPage = () => {
           }
         }
         employeeOneImage {
-        title
-        resize (height: 250) {
-      	  src
+          title
+          resize (height: 250) {
+            src
+          }
+        }
+      
+        employeeOneName
+        employeeOnePosition
+        employeeOneLinkedIn
+        employeeTwoImage {
+          title
+          resize (height: 250) {
+            src
+          }
+        }
+        employeeTwoName
+        employeeTwoPosition
+        employeeTwoLinkedIn
+        employeeThreeImage {
+          title
+          resize (height: 250) {
+            src
+          }
+        }
+        employeeThreeName
+        employeeThreePosition
+        employeeThreeLinkedIn
+        employeeFourImage {
+          title
+          resize (height: 250) {
+            src
+          }
+        }
+        employeeFourName
+        employeeFourPosition
+        employeeFourLinkedIn
+        annualReport
+        annualReportText {
+          childMarkdownRemark {
+            html
+          }
         }
       }
-      employeeOneName
-      employeeOnePosition
-      employeeOneLinkedIn
-      employeeTwoImage {
-        title
-        resize (height: 250) {
-      	  src
+      esDO_contentfulAboutPage: contentfulAboutPage(node_locale: { eq: "es-DO" }) {
+        heroImage {
+          title
+          resize (height: 1000) {
+            src            
+          }
+        }
+        heroText
+        heroSubText{
+          childMarkdownRemark {
+            html
+          }
+        }
+        missionHeader
+        missionText {
+          childMarkdownRemark {
+            html
+          }
+        }
+        visionHeader
+        visionText {
+          childMarkdownRemark {
+            html
+          }
+        }
+        employeeOneImage {
+          title
+          resize (height: 250) {
+            src
+          }
+        }
+      
+        employeeOneName
+        employeeOnePosition
+        employeeOneLinkedIn
+        employeeTwoImage {
+          title
+          resize (height: 250) {
+            src
+          }
+        }
+        employeeTwoName
+        employeeTwoPosition
+        employeeTwoLinkedIn
+        employeeThreeImage {
+          title
+          resize (height: 250) {
+            src
+          }
+        }
+        employeeThreeName
+        employeeThreePosition
+        employeeThreeLinkedIn
+        employeeFourImage {
+          title
+          resize (height: 250) {
+            src
+          }
+        }
+        employeeFourName
+        employeeFourPosition
+        employeeFourLinkedIn
+        annualReport
+        annualReportText {
+          childMarkdownRemark {
+            html
+          }
         }
       }
-      employeeTwoName
-      employeeTwoPosition
-      employeeTwoLinkedIn
-      employeeThreeImage {
-        title
-        resize (height: 250) {
-      	  src
-        }
-      }
-      employeeThreeName
-      employeeThreePosition
-      employeeThreeLinkedIn
-      employeeFourImage {
-        title
-        resize (height: 250) {
-      	  src
-        }
-      }
-      employeeFourName
-      employeeFourPosition
-      employeeFourLinkedIn
-      annualReport
-      annualReportText {
-        childMarkdownRemark {
-          html
-        }
-      }
-    }
-    contentfulFeaturedVolunteers {
+    enUS_contentfulFeaturedVolunteers: contentfulFeaturedVolunteers {
       volunteerName
       volunteerOneRole
       volunteerOneBio {
@@ -105,7 +178,38 @@ const AboutPage = () => {
         volunteerThreeBio
       } 
     }
-    contentfulLandingPage {
+    esDO_contentfulFeaturedVolunteers: contentfulFeaturedVolunteers {
+      volunteerName
+      volunteerOneRole
+      volunteerOneBio {
+        volunteerOneBio
+      }
+      volunteerTwoName
+      volunteerTwoRole
+      volunteerTwoBio {
+        volunteerTwoBio
+      }
+      volunteerThreeName
+      volunteerThreeRole
+      volunteerThreeBio {
+        volunteerThreeBio
+      } 
+    }
+    
+    enUS_contentfulLandingPage: contentfulLandingPage {
+      ourPartnersText {
+        childMarkdownRemark {
+          html
+        }
+      }
+      partnerships {
+        title
+        resize (height: 200) {
+          src
+        }
+      }
+    }
+    esDO_contentfulLandingPage: contentfulLandingPage {
       ourPartnersText {
         childMarkdownRemark {
           html
@@ -120,20 +224,25 @@ const AboutPage = () => {
     }
   }
   `)
+
+  let contentfulAboutPage = LANGUAGESETTINGS.contentfulAboutPage
+  let contentfulFeaturedVolunteers = LANGUAGESETTINGS.contentfulFeaturedVolunteers
+  let contentfulLandingPage = LANGUAGESETTINGS.contentfulLandingPage
+
   return (
     <div>
       <Layout>
         <div className={aboutStyles.container}>
           <div className={aboutStyles.banner}>
             <div className={aboutStyles.bannerImage}>
-              <img alt={data.contentfulAboutPage.heroImage.title} src={data.contentfulAboutPage.heroImage.resize.src} fluid />
+              <img alt={data[contentfulAboutPage].heroImage.title} src={data[contentfulAboutPage].heroImage.resize.src} fluid />
               <div id="who-we-are" className={aboutStyles.title}>
                 <div className={aboutStyles.about}>
                   <div className={aboutStyles.aboutText}>
-                    <h1>{data.contentfulAboutPage.heroText}</h1>
+                    <h1>{data[contentfulAboutPage].heroText}</h1>
                     <div
                       dangerouslySetInnerHTML={{
-                        __html: data.contentfulAboutPage.heroSubText.childMarkdownRemark.html,
+                        __html: data[contentfulAboutPage].heroSubText.childMarkdownRemark.html,
                       }}
                     />
                   </div>
@@ -146,18 +255,18 @@ const AboutPage = () => {
           </div>
           <div className={aboutStyles.body}>
             <div className={aboutStyles.missionSection}>
-              <h2>{data.contentfulAboutPage.missionHeader}</h2>
+              <h2>{data[contentfulAboutPage].missionHeader}</h2>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: data.contentfulAboutPage.missionText.childMarkdownRemark.html,
+                  __html: data[contentfulAboutPage].missionText.childMarkdownRemark.html,
                 }}
               />
             </div>
             <div className={aboutStyles.visionSection}>
-              <h2>{data.contentfulAboutPage.visionHeader}</h2>
+              <h2>{data[contentfulAboutPage].visionHeader}</h2>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: data.contentfulAboutPage.visionText.childMarkdownRemark.html,
+                  __html: data[contentfulAboutPage].visionText.childMarkdownRemark.html,
                 }}
               />
             </div>
@@ -167,37 +276,37 @@ const AboutPage = () => {
                 <div className={aboutStyles.employees}>
                   <div className={aboutStyles.employee}>
                     <div className={aboutStyles.imgContainer}>
-                      <img alt={data.contentfulAboutPage.employeeOneImage.title} src={data.contentfulAboutPage.employeeOneImage.resize.src} fluid />
-                      <a href={data.contentfulAboutPage.employeeOneLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
+                      <img alt={data[contentfulAboutPage].employeeOneImage.title} src={data[contentfulAboutPage].employeeOneImage.resize.src} fluid />
+                      <a href={data[contentfulAboutPage].employeeOneLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
                     </div>
-                    <h2>{data.contentfulAboutPage.employeeOneName}</h2>
-                    <h3>{data.contentfulAboutPage.employeeOnePosition}</h3>
+                    <h2>{data[contentfulAboutPage].employeeOneName}</h2>
+                    <h3>{data[contentfulAboutPage].employeeOnePosition}</h3>
                   </div>
                   <div className={aboutStyles.employee}>
                     <div className={aboutStyles.imgContainer}>
-                      <img alt={data.contentfulAboutPage.employeeTwoImage.title} src={data.contentfulAboutPage.employeeTwoImage.resize.src} fluid />
-                      <a href={data.contentfulAboutPage.employeeTwoLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
+                      <img alt={data[contentfulAboutPage].employeeTwoImage.title} src={data[contentfulAboutPage].employeeTwoImage.resize.src} fluid />
+                      <a href={data[contentfulAboutPage].employeeTwoLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
                     </div>
-                    <h2>{data.contentfulAboutPage.employeeTwoName}</h2>
-                    <h3>{data.contentfulAboutPage.employeeTwoPosition}</h3>
+                    <h2>{data[contentfulAboutPage].employeeTwoName}</h2>
+                    <h3>{data[contentfulAboutPage].employeeTwoPosition}</h3>
                   </div>
                 </div>
                 <div className={aboutStyles.employees}>
                   <div className={aboutStyles.employee}>
                     <div className={aboutStyles.imgContainer}>
-                      <img alt={data.contentfulAboutPage.employeeThreeImage.title} src={data.contentfulAboutPage.employeeThreeImage.resize.src} fluid />
-                      <a href={data.contentfulAboutPage.employeeThreeLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
+                      <img alt={data[contentfulAboutPage].employeeThreeImage.title} src={data[contentfulAboutPage].employeeThreeImage.resize.src} fluid />
+                      <a href={data[contentfulAboutPage].employeeThreeLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
                     </div>
-                    <h2>{data.contentfulAboutPage.employeeThreeName}</h2>
-                    <h3>{data.contentfulAboutPage.employeeThreePosition}</h3>
+                    <h2>{data[contentfulAboutPage].employeeThreeName}</h2>
+                    <h3>{data[contentfulAboutPage].employeeThreePosition}</h3>
                   </div>
                   <div className={aboutStyles.employee}>
                     <div className={aboutStyles.imgContainer}>
-                      <img alt={data.contentfulAboutPage.employeeFourImage.title} src={data.contentfulAboutPage.employeeFourImage.resize.src} fluid />
-                      <a href={data.contentfulAboutPage.employeeFourLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
+                      <img alt={data[contentfulAboutPage].employeeFourImage.title} src={data[contentfulAboutPage].employeeFourImage.resize.src} fluid />
+                      <a href={data[contentfulAboutPage].employeeFourLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
                     </div>
-                    <h2>{data.contentfulAboutPage.employeeFourName}</h2>
-                    <h3>{data.contentfulAboutPage.employeeFourPosition}</h3>
+                    <h2>{data[contentfulAboutPage].employeeFourName}</h2>
+                    <h3>{data[contentfulAboutPage].employeeFourPosition}</h3>
                   </div>
                 </div>
               </div>
@@ -208,37 +317,37 @@ const AboutPage = () => {
                 <div className={aboutStyles.employees}>
                   <div className={aboutStyles.employee}>
                     <div className={aboutStyles.imgContainer}>
-                      <img alt={data.contentfulAboutPage.employeeOneImage.title} src={data.contentfulAboutPage.employeeOneImage.resize.src} fluid />
-                      <a href={data.contentfulAboutPage.employeeOneLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
+                      <img alt={data[contentfulAboutPage].employeeOneImage.title} src={data[contentfulAboutPage].employeeOneImage.resize.src} fluid />
+                      <a href={data[contentfulAboutPage].employeeOneLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
                     </div>
-                    <h2>{data.contentfulFeaturedVolunteers.volunteerName}</h2>
-                    <h3>{data.contentfulFeaturedVolunteers.volunteerOneRole}</h3>
+                    <h2>{data[contentfulFeaturedVolunteers].volunteerName}</h2>
+                    <h3>{data[contentfulFeaturedVolunteers].volunteerOneRole}</h3>
                   </div>
                   <div className={aboutStyles.employee}>
                     <div className={aboutStyles.imgContainer}>
-                      <img alt={data.contentfulAboutPage.employeeTwoImage.title} src={data.contentfulAboutPage.employeeTwoImage.resize.src} fluid />
-                      <a href={data.contentfulAboutPage.employeeTwoLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
+                      <img alt={data[contentfulAboutPage].employeeTwoImage.title} src={data[contentfulAboutPage].employeeTwoImage.resize.src} fluid />
+                      <a href={data[contentfulAboutPage].employeeTwoLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
                     </div>
-                    <h2>{data.contentfulFeaturedVolunteers.volunteerTwoName}</h2>
-                    <h3>{data.contentfulFeaturedVolunteers.volunteerTwoRole}</h3>
+                    <h2>{data[contentfulFeaturedVolunteers].volunteerTwoName}</h2>
+                    <h3>{data[contentfulFeaturedVolunteers].volunteerTwoRole}</h3>
                   </div>
                 </div>
                 <div className={aboutStyles.employees}>
                   <div className={aboutStyles.employee}>
                     <div className={aboutStyles.imgContainer}>
-                      <img alt={data.contentfulAboutPage.employeeThreeImage.title} src={data.contentfulAboutPage.employeeThreeImage.resize.src} fluid />
-                      <a href={data.contentfulAboutPage.employeeThreeLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
+                      <img alt={data[contentfulAboutPage].employeeThreeImage.title} src={data[contentfulAboutPage].employeeThreeImage.resize.src} fluid />
+                      <a href={data[contentfulAboutPage].employeeThreeLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
                     </div>
-                    <h2>{data.contentfulFeaturedVolunteers.volunteerThreeName}</h2>
-                    <h3>{data.contentfulFeaturedVolunteers.volunteerThreeRole}</h3>
+                    <h2>{data[contentfulFeaturedVolunteers].volunteerThreeName}</h2>
+                    <h3>{data[contentfulFeaturedVolunteers].volunteerThreeRole}</h3>
                   </div>
                   <div className={aboutStyles.employee}>
                     <div className={aboutStyles.imgContainer}>
-                      <img alt={data.contentfulAboutPage.employeeFourImage.title} src={data.contentfulAboutPage.employeeFourImage.resize.src} fluid />
-                      <a href={data.contentfulAboutPage.employeeFourLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
+                      <img alt={data[contentfulAboutPage].employeeFourImage.title} src={data[contentfulAboutPage].employeeFourImage.resize.src} fluid />
+                      <a href={data[contentfulAboutPage].employeeFourLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
                     </div>
-                    <h2>{data.contentfulFeaturedVolunteers.volunteerName}</h2>
-                    <h3>{data.contentfulFeaturedVolunteers.volunteerOneRole}</h3>
+                    <h2>{data[contentfulFeaturedVolunteers].volunteerName}</h2>
+                    <h3>{data[contentfulFeaturedVolunteers].volunteerOneRole}</h3>
                   </div>
                 </div>
               </div>
@@ -246,7 +355,7 @@ const AboutPage = () => {
             <div id="partners" className={aboutStyles.sectionPartners}>
               <h2>Our Partners</h2>
               <div className={aboutStyles.partnerImages}>
-                {data.contentfulLandingPage.partnerships.map((partnerships) => {
+                {data[contentfulLandingPage].partnerships.map((partnerships) => {
                   return (
                     <img alt={partnerships.title} src={partnerships.resize.src} />
                   )
@@ -254,10 +363,10 @@ const AboutPage = () => {
               </div>
             </div>
             <div className={aboutStyles.sectionReport}>
-              <h2 id="report">{data.contentfulAboutPage.annualReport}</h2>
+              <h2 id="report">{data[contentfulAboutPage].annualReport}</h2>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: data.contentfulAboutPage.annualReportText.childMarkdownRemark.html,
+                  __html: data[contentfulAboutPage].annualReportText.childMarkdownRemark.html,
                 }}
               />
               <p className={aboutStyles.reportLink}>Read 2019 Report</p>

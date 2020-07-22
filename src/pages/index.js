@@ -32,7 +32,7 @@ const IndexPage = () => {
           }
         }
       }
-      enUS: contentfulLandingPage(node_locale: { eq: "en-US" }) {
+      enUS_contentfulLandingPage: contentfulLandingPage(node_locale: { eq: "en-US" }) {
         hero
         firstSectionTitle
         firstSectionParagraph {
@@ -71,7 +71,7 @@ const IndexPage = () => {
         }
       }
 
-      esDO: contentfulLandingPage(node_locale: { eq: "es-DO" }) {
+      enDO_contentfulLandingPage: contentfulLandingPage(node_locale: { eq: "es-DO" }) {
         hero
         firstSectionTitle
         firstSectionParagraph {
@@ -109,7 +109,7 @@ const IndexPage = () => {
           }
         }
       }
-      enUS_projects: contentfulProjectTypes(node_locale: { eq: "en-US" }) {
+      enUS_contentfulProjectTypes: contentfulProjectTypes(node_locale: { eq: "en-US" }) {
         projectTypeOne
         projectOneLongDescription {
           childMarkdownRemark {
@@ -141,7 +141,7 @@ const IndexPage = () => {
           }
         }
       }
-      esDO_projects: contentfulProjectTypes(node_locale: { eq: "es-DO" }) {
+      esDO_contentfulProjectTypes: contentfulProjectTypes(node_locale: { eq: "es-DO" }) {
         projectTypeOne
         projectOneLongDescription {
           childMarkdownRemark {
@@ -225,9 +225,8 @@ const IndexPage = () => {
     return () => anim.destroy(); // optional clean up for unmounting
   }, []); // eslint-disable-line
 
-  let language = LANGUAGESETTINGS.landingPage
-  let languageProjects = LANGUAGESETTINGS.projects
-
+  let contentfulLandingPage = LANGUAGESETTINGS.contentfulLandingPage
+  let contentfulProjectTypes = LANGUAGESETTINGS.contentfulProjectTypes
 
   return (
     <div>
@@ -238,15 +237,15 @@ const IndexPage = () => {
               <div className="animation-container" ref={animationContainer} />
             </div>
             <div className={styles.hero}>
-              <h1>{data[language].hero}</h1>
+              <h1>{data[contentfulLandingPage].hero}</h1>
             </div>
           </div>
           <div className={styles.sectionOdd}>
             <div className={styles.sectionText}>
-              <h2>{data[language].firstSectionTitle}</h2>
+              <h2>{data[contentfulLandingPage].firstSectionTitle}</h2>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: data[language].firstSectionParagraph.childMarkdownRemark.html,
+                  __html: data[contentfulLandingPage].firstSectionParagraph.childMarkdownRemark.html,
                 }}
               />
             </div>
@@ -260,10 +259,10 @@ const IndexPage = () => {
               <h2>Impact Numbers</h2>
             </div>
             <div className={styles.sectionText}>
-              <h2>{data[language].secondSectionTitle}</h2>
+              <h2>{data[contentfulLandingPage].secondSectionTitle}</h2>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: data[language].secondSectionParagraph.childMarkdownRemark.html,
+                  __html: data[contentfulLandingPage].secondSectionParagraph.childMarkdownRemark.html,
                 }}
               />
             </div>
@@ -271,42 +270,42 @@ const IndexPage = () => {
           <div className={styles.sectionBlue}>
             <Carousel controls={false} indicators={false}>
               <Carousel.Item>
-                <h2>{data[languageProjects].projectTypeOne}</h2>
+                <h2>{data[contentfulProjectTypes].projectTypeOne}</h2>
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: data[languageProjects].projectOneLongDescription.childMarkdownRemark.html,
+                    __html: data[contentfulProjectTypes].projectOneLongDescription.childMarkdownRemark.html,
                   }}
                 />
               </Carousel.Item>
               <Carousel.Item>
-                <h2>{data[languageProjects].projectTypeTwo}</h2>
+                <h2>{data[contentfulProjectTypes].projectTypeTwo}</h2>
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: data[languageProjects].projectTwoLongDescription.childMarkdownRemark.html,
+                    __html: data[contentfulProjectTypes].projectTwoLongDescription.childMarkdownRemark.html,
                   }}
                 />
               </Carousel.Item>
               <Carousel.Item>
-                <h2>{data[languageProjects].projectTypeThree}</h2>
+                <h2>{data[contentfulProjectTypes].projectTypeThree}</h2>
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: data[languageProjects].projectThreeLongDescription.childMarkdownRemark.html,
+                    __html: data[contentfulProjectTypes].projectThreeLongDescription.childMarkdownRemark.html,
                   }}
                 />
               </Carousel.Item>
               <Carousel.Item>
-                <h2>{data[languageProjects].projectTypeFour}</h2>
+                <h2>{data[contentfulProjectTypes].projectTypeFour}</h2>
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: data[languageProjects].projectFourLongDescription.childMarkdownRemark.html,
+                    __html: data[contentfulProjectTypes].projectFourLongDescription.childMarkdownRemark.html,
                   }}
                 />
               </Carousel.Item>
               <Carousel.Item>
-                <h2>{data[languageProjects].projectTypeFive}</h2>
+                <h2>{data[contentfulProjectTypes].projectTypeFive}</h2>
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: data[languageProjects].projectFiveLongDescription.childMarkdownRemark.html,
+                    __html: data[contentfulProjectTypes].projectFiveLongDescription.childMarkdownRemark.html,
                   }}
                 />
               </Carousel.Item>
@@ -319,10 +318,10 @@ const IndexPage = () => {
           </div>
           <div className={styles.sectionOdd}>
             <div className={styles.sectionText}>
-              <h2>{data[language].thirdSectionTitle}</h2>
+              <h2>{data[contentfulLandingPage].thirdSectionTitle}</h2>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: data[language].thirdSectionParagraph.childMarkdownRemark.html,
+                  __html: data[contentfulLandingPage].thirdSectionParagraph.childMarkdownRemark.html,
                 }}
               />
             </div>
@@ -337,10 +336,10 @@ const IndexPage = () => {
               <div className="bridge-container" ref={bridgeContainer} />
             </div>
             <div className={styles.sectionText}>
-              <h2>{data[language].fourthSectionTitle}</h2>
+              <h2>{data[contentfulLandingPage].fourthSectionTitle}</h2>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: data[language].fourthSectionParagraph.childMarkdownRemark.html,
+                  __html: data[contentfulLandingPage].fourthSectionParagraph.childMarkdownRemark.html,
                 }}
               />
             </div>
@@ -349,11 +348,11 @@ const IndexPage = () => {
             <h2>Our Partners</h2>
             <div
               dangerouslySetInnerHTML={{
-                __html: data[language].ourPartnersText.childMarkdownRemark.html,
+                __html: data[contentfulLandingPage].ourPartnersText.childMarkdownRemark.html,
               }}
             />
             <div className={styles.partnerImages}>
-              {data[language].partnerships.map((partnerships) => {
+              {data[contentfulLandingPage].partnerships.map((partnerships) => {
                 return (
                   <img alt={partnerships.title} src={partnerships.resize.src} />
                 )

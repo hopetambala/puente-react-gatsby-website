@@ -1,18 +1,17 @@
-var GLOBAL_LANGUAGE = 'ENGLISH';
+var GLOBAL_LANGUAGE = 'SPANISH';
+var code = "enUS"
 
-var LANGUAGESETTINGS = {
-    landingPage:"enUS",
-    projects:"enUS_projects"
-}
 
 if (GLOBAL_LANGUAGE === 'SPANISH') {
-    LANGUAGESETTINGS["landingPage"] = 'esDO';
-    LANGUAGESETTINGS["projects"] = 'esDO_projects';
+    code = "esDO"
 }
 
-else {
-    LANGUAGESETTINGS["landingPage"] = 'enUS';
-    LANGUAGESETTINGS["projects"] = 'enUS_projects';
+var LANGUAGESETTINGS = {
+    contentfulLandingPage:`${code}_contentfulLandingPage`,
+    contentfulProjectTypes:`${code}_contentfulProjectTypes`,
+    contentfulAboutPage:`${code}_contentfulAboutPage`,
+    contentfulFeaturedVolunteers:`${code}_contentfulFeaturedVolunteers`
+    
 }
 
 
