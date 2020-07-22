@@ -10,7 +10,8 @@ var LANGUAGESETTINGS = {
     contentfulLandingPage:`${code}_contentfulLandingPage`,
     contentfulProjectTypes:`${code}_contentfulProjectTypes`,
     contentfulAboutPage:`${code}_contentfulAboutPage`,
-    contentfulFeaturedVolunteers:`${code}_contentfulFeaturedVolunteers`
+    contentfulFeaturedVolunteers:`${code}_contentfulFeaturedVolunteers`,
+    contentfulMerchandisePage:`${code}_contentfulMerchandisePage`
     
 }
 

@@ -161,7 +161,7 @@ const AboutPage = () => {
           }
         }
       }
-    enUS_contentfulFeaturedVolunteers: contentfulFeaturedVolunteers {
+    enUS_contentfulFeaturedVolunteers: contentfulFeaturedVolunteers(node_locale: { eq: "en-US" }) {
       volunteerName
       volunteerOneRole
       volunteerOneBio {
@@ -178,7 +178,7 @@ const AboutPage = () => {
         volunteerThreeBio
       } 
     }
-    esDO_contentfulFeaturedVolunteers: contentfulFeaturedVolunteers {
+    esDO_contentfulFeaturedVolunteers: contentfulFeaturedVolunteers(node_locale: { eq: "es-DO" }) {
       volunteerName
       volunteerOneRole
       volunteerOneBio {
@@ -196,7 +196,7 @@ const AboutPage = () => {
       } 
     }
     
-    enUS_contentfulLandingPage: contentfulLandingPage {
+    enUS_contentfulLandingPage: contentfulLandingPage(node_locale: { eq: "en-US" }) {
       ourPartnersText {
         childMarkdownRemark {
           html
@@ -209,7 +209,7 @@ const AboutPage = () => {
         }
       }
     }
-    esDO_contentfulLandingPage: contentfulLandingPage {
+    esDO_contentfulLandingPage: contentfulLandingPage(node_locale: { eq: "es-DO" }) {
       ourPartnersText {
         childMarkdownRemark {
           html

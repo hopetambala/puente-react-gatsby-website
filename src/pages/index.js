@@ -71,7 +71,7 @@ const IndexPage = () => {
         }
       }
 
-      enDO_contentfulLandingPage: contentfulLandingPage(node_locale: { eq: "es-DO" }) {
+      esDO_contentfulLandingPage: contentfulLandingPage(node_locale: { eq: "es-DO" }) {
         hero
         firstSectionTitle
         firstSectionParagraph {
