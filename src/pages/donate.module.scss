@@ -31,8 +31,8 @@ $blue: #3d80fc;
       .title {
         width: 50%;
         h1 {
-          padding: 4vmax 6vmax 0;
-          font-size: 56px;
+          padding: 3vmax 6vmax;
+          font-size: 48px;
           font-weight: 700;
           text-transform: uppercase;
           color: $black;
@@ -40,7 +40,7 @@ $blue: #3d80fc;
           margin: 0;
         }
         p {
-          padding: 4vmax 6vmax;
+          padding: 0 6vmax 2vmax;
           margin: 0;
         }
       }
@@ -48,7 +48,7 @@ $blue: #3d80fc;
         width: 50%;
         .donate-form {
           width: 100%;
-          padding: 4vmax 6vmax;
+          padding: 3vmax 6vmax;
           margin: 0;
         }
       }
@@ -63,11 +63,16 @@ $blue: #3d80fc;
         .title {
           h1 {
             font-size: 40px;
-            padding: 4vmax 4vmax 0;
+            text-shadow: 2px 2px $yellow;
+            padding: 3vmax 4vmax;
           }
           p {
-            padding: 4vmax 4vmax;
-            font-size: 14px;
+            padding: 0 4vmax 2vmax;
+          }
+        }
+        .donate-section {
+          .donate-form {
+            padding: 3vmax 4vmax;
           }
         }
       }
@@ -82,6 +87,12 @@ $blue: #3d80fc;
         flex-direction: column;
         .title {
           width: 100%;
+          h1 {
+            font-size: 32px;
+          }
+          p {
+            font-size: 14px;
+          }
         }
         .donate-section {
           width: 100%;

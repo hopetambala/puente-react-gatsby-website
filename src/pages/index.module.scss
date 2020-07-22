@@ -28,27 +28,26 @@ $blue: #3d80fc;
       align-items: center;
       justify-content: center;
       div {
-        width: 85%;
+        width: 1400px;
       }
     }
     .hero {
-      height: 30%;
       display: flex;
       align-items: flex-start;
       justify-content: flex-end;
       display: block;
       h1 {
-        width: 60%;
-        font-size: 64px;
+        font-size: 56px;
         font-weight: 700;
         text-transform: uppercase;
         text-align: center;
         color: $black;
-        text-shadow: 2.5px 2.5px $off-white;
+        text-shadow: 3px 3px $white;
         margin: 0;
+        width: 650px;
         position: relative;
-        bottom: 40vw;
-        left: 40vw;
+        bottom: 30vh;
+        left: 37.5vw;
       }
     }
   }
@@ -56,14 +55,14 @@ $blue: #3d80fc;
   .section-impact,
   .section-blue,
   .section-partners {
-    padding: 4vmax 0 4vmax 6vmax;
+    padding: 3vmax 0 3vmax 6vmax;
     background-color: $off-white;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     &.section-impact {
-      padding: 4vmax 6vmax 4vmax 0;
+      padding: 3vmax 6vmax 3vmax 0;
       .section-impact-numbers {
         width: 55%;
         height: 400px;
@@ -72,13 +71,12 @@ $blue: #3d80fc;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding-left: 8vmax;
-        margin-right: 8vmax;
+        padding-left: 6vmax;
+        margin-right: 6vmax;
         h2 {
           color: $black;
-          font-size: 40px;
-          line-height: 50px;
-          text-shadow: 2.5px 2.5px $off-white;
+          font-size: 32px;
+          text-shadow: 2px 2px $off-white;
           text-transform: uppercase;
           margin: 0;
         }
@@ -88,19 +86,18 @@ $blue: #3d80fc;
       }
     }
     &.section-blue {
-      padding: 4vmax 6vmax;
+      padding: 3vmax 6vmax;
       width: 100%;
       background-color: $blue;
       flex-direction: column;
       h2 {
         color: $yellow;
-        font-size: 48px;
-        text-shadow: 2.5px 2.5px $black;
+        font-size: 32px;
+        text-shadow: 2px 2px $black;
         text-transform: uppercase;
         text-align: center;
       }
       p {
-        font-size: 17px;
         color: $off-white;
         text-align: center;
       }
@@ -108,7 +105,7 @@ $blue: #3d80fc;
         text-decoration: none;
         .button-background {
           background-color: $yellow;
-          height: 50px;
+          height: 40px;
           width: 150px;
           border-radius: 5px;
           display: flex;
@@ -116,7 +113,6 @@ $blue: #3d80fc;
           justify-content: center;
           p {
             color: $black;
-            font-size: 17px;
             font-weight: 500;
             margin: 0;
           }
@@ -124,14 +120,14 @@ $blue: #3d80fc;
       }
     }
     &.section-partners {
-      padding: 4vmax 6vmax;
+      padding: 3vmax 6vmax;
       flex-direction: column;
       width: 100%;
       background-color: $white;
       h2 {
         color: $black;
-        font-size: 40px;
-        text-shadow: 2.5px 2.5px $yellow;
+        font-size: 32px;
+        text-shadow: 2px 2px $yellow;
         text-transform: uppercase;
         text-align: center;
       }
@@ -148,26 +144,25 @@ $blue: #3d80fc;
     }
     .section-text {
       width: 45%;
-      margin-right: 8vmax;
+      margin-right: 6vmax;
       h2 {
         color: $black;
-        font-size: 40px;
-        text-shadow: 2.5px 2.5px $yellow;
+        font-size: 32px;
+        text-shadow: 2px 2px $yellow;
         text-transform: uppercase;
         text-align: center;
       }
       p {
-        font-size: 17px;
         padding: 0;
       }
     }
     .section-image {
       width: 55%;
-      padding-right: 2vmax;
+      padding-right: 6vmax;
     }
   }
   .section-odd {
-    padding: 4vmax 6vmax 4vmax 0;
+    padding: 3vmax 6vmax 3vmax 0;
     background-color: $white;
     display: flex;
     flex-direction: row;
@@ -175,16 +170,15 @@ $blue: #3d80fc;
     justify-content: center;
     .section-text {
       width: 45%;
-      margin-left: 8vmax;
+      margin-left: 6vmax;
       h2 {
         color: $black;
-        font-size: 40px;
-        text-shadow: 2.5px 2.5px $yellow;
+        font-size: 32px;
+        text-shadow: 2px 2px $yellow;
         text-transform: uppercase;
         text-align: center;
       }
       p {
-        font-size: 17px;
         padding: 0;
       }
     }
@@ -197,85 +191,81 @@ $blue: #3d80fc;
 @media (max-width: 1024px) {
   .container {
     .banner {
-      .hero-image {
-        display: block;
-        div {
-          position: relative;
-          right: 200px;
-          width: 200%;
-        }
-      }
+      height: 95vh;
       .hero {
         h1 {
-          font-size: 56px;
-          bottom: 30vw;
-          left: 30vw;
+          font-size: 48px;
+          width: 550px;
+          bottom: 25vh;
+          left: 25vw;
         }
       }
     }
-    .section,
-    .section-impact,
-    .section-blue,
-    .section-partners {
-      padding: 4vmax 0 4vmax 4vmax;
-      &.section-impact {
-        padding: 4vmax 4vmax 4vmax 0;
-        .section-impact-numbers {
-          h2 {
-            font-size: 36px;
-            line-height: 46px;
-            text-shadow: 2px 2px $off-white;
-          }
-        }
-      }
-      &.section-blue {
-        padding: 4vmax;
+  }
+  .section,
+  .section-impact,
+  .section-blue,
+  .section-partners {
+    padding: 3vmax 0 3vmax 4vmax;
+    &.section-impact {
+      padding: 3vmax 4vmax 3vmax 0;
+      .section-impact-numbers {
         h2 {
-          font-size: 36px;
-          text-shadow: 2px 2px $black;
-        }
-      }
-      &.section-partners {
-        padding: 4vmax;
-        h2 {
-          font-size: 36px;
-          text-shadow: 2px 2px $yellow;
-        }
-      }
-      .section-text {
-        h2 {
-          font-size: 36px;
-          text-shadow: 2px 2px $yellow;
+          font-size: 28px;
         }
       }
     }
-    .section-odd {
-      padding: 4vmax 4vmax 4vmax 0;
-      .section-text {
-        h2 {
-          font-size: 36px;
-          text-shadow: 2px 2px $yellow;
-        }
+    &.section-blue {
+      padding: 3vmax 4vmax;
+      h2 {
+        font-size: 28px;
+      }
+    }
+    &.section-partners {
+      padding: 3vmax 4vmax;
+      h2 {
+        font-size: 28px;
+      }
+    }
+    .section-text {
+      margin-right: 4vmax;
+      h2 {
+        font-size: 28px;
+      }
+    }
+    .section-image {
+      padding-right: 4vmax;
+    }
+  }
+  .section-odd {
+    padding: 3vmax 4vmax 3vmax 0;
+    .section-text {
+      margin-left: 4vmax;
+      h2 {
+        font-size: 28px;
       }
     }
   }
 }
 
 @media (max-width: 768px) {
-.container {
+  .container {
     .banner {
-      height: 100vh;
       .hero-image {
         div {
-          width: 325%;
+          width: 1250px;
+          position: relative;
+          left: 100px;
         }
       }
       .hero {
         h1 {
-          width: 100%;
           font-size: 40px;
-          bottom: 75vw;
-          left: 0vw;
+          text-shadow: 2px 2px $white;
+          width: 475px;
+          position: relative;
+          bottom: 30vh;
+          left: 27.5vw;
         }
       }
     }
@@ -283,21 +273,20 @@ $blue: #3d80fc;
     .section-impact,
     .section-blue,
     .section-partners {
+      padding: 3vmax 4vmax;
       flex-direction: column-reverse;
       &.section {
         width: 100%;
-        padding: 4vmax;
         flex-direction: column;
         .section-text {
           width: 100%;
           margin: 0;
           h2 {
-            font-size: 32px;
-            text-shadow: 2.5px 2.5px $yellow;
+            font-size: 28px;
+            text-shadow: 2px 2px $yellow;
           }
           p {
             font-size: 14px;
-            padding: 0;
           }
         }
       }
@@ -312,35 +301,34 @@ $blue: #3d80fc;
           padding: 0;
           margin: 0;
           h2 {
-            font-size: 32px;
-            text-shadow: 2.5px 2.5px $off-white;
+            font-size: 28px;
+            text-shadow: 2px 2px $off-white;
           }
         }
         .section-text {
           width: 100%;
-          padding: 4vmax;
+          padding: 3vmax 4vmax;
           h2 {
-            font-size: 32px;
-            text-shadow: 2.5px 2.5px $yellow;
+            font-size: 28px;
+            text-shadow: 2px 2px $yellow;
           }
           p {
             font-size: 14px;
-            padding: 0;
           }
         }
         .section-image {
           padding: 0;
+          margin-bottom: 3vmax;
         }
       }
       &.section-blue {
+        padding: 3vmax 4vmax;
         h2 {
-          font-size: 32px;
-          text-shadow: 2.5px 2.5px $black;
+          font-size: 28px;
+          text-shadow: 2px 2px $black;
         }
         p {
           font-size: 14px;
-          color: $off-white;
-          text-align: center;
         }
         .button {
           .button-background {
@@ -354,21 +342,44 @@ $blue: #3d80fc;
         }
       }
       &.section-partners {
+        padding: 3vmax 4vmax;
         h2 {
-          font-size: 32px;
-          text-shadow: 2.5px 2.5px $yellow;
+          font-size: 28px;
+          text-shadow: 2px 2px $yellow;
+        }
+        p {
+          font-size: 14px;
         }
       }
       .section-text {
         width: 100%;
         margin: 0;
         h2 {
-          font-size: 32px;
-          text-shadow: 2.5px 2.5px $yellow;
+          font-size: 28px;
+          text-shadow: 2px 2px $yellow;
         }
         p {
           font-size: 14px;
-          padding: 0;
+        }
+      }
+      .section-image {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 3vmax;
+      }
+    }
+    .section-odd {
+      width: 100%;
+      padding: 3vmax 4vmax;
+      flex-direction: column-reverse;
+      .section-text {
+        width: 100%;
+        margin: 0;
+        h2 {
+          font-size: 28px;
+        }
+        p {
+          font-size: 14px;
         }
       }
       .section-image {
@@ -376,25 +387,86 @@ $blue: #3d80fc;
         margin-bottom: 4vmax;
       }
     }
-    .section-odd {
-      width: 100%;
-      padding: 4vmax;
-      flex-direction: column-reverse;
-      .section-text {
-        width: 100%;
-        margin: 0;
-        h2 {
-          font-size: 32px;
-          text-shadow: 2.5px 2.5px $yellow;
-        }
-        p {
-          font-size: 14px;
-          padding: 0;
+  }
+}
+
+@media (max-width: 630px) {
+  .container {
+    .banner {
+      .hero {
+        h1 {
+          left: 5vw;
         }
       }
-      .section-image {
-        width: 100%;
-        margin-bottom: 4vmax;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .container {
+    .banner {
+      .hero {
+        h1 {
+          font-size: 32px;
+          width: 400px;
+          left: 7.5vw;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .container {
+    .banner {
+      .hero {
+        h1 {
+          font-size: 28px;
+          width: 350px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    .banner {
+      .hero-image {
+        div {
+          width: 1050px;
+        }
+      }
+      .hero {
+        h1 {
+          left: 2.5vw;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .container {
+    .banner {
+      .hero {
+        h1 {
+          font-size: 24px;
+          width: 300px;
+          left: 2.5vw;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 280px) {
+  .container {
+    .banner {
+      .hero {
+        h1 {
+          left: 0;
+        }
       }
     }
   }

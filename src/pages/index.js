@@ -14,6 +14,7 @@ import Carousel from 'react-bootstrap/Carousel'
 
 // Component Imports
 import Layout from "../components/layout"
+// import HomeBanner from '../components/homeBanner'
 
 // Style Imports
 import styles from "./index.module.scss"
