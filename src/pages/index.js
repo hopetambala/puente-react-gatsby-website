@@ -30,7 +30,7 @@ const IndexPage = () => {
           }
         }
       }
-      contentfulLandingPage {
+      contentfulLandingPage(node_locale: { eq: "en-US" }) {
         hero
         firstSectionTitle
         firstSectionParagraph {
@@ -68,7 +68,7 @@ const IndexPage = () => {
           }
         }
       }
-      contentfulProjectTypes {
+      contentfulProjectTypes(node_locale: { eq: "en-US" }) {
         projectTypeOne
         projectOneLongDescription {
           childMarkdownRemark {

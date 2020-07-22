@@ -67,13 +67,5 @@ module.exports = {
         endpoint: 'https://puente-dr.us18.list-manage.com/subscribe/post?u=a315d09ff9101146e276cb12a&amp;id=af3190932c', // add your MC list endpoint here; see instructions below
       },
     },
-    {
-      resolve: `gatsby-source-stripe`,
-      options: {
-        objects: ['Balance', 'BalanceTransaction', 'Product', 'ApplicationFee', 'Sku', 'Subscription'],
-        secretKey: process.env.STRIPE_SECRET_KEY,
-        downloadFiles: true,
-      }
-    },
   ],
 }
