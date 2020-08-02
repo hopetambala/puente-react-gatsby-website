@@ -74,11 +74,21 @@ $blue: #3d80fc;
         padding-left: 6vmax;
         margin-right: 6vmax;
         h2 {
-          color: $black;
-          font-size: 32px;
-          text-shadow: 2px 2px $off-white;
+          font-size: 40px;
+          font-weight: 700;
           text-transform: uppercase;
+          color: $black;
+          text-shadow: 2px 2px $off-white;
+          margin: 0 2vw;
+          padding: 0;
+        }
+        h3 {
+          font-size: 18px;
+          font-weight: 700;
+          text-transform: uppercase;
+          color: $black;
           margin: 0;
+          padding: 0;
         }
       }
       .section-text {
