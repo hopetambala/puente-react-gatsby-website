@@ -34,7 +34,11 @@ const TechnologyPage = () => {
           }
         }
         heroSubText
-        dividerText
+        dividerTextLong{
+          childMarkdownRemark {
+            html
+          }
+        }
         sectionOneGif {
           title
           resize (height: 1000) {
@@ -117,7 +121,12 @@ const TechnologyPage = () => {
           </div>
         </div>
         <div className={styles.divider}>
-          <p>{data.contentfulTechnologyPage.dividerText}</p>
+          {/* <p>{data.contentfulTechnologyPage.dividerText}</p> */}
+          <div
+            dangerouslySetInnerHTML={{
+              __html: data.contentfulTechnologyPage.dividerTextLong.childMarkdownRemark.html,
+            }}
+          />
         </div>
         <div id="mobile-data-collection" className={styles.sectionOne}>
           <h2>{data.contentfulTechnologyPage.sectionOneHeader}</h2>

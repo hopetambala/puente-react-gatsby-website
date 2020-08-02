@@ -8,7 +8,7 @@ import {
 // Component Imports
 import Layout from "../components/layout"
 import VolunteerCTA from "../components/volunteerCTA"
-import VolunteerContactCTA from "../components/volunteerContactCTA"
+import PartnerContactCTA from "../components/PartnerContactCTA"
 
 // Style Imports
 import volunteerStyles from "./volunteer.module.scss"
@@ -43,8 +43,10 @@ const VolunteerPage = () => {
           heroSubText
         }
         sectionOneHeader
-        sectionOneParagraph {
-          sectionOneParagraph
+        sectionOneParagraph{
+          childMarkdownRemark{
+            html
+          }
         }
         sectionOneImage {
           title
@@ -105,7 +107,11 @@ const VolunteerPage = () => {
             <div id="volunteer" className={volunteerStyles.section}>
               <div className={volunteerStyles.sectionText}>
                 <h2>{data.contentfulVolunteerPage.sectionOneHeader}</h2>
-                <p>{data.contentfulVolunteerPage.sectionOneParagraph.sectionOneParagraph}</p>
+                  <div
+                  dangerouslySetInnerHTML={{
+                    __html: data.contentfulVolunteerPage.sectionOneParagraph.childMarkdownRemark.html,
+                  }}
+              />
               </div>
               <div className={volunteerStyles.sectionImage}>
                 <img alt={data.contentfulVolunteerPage.sectionOneImage.title} src={data.contentfulVolunteerPage.sectionOneImage.resize.src} fluid />
@@ -121,8 +127,8 @@ const VolunteerPage = () => {
                 <img alt={data.contentfulVolunteerPage.sectionTwoImage.title} src={data.contentfulVolunteerPage.sectionTwoImage.resize.src} fluid />
               </div>
             </div>
-            {/* <VolunteerContactCTA />
-            <div className={volunteerStyles.sectionDonate}>
+            <PartnerContactCTA />
+            {/* <div className={volunteerStyles.sectionDonate}>
               <div id="newsletter" className={volunteerStyles.sectionText}>
                 <h2>{data.contentfulVolunteerPage.sectionThreeHeader}</h2>
                 <p>{data.contentfulVolunteerPage.sectionThreeParagraph.sectionThreeParagraph}</p>
