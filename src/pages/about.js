@@ -209,7 +209,7 @@ const AboutPage = () => {
                   <div className={aboutStyles.employee}>
                     <div className={aboutStyles.imgContainer}>
                       <img alt={data.contentfulAboutPage.employeeOneImage.title} src={data.contentfulAboutPage.employeeOneImage.resize.src} fluid />
-                      <a href={data.contentfulAboutPage.employeeOneLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
+                      {/* <a href={data.contentfulAboutPage.employeeOneLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a> */}
                     </div>
                     <h2>{data.contentfulFeaturedVolunteers.volunteerName}</h2>
                     <h3>{data.contentfulFeaturedVolunteers.volunteerOneRole}</h3>
@@ -217,7 +217,7 @@ const AboutPage = () => {
                   <div className={aboutStyles.employee}>
                     <div className={aboutStyles.imgContainer}>
                       <img alt={data.contentfulAboutPage.employeeTwoImage.title} src={data.contentfulAboutPage.employeeTwoImage.resize.src} fluid />
-                      <a href={data.contentfulAboutPage.employeeTwoLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
+                      {/* <a href={data.contentfulAboutPage.employeeTwoLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a> */}
                     </div>
                     <h2>{data.contentfulFeaturedVolunteers.volunteerTwoName}</h2>
                     <h3>{data.contentfulFeaturedVolunteers.volunteerTwoRole}</h3>
@@ -227,7 +227,7 @@ const AboutPage = () => {
                   <div className={aboutStyles.employee}>
                     <div className={aboutStyles.imgContainer}>
                       <img alt={data.contentfulAboutPage.employeeThreeImage.title} src={data.contentfulAboutPage.employeeThreeImage.resize.src} fluid />
-                      <a href={data.contentfulAboutPage.employeeThreeLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
+                      {/* <a href={data.contentfulAboutPage.employeeThreeLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a> */}
                     </div>
                     <h2>{data.contentfulFeaturedVolunteers.volunteerThreeName}</h2>
                     <h3>{data.contentfulFeaturedVolunteers.volunteerThreeRole}</h3>
@@ -235,7 +235,7 @@ const AboutPage = () => {
                   <div className={aboutStyles.employee}>
                     <div className={aboutStyles.imgContainer}>
                       <img alt={data.contentfulAboutPage.employeeFourImage.title} src={data.contentfulAboutPage.employeeFourImage.resize.src} fluid />
-                      <a href={data.contentfulAboutPage.employeeFourLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
+                      {/* <a href={data.contentfulAboutPage.employeeFourLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a> */}
                     </div>
                     <h2>{data.contentfulFeaturedVolunteers.volunteerName}</h2>
                     <h3>{data.contentfulFeaturedVolunteers.volunteerOneRole}</h3>
@@ -260,7 +260,7 @@ const AboutPage = () => {
                   __html: data.contentfulAboutPage.annualReportText.childMarkdownRemark.html,
                 }}
               />
-              <p className={aboutStyles.reportLink}>Read 2019 Report</p>
+              <p className={aboutStyles.reportLink}><a target="_blank" href="https://issuu.com/puente-dr/docs/puente_2019_annual_report">Read 2019 Report</a></p>
             </div>
           </div>
         </div>
