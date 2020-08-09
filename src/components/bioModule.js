@@ -2,7 +2,7 @@ import React from "react"
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 
-import styles from "./bioModule.module.scss"
+// import styles from "./bioModule.module.scss"
 
 const BioModal = (props) => {
   return (
