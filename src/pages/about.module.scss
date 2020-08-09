@@ -129,17 +129,22 @@ $blue: #3d80fc;
                 margin: 0;
                 box-shadow: 5px 5px $yellow;
               }
-              a {
+              .icon,
+              .icon-two {
                 background-color: $yellow;
                 color: $black;
                 padding: 10px;
                 margin: 0;
                 border-radius: 100px;
                 position: absolute;
-                top: 0;
+                cursor: pointer;
                 left: 0;
-                .icon {
-                  filter: drop-shadow(2px 2px $white);
+                // filter: drop-shadow(2px 2px $white);
+                &.icon {
+                  top: 0;
+                }
+                &.icon-two {
+                  top: 55px;
                 }
               }
             }

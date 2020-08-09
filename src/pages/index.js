@@ -44,6 +44,8 @@ const IndexPage = () => {
             html
           }
         }
+        impactNumbers
+        impactDescriptions
         thirdSectionTitle
         thirdSectionParagraph {
           childMarkdownRemark {
@@ -180,7 +182,22 @@ const IndexPage = () => {
           </div>
           <div className={styles.sectionImpact}>
             <div className={styles.sectionImpactNumbers}>
-              <h2>Impact Numbers</h2>
+              <div className={styles.impactNumber}>
+                <h2>{data.contentfulLandingPage.impactNumbers[0]}</h2>
+                <h3>{data.contentfulLandingPage.impactDescriptions[0]}</h3>
+              </div>
+              <div className={styles.impactNumber}>
+                <h2>{data.contentfulLandingPage.impactNumbers[1]}</h2>
+                <h3>{data.contentfulLandingPage.impactDescriptions[1]}</h3>
+              </div>
+              <div className={styles.impactNumber}>
+                <h2>{data.contentfulLandingPage.impactNumbers[2]}</h2>
+                <h3>{data.contentfulLandingPage.impactDescriptions[2]}</h3>
+              </div>
+              <div className={styles.impactNumber}>
+                <h2>{data.contentfulLandingPage.impactNumbers[3]}</h2>
+                <h3>{data.contentfulLandingPage.impactDescriptions[3]}</h3>
+              </div>
             </div>
             <div className={styles.sectionText}>
               <h2>{data.contentfulLandingPage.secondSectionTitle}</h2>

@@ -17,6 +17,10 @@ $blue: #3d80fc;
   top: 0;
   .logo {
     width: 10%;
+    img {
+      margin: 0;
+      padding: 0;
+    }
   }
   .icon {
     color: $black;

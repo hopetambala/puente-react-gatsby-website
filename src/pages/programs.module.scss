@@ -82,15 +82,16 @@ $blue: #3d80fc;
       }
     }
     .section-impact {
-      width: 40%;
+      margin: 3vmax 0 3vmax 6vmax;
+      width: 50%;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
       background-color: $yellow;
       .section-impact-numbers {
-        width: 20%;
-        height: 55px;
+        // width: 20%;
+        height: 60px;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -101,11 +102,11 @@ $blue: #3d80fc;
           text-transform: uppercase;
           color: $black;
           text-shadow: 2px 2px $off-white;
-          margin: 0 2vw;
+          margin: 2vh 2vw;
           padding: 0;
         }
         h3 {
-          font-size: 18px;
+          font-size: 24px;
           font-weight: 700;
           text-transform: uppercase;
           color: $black;
@@ -216,6 +217,9 @@ $blue: #3d80fc;
         p {
           padding: 1vmax 4vmax 3vmax 4vmax;
         }
+      }
+      .section-impact {
+        margin: 3vmax 0 3vmax 4vmax;
       }
     }
     .projects {

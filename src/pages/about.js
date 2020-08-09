@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import {
   // Link,
   graphql,
@@ -9,12 +9,14 @@ import ReactPlayer from 'react-player/youtube'
 
 // Component Imports
 import Layout from "../components/layout"
+import BioModal from '../components/bioModule'
 // import AboutCTA from "../components/aboutCTA"
 
 // Style/Icon Imports
 import aboutStyles from "./about.module.scss"
 import { Icon } from 'react-icons-kit'
 import { linkedin } from 'react-icons-kit/fa/linkedin'
+import { plus } from 'react-icons-kit/fa/plus'
 
 const AboutPage = () => {
   const data = useStaticQuery(
@@ -54,6 +56,11 @@ const AboutPage = () => {
       employeeOneName
       employeeOnePosition
       employeeOneLinkedIn
+      employeeOneBio {
+        childMarkdownRemark {
+          html
+        }
+      } 
       employeeTwoImage {
         title
         resize (height: 250) {
@@ -63,6 +70,11 @@ const AboutPage = () => {
       employeeTwoName
       employeeTwoPosition
       employeeTwoLinkedIn
+      employeeTwoBio {
+        childMarkdownRemark {
+          html
+        }
+      } 
       employeeThreeImage {
         title
         resize (height: 250) {
@@ -72,6 +84,11 @@ const AboutPage = () => {
       employeeThreeName
       employeeThreePosition
       employeeThreeLinkedIn
+      employeeThreeBio {
+        childMarkdownRemark {
+          html
+        }
+      } 
       employeeFourImage {
         title
         resize (height: 250) {
@@ -81,6 +98,11 @@ const AboutPage = () => {
       employeeFourName
       employeeFourPosition
       employeeFourLinkedIn
+      employeeFourBio {
+        childMarkdownRemark {
+          html
+        }
+      } 
       annualReport
       annualReportText {
         childMarkdownRemark {
@@ -92,17 +114,30 @@ const AboutPage = () => {
       volunteerName
       volunteerOneRole
       volunteerOneBio {
-        volunteerOneBio
+        childMarkdownRemark {
+          html
+        }
       }
       volunteerTwoName
       volunteerTwoRole
       volunteerTwoBio {
-        volunteerTwoBio
+        childMarkdownRemark {
+          html
+        }
       }
       volunteerThreeName
       volunteerThreeRole
       volunteerThreeBio {
-        volunteerThreeBio
+        childMarkdownRemark {
+          html
+        }
+      } 
+      volunteerFourName
+      volunteerFourRole
+      volunteerFourBio {
+        childMarkdownRemark {
+          html
+        }
       } 
     }
     contentfulLandingPage {
@@ -120,6 +155,14 @@ const AboutPage = () => {
     }
   }
   `)
+  const [scottShow, setScottShow] = useState(false);
+  const [paulShow, setPaulShow] = useState(false);
+  const [hopeShow, setHopeShow] = useState(false);
+  const [crismaryShow, setCrismaryShow] = useState(false);
+  const [volunteerShow, setVolunteerShow] = useState(false);
+  const [volunteerTwoShow, setVolunteerTwoShow] = useState(false);
+  const [volunteerThreeShow, setVolunteerThreeShow] = useState(false);
+  const [volunteerFourShow, setVolunteerFourShow] = useState(false);
   return (
     <div>
       <Layout>
@@ -169,6 +212,17 @@ const AboutPage = () => {
                     <div className={aboutStyles.imgContainer}>
                       <img alt={data.contentfulAboutPage.employeeOneImage.title} src={data.contentfulAboutPage.employeeOneImage.resize.src} fluid />
                       <a href={data.contentfulAboutPage.employeeOneLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
+                      <Icon onClick={() => setScottShow(true)} className={aboutStyles.iconTwo} size={24} icon={plus} />
+                      <BioModal
+                        show={scottShow}
+                        onHide={() => setScottShow(false)}
+                      >
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: data.contentfulAboutPage.employeeOneBio.childMarkdownRemark.html,
+                          }}
+                        />
+                      </BioModal>
                     </div>
                     <h2>{data.contentfulAboutPage.employeeOneName}</h2>
                     <h3>{data.contentfulAboutPage.employeeOnePosition}</h3>
@@ -177,6 +231,17 @@ const AboutPage = () => {
                     <div className={aboutStyles.imgContainer}>
                       <img alt={data.contentfulAboutPage.employeeTwoImage.title} src={data.contentfulAboutPage.employeeTwoImage.resize.src} fluid />
                       <a href={data.contentfulAboutPage.employeeTwoLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
+                      <Icon onClick={() => setPaulShow(true)} className={aboutStyles.iconTwo} size={24} icon={plus} />
+                      <BioModal
+                        show={paulShow}
+                        onHide={() => setPaulShow(false)}
+                      >
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: data.contentfulAboutPage.employeeTwoBio.childMarkdownRemark.html,
+                          }}
+                        />
+                      </BioModal>
                     </div>
                     <h2>{data.contentfulAboutPage.employeeTwoName}</h2>
                     <h3>{data.contentfulAboutPage.employeeTwoPosition}</h3>
@@ -187,6 +252,17 @@ const AboutPage = () => {
                     <div className={aboutStyles.imgContainer}>
                       <img alt={data.contentfulAboutPage.employeeThreeImage.title} src={data.contentfulAboutPage.employeeThreeImage.resize.src} fluid />
                       <a href={data.contentfulAboutPage.employeeThreeLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
+                      <Icon onClick={() => setHopeShow(true)} className={aboutStyles.iconTwo} size={24} icon={plus} />
+                      <BioModal
+                        show={hopeShow}
+                        onHide={() => setHopeShow(false)}
+                      >
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: data.contentfulAboutPage.employeeThreeBio.childMarkdownRemark.html,
+                          }}
+                        />
+                      </BioModal>
                     </div>
                     <h2>{data.contentfulAboutPage.employeeThreeName}</h2>
                     <h3>{data.contentfulAboutPage.employeeThreePosition}</h3>
@@ -195,6 +271,17 @@ const AboutPage = () => {
                     <div className={aboutStyles.imgContainer}>
                       <img alt={data.contentfulAboutPage.employeeFourImage.title} src={data.contentfulAboutPage.employeeFourImage.resize.src} fluid />
                       <a href={data.contentfulAboutPage.employeeFourLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
+                      <Icon onClick={() => setCrismaryShow(true)} className={aboutStyles.iconTwo} size={24} icon={plus} />
+                      <BioModal
+                        show={crismaryShow}
+                        onHide={() => setCrismaryShow(false)}
+                      >
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: data.contentfulAboutPage.employeeFourBio.childMarkdownRemark.html,
+                          }}
+                        />
+                      </BioModal>
                     </div>
                     <h2>{data.contentfulAboutPage.employeeFourName}</h2>
                     <h3>{data.contentfulAboutPage.employeeFourPosition}</h3>
@@ -203,13 +290,23 @@ const AboutPage = () => {
               </div>
             </div>
             <div id="volunteers" className={aboutStyles.volunteerSection}>
-              <h2>Our Volunteers</h2>
+              <h2>Featured Volunteers</h2>
               <div className={aboutStyles.employeeRow}>
                 <div className={aboutStyles.employees}>
                   <div className={aboutStyles.employee}>
                     <div className={aboutStyles.imgContainer}>
                       <img alt={data.contentfulAboutPage.employeeOneImage.title} src={data.contentfulAboutPage.employeeOneImage.resize.src} fluid />
-                      {/* <a href={data.contentfulAboutPage.employeeOneLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a> */}
+                      <Icon onClick={() => setVolunteerShow(true)} className={aboutStyles.icon} size={24} icon={plus} />
+                      <BioModal
+                        show={volunteerShow}
+                        onHide={() => setVolunteerShow(false)}
+                      >
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: data.contentfulFeaturedVolunteers.volunteerOneBio.childMarkdownRemark.html,
+                          }}
+                        />
+                      </BioModal>
                     </div>
                     <h2>{data.contentfulFeaturedVolunteers.volunteerName}</h2>
                     <h3>{data.contentfulFeaturedVolunteers.volunteerOneRole}</h3>
@@ -217,7 +314,17 @@ const AboutPage = () => {
                   <div className={aboutStyles.employee}>
                     <div className={aboutStyles.imgContainer}>
                       <img alt={data.contentfulAboutPage.employeeTwoImage.title} src={data.contentfulAboutPage.employeeTwoImage.resize.src} fluid />
-                      {/* <a href={data.contentfulAboutPage.employeeTwoLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a> */}
+                      <Icon onClick={() => setVolunteerTwoShow(true)} className={aboutStyles.icon} size={24} icon={plus} />
+                      <BioModal
+                        show={volunteerTwoShow}
+                        onHide={() => setVolunteerTwoShow(false)}
+                      >
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: data.contentfulFeaturedVolunteers.volunteerTwoBio.childMarkdownRemark.html,
+                          }}
+                        />
+                      </BioModal>
                     </div>
                     <h2>{data.contentfulFeaturedVolunteers.volunteerTwoName}</h2>
                     <h3>{data.contentfulFeaturedVolunteers.volunteerTwoRole}</h3>
@@ -227,7 +334,17 @@ const AboutPage = () => {
                   <div className={aboutStyles.employee}>
                     <div className={aboutStyles.imgContainer}>
                       <img alt={data.contentfulAboutPage.employeeThreeImage.title} src={data.contentfulAboutPage.employeeThreeImage.resize.src} fluid />
-                      {/* <a href={data.contentfulAboutPage.employeeThreeLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a> */}
+                      <Icon onClick={() => setVolunteerThreeShow(true)} className={aboutStyles.icon} size={24} icon={plus} />
+                      <BioModal
+                        show={volunteerThreeShow}
+                        onHide={() => setVolunteerThreeShow(false)}
+                      >
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: data.contentfulFeaturedVolunteers.volunteerThreeBio.childMarkdownRemark.html,
+                          }}
+                        />
+                      </BioModal>
                     </div>
                     <h2>{data.contentfulFeaturedVolunteers.volunteerThreeName}</h2>
                     <h3>{data.contentfulFeaturedVolunteers.volunteerThreeRole}</h3>
@@ -235,9 +352,19 @@ const AboutPage = () => {
                   <div className={aboutStyles.employee}>
                     <div className={aboutStyles.imgContainer}>
                       <img alt={data.contentfulAboutPage.employeeFourImage.title} src={data.contentfulAboutPage.employeeFourImage.resize.src} fluid />
-                      {/* <a href={data.contentfulAboutPage.employeeFourLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a> */}
+                      <Icon onClick={() => setVolunteerFourShow(true)} className={aboutStyles.icon} size={24} icon={plus} />
+                      <BioModal
+                        show={volunteerFourShow}
+                        onHide={() => setVolunteerFourShow(false)}
+                      >
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: data.contentfulFeaturedVolunteers.volunteerFourBio.childMarkdownRemark.html,
+                          }}
+                        />
+                      </BioModal>
                     </div>
-                    <h2>{data.contentfulFeaturedVolunteers.volunteerName}</h2>
+                    <h2>{data.contentfulFeaturedVolunteers.volunteerFourName}</h2>
                     <h3>{data.contentfulFeaturedVolunteers.volunteerOneRole}</h3>
                   </div>
                 </div>
@@ -260,7 +387,7 @@ const AboutPage = () => {
                   __html: data.contentfulAboutPage.annualReportText.childMarkdownRemark.html,
                 }}
               />
-              <p className={aboutStyles.reportLink}><a target="_blank" href="https://issuu.com/puente-dr/docs/puente_2019_annual_report">Read 2019 Report</a></p>
+              <p className={aboutStyles.reportLink}><a target="_blank" rel="noopener noreferrer" href="https://issuu.com/puente-dr/docs/puente_2019_annual_report">Read 2019 Report</a></p>
             </div>
           </div>
         </div>
