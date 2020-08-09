@@ -32,7 +32,9 @@ const Layout = (props) => {
         <link rel="icon" href={favicon} />
         <script src="https://givebutter.com/js/widget.js" type="text/javascript" />
       </Helmet>
-      <Header className={layoutStyles.header} />
+      <div className={layoutStyles.header}>
+        <Header />
+      </div>
       <div className={layoutStyles.content}>
         {props.children}
       </div>

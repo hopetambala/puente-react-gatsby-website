@@ -23,18 +23,31 @@ $blue: #3d80fc;
         margin: 0;
       }
       .title {
-        h1 {
-          padding: 4vmax 6vmax 0;
-          font-size: 56px;
-          font-weight: 700;
-          text-transform: uppercase;
-          color: $black;
-          text-shadow: 2.5px 2.5px $yellow;
-          margin: 0;
-        }
-        p {
-          padding: 2vmax 6vmax 4vmax 6vmax;
-          margin: 0;
+        padding: 3vmax 6vmax;
+        .about {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          .about-text {
+            width: 55%;
+            h1 {
+              font-size: 48px;
+              font-weight: 700;
+              text-transform: uppercase;
+              color: $black;
+              text-shadow: 2.5px 2.5px $yellow;
+              margin: 0;
+            }
+            p {
+              padding-top: 1vmax;
+              margin: 0;
+            }
+          }
+          .about-video {
+            width: 42.5%;
+          }
         }
       }
     }
@@ -42,145 +55,127 @@ $blue: #3d80fc;
   .body {
     background-color: $white;
     .missionSection {
+      padding: 3vmax 6vmax;
       h2 {
-        font-size: 40px;
+        font-size: 32px;
         font-weight: 600;
         text-transform: uppercase;
         color: $black;
-        text-shadow: 2.5px 2.5px $yellow;
+        text-shadow: 2px 2px $yellow;
         margin: 0;
-        padding: 4vmax 6vmax 0;
       }
       p {
-        padding: 2vmax 6vmax 4vmax 6vmax;
+        padding-top: 1vmax;
         margin: 0;
       }
     }
     .visionSection {
       background-color: $off-white;
+      padding: 3vmax 6vmax;
       h2 {
-        font-size: 40px;
+        font-size: 32px;
         font-weight: 600;
         text-transform: uppercase;
         color: $black;
-        text-shadow: 2.5px 2.5px $yellow;
+        text-shadow: 2px 2px $yellow;
         margin: 0;
-        padding: 4vmax 6vmax 0;
       }
       p {
-        padding: 2vmax 6vmax 4vmax 6vmax;
+        padding-top: 1vmax;
         margin: 0;
       }
     }
-    .bio-section {
+    .staff-section,
+    .volunteer-section {
+      padding: 3vmax 6vmax;
+      &.staff-section {
+        background-color: $white;
+      }
+      &.volunteer-section {
+        background-color: $off-white;
+      }
       h2 {
-        font-size: 40px;
+        font-size: 32px;
         font-weight: 600;
         text-transform: uppercase;
         color: $black;
-        text-shadow: 2.5px 2.5px $yellow;
+        text-shadow: 2px 2px $yellow;
         margin: 0;
-        padding: 4vmax 6vmax 0;
+        padding: 0 0 3vmax;
       }
       .employee-row {
-        padding: 4vmax 6vmax;
         width: 100%;
         display: flex;
         flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        .employee {
-          width: 100%;
+        align-items: flex-start;
+        justify-content: space-around;
+        .employees {
+          width: 50%;
           display: flex;
           flex-direction: row;
-          align-items: center;
+          align-items: flex-start;
           justify-content: space-around;
-          .employee-image {
+          .employee {
             width: 45%;
-            img {
-              margin: 0;
-              box-shadow: 5px 5px $yellow;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-around;
+            .img-container {
+              position: relative;
+              padding: 10px;
+              img {
+                display: block;
+                margin: 0;
+                box-shadow: 5px 5px $yellow;
+              }
+              a {
+                background-color: $yellow;
+                color: $black;
+                padding: 10px;
+                margin: 0;
+                border-radius: 100px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                .icon {
+                  filter: drop-shadow(2px 2px $white);
+                }
+              }
             }
-          }
-          .employee-info {
-            width: 50%;
             h2 {
-              font-size: 28px;
-              font-weight: 600;
-              text-transform: uppercase;
-              color: $black;
-              text-shadow: 2px 2px $yellow;
-              margin: 0;
-              padding: 1vh 0;
-            }
-            h3 {
               font-size: 20px;
               font-weight: 600;
               text-transform: uppercase;
               color: $black;
               text-shadow: 2px 2px $yellow;
               margin: 0;
-              padding: 1vh 0;
+              padding: 1vmax 0 0.5vmax 10px;
             }
-            a {
+            h3 {
+              padding-left: 10px;
+              font-size: 16px;
               color: $black;
-              .icon {
-                filter: drop-shadow(2px 2px $yellow);
-              }
+              margin: 0;
             }
           }
         }
       }
     }
-    .volunteer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 4vmax 4vmax;
-      background-color: $blue;
-      .volunteer-bio {
-        width: 100%;
-        h2 {
-          color: $yellow;
-          font-size: 40px;
-          font-weight: 600;
-          text-shadow: 2.5px 2.5px $black;
-          text-transform: uppercase;
-          text-align: center;
-          padding: 0;
-          margin: 0;
-          margin-bottom: 1vmax;
-        }
-        h3 {
-          color: $yellow;
-          font-size: 20px;
-          font-weight: 500;
-          text-shadow: 2px 2px $black;
-          text-transform: uppercase;
-          text-align: center;
-        }
-        p {
-          color: $off-white;
-          padding: 0;
-          margin-top: 1vmax;
-          margin: 0;
-        }
-      }
-    }
     .section-partners {
-      padding: 4vmax 0 4vmax 6vmax;
+      padding: 3vmax 0 3vmax 6vmax;
       background-color: $white;
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      padding: 4vmax 6vmax;
+      padding: 3vmax 6vmax;
       flex-direction: column;
       width: 100%;
       h2 {
         color: $black;
-        font-size: 40px;
-        text-shadow: 2.5px 2.5px $yellow;
+        font-size: 32px;
+        text-shadow: 2px 2px $yellow;
         text-transform: uppercase;
       }
       .partner-images {
@@ -190,27 +185,28 @@ $blue: #3d80fc;
         justify-content: center;
         width: 20%;
         img {
-          margin-top: 2vh;
+          margin-top: 1vh;
+          margin-bottom: 0;
         }
       }
     }
     .section-report {
+      padding: 3vmax 6vmax;
       background-color: $off-white;
       h2 {
-        font-size: 40px;
+        font-size: 32px;
         font-weight: 600;
         text-transform: uppercase;
         color: $black;
-        text-shadow: 2.5px 2.5px $yellow;
+        text-shadow: 2px 2px $yellow;
         margin: 0;
-        padding: 4vmax 6vmax 0;
       }
       p {
-        padding: 4vmax 6vmax 0;
+        padding: 1vmax 0 0 0;
         margin: 0;
       }
       .report-link {
-        padding: 4vmax 6vmax;
+        padding: 1vmax 0 0 0;
         margin: 0;
         color: $blue;
         text-decoration: underline;
@@ -225,39 +221,55 @@ $blue: #3d80fc;
     .banner {
       .banner-image {
         .title {
-          h1 {
-            padding: 4vmax 4vmax;
-            font-size: 48px;
+          padding: 3vmax 4vmax;
+          .about {
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            .about-text {
+              width: 100%;
+              h1 {
+                font-size: 40px;
+                text-shadow: 2px 2px $yellow;
+              }
+            }
+            .about-video {
+              padding-top: 3vmax;
+              width: 100%;
+            }
           }
         }
       }
     }
     .body {
-      background-color: $white;
-      p {
-        padding: 4vmax 4vmax;
-        font-size: 14px;
-      }
-      .section {
+      .missionSection {
+        padding: 3vmax 4vmax;
         h2 {
-          padding: 2vmax 4vmax 0;
-          font-size: 32px;
-        }
-        p {
-          padding: 2vmax 4vmax;
+          font-size: 28px;
         }
       }
-      .employee-row {
-        padding: 2vmax 4vmax 2vmax;
-        .employee {
-          .employee-info {
-            h2 {
-              font-size: 24px;
-            }
-            h3 {
-              font-size: 20px;
-            }
-          }
+      .visionSection {
+        padding: 3vmax 4vmax;
+        h2 {
+          font-size: 28px;
+        }
+      }
+      .staff-section,
+      .volunteer-section {
+        padding: 3vmax 4vmax;
+        h2 {
+          font-size: 28px;
+        }
+      }
+      .section-partners {
+        h2 {
+          font-size: 28px;
+        }
+      }
+      .section-report {
+        padding: 3vmax 4vmax;
+        h2 {
+          font-size: 28px;
         }
       }
     }
@@ -270,40 +282,87 @@ $blue: #3d80fc;
     .banner {
       .banner-image {
         .title {
-          h1 {
-            font-size: 40px;
+          .about {
+            .about-text {
+              h1 {
+                font-size: 32px;
+              }
+              p {
+                font-size: 14px;
+              }
+            }
           }
         }
       }
     }
     .body {
-      background-color: $white;
-      p {
-        font-size: 14px;
-      }
-      .section {
+      .missionSection {
         h2 {
-          font-size: 28px;
-          text-shadow: 2px 2px $yellow;
+          font-size: 24px;
+        }
+        p {
+          font-size: 14px;
         }
       }
-      .employee-row {
-        padding: 4vmax 4vmax 0;
-        flex-direction: column;
-        .employee {
-          padding: 4vmax 0;
-          flex-direction: row;
-          justify-content: space-around;
-          .employee-info {
-            h2 {
-              font-size: 20px;
-              text-shadow: 1.5px 1.5px $yellow;
-            }
-            h3 {
-              font-size: 14px;
-              text-shadow: 1px 1px $yellow;
+      .visionSection {
+        h2 {
+          font-size: 24px;
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+      .staff-section,
+      .volunteer-section {
+        h2 {
+          font-size: 24px;
+        }
+        .employee-row {
+          flex-direction: column;
+          .employees {
+            width: 100%;
+            padding: 1vmax 0;
+            .employee {
+              .img-container {
+                padding: 5px;
+                img {
+                  box-shadow: 3px 3px $yellow;
+                }
+                a {
+                  padding: 6.5px;
+                }
+              }
+              h2 {
+                font-size: 16px;
+                padding: 1vmax 0 0.5vmax 6.5px;
+              }
+              h3 {
+                padding-left: 6.5px;
+                font-size: 12px;
+              }
             }
           }
+        }
+      }
+      .section-partners {
+        h2 {
+          font-size: 24px;
+        }
+        .partner-images {
+          img {
+            margin-top: 0;
+          }
+        }
+      }
+      .section-report {
+        h2 {
+          font-size: 24px;
+        }
+        p {
+          font-size: 14px;
+        }
+        .report-link {
+          font-size: 14px;
         }
       }
     }

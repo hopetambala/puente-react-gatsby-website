@@ -40,7 +40,7 @@ const Header = () => {
 
   if (width > 768) {
     return (
-      <Navbar className={styles.navBackground} collapseOnSelect expand="lg">
+      <Navbar className={styles.navBackground} collapseOnSelect expand="lg" onScroll>
         <Navbar.Brand className={styles.logo}>
           <Link to="/">
             <Logo />
@@ -136,16 +136,19 @@ const Header = () => {
                 <NavDropdown.Item className={styles.dropdownItem}>
                   <Link style={{ color: "#000" }} to="/volunteer#partner">Become a Partner</Link>
                 </NavDropdown.Item>
-                <NavDropdown.Item className={styles.dropdownItem}>
+                {/* <NavDropdown.Item className={styles.dropdownItem}>
                   <Link style={{ color: "#000" }} to="/volunteer#newsletter">Newsletter</Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item className={styles.dropdownItem}>
                   <Link style={{ color: "#000" }} to="/volunteer#donate">Donate</Link>
-                </NavDropdown.Item>
+                </NavDropdown.Item> */}
               </NavDropdown>
             </Nav.Item>
             <Nav.Item className={styles.nav}>
               <Nav.Link className={styles.navItem} href="/news">News</Nav.Link>
+            </Nav.Item>
+            <Nav.Item className={styles.nav}>
+              <Nav.Link className={styles.navItem} href="/merchandise">Merchandise</Nav.Link>
             </Nav.Item>
             <Nav.Item className={styles.nav}>
               <Nav.Link className={styles.navDonate} href="/donate">Donate</Nav.Link>
@@ -195,6 +198,9 @@ const Header = () => {
             </Nav.Item>
             <Nav.Item className={styles.nav}>
               <Nav.Link className={styles.navItem} href="/news">News</Nav.Link>
+            </Nav.Item>
+            <Nav.Item className={styles.nav}>
+              <Nav.Link className={styles.navItem} href="/merchandise">Merchandise</Nav.Link>
             </Nav.Item>
             <Nav.Item className={styles.nav}>
               <Nav.Link className={styles.navDonate} href="/donate">Donate</Nav.Link>

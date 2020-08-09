@@ -18,10 +18,8 @@ const AcceptableUse = () => {
       contentfulTermsOfServicePage {
         heroText
         bodyText {
-          content {
-            content {
-              value
-            }
+          childMarkdownRemark {
+            html
           }
         }
       }
@@ -34,11 +32,11 @@ const AcceptableUse = () => {
           <h1>{data.contentfulTermsOfServicePage.heroText}</h1>
         </div>
         <div className={styles.body}>
-          {data.contentfulTermsOfServicePage.bodyText.content.map((bullet) => {
-            return (
-              <p>{bullet.content[0].value}</p>
-            )
-          })}
+          <div
+            dangerouslySetInnerHTML={{
+              __html: data.contentfulTermsOfServicePage.bodyText.childMarkdownRemark.html,
+            }}
+          />
         </div>
       </div>
     </Layout>

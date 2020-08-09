@@ -30,7 +30,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-s3`,
       options: {
-        bucketName: "website-react-gatsby",
+        bucketName: "www.puente-dr.org",
       },
     },
     'gatsby-transformer-remark',
@@ -47,6 +47,13 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-plugin-sass',
     {
+      resolve: 'gatsby-plugin-i18n',
+      options: {
+        langKeyDefault: 'en',
+        useLangKeyLayout: false
+      }
+    },
+    {
       resolve: 'gatsby-source-contentful',
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
@@ -59,14 +66,6 @@ module.exports = {
       options: {
         endpoint: 'https://puente-dr.us18.list-manage.com/subscribe/post?u=a315d09ff9101146e276cb12a&amp;id=af3190932c', // add your MC list endpoint here; see instructions below
       },
-    },
-    {
-      resolve: `gatsby-source-stripe`,
-      options: {
-        objects: ['Balance', 'BalanceTransaction', 'Product', 'ApplicationFee', 'Sku', 'Subscription'],
-        secretKey: process.env.STRIPE_SECRET_KEY,
-        downloadFiles: true,
-      }
     },
   ],
 }

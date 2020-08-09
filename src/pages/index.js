@@ -14,6 +14,7 @@ import Carousel from 'react-bootstrap/Carousel'
 
 // Component Imports
 import Layout from "../components/layout"
+// import HomeBanner from '../components/homeBanner'
 
 // Style Imports
 import styles from "./index.module.scss"
@@ -29,38 +30,35 @@ const IndexPage = () => {
           }
         }
       }
-      contentfulLandingPage {
+      contentfulLandingPage(node_locale: { eq: "en-US" }) {
         hero
         firstSectionTitle
-        firstSectionParagaph {
-          content {
-            content {
-              value
-            }
+        firstSectionParagraph {
+          childMarkdownRemark {
+            html
           }
         }
         secondSectionTitle
         secondSectionParagraph {
-          content {
-            content {
-              value
-            }
+          childMarkdownRemark {
+            html
           }
         }
         thirdSectionTitle
         thirdSectionParagraph {
-          content {
-            content {
-              value
-            }
+          childMarkdownRemark {
+            html
           }
         }
         fourthSectionTitle
         fourthSectionParagraph {
-          content {
-            content {
-              value
-            }
+          childMarkdownRemark {
+            html
+          }
+        }
+        ourPartnersText {
+          childMarkdownRemark {
+            html
           }
         }
         partnerships {
@@ -70,34 +68,36 @@ const IndexPage = () => {
           }
         }
       }
-      contentfulProjectTypes {
+      contentfulProjectTypes(node_locale: { eq: "en-US" }) {
         projectTypeOne
-        projectOneShortDescription {
-          projectOneShortDescription
+        projectOneLongDescription {
+          childMarkdownRemark {
+            html
+          }
         }
         projectTypeTwo
-        projectTwoShortDescription {
-          projectTwoShortDescription
+        projectTwoLongDescription {
+          childMarkdownRemark {
+            html
+          }
         }
         projectTypeThree
-        projectThreeShortDescription {
-          projectThreeShortDescription
+        projectThreeLongDescription {
+          childMarkdownRemark {
+            html
+          }
         }
         projectTypeFour
-        projectFourShortDescription {
-          projectFourShortDescription
+        projectFourLongDescription {
+          childMarkdownRemark {
+            html
+          }
         }
         projectTypeFive
-        projectFiveShortDescription {
-          projectFiveShortDescription
-        }
-        projectTypeSix
-        projectSixShortDescription {
-          projectSixShortDescription
-        }
-        projectTypeSeven
-        projectSevenShortDescription {
-          projectSevenShortDescription
+        projectFiveLongDescription {
+          childMarkdownRemark {
+            html
+          }
         }
       }
     }
@@ -114,7 +114,7 @@ const IndexPage = () => {
       animationData: heroAnimation
     });
     return () => anim.destroy(); // optional clean up for unmounting
-  }, []);
+  }, []); // eslint-disable-line
 
   let bridgeContainer = createRef();
   useEffect(() => {
@@ -126,7 +126,7 @@ const IndexPage = () => {
       animationData: bridgeAnimation
     });
     return () => anim.destroy(); // optional clean up for unmounting
-  }, []);
+  }, []); // eslint-disable-line
   
   let dataContainer = createRef();
   useEffect(() => {
@@ -138,7 +138,7 @@ const IndexPage = () => {
       animationData: dataAnimation
     });
     return () => anim.destroy(); // optional clean up for unmounting
-  }, []);
+  }, []); // eslint-disable-line
   
   let serviceContainer = createRef();
   useEffect(() => {
@@ -150,14 +150,14 @@ const IndexPage = () => {
       animationData: serviceAnimation
     });
     return () => anim.destroy(); // optional clean up for unmounting
-  }, []);
+  }, []); // eslint-disable-line
+  
   return (
     <div>
       <Layout>
         <div className={styles.container}>
           <div className={styles.banner}>
             <div className = {styles.heroImage}>
-              {/* <Img fluid={data.image.childImageSharp.fluid} /> */}
               <div className="animation-container" ref={animationContainer} />
             </div>
             <div className={styles.hero}>
@@ -167,7 +167,11 @@ const IndexPage = () => {
           <div className={styles.sectionOdd}>
             <div className={styles.sectionText}>
               <h2>{data.contentfulLandingPage.firstSectionTitle}</h2>
-              <p>{data.contentfulLandingPage.firstSectionParagaph.content[0].content[0].value}</p>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: data.contentfulLandingPage.firstSectionParagraph.childMarkdownRemark.html,
+                }}
+              />
             </div>
             <div className={styles.sectionImage}>
               {/* <Img fluid={data.image.childImageSharp.fluid} /> */}
@@ -180,38 +184,54 @@ const IndexPage = () => {
             </div>
             <div className={styles.sectionText}>
               <h2>{data.contentfulLandingPage.secondSectionTitle}</h2>
-              <p>{data.contentfulLandingPage.secondSectionParagraph.content[0].content[0].value}</p>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: data.contentfulLandingPage.secondSectionParagraph.childMarkdownRemark.html,
+                }}
+              />
             </div>
           </div>
           <div className={styles.sectionBlue}>
             <Carousel controls={false} indicators={false}>
               <Carousel.Item>
                 <h2>{data.contentfulProjectTypes.projectTypeOne}</h2>
-                <p>{data.contentfulProjectTypes.projectOneShortDescription.projectOneShortDescription}</p>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: data.contentfulProjectTypes.projectOneLongDescription.childMarkdownRemark.html,
+                  }}
+                />
               </Carousel.Item>
               <Carousel.Item>
                 <h2>{data.contentfulProjectTypes.projectTypeTwo}</h2>
-                <p>{data.contentfulProjectTypes.projectTwoShortDescription.projectTwoShortDescription}</p>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: data.contentfulProjectTypes.projectTwoLongDescription.childMarkdownRemark.html,
+                  }}
+                />
               </Carousel.Item>
               <Carousel.Item>
                 <h2>{data.contentfulProjectTypes.projectTypeThree}</h2>
-                <p>{data.contentfulProjectTypes.projectThreeShortDescription.projectThreeShortDescription}</p>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: data.contentfulProjectTypes.projectThreeLongDescription.childMarkdownRemark.html,
+                  }}
+                />
               </Carousel.Item>
               <Carousel.Item>
                 <h2>{data.contentfulProjectTypes.projectTypeFour}</h2>
-                <p>{data.contentfulProjectTypes.projectFourShortDescription.projectFourShortDescription}</p>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: data.contentfulProjectTypes.projectFourLongDescription.childMarkdownRemark.html,
+                  }}
+                />
               </Carousel.Item>
               <Carousel.Item>
                 <h2>{data.contentfulProjectTypes.projectTypeFive}</h2>
-                <p>{data.contentfulProjectTypes.projectFiveShortDescription.projectFiveShortDescription}</p>
-              </Carousel.Item>
-              <Carousel.Item>
-                <h2>{data.contentfulProjectTypes.projectTypeSix}</h2>
-                <p>{data.contentfulProjectTypes.projectSixShortDescription.projectSixShortDescription}</p>
-              </Carousel.Item>
-              <Carousel.Item>
-                <h2>{data.contentfulProjectTypes.projectTypeSeven}</h2>
-                <p>{data.contentfulProjectTypes.projectSevenShortDescription.projectSevenShortDescription}</p>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: data.contentfulProjectTypes.projectFiveLongDescription.childMarkdownRemark.html,
+                  }}
+                />
               </Carousel.Item>
             </Carousel>
             <Link className={styles.button} to="/programs">
@@ -223,7 +243,11 @@ const IndexPage = () => {
           <div className={styles.sectionOdd}>
             <div className={styles.sectionText}>
               <h2>{data.contentfulLandingPage.thirdSectionTitle}</h2>
-              <p>{data.contentfulLandingPage.thirdSectionParagraph.content[0].content[0].value}</p>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: data.contentfulLandingPage.thirdSectionParagraph.childMarkdownRemark.html,
+                }}
+              />
             </div>
             <div className={styles.sectionImage}>
               {/* <Img fluid={data.image.childImageSharp.fluid} /> */}
@@ -237,11 +261,20 @@ const IndexPage = () => {
             </div>
             <div className={styles.sectionText}>
               <h2>{data.contentfulLandingPage.fourthSectionTitle}</h2>
-              <p>{data.contentfulLandingPage.fourthSectionParagraph.content[0].content[0].value}</p>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: data.contentfulLandingPage.fourthSectionParagraph.childMarkdownRemark.html,
+                }}
+              />
             </div>
           </div>
           <div className={styles.sectionPartners}>
             <h2>Our Partners</h2>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: data.contentfulLandingPage.ourPartnersText.childMarkdownRemark.html,
+              }}
+            />
             <div className={styles.partnerImages}>
               {data.contentfulLandingPage.partnerships.map((partnerships) => {
                 return (

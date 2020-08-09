@@ -46,5 +46,6 @@ There's a decent amount that'll be necessary to get this publically consumed on 
 
 - [CSS Boxes](https://www.bypeople.com/css-boxes/)
 - [Flexbox](http://flexbox.buildwithreact.com/)
+- [Google Domains to S3](https://medium.com/@limichelle21/connecting-google-domains-to-amazon-s3-d0d9da467650)
 
 

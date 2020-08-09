@@ -9,7 +9,7 @@ $blue: #3d80fc;
 
 .container {
   .row {
-    padding: 4vmax 6vmax;
+    padding: 3vmax 6vmax;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -21,18 +21,17 @@ $blue: #3d80fc;
       align-items: center;
       justify-content: center;
       h1 {
-        padding: 4vmax 6vmax;
-        font-size: 56px;
+        padding: 3vmax 6vmax;
+        font-size: 48px;
         font-weight: 700;
         text-transform: uppercase;
         color: $black;
         text-shadow: 2.5px 2.5px $yellow;
         margin: 0;
-        padding: 0;
+        padding: 0 0 2vmax;
         text-align: center;
       }
       p {
-        font-size: 17px;
         width: 75%;
         margin: 0;
         padding: 0;
@@ -48,27 +47,31 @@ $blue: #3d80fc;
   }
   .divider {
     background-color: $off-white;
-    padding: 4vmax 6vmax;
-    text-align: center;
+    padding: 3vmax 6vmax;
+    // text-align: center;
+    // p {
+    //   margin: 0;
+    //   padding: 0;
+    // }
   }
   .section-one {
-    padding: 4vmax 6vmax;
+    padding: 3vmax 6vmax;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     h2 {
-      font-size: 40px;
+      font-size: 32px;
       font-weight: 600;
       text-transform: uppercase;
       color: $black;
-      text-shadow: 2.5px 2.5px $yellow;
+      text-shadow: 2px 2px $yellow;
       margin: 0;
-      padding: 0;
+      padding: 0 0 2vmax;
       text-align: center;
     }
     .collection-content {
-      padding-top: 4vmax;
+      padding-top: 3vmax 4vmax;
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -80,20 +83,21 @@ $blue: #3d80fc;
         align-items: center;
         justify-content: center;
         .placeholder {
-          background-color: $yellow;
-          width: 325px;
-          height: 60vh;
+          width: 100%;
           text-align: center;
+          img {
+            margin: 0;
+          }
         }
       }
       .collection-text {
         width: 47.5%;
         h3 {
-          font-size: 28px;
+          font-size: 24px;
           font-weight: 600;
           text-transform: uppercase;
           color: $black;
-          text-shadow: 2.5px 2.5px $yellow;
+          text-shadow: 2px 2px $yellow;
           margin: 0;
           margin-top: 2vh;
           padding: 0;
@@ -107,19 +111,19 @@ $blue: #3d80fc;
   }
   .section-two {
     background-color: $off-white;
-    padding: 4vmax 6vmax;
+    padding: 3vmax 6vmax;
     h2 {
-      font-size: 40px;
+      font-size: 32px;
       font-weight: 600;
       text-transform: uppercase;
       color: $black;
-      text-shadow: 2.5px 2.5px $yellow;
+      text-shadow: 2px 2px $yellow;
       margin: 0;
-      padding: 0;
+      padding: 0 0 2vmax;
       text-align: center;
     }
     .analysis-content {
-      padding-top: 4vmax;
+      padding-top: 3vmax 4vmax;
       display: flex;
       flex-direction: row-reverse;
       align-items: center;
@@ -131,20 +135,21 @@ $blue: #3d80fc;
         align-items: center;
         justify-content: center;
         .placeholder {
-          background-color: $yellow;
-          width: 500px;
-          height: 40vh;
+          width: 100%;
           text-align: center;
+          img {
+            margin: 0;
+          }
         }
       }
       .analysis-text {
         width: 47.5%;
         h3 {
-          font-size: 28px;
+          font-size: 24px;
           font-weight: 600;
           text-transform: uppercase;
           color: $black;
-          text-shadow: 2.5px 2.5px $yellow;
+          text-shadow: 2px 2px $yellow;
           margin: 0;
           margin-top: 2vh;
           padding: 0;
@@ -156,49 +161,67 @@ $blue: #3d80fc;
       }
     }
   }
-  .volunteer {
+  .testimonials {
+    padding: 3vmax 6vmax;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 4vmax 6vmax;
-    background-color: $blue;
-    .volunteer-bio {
-      width: 100%;
-      h2 {
-        color: $yellow;
-        font-size: 40px;
+    .testimonial {
+      background-color: $off-white;
+      padding: 3vmax;
+      border-radius: 10px;
+      box-shadow: -5px 5px $yellow;
+      width: 45%;
+      .open-quote,
+      .close-quote {
+        color: $black;
+        font-size: 56px;
         font-weight: 600;
-        text-shadow: 2.5px 2.5px $black;
+        text-shadow: 2.5px 2.5px $yellow;
         text-transform: uppercase;
-        text-align: center;
-        padding: 0 0 1vmax 0;
+        margin: 0;
+        padding: 0;
+        &.close-quote {
+          text-align: right;
+          transform: scale(1, -1);
+        }
+      }
+      h2 {
+        color: $black;
+        font-size: 32px;
+        font-weight: 600;
+        text-shadow: 2px 2px $yellow;
+        text-transform: uppercase;
+        text-align: right;
+        padding: 2vmax 0 0;
         margin: 0;
       }
       p {
-        color: $off-white;
+        color: $black;
         padding: 0;
-        margin-top: 1vmax;
         margin: 0;
       }
     }
   }
   .demo {
-    padding: 4vmax 6vmax;
+    background-color: $off-white;
+    padding: 3vmax 6vmax;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     h2 {
-      font-size: 40px;
+      font-size: 32px;
       font-weight: 600;
       text-transform: uppercase;
       color: $black;
-      text-shadow: 2.5px 2.5px $yellow;
+      text-shadow: 2px 2px $yellow;
       margin: 0;
       padding: 0 0 2vmax 0;
     }
     .request-form {
-      width: 40%;
+      width: 50%;
     }
   }
 }
@@ -206,58 +229,62 @@ $blue: #3d80fc;
 @media (max-width: 1024px) {
   .container {
     .row {
-      padding: 4vmax;
+      padding: 3vmax 4vmax;
       .col {
         h1 {
-          font-size: 40px;
-          text-shadow: 2.5px 2.5px $yellow;
-        }
-        p {
-          font-size: 14px;
+          font-size: 32px;
+          text-shadow: 2px 2px $yellow;
         }
       }
     }
     .divider {
-      padding: 4vmax;
-      p {
-        padding: 0;
-        margin: 0;
-        font-size: 14px;
-      }
+      padding: 3vmax 4vmax;
     }
     .section-one {
       h2 {
-        font-size: 32px;
-        text-shadow: 2.5px 2.5px $yellow;
+        font-size: 28px;
       }
       .collection-content {
         .collection-text {
           h3 {
             font-size: 24px;
-            text-shadow: 2.5px 2.5px $yellow;
-          }
-          p {
-            font-size: 14px;
           }
         }
       }
     }
     .section-two {
-      padding: 4vmax;
+      padding: 3vmax 4vmax;
       h2 {
-        font-size: 32px;
-        text-shadow: 2.5px 2.5px $yellow;
+        font-size: 28px;
       }
       .analysis-content {
         .analysis-text {
           h3 {
             font-size: 24px;
-            text-shadow: 2.5px 2.5px $yellow;
-          }
-          p {
-            font-size: 14px;
           }
         }
+      }
+    }
+    .testimonials {
+      padding: 3vmax 4vmax;
+      .testimonial {
+        .open-quote,
+        .close-quote {
+          font-size: 48px;
+          &.close-quote {
+            text-align: right;
+            transform: scale(1, -1);
+          }
+        }
+        h2 {
+          font-size: 28px;
+        }
+      }
+    }
+    .demo {
+      padding: 3vmax 4vmax;
+      h2 {
+        font-size: 28px;
       }
     }
   }
@@ -292,7 +319,7 @@ $blue: #3d80fc;
       padding: 4vmax;
       h2 {
         font-size: 24px;
-        text-shadow: 2.5px 2.5px $yellow;
+        text-shadow: 2px 2px $yellow;
       }
       .collection-content {
         flex-direction: column;
@@ -300,7 +327,10 @@ $blue: #3d80fc;
           width: 100%;
           h3 {
             font-size: 20px;
-            text-shadow: 2.5px 2.5px $yellow;
+            text-shadow: 1.5px 1, 5px $yellow;
+          }
+          p {
+            font-size: 14px;
           }
         }
       }
@@ -308,7 +338,7 @@ $blue: #3d80fc;
     .section-two {
       h2 {
         font-size: 24px;
-        text-shadow: 2.5px 2.5px $yellow;
+        text-shadow: 2px 2px $yellow;
       }
       .analysis-content {
         flex-direction: column;
@@ -316,9 +346,43 @@ $blue: #3d80fc;
           width: 100%;
           h3 {
             font-size: 20px;
-            text-shadow: 2.5px 2.5px $yellow;
+            text-shadow: 1.5px 1, 5px $yellow;
+          }
+          p {
+            font-size: 14px;
           }
         }
+      }
+    }
+    .testimonials {
+      flex-direction: column;
+      .testimonial {
+        width: 100%;
+        margin-bottom: 1vmax;
+        margin-top: 1vmax;
+        .open-quote,
+        .close-quote {
+          font-size: 40px;
+          text-shadow: 2px 2px $yellow;
+          &.close-quote {
+            text-align: right;
+            transform: scale(1, -1);
+          }
+        }
+        h2 {
+          font-size: 24px;
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+    .demo {
+      h2 {
+        font-size: 24px;
+      }
+      .request-form {
+        width: 100%;
       }
     }
   }
