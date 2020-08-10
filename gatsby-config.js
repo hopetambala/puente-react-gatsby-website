@@ -30,7 +30,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-s3`,
       options: {
-        bucketName: "www.puente-dr.org",
+        // bucketName: "www.puente-dr.org",
+        bucketName: process.env.S3_BUCKET,
       },
     },
     'gatsby-transformer-remark',
