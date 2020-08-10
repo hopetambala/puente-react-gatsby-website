@@ -47,9 +47,11 @@
   },
   "scripts": {
     "develop": "env-cmd -f .env.development gatsby develop",
-    "deploy": "npm run build && gatsby-plugin-s3 deploy",
+    "deploy-dev": "npm run build-dev && gatsby-plugin-s3 deploy -y",
+    "deploy": "npm run build-prod && gatsby-plugin-s3 deploy",
     "start": "npm run develop",
-    "build": "env-cmd -f .env.development gatsby build",
+    "build-dev": "env-cmd -f .env.development gatsby build",
+    "build-prod": "env-cmd -f .env.production gatsby build",
     "heroku-postbuild": "gatsby build",
     "serve": "gatsby serve",
     "setup": "npm install --no-save contentful-import yargs-parser axios chalk && node ./setup.js"

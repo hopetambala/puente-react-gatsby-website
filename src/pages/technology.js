@@ -1,4 +1,5 @@
-import React from "react"
+import React, {useEffect, createRef} from "react"
+import lottie from "lottie-web"
 import {
   // Link,
   graphql,
@@ -9,7 +10,7 @@ import Form from 'react-bootstrap/Form'
 
 // Component Imports
 import Layout from "../components/layout"
-// import DemoCTA from "../components/DemoCTA"
+import dataAnimation from '../animations/data.json'
 
 // Styles Import
 import styles from './technology.module.scss'
@@ -106,6 +107,19 @@ const TechnologyPage = () => {
       }
     }
   `)
+
+  let dataContainer = createRef();
+  useEffect(() => {
+    const anim = lottie.loadAnimation({
+      container: dataContainer.current,
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      animationData: dataAnimation
+    });
+    return () => anim.destroy(); // optional clean up for unmounting
+  }, []); // eslint-disable-line
+
   return (
     <Layout>
       <div className={styles.container}>
@@ -115,9 +129,11 @@ const TechnologyPage = () => {
             <p>{data.contentfulTechnologyPage.heroSubText}</p>
           </div>
           <div className={styles.col}>
-            <div>
+            {/* <div>
               <img alt={data.contentfulTechnologyPage.heroImage.title} src={data.contentfulTechnologyPage.heroImage.resize.src} fluid />
-            </div>
+            </div> */}
+            <div className="data-container" ref={dataContainer} />
+
           </div>
         </div>
         <div className={styles.divider}>
