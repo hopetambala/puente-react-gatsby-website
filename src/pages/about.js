@@ -111,11 +111,23 @@ const AboutPage = () => {
       }
     }
     contentfulFeaturedVolunteers {
+      volunteerOneImage {
+        title
+        resize (height: 250) {
+      	  src
+        }
+      }
       volunteerName
       volunteerOneRole
       volunteerOneBio {
         childMarkdownRemark {
           html
+        }
+      }
+      volunteerTwoImage {
+        title
+        resize (height: 250) {
+      	  src
         }
       }
       volunteerTwoName
@@ -125,11 +137,23 @@ const AboutPage = () => {
           html
         }
       }
+      volunteerThreeImage {
+        title
+        resize (height: 250) {
+      	  src
+        }
+      }
       volunteerThreeName
       volunteerThreeRole
       volunteerThreeBio {
         childMarkdownRemark {
           html
+        }
+      }
+      volunteerFourImage {
+        title
+        resize (height: 250) {
+      	  src
         }
       } 
       volunteerFourName
@@ -295,7 +319,7 @@ const AboutPage = () => {
                 <div className={aboutStyles.employees}>
                   <div className={aboutStyles.employee}>
                     <div className={aboutStyles.imgContainer}>
-                      <img alt={data.contentfulAboutPage.employeeOneImage.title} src={data.contentfulAboutPage.employeeOneImage.resize.src} fluid />
+                      <img alt={data.contentfulFeaturedVolunteers.volunteerOneImage.title} src={data.contentfulFeaturedVolunteers.volunteerOneImage.resize.src} fluid />
                       <Icon onClick={() => setVolunteerShow(true)} className={aboutStyles.icon} size={24} icon={plus} />
                       <BioModal
                         show={volunteerShow}
@@ -313,7 +337,7 @@ const AboutPage = () => {
                   </div>
                   <div className={aboutStyles.employee}>
                     <div className={aboutStyles.imgContainer}>
-                      <img alt={data.contentfulAboutPage.employeeTwoImage.title} src={data.contentfulAboutPage.employeeTwoImage.resize.src} fluid />
+                      <img alt={data.contentfulFeaturedVolunteers.volunteerTwoImage.title} src={data.contentfulFeaturedVolunteers.volunteerTwoImage.resize.src} fluid />
                       <Icon onClick={() => setVolunteerTwoShow(true)} className={aboutStyles.icon} size={24} icon={plus} />
                       <BioModal
                         show={volunteerTwoShow}
@@ -333,7 +357,7 @@ const AboutPage = () => {
                 <div className={aboutStyles.employees}>
                   <div className={aboutStyles.employee}>
                     <div className={aboutStyles.imgContainer}>
-                      <img alt={data.contentfulAboutPage.employeeThreeImage.title} src={data.contentfulAboutPage.employeeThreeImage.resize.src} fluid />
+                      <img alt={data.contentfulFeaturedVolunteers.volunteerThreeImage.title} src={data.contentfulFeaturedVolunteers.volunteerThreeImage.resize.src} fluid />
                       <Icon onClick={() => setVolunteerThreeShow(true)} className={aboutStyles.icon} size={24} icon={plus} />
                       <BioModal
                         show={volunteerThreeShow}
@@ -351,7 +375,7 @@ const AboutPage = () => {
                   </div>
                   <div className={aboutStyles.employee}>
                     <div className={aboutStyles.imgContainer}>
-                      <img alt={data.contentfulAboutPage.employeeFourImage.title} src={data.contentfulAboutPage.employeeFourImage.resize.src} fluid />
+                      <img alt={data.contentfulFeaturedVolunteers.volunteerFourImage.title} src={data.contentfulFeaturedVolunteers.volunteerFourImage.resize.src} fluid />
                       <Icon onClick={() => setVolunteerFourShow(true)} className={aboutStyles.icon} size={24} icon={plus} />
                       <BioModal
                         show={volunteerFourShow}
