@@ -1,8 +1,6 @@
 import React from 'react'
 import {
-  Link,
-  // useStaticQuery,
-  // graphql
+  Link
 } from "gatsby"
 // import Img from "gatsby-image"
 import Form from 'react-bootstrap/Form'
@@ -109,10 +107,10 @@ class Footer extends React.Component {
             <h2>Phone:</h2>
             <p>1-574-302-7756</p>
             <div className={footerStyles.icons}>
-              <a href="https://www.facebook.com/puentedr/"><Icon size={25} icon={facebook} /></a>
-              <a href="https://www.instagram.com/puentedr/"><Icon size={25} icon={instagram} /></a>
-              <a href="https://www.youtube.com/channel/UCDcD_DYPeLt4NZdVwKX8gDw"><Icon size={25} icon={youtubePlay} /></a>
-              <a href="https://www.linkedin.com/company/18499313/admin/"><Icon size={25} icon={linkedin} /></a>
+              <a href="https://www.facebook.com/puentedr/" target="_blank" rel="noopener noreferrer"><Icon size={25} icon={facebook} /></a>
+              <a href="https://www.instagram.com/puentedr/" target="_blank" rel="noopener noreferrer"><Icon size={25} icon={instagram} /></a>
+              <a href="https://www.youtube.com/channel/UCDcD_DYPeLt4NZdVwKX8gDw"target="_blank" rel="noopener noreferrer" ><Icon size={25} icon={youtubePlay} /></a>
+              <a href="https://www.linkedin.com/company/18499313/admin/" target="_blank" rel="noopener noreferrer"><Icon size={25} icon={linkedin} /></a>
             </div>
           </div>
           <div className={footerStyles.section}>
