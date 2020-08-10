@@ -11,7 +11,7 @@ const PartnerContactCTA = () => {
   const [modalShow, setModalShow] = useState(false);
   return (
     <div className={styles.container}>
-      <h2>Become a Partner?</h2>
+      <h2>Ready to become a partner?</h2>
       <div className={styles.button}>
         <Button onClick={() => setModalShow(true)} className={styles.buttonBackground}>
           Contact Us
