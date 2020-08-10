@@ -229,7 +229,7 @@ const AboutPage = () => {
               />
             </div>
             <div id="staff" className={aboutStyles.staffSection}>
-              <h2>Our Staff</h2>
+              <h2>Our Team</h2>
               <div className={aboutStyles.employeeRow}>
                 <div className={aboutStyles.employees}>
                   <div className={aboutStyles.employee}>
