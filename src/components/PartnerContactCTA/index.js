@@ -2,10 +2,10 @@ import React, { useState } from "react"
 import Button from 'react-bootstrap/Button'
 
 // Style Imports
-import styles from './PartnerContactCTA.module.scss'
+import styles from './index.module.scss'
 
 // Component Imports
-import ContactModal from './contactModule'
+import ContactModal from '../contactModule'
 
 const PartnerContactCTA = () => {
   const [modalShow, setModalShow] = useState(false);

@@ -1,12 +1,7 @@
 import React from 'react'
-import {
-  // Link,
-  // useStaticQuery,
-  // graphql
-} from "gatsby"
 
 // Component/Icon Imports
-import { Icon } from 'react-icons-kit'
+// import { Icon } from 'react-icons-kit'
 
 // Style Imports
 import '../styles/styles.scss'

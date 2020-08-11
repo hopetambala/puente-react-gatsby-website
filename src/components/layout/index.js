@@ -4,15 +4,15 @@ import {
   graphql,
   useStaticQuery,
 } from "gatsby"
-import favicon from '../images/favicon.ico'
+import favicon from '../../images/favicon.ico'
 
 // Component Imports
-import Header from './header'
-import Footer from './footer'
+import Header from '../header'
+import Footer from '../footer'
 
 //Style Imports
-import '../styles/styles.scss'
-import layoutStyles from './layout.module.scss'
+import '../../styles/styles.scss'
+import layoutStyles from './index.module.scss'
 
 const Layout = (props) => {
   const data = useStaticQuery(

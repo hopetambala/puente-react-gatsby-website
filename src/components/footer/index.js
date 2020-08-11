@@ -15,7 +15,7 @@ import { youtubePlay } from 'react-icons-kit/fa/youtubePlay'
 import { linkedin } from 'react-icons-kit/fa/linkedin'
 
 // Style Imports
-import '../..//styles/styles.scss'
+import '../../styles/styles.scss'
 import footerStyles from './index.module.scss'
 
 class Footer extends React.Component {

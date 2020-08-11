@@ -1,8 +1,8 @@
 import React from "react"
 
 // Style Imports
-import '../styles/styles.scss'
-import styles from './footer/index.module.scss'
+import '../../styles/styles.scss'
+import styles from '../footer/index.module.scss'
 
 const Logo = () => {
   // const logo = useStaticQuery(graphql`
@@ -17,7 +17,7 @@ const Logo = () => {
   //   }
   // `)
   return (
-    <img className={styles.logo} src={require('../images/logo-black.png')} alt="Puente Logo" />
+    <img className={styles.logo} src={require('../../images/logo-black.png')} alt="Puente Logo" />
   )
 }
 

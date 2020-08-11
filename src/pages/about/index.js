@@ -6,11 +6,11 @@ import {
 import ReactPlayer from 'react-player/youtube'
 
 // Component Imports
-import Layout from "../components/layout"
-import BioModal from '../components/bioModule'
+import Layout from "../../components/layout"
+import BioModal from '../../components/bioModule'
 
 // Style/Icon Imports
-import aboutStyles from "./about.module.scss"
+import aboutStyles from "./index.module.scss"
 import { Icon } from 'react-icons-kit'
 import { linkedin } from 'react-icons-kit/fa/linkedin'
 import { plus } from 'react-icons-kit/fa/plus'

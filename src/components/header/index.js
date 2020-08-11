@@ -4,14 +4,13 @@ import {
 } from "gatsby"
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
-// import Button from 'react-bootstrap/Button'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 
 // Style imports
-import styles from "./header.module.scss"
+import styles from "./index.module.scss"
 
 //Logo imports
-import Logo from '../components/footerLogo'
+import Logo from '../footerLogo'
 
 // Icon imports
 import { Icon } from 'react-icons-kit'
