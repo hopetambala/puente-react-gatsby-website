@@ -253,27 +253,6 @@ const AboutPage = () => {
                   </div>
                   <div className={aboutStyles.employee}>
                     <div className={aboutStyles.imgContainer}>
-                      <img alt={data.contentfulAboutPage.employeeTwoImage.title} src={data.contentfulAboutPage.employeeTwoImage.resize.src} fluid />
-                      <a href={data.contentfulAboutPage.employeeTwoLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
-                      <Icon onClick={() => setPaulShow(true)} className={aboutStyles.iconTwo} size={24} icon={plus} />
-                      <BioModal
-                        show={paulShow}
-                        onHide={() => setPaulShow(false)}
-                      >
-                        <div
-                          dangerouslySetInnerHTML={{
-                            __html: data.contentfulAboutPage.employeeTwoBio.childMarkdownRemark.html,
-                          }}
-                        />
-                      </BioModal>
-                    </div>
-                    <h2>{data.contentfulAboutPage.employeeTwoName}</h2>
-                    <h3>{data.contentfulAboutPage.employeeTwoPosition}</h3>
-                  </div>
-                </div>
-                <div className={aboutStyles.employees}>
-                  <div className={aboutStyles.employee}>
-                    <div className={aboutStyles.imgContainer}>
                       <img alt={data.contentfulAboutPage.employeeThreeImage.title} src={data.contentfulAboutPage.employeeThreeImage.resize.src} fluid />
                       <a href={data.contentfulAboutPage.employeeThreeLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
                       <Icon onClick={() => setHopeShow(true)} className={aboutStyles.iconTwo} size={24} icon={plus} />
@@ -290,6 +269,27 @@ const AboutPage = () => {
                     </div>
                     <h2>{data.contentfulAboutPage.employeeThreeName}</h2>
                     <h3>{data.contentfulAboutPage.employeeThreePosition}</h3>
+                  </div>
+                </div>
+                <div className={aboutStyles.employees}>
+                <div className={aboutStyles.employee}>
+                    <div className={aboutStyles.imgContainer}>
+                      <img alt={data.contentfulAboutPage.employeeTwoImage.title} src={data.contentfulAboutPage.employeeTwoImage.resize.src} fluid />
+                      <a href={data.contentfulAboutPage.employeeTwoLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
+                      <Icon onClick={() => setPaulShow(true)} className={aboutStyles.iconTwo} size={24} icon={plus} />
+                      <BioModal
+                        show={paulShow}
+                        onHide={() => setPaulShow(false)}
+                      >
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: data.contentfulAboutPage.employeeTwoBio.childMarkdownRemark.html,
+                          }}
+                        />
+                      </BioModal>
+                    </div>
+                    <h2>{data.contentfulAboutPage.employeeTwoName}</h2>
+                    <h3>{data.contentfulAboutPage.employeeTwoPosition}</h3>
                   </div>
                   <div className={aboutStyles.employee}>
                     <div className={aboutStyles.imgContainer}>
