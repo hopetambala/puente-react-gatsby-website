@@ -1,16 +1,13 @@
 import React, { useState } from "react"
 import {
-  // Link,
   graphql,
   useStaticQuery,
 } from "gatsby"
 import ReactPlayer from 'react-player/youtube'
-// import Carousel from 'react-bootstrap/Carousel'
 
 // Component Imports
 import Layout from "../components/layout"
 import BioModal from '../components/bioModule'
-// import AboutCTA from "../components/aboutCTA"
 
 // Style/Icon Imports
 import aboutStyles from "./about.module.scss"
@@ -107,6 +104,22 @@ const AboutPage = () => {
       annualReportText {
         childMarkdownRemark {
           html
+        }
+      }
+    }
+    contentfulTeamMemberModel{
+      name
+      position
+      linkedin
+      bio {
+        childMarkdownRemark{
+          html
+        }
+      }
+      image {
+        title
+        resize (height: 1000) {
+          src            
         }
       }
     }

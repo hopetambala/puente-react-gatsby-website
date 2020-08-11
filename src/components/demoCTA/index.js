@@ -2,19 +2,19 @@ import React, { useState } from "react"
 import Button from 'react-bootstrap/Button'
 
 // Style Imports
-import styles from './faqCTA.module.scss'
+import styles from './index.module.scss'
 
 // Component Imports
-import ContactModal from './contactModule'
+import ContactModal from '../contactModule'
 
-const FaqCTA = () => {
+const DemoCTA = () => {
   const [modalShow, setModalShow] = useState(false);
   return (
     <div className={styles.container}>
-      <h2>Have a question that's not listed?</h2>
+      <h2>Ready to Empower Your Community?</h2>
       <div className={styles.button}>
         <Button onClick={() => setModalShow(true)} className={styles.buttonBackground}>
-          Contact Us
+          Request a Demo
         </Button>
         <ContactModal
           show={modalShow}
@@ -25,4 +25,4 @@ const FaqCTA = () => {
   )
 }
 
-export default FaqCTA
+export default DemoCTA

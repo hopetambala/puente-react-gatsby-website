@@ -7,9 +7,9 @@ import {
 import Button from 'react-bootstrap/Button'
 
 // Style Imports
-import styles from './volunteerCTA.module.scss'
+import styles from './index.module.scss'
 
-const DonateCTA = () => {
+const AboutCTA = () => {
   // const data = useStaticQuery(
   //   graphql`
   //   query {
@@ -22,14 +22,14 @@ const DonateCTA = () => {
   // `)
   return (
     <div className={styles.container}>
-      <h2>You Can Also Support Puente by Donating!</h2>
-      <Link className={styles.button} to="/donate">
+      <h2>Learn About What We Have Been Up To</h2>
+      <Link className={styles.button} to="/news">
         <Button className={styles.buttonBackground}>
-          Donate
+          Annual Report
         </Button>
       </Link>
     </div>
   )
 }
 
-export default DonateCTA
+export default AboutCTA

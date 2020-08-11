@@ -7,7 +7,7 @@ import Form from 'react-bootstrap/Form'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
 
 // Component/Icon Imports
-import Logo from './footerLogo'
+import Logo from '../footerLogo'
 import { Icon } from 'react-icons-kit'
 import { facebook } from 'react-icons-kit/fa/facebook'
 import { instagram } from 'react-icons-kit/fa/instagram'
@@ -15,8 +15,8 @@ import { youtubePlay } from 'react-icons-kit/fa/youtubePlay'
 import { linkedin } from 'react-icons-kit/fa/linkedin'
 
 // Style Imports
-import '../styles/styles.scss'
-import footerStyles from './footer.module.scss'
+import '../..//styles/styles.scss'
+import footerStyles from './index.module.scss'
 
 class Footer extends React.Component {
   constructor(props) {

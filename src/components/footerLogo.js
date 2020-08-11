@@ -1,13 +1,8 @@
 import React from "react"
-// import {
-//   useStaticQuery,
-//   graphql
-// } from "gatsby"
-// import Img from "gatsby-image"
 
 // Style Imports
 import '../styles/styles.scss'
-import styles from './footer.module.scss'
+import styles from './footer/index.module.scss'
 
 const Logo = () => {
   // const logo = useStaticQuery(graphql`
