@@ -2,7 +2,7 @@ import React from "react"
 
 // Style Imports
 import '../../styles/styles.scss'
-import styles from '../footer/index.module.scss'
+import styles from '../Footer/index.module.scss'
 
 const Logo = () => {
   // const logo = useStaticQuery(graphql`
