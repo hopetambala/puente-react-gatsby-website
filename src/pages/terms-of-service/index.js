@@ -6,16 +6,16 @@ import {
 } from "gatsby"
 
 // Component Imports
-import Layout from "../components/layout"
+import Layout from "../../components/layout"
 
 // Style imports
-import styles from "./acceptable-use.module.scss"
+import styles from "./index.module.scss"
 
 const AcceptableUse = () => {
   const data = useStaticQuery(
     graphql`
     query {
-      contentfulAcceptableUsePage {
+      contentfulTermsOfServicePage {
         heroText
         bodyText {
           childMarkdownRemark {
@@ -29,12 +29,12 @@ const AcceptableUse = () => {
     <Layout>
       <div className={styles.container}>
         <div className={styles.header}>
-          <h1>{data.contentfulAcceptableUsePage.heroText}</h1>
+          <h1>{data.contentfulTermsOfServicePage.heroText}</h1>
         </div>
         <div className={styles.body}>
           <div
             dangerouslySetInnerHTML={{
-              __html: data.contentfulAcceptableUsePage.bodyText.childMarkdownRemark.html,
+              __html: data.contentfulTermsOfServicePage.bodyText.childMarkdownRemark.html,
             }}
           />
         </div>

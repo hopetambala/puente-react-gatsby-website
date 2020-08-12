@@ -9,11 +9,11 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 
 // Component Imports
-import Layout from "../components/layout"
-import dataAnimation from '../animations/data.json'
+import Layout from "../../components/layout"
+import dataAnimation from '../../animations/data.json'
 
 // Styles Import
-import styles from './technology.module.scss'
+import styles from './index.module.scss'
 
 const TechnologyPage = () => {
   const data = useStaticQuery(

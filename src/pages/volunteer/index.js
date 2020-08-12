@@ -6,12 +6,12 @@ import {
 } from "gatsby"
 
 // Component Imports
-import Layout from "../components/layout"
-import VolunteerCTA from "../components/volunteerCTA"
-import PartnerContactCTA from "../components/PartnerContactCTA"
+import Layout from "../../components/layout"
+import VolunteerCTA from "../../components/volunteerCTA"
+import PartnerContactCTA from "../../components/PartnerContactCTA"
 
 // Style Imports
-import volunteerStyles from "./volunteer.module.scss"
+import volunteerStyles from "./index.module.scss"
 
 const VolunteerPage = () => {
   const data = useStaticQuery(

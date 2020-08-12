@@ -6,11 +6,10 @@ import {
 } from "gatsby"
 
 // Component Imports
-import Layout from "../components/layout"
-// import DonateForm from "../components/donateForm"
+import Layout from "../../components/layout"
 
 // Style Imports
-import donateStyles from "./donate.module.scss"
+import donateStyles from "./index.module.scss"
 
 const DonatePage = () => {
   const data = useStaticQuery(

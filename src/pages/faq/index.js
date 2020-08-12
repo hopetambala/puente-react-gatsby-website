@@ -8,11 +8,11 @@ import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
 
 // Component Imports
-import Layout from "../components/layout"
-import FaqCTA from "../components/faqCTA"
+import Layout from "../../components/layout"
+import FaqCTA from "../../components/faqCTA"
 
 // Style Imports
-import faqStyles from "./faq.module.scss"
+import faqStyles from "./index.module.scss"
 
 const FAQPage = () => {
   const data = useStaticQuery(

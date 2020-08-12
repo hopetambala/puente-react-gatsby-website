@@ -8,10 +8,10 @@ import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'
 
 // Component Imports
-import Layout from "../components/layout"
+import Layout from "../../components/layout"
 
 // Style/Icon Imports
-import styles from "./news.module.scss"
+import styles from "./index.module.scss"
 
 const ReportsPage = () => {
   const data = useStaticQuery(
