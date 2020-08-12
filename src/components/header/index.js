@@ -10,7 +10,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 import styles from "./index.module.scss"
 
 //Logo imports
-import Logo from '../footerLogo'
+import Logo from '../Logo'
 
 // Icon imports
 import { Icon } from 'react-icons-kit'

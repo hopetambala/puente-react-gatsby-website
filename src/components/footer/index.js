@@ -2,12 +2,11 @@ import React from 'react'
 import {
   Link
 } from "gatsby"
-// import Img from "gatsby-image"
 import Form from 'react-bootstrap/Form'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
 
 // Component/Icon Imports
-import Logo from '../footerLogo'
+import Logo from '../Logo'
 import { Icon } from 'react-icons-kit'
 import { facebook } from 'react-icons-kit/fa/facebook'
 import { instagram } from 'react-icons-kit/fa/instagram'

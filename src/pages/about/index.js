@@ -9,12 +9,11 @@ import _ from 'lodash'
 // Component Imports
 import Layout from "../../components/layout"
 import MemberBio from './MemberBio'
-import BioModal from '../../components/bioModule'
+import BioModal from './MemberBio/Modal'
 
 // Style/Icon Imports
 import aboutStyles from "./index.module.scss"
 import { Icon } from 'react-icons-kit'
-import { linkedin } from 'react-icons-kit/fa/linkedin'
 import { plus } from 'react-icons-kit/fa/plus'
 
 const AboutPage = () => {
@@ -250,12 +249,12 @@ const AboutPage = () => {
               <h2>Our Team</h2>
               <div className={aboutStyles.employeeRow}>
                 <div className={aboutStyles.employees}>
-                  <MemberBio profile={profiles[2]} />
-                  <MemberBio profile={profiles[1]} />
+                  <MemberBio linkedin profile={profiles[2]} />
+                  <MemberBio linkedin profile={profiles[1]} />
                 </div>
                 <div className={aboutStyles.employees}>
-                  <MemberBio profile={profiles[3]} />
-                  <MemberBio profile={profiles[0]} />
+                  <MemberBio linkedin profile={profiles[3]} />
+                  <MemberBio linkedin profile={profiles[0]} />
                 </div>
               </div>
               <div className={aboutStyles.employeeRow}>
