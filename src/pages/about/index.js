@@ -4,9 +4,11 @@ import {
   useStaticQuery,
 } from "gatsby"
 import ReactPlayer from 'react-player/youtube'
+import _ from 'lodash'
 
 // Component Imports
 import Layout from "../../components/layout"
+import MemberBio from './MemberBio'
 import BioModal from '../../components/bioModule'
 
 // Style/Icon Imports
@@ -107,19 +109,21 @@ const AboutPage = () => {
         }
       }
     }
-    contentfulTeamMemberModel{
-      name
-      position
-      linkedin
-      bio {
-        childMarkdownRemark{
-          html
+    allContentfulTeamMemberModel{
+      nodes{
+        name
+        position
+        linkedin
+        bio {
+          childMarkdownRemark{
+            html
+          }
         }
-      }
-      image {
-        title
-        resize (height: 1000) {
-          src            
+        image {
+          title
+          resize (height: 250) {
+            src            
+          }
         }
       }
     }
@@ -192,14 +196,15 @@ const AboutPage = () => {
     }
   }
   `)
-  const [scottShow, setScottShow] = useState(false);
-  const [paulShow, setPaulShow] = useState(false);
-  const [hopeShow, setHopeShow] = useState(false);
-  const [crismaryShow, setCrismaryShow] = useState(false);
+
   const [volunteerShow, setVolunteerShow] = useState(false);
   const [volunteerTwoShow, setVolunteerTwoShow] = useState(false);
   const [volunteerThreeShow, setVolunteerThreeShow] = useState(false);
   const [volunteerFourShow, setVolunteerFourShow] = useState(false);
+
+  const { nodes } = data.allContentfulTeamMemberModel
+  const profiles = _.uniqBy(nodes,'name')
+
   return (
     <div>
       <Layout>
@@ -245,84 +250,22 @@ const AboutPage = () => {
               <h2>Our Team</h2>
               <div className={aboutStyles.employeeRow}>
                 <div className={aboutStyles.employees}>
-                  <div className={aboutStyles.employee}>
-                    <div className={aboutStyles.imgContainer}>
-                      <img alt={data.contentfulAboutPage.employeeOneImage.title} src={data.contentfulAboutPage.employeeOneImage.resize.src} fluid />
-                      <a href={data.contentfulAboutPage.employeeOneLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
-                      <Icon onClick={() => setScottShow(true)} className={aboutStyles.iconTwo} size={24} icon={plus} />
-                      <BioModal
-                        show={scottShow}
-                        onHide={() => setScottShow(false)}
-                      >
-                        <div
-                          dangerouslySetInnerHTML={{
-                            __html: data.contentfulAboutPage.employeeOneBio.childMarkdownRemark.html,
-                          }}
-                        />
-                      </BioModal>
-                    </div>
-                    <h2>{data.contentfulAboutPage.employeeOneName}</h2>
-                    <h3>{data.contentfulAboutPage.employeeOnePosition}</h3>
-                  </div>
-                  <div className={aboutStyles.employee}>
-                    <div className={aboutStyles.imgContainer}>
-                      <img alt={data.contentfulAboutPage.employeeThreeImage.title} src={data.contentfulAboutPage.employeeThreeImage.resize.src} fluid />
-                      <a href={data.contentfulAboutPage.employeeThreeLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
-                      <Icon onClick={() => setHopeShow(true)} className={aboutStyles.iconTwo} size={24} icon={plus} />
-                      <BioModal
-                        show={hopeShow}
-                        onHide={() => setHopeShow(false)}
-                      >
-                        <div
-                          dangerouslySetInnerHTML={{
-                            __html: data.contentfulAboutPage.employeeThreeBio.childMarkdownRemark.html,
-                          }}
-                        />
-                      </BioModal>
-                    </div>
-                    <h2>{data.contentfulAboutPage.employeeThreeName}</h2>
-                    <h3>{data.contentfulAboutPage.employeeThreePosition}</h3>
-                  </div>
+                  <MemberBio profile={profiles[2]} />
+                  <MemberBio profile={profiles[1]} />
                 </div>
                 <div className={aboutStyles.employees}>
-                <div className={aboutStyles.employee}>
-                    <div className={aboutStyles.imgContainer}>
-                      <img alt={data.contentfulAboutPage.employeeTwoImage.title} src={data.contentfulAboutPage.employeeTwoImage.resize.src} fluid />
-                      <a href={data.contentfulAboutPage.employeeTwoLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
-                      <Icon onClick={() => setPaulShow(true)} className={aboutStyles.iconTwo} size={24} icon={plus} />
-                      <BioModal
-                        show={paulShow}
-                        onHide={() => setPaulShow(false)}
-                      >
-                        <div
-                          dangerouslySetInnerHTML={{
-                            __html: data.contentfulAboutPage.employeeTwoBio.childMarkdownRemark.html,
-                          }}
-                        />
-                      </BioModal>
-                    </div>
-                    <h2>{data.contentfulAboutPage.employeeTwoName}</h2>
-                    <h3>{data.contentfulAboutPage.employeeTwoPosition}</h3>
-                  </div>
-                  <div className={aboutStyles.employee}>
-                    <div className={aboutStyles.imgContainer}>
-                      <img alt={data.contentfulAboutPage.employeeFourImage.title} src={data.contentfulAboutPage.employeeFourImage.resize.src} fluid />
-                      <a href={data.contentfulAboutPage.employeeFourLinkedIn}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>
-                      <Icon onClick={() => setCrismaryShow(true)} className={aboutStyles.iconTwo} size={24} icon={plus} />
-                      <BioModal
-                        show={crismaryShow}
-                        onHide={() => setCrismaryShow(false)}
-                      >
-                        <div
-                          dangerouslySetInnerHTML={{
-                            __html: data.contentfulAboutPage.employeeFourBio.childMarkdownRemark.html,
-                          }}
-                        />
-                      </BioModal>
-                    </div>
-                    <h2>{data.contentfulAboutPage.employeeFourName}</h2>
-                    <h3>{data.contentfulAboutPage.employeeFourPosition}</h3>
-                  </div>
+                  <MemberBio profile={profiles[3]} />
+                  <MemberBio profile={profiles[0]} />
+                </div>
+              </div>
+              <div className={aboutStyles.employeeRow}>
+                <div className={aboutStyles.employees}>
+                  {/* <MemberBio profile={profiles[4]} /> */}
+                  {/* <MemberBio profile={profiles[5]} /> */}
+                </div>
+                <div className={aboutStyles.employees}>
+                  {/* <MemberBio profile={profiles[6]} /> */}
+                  {/* <MemberBio profile={profiles[7]} /> */}
                 </div>
               </div>
             </div>

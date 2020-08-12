@@ -27,6 +27,7 @@ module.exports = {
   },
   pathPrefix: '/gatsby-contentful-starter',
   plugins: [
+    `gatsby-plugin-lodash`,
     {
       resolve: `gatsby-plugin-s3`,
       options: {
