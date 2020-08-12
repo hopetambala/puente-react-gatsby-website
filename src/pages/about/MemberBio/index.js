@@ -11,6 +11,8 @@ const MemberBio = (props) =>{
     const [show, setShow] = useState(false);
     const { profile } = props
 
+    if(!profile) return null
+
     return(
         <div className={aboutStyles.employee}>
             <div className={aboutStyles.imgContainer}>
