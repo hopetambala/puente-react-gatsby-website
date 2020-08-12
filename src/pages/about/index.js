@@ -45,69 +45,13 @@ const AboutPage = () => {
             html
           }
         }
-        employeeOneImage {
-        title
-        resize (height: 250) {
-      	  src
+        annualReport
+        annualReportText {
+          childMarkdownRemark {
+            html
+          }
         }
       }
-      employeeOneName
-      employeeOnePosition
-      employeeOneLinkedIn
-      employeeOneBio {
-        childMarkdownRemark {
-          html
-        }
-      } 
-      employeeTwoImage {
-        title
-        resize (height: 250) {
-      	  src
-        }
-      }
-      employeeTwoName
-      employeeTwoPosition
-      employeeTwoLinkedIn
-      employeeTwoBio {
-        childMarkdownRemark {
-          html
-        }
-      } 
-      employeeThreeImage {
-        title
-        resize (height: 250) {
-      	  src
-        }
-      }
-      employeeThreeName
-      employeeThreePosition
-      employeeThreeLinkedIn
-      employeeThreeBio {
-        childMarkdownRemark {
-          html
-        }
-      } 
-      employeeFourImage {
-        title
-        resize (height: 250) {
-      	  src
-        }
-      }
-      employeeFourName
-      employeeFourPosition
-      employeeFourLinkedIn
-      employeeFourBio {
-        childMarkdownRemark {
-          html
-        }
-      } 
-      annualReport
-      annualReportText {
-        childMarkdownRemark {
-          html
-        }
-      }
-    }
     allContentfulTeamMemberModel{
       nodes{
         name
@@ -259,12 +203,12 @@ const AboutPage = () => {
               </div>
               <div className={aboutStyles.employeeRow}>
                 <div className={aboutStyles.employees}>
-                  {/* <MemberBio profile={profiles[4]} /> */}
-                  {/* <MemberBio profile={profiles[5]} /> */}
+                  <MemberBio linkedin profile={profiles[5]} />
+                  <MemberBio linkedin profile={profiles[4]} />
                 </div>
                 <div className={aboutStyles.employees}>
-                  {/* <MemberBio profile={profiles[6]} /> */}
-                  {/* <MemberBio profile={profiles[7]} /> */}
+                  <MemberBio linkedin profile={profiles[6]} />
+                  <MemberBio linkedin profile={profiles[7]} />
                 </div>
               </div>
             </div>

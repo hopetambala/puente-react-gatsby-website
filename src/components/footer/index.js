@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
 
 // Component/Icon Imports
-import Logo from '../Logo'
+import Logo from '../logo'
 import { Icon } from 'react-icons-kit'
 import { facebook } from 'react-icons-kit/fa/facebook'
 import { instagram } from 'react-icons-kit/fa/instagram'

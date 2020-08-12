@@ -7,8 +7,8 @@ import {
 import favicon from '../../images/favicon.ico'
 
 // Component Imports
-import Header from '../Header'
-import Footer from '../Footer'
+import Header from '../header'
+import Footer from '../footer'
 
 //Style Imports
 import '../../styles/styles.scss'
