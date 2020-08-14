@@ -58,8 +58,8 @@ const Header = () => {
             </Nav.Item>
             <Nav.Item className={styles.navContact}>
               <Icon className={styles.iconHeader} size={18} icon={ic_email} />
-              <Nav.Link href="mailto:info@puente-dr.com">
-                info@puente-dr.com
+              <Nav.Link href="mailto:info@puente-dr.org">
+                info@puente-dr.org
             </Nav.Link>
             </Nav.Item>
           </Nav>
