@@ -177,8 +177,8 @@ const Header = () => {
             </Nav.Item>
             <Nav.Item className={styles.navContact}>
               <Icon className={styles.iconHeader} size={18} icon={ic_email} />
-              <Nav.Link href="mailto:info@puente-dr.com">
-                info@puente-dr.com
+              <Nav.Link href="mailto:info@puente-dr.org">
+                info@puente-dr.org
             </Nav.Link>
             </Nav.Item>
           </Nav>
@@ -187,13 +187,13 @@ const Header = () => {
               <Nav.Link className={styles.navItem} href="/about">About Us</Nav.Link>
             </Nav.Item>
             <Nav.Item className={styles.nav}>
-              <Nav.Link className={styles.navItem} href="/technology">Technology</Nav.Link>
+              <Nav.Link className={styles.navItem} href="/technology">Our Technology</Nav.Link>
             </Nav.Item>
             <Nav.Item className={styles.nav}>
-              <Nav.Link className={styles.navItem} href="/programs">Programs</Nav.Link>
+              <Nav.Link className={styles.navItem} href="/programs">Our Work</Nav.Link>
             </Nav.Item>
             <Nav.Item className={styles.nav}>
-              <Nav.Link className={styles.navItem} href="/volunteer">Volunteers</Nav.Link>
+              <Nav.Link className={styles.navItem} href="/volunteer">Get Involved</Nav.Link>
             </Nav.Item>
             <Nav.Item className={styles.nav}>
               <Nav.Link className={styles.navItem} href="/news">News</Nav.Link>
