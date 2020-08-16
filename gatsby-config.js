@@ -29,9 +29,14 @@ module.exports = {
   plugins: [
     `gatsby-plugin-lodash`,
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.GOOGLE_ANALYTICS,
+      },
+    },
+    {
       resolve: `gatsby-plugin-s3`,
       options: {
-        // bucketName: "www.puente-dr.org",
         bucketName: process.env.S3_BUCKET,
       },
     },
