@@ -52,7 +52,7 @@ const AboutPage = () => {
           }
         }
       }
-    allContentfulTeamMemberModel{
+    allContentfulTeamMemberModel(sort: {fields: name, order: ASC}){
       nodes{
         name
         position
@@ -193,22 +193,22 @@ const AboutPage = () => {
               <h2>Our Team</h2>
               <div className={aboutStyles.employeeRow}>
                 <div className={aboutStyles.employees}>
-                  <MemberBio linkedin profile={profiles[0]} />
-                  <MemberBio linkedin profile={profiles[3]} />
+                  <MemberBio linkedin profile={profiles[6]} />
+                  <MemberBio linkedin profile={profiles[1]} />
                 </div>
                 <div className={aboutStyles.employees}>
-                  <MemberBio linkedin profile={profiles[2]} />
+                  <MemberBio linkedin profile={profiles[0]} />
                   <MemberBio linkedin profile={profiles[5]} />
                 </div>
               </div>
               <div className={aboutStyles.employeeRow}>
                 <div className={aboutStyles.employees}>
-                  <MemberBio linkedin profile={profiles[1]} />
-                  <MemberBio linkedin profile={profiles[6]} />
-                </div>
-                <div className={aboutStyles.employees}>
                   <MemberBio linkedin profile={profiles[4]} />
                   <MemberBio linkedin profile={profiles[7]} />
+                </div>
+                <div className={aboutStyles.employees}>
+                  <MemberBio linkedin profile={profiles[3]} />
+                  <MemberBio linkedin profile={profiles[2]} />
                 </div>
               </div>
             </div>
