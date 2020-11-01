@@ -1,0 +1,1 @@
+npm run setup -- --spaceId MY_SPACE_ID --deliveryToken MY_DELIVERY_TOKEN --managementToken MY_MANAGEMENT_TOKEN
