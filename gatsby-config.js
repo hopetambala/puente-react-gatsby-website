@@ -27,6 +27,7 @@ module.exports = {
   },
   pathPrefix: '/gatsby-contentful-starter',
   plugins: [
+    `gatsby-plugin-fontawesome-css`,
     `gatsby-plugin-lodash`,
     {
       resolve: `gatsby-plugin-google-analytics`,

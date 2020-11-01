@@ -7,6 +7,13 @@ import {
 } from "gatsby"
 
 import { Form, Button, Card, Container, Row, Col}  from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faCheck,
+  faListUl,
+  faTimes,
+  faList
+} from '@fortawesome/free-solid-svg-icons'
 
 // Component Imports
 import Layout from "../../components/layout"
@@ -237,58 +244,92 @@ const TechnologyPage = () => {
           </div>
         </div>
         <div id="pricing-structure" className={styles.sectionOne}>
-          <Container className={styles.pricing}>
+          <div className={styles.pricing}>
             <h2>Pricing Structure</h2>
             <Row>
-              <Col >
+              <Col>
                 <Card className={styles.card}>
                   <Card.Body className={styles.cardBody}>
-                    <Card.Title className={[styles.cardTitle,"text-muted text-uppercase text-center"]}>Free</Card.Title>
-                    <h6 className={styles.cardPrice}>$0<span className={styles.period}>/month</span></h6>
+                    <Card.Title className={[styles.cardTitle,"text-muted text-uppercase text-center"]}>Start</Card.Title>
+                    <h6 className={styles.cardPrice}>$50<span className={styles.period}>/month</span></h6>
                     <hr />
                     <ul className="fa-ul">
-                      <li><span className="fa-li"><i className="fas fa-check"></i></span>Single User</li>
-                      <li><span className="fa-li"><i className="fas fa-check"></i></span>5GB Storage</li>
-                      <li><span className="fa-li"><i className="fas fa-check"></i></span>Unlimited Public Projects</li>
-                      <li><span className="fa-li"><i className="fas fa-check"></i></span>Community Access</li>
-                      <li className="text-muted"><span className="fa-li"><i className="fas fa-times"></i></span>Unlimited Private Projects</li>
-                      <li className="text-muted"><span className="fa-li"><i className="fas fa-times"></i></span>Dedicated Phone Support</li>
-                      <li className="text-muted"><span className="fa-li"><i className="fas fa-times"></i></span>Free Subdomain</li>
-                      <li className="text-muted"><span className="fa-li"><i className="fas fa-times"></i></span>Monthly Status Reports</li>
+                      <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Unlimited Storage</li>
+                      <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Access to pre-built out forms</li>
+                      <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Up to <strong>3</strong> active users</li>
+                      <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Offline Capability*</li>
+                      <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Excel/CSV exports</li>
+                      <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>Custom Forms</li>
+                      <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>Dedicated Staff Support</li>
+                      <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>On-the-ground training</li>
+                      <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>Automated Monthly Status Reports</li>
+                      <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>SMS Monitoring and Evaluation</li>
+                      <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>Open API Access</li>
                     </ul>
-                    <Button href="#" primary block className={[styles.btn,"text-uppercase"]}>Button</Button>
+                    <Button href="#" primary block className={[styles.btn,"text-uppercase"]}>Sign-up</Button>
                   </Card.Body>
                 </Card>
               </Col>
               <Col>
-
-              <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
-                <Card.Body>
-                  <Card.Title>Card Title</Card.Title>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make up the bulk of
-                    the card's content.
-                  </Card.Text>
-                  <Button variant="primary">Go somewhere</Button>
-                </Card.Body>
-              </Card>
+                <Card className={styles.card}>
+                  <Card.Body className={styles.cardBody}>
+                    <Card.Title className={[styles.cardTitle,"text-muted text-uppercase text-center"]}>Grow</Card.Title>
+                    <h6 className={styles.cardPrice}>$150<span className={styles.period}>/month</span></h6>
+                    <hr />
+                    <Card.Subtitle className={styles.cardTitle}>Everything in "Start" plus!</Card.Subtitle>
+                    <ul className="fa-ul">
+                      <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Up to <strong>10</strong> active users</li>
+                      <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Up to <strong>3</strong> custom forms</li>
+                      <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Up to <strong>1 hour</strong> of dedicated staff support</li>
+                      <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>On-the-ground training</li>
+                      <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>Automated Monthly Status Reports</li>
+                      <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>SMS Monitoring and Evaluation</li>
+                      <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>Open API Access</li>
+                    </ul>
+                    <Button href="#" primary block className={[styles.btn,"text-uppercase"]}>Sign-up</Button>
+                  </Card.Body>
+                </Card>
               </Col>
               <Col>
-              <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
-                <Card.Body>
-                  <Card.Title>Card Title</Card.Title>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make up the bulk of
-                    the card's content.
-                  </Card.Text>
-                  <Button variant="primary">Go somewhere</Button>
-                </Card.Body>
-              </Card>
+                <Card className={styles.card}>
+                    <Card.Body className={styles.cardBody}>
+                      <Card.Title className={[styles.cardTitle,"text-muted text-uppercase text-center"]}>Expand</Card.Title>
+                      <h6 className={styles.cardPrice}>$350<span className={styles.period}>/month</span></h6>
+                      <hr />
+                      <Card.Subtitle className={styles.cardTitle}>Everything in "Grow" plus!</Card.Subtitle>
+                      <ul className="fa-ul">
+                        <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Up to <strong>20</strong> active users</li>
+                        <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Up to <strong>6</strong> custom forms</li>
+                        <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Up to <strong>3 hours</strong> of dedicated staff support</li>
+                        <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>On-the-ground training</li>
+                        <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Automated Monthly Status Reports</li>
+                        <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>SMS Monitoring and Evaluation</li>
+                        <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>Open API Access</li>
+                      </ul>
+                      <Button href="#" primary block className={[styles.btn,"text-uppercase"]}>Sign-up</Button>
+                    </Card.Body>
+                  </Card>
+              </Col>
+              <Col>
+                <Card className={styles.card}>
+                    <Card.Body className={styles.cardBody}>
+                      <Card.Title className={[styles.cardTitle,"text-muted text-uppercase text-center"]}>Establish</Card.Title>
+                      <h6 className={styles.cardPrice}>$750<span className={styles.period}>/month</span></h6>
+                      <hr />
+                      <Card.Subtitle className={styles.cardTitle}>Everything in "Expand" plus!</Card.Subtitle>
+                      <ul className="fa-ul">
+                        <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span><strong>Unlimited</strong> active users</li>
+                        <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span><strong>Unlimited</strong> custom forms</li>
+                        <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Up to <strong>5 hours</strong> of dedicated staff support</li>
+                        <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>SMS Monitoring and Evaluation</li>
+                        <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Open API Access</li>
+                      </ul>
+                      <Button href="#" primary block className={[styles.btn,"text-uppercase"]}>Sign-up</Button>
+                    </Card.Body>
+                  </Card>
               </Col>
             </Row>
-          </Container>
+          </div>
         </div>
         <div id="request-demo" className={styles.demo} >
           <h2>Request a Demo</h2>
