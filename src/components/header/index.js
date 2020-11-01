@@ -101,6 +101,9 @@ const Header = () => {
                   <Link style={{ color: "#000" }} to="/technology#testimonials">Testimonials</Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item className={styles.dropdownItem}>
+                  <Link style={{ color: "#000" }} to="/technology#pricing">Pricing</Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item className={styles.dropdownItem}>
                   <Link style={{ color: "#000" }} to="/technology#request-demo">Request a Demo</Link>
                 </NavDropdown.Item>
               </NavDropdown>

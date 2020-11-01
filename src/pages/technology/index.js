@@ -6,13 +6,11 @@ import {
   useStaticQuery,
 } from "gatsby"
 
-import { Form, Button, Card, Container, Row, Col}  from 'react-bootstrap'
+import { Form, Button, Card, Row, Col}  from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faCheck,
-  faListUl,
   faTimes,
-  faList
 } from '@fortawesome/free-solid-svg-icons'
 
 // Component Imports
@@ -243,7 +241,7 @@ const TechnologyPage = () => {
             <h3 className={styles.closeQuote}>"</h3>
           </div>
         </div>
-        <div id="pricing-structure" className={styles.sectionOne}>
+        <div id="pricing" className={styles.sectionOne}>
           <div className={styles.pricing}>
             <h2>Pricing Structure</h2>
             <Row>
@@ -266,7 +264,7 @@ const TechnologyPage = () => {
                       <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>SMS Monitoring and Evaluation</li>
                       <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>Open API Access</li>
                     </ul>
-                    <Button href="#" primary block className={[styles.btn,"text-uppercase"]}>Sign-up</Button>
+                    <Button href="#" primary block className={[styles.btn,"text-uppercase"]}>Contact for Details</Button>
                   </Card.Body>
                 </Card>
               </Col>
@@ -286,7 +284,7 @@ const TechnologyPage = () => {
                       <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>SMS Monitoring and Evaluation</li>
                       <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>Open API Access</li>
                     </ul>
-                    <Button href="#" primary block className={[styles.btn,"text-uppercase"]}>Sign-up</Button>
+                    <Button href="mailto:info@puente-dr.org" primary block className={[styles.btn,"text-uppercase"]}>Contact for Details</Button>
                   </Card.Body>
                 </Card>
               </Col>
@@ -306,7 +304,7 @@ const TechnologyPage = () => {
                         <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>SMS Monitoring and Evaluation</li>
                         <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>Open API Access</li>
                       </ul>
-                      <Button href="#" primary block className={[styles.btn,"text-uppercase"]}>Sign-up</Button>
+                      <Button href="#" primary block className={[styles.btn,"text-uppercase"]}>Contact for Details</Button>
                     </Card.Body>
                   </Card>
               </Col>
@@ -324,7 +322,7 @@ const TechnologyPage = () => {
                         <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>SMS Monitoring and Evaluation</li>
                         <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Open API Access</li>
                       </ul>
-                      <Button href="#" primary block className={[styles.btn,"text-uppercase"]}>Sign-up</Button>
+                      <Button href="#" primary block className={[styles.btn,"text-uppercase"]}>Contact for Details</Button>
                     </Card.Body>
                   </Card>
               </Col>
