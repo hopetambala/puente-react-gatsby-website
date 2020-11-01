@@ -5,8 +5,8 @@ import {
   graphql,
   useStaticQuery,
 } from "gatsby"
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
+
+import { Form, Button, Card, Container, Row, Col}  from 'react-bootstrap'
 
 // Component Imports
 import Layout from "../../components/layout"
@@ -235,6 +235,60 @@ const TechnologyPage = () => {
             />
             <h3 className={styles.closeQuote}>"</h3>
           </div>
+        </div>
+        <div id="pricing-structure" className={styles.sectionOne}>
+          <Container className={styles.pricing}>
+            <h2>Pricing Structure</h2>
+            <Row>
+              <Col >
+                <Card className={styles.card}>
+                  <Card.Body className={styles.cardBody}>
+                    <Card.Title className={[styles.cardTitle,"text-muted text-uppercase text-center"]}>Free</Card.Title>
+                    <h6 className={styles.cardPrice}>$0<span className={styles.period}>/month</span></h6>
+                    <hr />
+                    <ul className="fa-ul">
+                      <li><span className="fa-li"><i className="fas fa-check"></i></span>Single User</li>
+                      <li><span className="fa-li"><i className="fas fa-check"></i></span>5GB Storage</li>
+                      <li><span className="fa-li"><i className="fas fa-check"></i></span>Unlimited Public Projects</li>
+                      <li><span className="fa-li"><i className="fas fa-check"></i></span>Community Access</li>
+                      <li className="text-muted"><span className="fa-li"><i className="fas fa-times"></i></span>Unlimited Private Projects</li>
+                      <li className="text-muted"><span className="fa-li"><i className="fas fa-times"></i></span>Dedicated Phone Support</li>
+                      <li className="text-muted"><span className="fa-li"><i className="fas fa-times"></i></span>Free Subdomain</li>
+                      <li className="text-muted"><span className="fa-li"><i className="fas fa-times"></i></span>Monthly Status Reports</li>
+                    </ul>
+                    <Button href="#" primary block className={[styles.btn,"text-uppercase"]}>Button</Button>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col>
+
+              <Card style={{ width: '18rem' }}>
+                <Card.Img variant="top" src="holder.js/100px180" />
+                <Card.Body>
+                  <Card.Title>Card Title</Card.Title>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make up the bulk of
+                    the card's content.
+                  </Card.Text>
+                  <Button variant="primary">Go somewhere</Button>
+                </Card.Body>
+              </Card>
+              </Col>
+              <Col>
+              <Card style={{ width: '18rem' }}>
+                <Card.Img variant="top" src="holder.js/100px180" />
+                <Card.Body>
+                  <Card.Title>Card Title</Card.Title>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make up the bulk of
+                    the card's content.
+                  </Card.Text>
+                  <Button variant="primary">Go somewhere</Button>
+                </Card.Body>
+              </Card>
+              </Col>
+            </Row>
+          </Container>
         </div>
         <div id="request-demo" className={styles.demo} >
           <h2>Request a Demo</h2>
