@@ -254,9 +254,9 @@ const TechnologyPage = () => {
                     <h6 className={styles.cardPrice}>$50<span className={styles.period}>/month</span></h6>
                     <hr />
                     <ul className="fa-ul">
-                      <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Unlimited Storage</li>
-                      <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Access to pre-built out forms</li>
                       <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Up to <strong>3</strong> active users</li>
+                      <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span><strong>Unlimited</strong> Storage</li>
+                      <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Access to pre-built out forms</li>
                       <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Offline Capability*</li>
                       <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Excel/CSV exports</li>
                       <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>Custom Forms</li>
@@ -320,7 +320,7 @@ const TechnologyPage = () => {
                       <ul className="fa-ul">
                         <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span><strong>Unlimited</strong> active users</li>
                         <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span><strong>Unlimited</strong> custom forms</li>
-                        <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Up to <strong>5 hours</strong> of dedicated staff support</li>
+                        <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Up to <strong>8 hours</strong> of dedicated staff support</li>
                         <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>SMS Monitoring and Evaluation</li>
                         <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Open API Access</li>
                       </ul>
