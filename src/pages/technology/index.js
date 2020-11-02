@@ -5,8 +5,13 @@ import {
   graphql,
   useStaticQuery,
 } from "gatsby"
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
+
+import { Form, Button, Card, Row, Col}  from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faCheck,
+  faTimes,
+} from '@fortawesome/free-solid-svg-icons'
 
 // Component Imports
 import Layout from "../../components/layout"
@@ -234,6 +239,94 @@ const TechnologyPage = () => {
               }}
             />
             <h3 className={styles.closeQuote}>"</h3>
+          </div>
+        </div>
+        <div id="pricing" className={styles.sectionOne}>
+          <div className={styles.pricing}>
+            <h2>Pricing Structure</h2>
+            <Row>
+              <Col>
+                <Card className={styles.card}>
+                  <Card.Body className={styles.cardBody}>
+                    <Card.Title className={[styles.cardTitle,"text-muted text-uppercase text-center"]}>Start</Card.Title>
+                    <h6 className={styles.cardPrice}>$50<span className={styles.period}>/month</span></h6>
+                    <hr />
+                    <ul className="fa-ul">
+                      <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Up to <strong>3</strong> active users</li>
+                      <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span><strong>Unlimited</strong> Storage</li>
+                      <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Access to pre-built out forms</li>
+                      <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Offline Capability*</li>
+                      <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Excel/CSV exports</li>
+                      <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>Custom Forms</li>
+                      <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>Dedicated Staff Support</li>
+                      <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>On-the-ground training</li>
+                      <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>Automated Monthly Status Reports</li>
+                      <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>SMS Monitoring and Evaluation</li>
+                      <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>Open API Access</li>
+                    </ul>
+                    <Button href="#" primary block className={[styles.btn,"text-uppercase"]}>Contact for Details</Button>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col>
+                <Card className={styles.card}>
+                  <Card.Body className={styles.cardBody}>
+                    <Card.Title className={[styles.cardTitle,"text-muted text-uppercase text-center"]}>Grow</Card.Title>
+                    <h6 className={styles.cardPrice}>$150<span className={styles.period}>/month</span></h6>
+                    <hr />
+                    <Card.Subtitle className={styles.cardTitle}>Everything in "Start" plus!</Card.Subtitle>
+                    <ul className="fa-ul">
+                      <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Up to <strong>10</strong> active users</li>
+                      <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Up to <strong>3</strong> custom forms</li>
+                      <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Up to <strong>1 hour</strong> of dedicated staff support</li>
+                      <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>On-the-ground training</li>
+                      <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>Automated Monthly Status Reports</li>
+                      <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>SMS Monitoring and Evaluation</li>
+                      <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>Open API Access</li>
+                    </ul>
+                    <Button href="mailto:info@puente-dr.org" primary block className={[styles.btn,"text-uppercase"]}>Contact for Details</Button>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col>
+                <Card className={styles.card}>
+                    <Card.Body className={styles.cardBody}>
+                      <Card.Title className={[styles.cardTitle,"text-muted text-uppercase text-center"]}>Expand</Card.Title>
+                      <h6 className={styles.cardPrice}>$350<span className={styles.period}>/month</span></h6>
+                      <hr />
+                      <Card.Subtitle className={styles.cardTitle}>Everything in "Grow" plus!</Card.Subtitle>
+                      <ul className="fa-ul">
+                        <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Up to <strong>20</strong> active users</li>
+                        <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Up to <strong>6</strong> custom forms</li>
+                        <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Up to <strong>3 hours</strong> of dedicated staff support</li>
+                        <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>On-the-ground training</li>
+                        <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Automated Monthly Status Reports</li>
+                        <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>SMS Monitoring and Evaluation</li>
+                        <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>Open API Access</li>
+                      </ul>
+                      <Button href="#" primary block className={[styles.btn,"text-uppercase"]}>Contact for Details</Button>
+                    </Card.Body>
+                  </Card>
+              </Col>
+              <Col>
+                <Card className={styles.card}>
+                    <Card.Body className={styles.cardBody}>
+                      <Card.Title className={[styles.cardTitle,"text-muted text-uppercase text-center"]}>Establish</Card.Title>
+                      <h6 className={styles.cardPrice}>$750<span className={styles.period}>/month</span></h6>
+                      <hr />
+                      <Card.Subtitle className={styles.cardTitle}>Everything in "Expand" plus!</Card.Subtitle>
+                      <ul className="fa-ul">
+                        <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span><strong>Unlimited</strong> active users</li>
+                        <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span><strong>Unlimited</strong> custom forms</li>
+                        <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Up to <strong>8 hours</strong> of dedicated staff support</li>
+                        <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>SMS Monitoring and Evaluation</li>
+                        <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Open API Access</li>
+                      </ul>
+                      <Button href="#" primary block className={[styles.btn,"text-uppercase"]}>Contact for Details</Button>
+                    </Card.Body>
+                  </Card>
+              </Col>
+            </Row>
           </div>
         </div>
         <div id="request-demo" className={styles.demo} >
