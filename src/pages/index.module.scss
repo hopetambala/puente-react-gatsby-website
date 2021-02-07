@@ -151,8 +151,8 @@ $blue: #3d80fc;
       .partner-images {
         -webkit-flex-wrap: wrap;
         flex-wrap: wrap;
-        justify-content: center;   
-        align-items: center;     
+        width: 80%;
+        margin: 0 auto;
         img {
           padding: 2rem;
         }

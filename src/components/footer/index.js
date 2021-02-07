@@ -1,6 +1,6 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {
-  Link
+  Link, useStaticQuery, graphql
 } from "gatsby"
 import Form from 'react-bootstrap/Form'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
@@ -17,28 +17,38 @@ import { linkedin } from 'react-icons-kit/fa/linkedin'
 import '../../styles/styles.scss'
 import footerStyles from './index.module.scss'
 
-class Footer extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      fName: '',
-      lName: '',
-      email: '', 
-      message: '',
+const Footer = () => {
+  const data = useStaticQuery(
+    graphql`
+    query{
+      contentfulFooter{
+        title
+        badgetGallery {
+          title
+          resize (height: 100) {
+            src
+          }
+        }
+      }
     }
-  }
+  `)
 
-  handleChange = e => {
-    this.setState({ email: e.target.value })
-  }
+  const [person,setPerson] = useState({
+    fName: '',
+    lName: '',
+    email: '', 
+    message: '',
+  })
 
-  handleSubmit = () => {
+  const handleSubmit = () => {
     const {
       fName,
       lName,
       email,
-    } = this.state;
+    } = person;
+
+      
+      console.log(fName,lName,email)
 
     addToMailchimp(email,
       {
@@ -47,15 +57,11 @@ class Footer extends React.Component {
       })
       .then(data => {
         console.log(data)
-        this.setState({ message: data.msg })
+        setPerson({ message: data.msg })
       }
     )
   }
 
-  render() {
-    const {
-      message,
-    } = this.state;
     return (
       <footer className={footerStyles.footer}>
         <div className={footerStyles.footerMain}>
@@ -68,6 +74,13 @@ class Footer extends React.Component {
               passionate individuals. Founded in 2018, and based in Constanza, Dominican Republic,
               with offices in Indiana.
             </p>
+            <div>
+              {data.contentfulFooter.badgetGallery.map((badges) => {
+                return (
+                  <img alt={badges.title} src={badges.resize.src} />
+                )
+              })}
+            </div>
           </div>
           <div className={footerStyles.section}>
             <nav>
@@ -122,27 +135,27 @@ class Footer extends React.Component {
                     className={footerStyles.input}
                     type="textarea"
                     placeholder={"First Name"}
-                    onChange={(e) => this.setState({ fName: e.target.value })}
+                    onChange={(e) => setPerson({ ...person, fName: e.target.value })}
                   />
                   <Form.Control
                     size="sm"
                     className={footerStyles.input}
                     type="textarea"
                     placeholder={"Last Name"}
-                    onChange={(e) => this.setState({ lName: e.target.value })}
+                    onChange={(e) => setPerson({ ...person, lName: e.target.value })}
                   />
                   <Form.Control
                     size="sm"
                     className={footerStyles.input}
                     type="email"
                     placeholder={"Enter email..."}
-                    onChange={(e) => this.setState({ email: e.target.value })} />
-                  <div tabIndex={0} onClick={this.handleSubmit} onKeyDown={this.handleSubmit}
+                    onChange={(e) => setPerson({ ...person, email: e.target.value })} />
+                  <div tabIndex={0} onClick={handleSubmit} onKeyDown={handleSubmit}
                     role="button" className={footerStyles.button}>
                     <p>Sign Up</p>
                   </div>
                 </div>
-                <p className={footerStyles.message} dangerouslySetInnerHTML={{ __html: message }}></p>
+                <p className={footerStyles.message} dangerouslySetInnerHTML={{ __html: person.message }}></p>
               </Form.Group>
             </Form>
           </div>
@@ -154,7 +167,6 @@ class Footer extends React.Component {
         </div>
       </footer>
     )
-  }
 }
 
 export default Footer
