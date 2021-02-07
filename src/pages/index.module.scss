@@ -149,13 +149,12 @@ $blue: #3d80fc;
         text-align: center;
       }
       .partner-images {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        width: 20%;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+        justify-content: center;   
+        align-items: center;     
         img {
-          margin-top: 2vh;
+          padding: 2rem;
         }
       }
     }

@@ -310,7 +310,7 @@ const AboutPage = () => {
                   __html: data.contentfulAboutPage.annualReportText.childMarkdownRemark.html,
                 }}
               />
-              <p className={aboutStyles.reportLink}><a target="_blank" rel="noopener noreferrer" href="https://issuu.com/puente-dr/docs/puente_2019_annual_report">Read 2019 Report</a></p>
+              <p className={aboutStyles.reportLink}><a target="_blank" rel="noopener noreferrer" href="https://puente-dr.github.io/annual-report/">Read Annual Reports</a></p>
             </div>
           </div>
         </div>

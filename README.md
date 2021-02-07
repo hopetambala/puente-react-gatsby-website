@@ -36,7 +36,7 @@ Get this React App working on AWS by [installing the AWS CLI](https://docs.aws.a
 #### Deploy in your terminal
 
 ```
-$ AWS_PROFILE=<NAME-OF-PROFILE> npm run deploy
+$ npm run deploy
 ```
 
 #### Permissions and Settings
