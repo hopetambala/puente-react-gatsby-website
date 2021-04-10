@@ -6,7 +6,8 @@
 
 Puente Website is a modern, responsive website built using Gatsby.js and Content.
 
-<!-- [AWS S3 URL](http://dashboard-react-cra-clientside.s3-website.us-east-1.amazonaws.com/) -->
+<!-- [AWS S3 dev URL](http://website-react-gatsby.s3-website-us-east-1.amazonaws.com
+/) -->
 
 ## Project Layout
 | Key Folder | Parent Folder | Description |
