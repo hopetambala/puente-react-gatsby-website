@@ -223,7 +223,7 @@ const TechnologyPage = () => {
         </div>
         <div id="interactive-map" className={styles.sectionTwo}>
           <h2>{data.contentfulTechnologyPage.sectionTwoHeader}</h2>
-          <iframe width="100%" height="800px" frameBorder="0" className={styles.analysisContent} src="http://puente-map-env.eba-cenm4eic.us-east-1.elasticbeanstalk.com/" title="W3Schools Free Online Web Tutorials"></iframe>
+          <iframe width="100%" height="800px" frameBorder="0" className={styles.analysisContent} src="http://puente-map-dev.eba-xs3kxsrj.us-east-1.elasticbeanstalk.com/" title="W3Schools Free Online Web Tutorials"></iframe>
         </div>
         <div id="testimonials" className={styles.testimonials}>
           <div className={styles.testimonial}>
