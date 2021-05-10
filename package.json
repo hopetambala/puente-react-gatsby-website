@@ -60,7 +60,8 @@
     "build-prod": "env-cmd -f .env.production gatsby build",
     "heroku-postbuild": "gatsby build",
     "serve": "gatsby serve",
-    "reinstall": "gatsby clean && rm -rf package-lock.json && rm -rf node_modules/ && npm install",
+    "cache-clear": "gatsby clean",
+    "reinstall": "npm run cache-clear && rm -rf package-lock.json && rm -rf node_modules/ && npm install",
     "setup": "npm install --no-save contentful-import yargs-parser axios chalk && node ./setup.js"
   }
 }

@@ -52,7 +52,7 @@ const AboutPage = () => {
           }
         }
       }
-    allContentfulTeamMemberModel(sort: {fields: name, order: ASC}){
+    allContentfulTeamMemberModel(sort: {fields: order, order: ASC}){
       nodes{
         name
         position
@@ -146,7 +146,7 @@ const AboutPage = () => {
   const [volunteerFourShow, setVolunteerFourShow] = useState(false);
 
   const { nodes } = data.allContentfulTeamMemberModel
-  const profiles = _.uniqBy(nodes,'name')
+  const profiles = _.chunk(_.uniqBy(nodes,'name'), 4)
 
   return (
     <div>
@@ -191,26 +191,20 @@ const AboutPage = () => {
             </div>
             <div id="staff" className={aboutStyles.staffSection}>
               <h2>Our Team</h2>
-              <div className={aboutStyles.employeeRow}>
-                <div className={aboutStyles.employees}>
-                  <MemberBio linkedin profile={profiles[6]} />
-                  <MemberBio linkedin profile={profiles[1]} />
-                </div>
-                <div className={aboutStyles.employees}>
-                  <MemberBio linkedin profile={profiles[0]} />
-                  <MemberBio linkedin profile={profiles[5]} />
-                </div>
-              </div>
-              <div className={aboutStyles.employeeRow}>
-                <div className={aboutStyles.employees}>
-                  <MemberBio linkedin profile={profiles[4]} />
-                  <MemberBio linkedin profile={profiles[7]} />
-                </div>
-                <div className={aboutStyles.employees}>
-                  <MemberBio linkedin profile={profiles[3]} />
-                  <MemberBio linkedin profile={profiles[2]} />
-                </div>
-              </div>
+              {profiles && profiles.map((row)=>
+                <div className={aboutStyles.employeeRow}> 
+                  <div className={aboutStyles.employees}>
+                    {row.slice(0,2).map((employee)=>
+                    <MemberBio linkedin profile={employee} />
+                    )}
+                  </div>
+                  <div className={aboutStyles.employees}>
+                    {row.slice(2,4).map((employee)=>
+                    <MemberBio linkedin profile={employee} />
+                    )}
+                  </div>
+              </div>)
+              }
             </div>
             <div id="volunteers" className={aboutStyles.volunteerSection}>
               <h2>Featured Volunteers</h2>
