@@ -73,10 +73,10 @@ const Header = () => {
                   <Link style={{ color: "#000" }} to="/about#who-we-are">Who We Are</Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item className={styles.dropdownItem}>
-                  <Link style={{ color: "#000" }} to="/about#staff">Our Staff</Link>
+                  <Link style={{ color: "#000" }} to="/about#staff">Our U.S. Staff</Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item className={styles.dropdownItem}>
-                  <Link style={{ color: "#000" }} to="/about#volunteers">Our Volunteers</Link>
+                  <Link style={{ color: "#000" }} to="/about#dominican-staff">Our D.R. Staff</Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item className={styles.dropdownItem}>
                   <Link style={{ color: "#000" }} to="/about#partners">Our Partners</Link>
