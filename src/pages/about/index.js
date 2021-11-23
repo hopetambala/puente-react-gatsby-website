@@ -65,6 +65,7 @@ const AboutPage = () => {
             src            
           }
         }
+        team
       }
     }
     allContentfulTeamMemberDominicanModel(sort: {fields: order, order: ASC}){
