@@ -184,7 +184,7 @@ const AboutPage = () => {
               )}
               </div>
             </div>
-            <div id="partners" className={aboutStyles.sectionPartners}>
+            {/* <div id="partners" className={aboutStyles.sectionPartners}>
               <h2>Our Partners</h2>
               <div className={aboutStyles.partnerImages}>
                 {data.contentfulLandingPage.partnerships.map((partnerships) => {
@@ -193,7 +193,7 @@ const AboutPage = () => {
                   )
                 })}
               </div>
-            </div>
+            </div> */}
             <div className={aboutStyles.sectionReport}>
               <h2 id="report">{data.contentfulAboutPage.annualReport}</h2>
               <div
