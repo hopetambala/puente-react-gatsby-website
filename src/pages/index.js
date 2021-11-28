@@ -63,7 +63,7 @@ const IndexPage = () => {
         }
         partnerships {
           title
-          resize (height: 200) {
+          resize (height: 150) {
             src
           }
         }

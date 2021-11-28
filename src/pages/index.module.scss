@@ -139,6 +139,7 @@ $blue: #3d80fc;
     &.section-partners {
       padding: 3vmax 6vmax;
       flex-direction: column;
+      justify-content: center;
       width: 100%;
       background-color: $white;
       h2 {
@@ -150,11 +151,11 @@ $blue: #3d80fc;
       }
       .partner-images {
         -webkit-flex-wrap: wrap;
+        display: flex;
         flex-wrap: wrap;
-        width: 80%;
-        margin: 0 auto;
+        justify-content:center;
         img {
-          padding: 2rem;
+          padding: 1rem;
         }
       }
     }
