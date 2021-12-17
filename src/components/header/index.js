@@ -246,7 +246,6 @@ export default Header
 //   `)
 
 //   const handleClick = () => {
-//     console.log("test")
 //     // ReactDOM.findDOMNode.getElementsByClassName('navSection')
 //   }
 

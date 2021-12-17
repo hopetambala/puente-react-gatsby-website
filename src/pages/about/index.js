@@ -65,23 +65,7 @@ const AboutPage = () => {
             src            
           }
         }
-      }
-    }
-    allContentfulTeamMemberDominicanModel(sort: {fields: order, order: ASC}){
-      nodes{
-        name
-        position
-        bio {
-          childMarkdownRemark{
-            html
-          }
-        }
-        image {
-          title
-          resize (height: 250) {
-            src            
-          }
-        }
+        team
       }
     }
     
@@ -102,10 +86,11 @@ const AboutPage = () => {
   `)
 
   const { nodes } = data.allContentfulTeamMemberModel
-  const profiles = _.chunk(_.uniqBy(nodes,'name'), 4)
+  const profiles = _.uniqBy(nodes,'name')
 
-  const { nodes:domNodes } = data.allContentfulTeamMemberDominicanModel
-  const domProfiles = _.chunk(_.uniqBy(domNodes,'name'), 4)
+  const byTeam = (row, teamName) => {
+    return row.filter((person)=> person.team?.includes(teamName))
+  }
 
   return (
     <div>
@@ -148,39 +133,57 @@ const AboutPage = () => {
                 }}
               />
             </div>
-            <div id="staff" className={aboutStyles.staffSection}>
-              <h2>Our U.S.Team</h2>
-              {profiles && profiles.map((row)=>
-                <div className={aboutStyles.employeeRow}> 
-                  <div className={aboutStyles.employees}>
-                    {row.slice(0,2).map((employee)=>
+            <div id="executive-staff" className={aboutStyles.staffSection}>
+              <h2>Our Executive Team</h2>
+              <div className={aboutStyles.employeeRow}> 
+              {profiles && byTeam(profiles, 'Executive').map((employee)=>
+                  <div className={aboutStyles.employee}>
                     <MemberBio linkedin profile={employee} />
-                    )}
                   </div>
-                  <div className={aboutStyles.employees}>
-                    {row.slice(2,4).map((employee)=>
+              )}
+              </div>
+            </div>
+            <div id="wash-staff" className={aboutStyles.staffSection}>
+              <h2>Our WASH Team</h2>
+              <div className={aboutStyles.employeeRow}> 
+              {profiles && byTeam(profiles, 'WASH').map((employee)=>
+                  <div className={aboutStyles.employee}>
                     <MemberBio linkedin profile={employee} />
-                    )}
                   </div>
-              </div>)}
+              )}
+              </div>
             </div>
-            <div id="dominican-staff" className={aboutStyles.staffSection}>
-              <h2>Our Dominican Team</h2>
-              {domProfiles && domProfiles.map((row)=>
-                <div className={aboutStyles.employeeRow}> 
-                  <div className={aboutStyles.employees}>
-                    {row.slice(0,2).map((employee)=>
-                    <MemberBio profile={employee} />
-                    )}
+            <div id="tech-staff" className={aboutStyles.staffSection}>
+              <h2>Our Engineering Team</h2>
+              <div className={aboutStyles.employeeRow}> 
+              {profiles && byTeam(profiles, 'Technology').map((employee)=>
+                  <div className={aboutStyles.employee}>
+                    <MemberBio linkedin profile={employee} />
                   </div>
-                  <div className={aboutStyles.employees}>
-                    {row.slice(2,4).map((employee)=>
-                    <MemberBio profile={employee} />
-                    )}
-                  </div>
-              </div>)}
+              )}
+              </div>
             </div>
-            <div id="partners" className={aboutStyles.sectionPartners}>
+            <div id="health-staff" className={aboutStyles.staffSection}>
+              <h2>Our Community Health Team</h2>
+              <div className={aboutStyles.employeeRow}> 
+              {profiles && byTeam(profiles, 'Health').map((employee)=>
+                  <div className={aboutStyles.employee}>
+                    <MemberBio linkedin profile={employee} />
+                  </div>
+              )}
+              </div>
+            </div>
+            <div id="projects-staff" className={aboutStyles.staffSection}>
+              <h2>Our Community Projects and Programming Team</h2>
+              <div className={aboutStyles.employeeRow}> 
+              {profiles && byTeam(profiles, 'Projects').map((employee)=>
+                  <div className={aboutStyles.employee}>
+                    <MemberBio linkedin profile={employee} />
+                  </div>
+              )}
+              </div>
+            </div>
+            {/* <div id="partners" className={aboutStyles.sectionPartners}>
               <h2>Our Partners</h2>
               <div className={aboutStyles.partnerImages}>
                 {data.contentfulLandingPage.partnerships.map((partnerships) => {
@@ -189,7 +192,7 @@ const AboutPage = () => {
                   )
                 })}
               </div>
-            </div>
+            </div> */}
             <div className={aboutStyles.sectionReport}>
               <h2 id="report">{data.contentfulAboutPage.annualReport}</h2>
               <div

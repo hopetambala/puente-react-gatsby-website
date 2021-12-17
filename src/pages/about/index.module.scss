@@ -106,20 +106,8 @@ $blue: #3d80fc;
       .employee-row {
         width: 100%;
         display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: space-around;
-        .employees {
-          width: 100%;
-          display: flex;
-          flex-direction: row;
-          align-items: flex-start;
-          .employee {
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: space-around;
+        flex-wrap: wrap;
+        .employee {
             .img-container {
               position: relative;
               padding: 10px;
@@ -140,10 +128,10 @@ $blue: #3d80fc;
                 left: 0;
                 // filter: drop-shadow(2px 2px $white);
                 &.icon {
-                  top: 0;
+                  top: 55px;
                 }
                 &.icon-two {
-                  top: 55px;
+                  top: 0px;
                 }
               }
             }
@@ -162,7 +150,6 @@ $blue: #3d80fc;
               color: $black;
               margin: 0;
             }
-          }
         }
       }
     }
