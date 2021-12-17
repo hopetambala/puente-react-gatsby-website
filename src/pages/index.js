@@ -293,7 +293,7 @@ const IndexPage = () => {
             <div className={styles.partnerImages}>
               {data.contentfulLandingPage.partnerships.map((partnerships) => {
                 return (
-                  <img alt={partnerships.title} src={partnerships.resize.src} />
+                  <img url={""} alt={partnerships.title} src={partnerships.resize.src} />
                 )
               })}
             </div>

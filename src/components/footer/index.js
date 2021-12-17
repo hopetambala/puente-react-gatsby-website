@@ -47,16 +47,12 @@ const Footer = () => {
       email,
     } = person;
 
-      
-      console.log(fName,lName,email)
-
     addToMailchimp(email,
       {
         FNAME: fName,
         LNAME: lName,
       })
       .then(data => {
-        console.log(data)
         setPerson({ message: data.msg })
       }
     )

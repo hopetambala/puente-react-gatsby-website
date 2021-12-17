@@ -86,7 +86,6 @@ const AboutPage = () => {
   `)
 
   const { nodes } = data.allContentfulTeamMemberModel
-  console.log(nodes)
   const profiles = _.uniqBy(nodes,'name')
 
   const byTeam = (row, teamName) => {
