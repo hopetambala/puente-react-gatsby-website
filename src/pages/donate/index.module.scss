@@ -53,6 +53,38 @@ $blue: #3d80fc;
         }
       }
     }
+    .body-monthly {
+      background-color: $off-white;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      .content {
+        // width: 100%;
+        flex-direction: row;
+        h1 {
+          padding: 3vmax 6vmax;
+          font-size: 48px;
+          font-weight: 700;
+          text-transform: uppercase;
+          color: $black;
+          text-shadow: 2.5px 2.5px $yellow;
+          margin: 0;
+        }
+        p {
+          padding: 0 6vmax 2vmax;
+          margin: 0;
+        }
+      }
+      .tier-images {
+        -webkit-flex-wrap: wrap;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:center;
+        img {
+          padding: 1rem;
+        }
+      }
+    }
   }
 }
 
@@ -60,6 +92,23 @@ $blue: #3d80fc;
   .container {
     .banner {
       .body {
+        .title {
+          h1 {
+            font-size: 40px;
+            text-shadow: 2px 2px $yellow;
+            padding: 3vmax 4vmax;
+          }
+          p {
+            padding: 0 4vmax 2vmax;
+          }
+        }
+        .donate-section {
+          .donate-form {
+            padding: 3vmax 4vmax;
+          }
+        }
+      }
+      .body-monthly {
         .title {
           h1 {
             font-size: 40px;
@@ -84,6 +133,21 @@ $blue: #3d80fc;
   .container {
     .banner {
       .body {
+        flex-direction: column;
+        .title {
+          width: 100%;
+          h1 {
+            font-size: 32px;
+          }
+          p {
+            font-size: 14px;
+          }
+        }
+        .donate-section {
+          width: 100%;
+        }
+      }
+      .body-monthly {
         flex-direction: column;
         .title {
           width: 100%;

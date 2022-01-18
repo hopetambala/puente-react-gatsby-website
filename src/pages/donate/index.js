@@ -18,12 +18,34 @@ const DonatePage = () => {
       contentfulDonationPage {
         logo {
           title
-          resize (height: 1000) {
-            src            
+          resize(height: 1000) {
+            src
           }
         }
         title
         pageText {
+          childMarkdownRemark {
+            html
+          }
+        }
+        monthlyDonorContent {
+          childMarkdownRemark {
+            html
+          }
+        }
+    
+        monthlyDonorTiers {
+          title
+          resize(height: 300) {
+            src
+          }
+        }
+        monthlyDonorTiersList {
+          childMarkdownRemark {
+            html
+          }
+        }
+        monthlyDonorHowItWorks {
           childMarkdownRemark {
             html
           }
@@ -51,6 +73,21 @@ const DonatePage = () => {
                   <iframe title="donate" src="https://givebutter.com/embed/c/8vtwH6" className={donateStyles.donateForm} name="givebutter" frameborder="0" scrolling="no" seamless allowpaymentrequest />
                 </div>
               </div>
+            </div>
+              <div className={donateStyles.bodyMonthly}>
+                <div className={donateStyles.content} dangerouslySetInnerHTML={{
+                      __html: data.contentfulDonationPage.monthlyDonorContent.childMarkdownRemark.html,
+                    }}
+                /> 
+              <div className={donateStyles.tierImages}>
+                {data.contentfulDonationPage.monthlyDonorTiers.map((image)=>
+                    <img alt={data.contentfulDonationPage.logo.title} src={image.resize.src} fluid />)
+                }
+              </div>
+                <div className={donateStyles.content} dangerouslySetInnerHTML={{
+                    __html: data.contentfulDonationPage.monthlyDonorHowItWorks.childMarkdownRemark.html,
+                  }}
+                />                   
             </div>
           </div>
         </div>
