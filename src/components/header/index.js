@@ -17,6 +17,7 @@ import { Icon } from 'react-icons-kit'
 import { ic_local_phone } from 'react-icons-kit/md/ic_local_phone'
 import { ic_email } from 'react-icons-kit/md/ic_email'
 import { ic_menu } from 'react-icons-kit/md/ic_menu'
+import BannerAd from "./bannerAd"
 
 const Header = () => {
 
@@ -38,6 +39,7 @@ const Header = () => {
   if (width > 768) {
     return (
       <>
+      <BannerAd />
       <Navbar className={styles.navBackground} collapseOnSelect expand="lg" onScroll>
         <Navbar.Brand className={styles.logo}>
           <Link to="/">
@@ -158,6 +160,8 @@ const Header = () => {
     )
   } else {
     return (
+      <>      
+      <BannerAd />
       <Navbar className={styles.navBackground} collapseOnSelect expand="lg">
         <Navbar.Brand className={styles.logo}>
           <Link to="/">
@@ -207,6 +211,8 @@ const Header = () => {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
+      </>
+
     )
   }
 }
