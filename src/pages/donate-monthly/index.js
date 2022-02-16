@@ -22,6 +22,12 @@ const DonatePage = () => {
             src
           }
         }
+        logoMonthly {
+          title
+          resize(height: 1000) {
+            src
+          }
+        }
         title
         pageText {
           childMarkdownRemark {
@@ -59,7 +65,7 @@ const DonatePage = () => {
         <div className={donateStyles.container}>
           <div className={donateStyles.banner}>
             <div className={donateStyles.bannerImage}>
-              <img alt={data.contentfulDonationPage.logo.title} src={data.contentfulDonationPage.logo.resize.src} fluid />
+              <img alt={data.contentfulDonationPage.logo.title} src={data.contentfulDonationPage.logoMonthly.resize.src} fluid />
               <div className={donateStyles.body}>
                 <div className={donateStyles.donateSection}>
                   <iframe title="donate" src="https://givebutter.com/embed/c/yuDENI" className={donateStyles.donateForm} name="givebutter" frameborder="0" scrolling="no" seamless allowpaymentrequest />
