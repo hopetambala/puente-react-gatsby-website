@@ -47,6 +47,7 @@ $blue: #3d80fc;
       .donate-section {
         width: 50%;
         .donate-form {
+          height: 800px !important;
           width: 100%;
           padding: 3vmax 6vmax;
           margin: 0;
@@ -83,13 +84,6 @@ $blue: #3d80fc;
         img {
           padding: 1rem;
         }
-        img:hover {
-          margin-top: -.25rem;
-          margin-bottom: .25rem;
-          box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
-          border-radius: 1rem;
-          transition: all 0.2s;
-        }
       }
     }
   }
@@ -110,8 +104,11 @@ $blue: #3d80fc;
           }
         }
         .donate-section {
+          width: 50%;
           .donate-form {
+            height: 800px !important;
             padding: 3vmax 4vmax;
+            margin: 0;
           }
         }
       }
@@ -128,7 +125,10 @@ $blue: #3d80fc;
         }
         .donate-section {
           .donate-form {
+            height: 800px !important;
+            width: 100%;
             padding: 3vmax 4vmax;
+            margin: 0;
           }
         }
       }

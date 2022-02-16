@@ -1,0 +1,20 @@
+$yellow: #fffcef;
+$blue: #3d80fc;
+
+.banner {
+  flex: auto;
+  font-size: large;
+  background-color: $blue;
+  text-align: center;
+  padding: 10px;
+  margin: auto;
+  position: sticky !important;
+}
+
+.link {
+  text-decoration: none;
+  color: $yellow;
+}
+
+
+

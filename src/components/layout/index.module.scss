@@ -13,27 +13,9 @@ $blue: #3d80fc;
   display: flex;
   flex-direction: column;
   .header {
-    padding-bottom: 8vmax;
     z-index: 100;
   }
   .content {
     flex-grow: 1;
-    // margin-top: 7vmax;
   }
 }
-
-// @media (max-width: 1024px) {
-//   .container {
-//     .content {
-//       margin-top: 7vmax;
-//     }
-//   }
-// }
-
-// @media (max-width: 768px) {
-//   .container {
-//     .content {
-//       margin-top: 7vmax;
-//     }
-//   }
-// }
