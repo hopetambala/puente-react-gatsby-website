@@ -145,8 +145,18 @@ const Header = () => {
               </NavDropdown>
             </Nav.Item>
             <Nav.Item className={styles.nav}>
-              <Nav.Link className={styles.navItem} href="/news">News</Nav.Link>
+              <NavDropdown className={styles.navItem} href="/news" title={
+                <Link style={{ color: "#000" }} to="/news">News</Link>
+              } id="menu-nav-dropdown"
+              >
+                <NavDropdown.Item className={styles.dropdownItem}>
+                  <Link style={{ color: "#000" }} to="/news/event">See our latest event!</Link>
+                </NavDropdown.Item>
+              </NavDropdown>
             </Nav.Item>
+            {/* <Nav.Item className={styles.nav}>
+              <Nav.Link className={styles.navItem} href="/news">News</Nav.Link>
+            </Nav.Item> */}
             <Nav.Item className={styles.nav}>
               <Nav.Link className={styles.navItem} href="/merchandise">Merchandise</Nav.Link>
             </Nav.Item>
