@@ -39,7 +39,7 @@ const DonatePage = () => {
                   <h1>{data.contentfulEventPage.title}</h1>
                 </div>
                 <div className={eventStyles.donateSection}>
-                  <iframe title="event" src={data.contentfulEventPage.givebutterLink} className={eventStyles.donateForm} name="givebutter" frameborder="0" scrolling="no" allowpaymentrequest />
+                  <iframe title="event" src={data.contentfulEventPage.givebutterLink} className={eventStyles.donateForm} name="givebutter" frameborder="0" scrolling="no" seamless allowpaymentrequest />
                 </div>
               </div>
             </div>
