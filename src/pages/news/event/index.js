@@ -54,18 +54,17 @@ const DonatePage = () => {
                     __html: data.contentfulEventPage.pageText.childMarkdownRemark.html,
                   }}
                 />
-     </div>
-
-                <div className={eventStyles.donateSection}>
-                  <iframe title="event" src={data.contentfulEventPage.givebutterLink} className={eventStyles.donateForm} name="givebutter" frameborder="0" scrolling="no" seamless allowpaymentrequest />
-                </div>
-                <div className={eventStyles.partnerImages}>
-                  {data.contentfulEventPage.eventGallery.map((sponsor) => {
-                    return (
-                      <img url={""} alt={sponsor.title} src={sponsor.resize.src} />
-                    )
-                  })}
-                </div>
+               </div>
+              <div className={eventStyles.donateSection}>
+                <iframe title="event" src={data.contentfulEventPage.givebutterLink} className={eventStyles.donateForm} name="givebutter" frameborder="0" scrolling="no" seamless allowpaymentrequest />
+              </div>
+              <div className={eventStyles.partnerImages}>
+                {data.contentfulEventPage.eventGallery.map((sponsor) => {
+                  return (
+                    <img url={""} alt={sponsor.title} src={sponsor.resize.src} />
+                  )
+                })}
+              </div>
             </div>
           </div>
         </div>
