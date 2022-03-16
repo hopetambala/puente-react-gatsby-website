@@ -23,7 +23,18 @@ const DonatePage = () => {
           }
         }
         title
+        pageText {
+          childMarkdownRemark {
+            html
+          }
+        }
         givebutterLink
+        eventGallery {
+          title
+          resize (height: 500) {
+            src
+          }
+        }
       }
     }
   `)
@@ -34,14 +45,27 @@ const DonatePage = () => {
           <div className={eventStyles.banner}>
             <div className={eventStyles.bannerImage}>
               <img alt={data.contentfulEventPage.logo.title} src={data.contentfulEventPage.logo.resize.src} fluid />
-              <div className={eventStyles.body}>
-                <div className={eventStyles.title}>
-                  <h1>{data.contentfulEventPage.title}</h1>
-                </div>
+              <div className={eventStyles.title}>
+                <h1>{data.contentfulEventPage.title}</h1>
+              </div>  
+              <div className={eventStyles.sectionPartners}>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: data.contentfulEventPage.pageText.childMarkdownRemark.html,
+                  }}
+                />
+     </div>
+
                 <div className={eventStyles.donateSection}>
                   <iframe title="event" src={data.contentfulEventPage.givebutterLink} className={eventStyles.donateForm} name="givebutter" frameborder="0" scrolling="no" seamless allowpaymentrequest />
                 </div>
-              </div>
+                <div className={eventStyles.partnerImages}>
+                  {data.contentfulEventPage.eventGallery.map((sponsor) => {
+                    return (
+                      <img url={""} alt={sponsor.title} src={sponsor.resize.src} />
+                    )
+                  })}
+                </div>
             </div>
           </div>
         </div>
