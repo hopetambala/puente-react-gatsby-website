@@ -11,7 +11,7 @@ import Layout from "../../../components/layout"
 // Style Imports
 import eventStyles from "./index.module.scss"
 
-const DonatePage = () => {
+const EventPage = () => {
   const data = useStaticQuery(
     graphql`
     query {
@@ -62,15 +62,15 @@ const DonatePage = () => {
               <div className={eventStyles.title}>
                 <h1>{data.contentfulEventPage.title}</h1>
               </div>  
-              <div className={eventStyles.sectionPartners} style={{display:"flex"}}>
+              <div className={eventStyles.sectionPartners}>
                 <div
-                style={{flex:1}}
                   dangerouslySetInnerHTML={{
                     __html: data.contentfulEventPage.pageText.childMarkdownRemark.html,
                   }}
+                  className={eventStyles.eventSection}
                 />
-                <div className={eventStyles.donateSection} style={{flex:1}}>
-                  <iframe title="event" src={data.contentfulEventPage.givebutterLink} className={eventStyles.donateForm} name="givebutter" frameborder="0" scrolling="no" seamless allowpaymentrequest />
+                <div className={eventStyles.eventSection}>
+                  <iframe title="event" src={data.contentfulEventPage.givebutterLink} className={eventStyles.eventForm} name="givebutter" frameborder="0" scrolling="no" seamless allowpaymentrequest />
                 </div>
               </div>
               {/* Current Sponsors Text */}
@@ -110,4 +110,4 @@ const DonatePage = () => {
   )
 }
 
-export default DonatePage
+export default EventPage
