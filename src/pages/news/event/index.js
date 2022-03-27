@@ -44,7 +44,7 @@ const EventPage = () => {
         title3
         gallerySponsors {
           title
-          resize (height: 250) {
+          resize (height: 400) {
             src
           }
         }
