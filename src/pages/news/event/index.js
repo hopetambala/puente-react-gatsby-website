@@ -35,6 +35,19 @@ const DonatePage = () => {
             src
           }
         }
+        title2
+        sponsorshipText {
+          childMarkdownRemark {
+            html
+          }
+        }
+        title3
+        gallerySponsors {
+          title
+          resize (height: 250) {
+            src
+          }
+        }
       }
     }
   `)
@@ -45,18 +58,42 @@ const DonatePage = () => {
           <div className={eventStyles.banner}>
             <div className={eventStyles.bannerImage}>
               <img alt={data.contentfulEventPage.logo.title} src={data.contentfulEventPage.logo.resize.src} fluid />
+              {/* Latest Event Text */}
               <div className={eventStyles.title}>
                 <h1>{data.contentfulEventPage.title}</h1>
               </div>  
-              <div className={eventStyles.sectionPartners}>
+              <div className={eventStyles.sectionPartners} style={{display:"flex"}}>
                 <div
+                style={{flex:1}}
                   dangerouslySetInnerHTML={{
                     __html: data.contentfulEventPage.pageText.childMarkdownRemark.html,
                   }}
                 />
-               </div>
-              <div className={eventStyles.donateSection}>
-                <iframe title="event" src={data.contentfulEventPage.givebutterLink} className={eventStyles.donateForm} name="givebutter" frameborder="0" scrolling="no" seamless allowpaymentrequest />
+                <div className={eventStyles.donateSection} style={{flex:1}}>
+                  <iframe title="event" src={data.contentfulEventPage.givebutterLink} className={eventStyles.donateForm} name="givebutter" frameborder="0" scrolling="no" seamless allowpaymentrequest />
+                </div>
+              </div>
+              {/* Current Sponsors Text */}
+              <div className={eventStyles.title}>
+                <h1>{data.contentfulEventPage.title3}</h1>
+              </div>  
+              <div className={eventStyles.partnerImages}>
+                {data.contentfulEventPage.gallerySponsors.map((sponsor) => {
+                  return (
+                    <img url={""} alt={sponsor.title} src={sponsor.resize.src} />
+                  )
+                })}
+              </div>
+              {/* Sponsorship Text */}
+              <div className={eventStyles.title}>
+                <h1>{data.contentfulEventPage.title2}</h1>
+              </div>  
+              <div className={eventStyles.sectionPartners}>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: data.contentfulEventPage.sponsorshipText.childMarkdownRemark.html,
+                  }}
+                />
               </div>
               <div className={eventStyles.partnerImages}>
                 {data.contentfulEventPage.eventGallery.map((sponsor) => {

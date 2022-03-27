@@ -26,7 +26,7 @@ $blue: #3d80fc;
     .title {
       width: 100%;
       h1 {
-        padding: 3vmax 6vmax;
+        padding: 3vmax 0 0 6vmax;
         font-size: 48px;
         font-weight: 700;
         text-transform: uppercase;
@@ -35,7 +35,7 @@ $blue: #3d80fc;
         margin: 0;
       }
       p {
-        padding: 0 6vmax 2vmax;
+        padding: 3vmax 0 0 6vmax;
         margin: 0;
       }
     }
@@ -43,7 +43,7 @@ $blue: #3d80fc;
       .donate-form {
         width: 100%;
         height: 500px;
-        padding: 0 3vmax 0 3vmax;
+        padding: 0 0 0 0;
       }
     }
     .section-partners {
