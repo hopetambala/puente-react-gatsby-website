@@ -47,7 +47,7 @@ const TechnologyPage = () => {
         }
         sectionOneGif {
           title
-          resize (height: 1000) {
+          resize (height: 750) {
             src            
           }
         }
