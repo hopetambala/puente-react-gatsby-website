@@ -29,25 +29,25 @@ const EventPage = () => {
           }
         }
         givebutterLink
-        eventGallery {
-          title
-          resize (height: 500) {
-            src
-          }
-        }
-        title2
-        sponsorshipText {
-          childMarkdownRemark {
-            html
-          }
-        }
-        title3
-        gallerySponsors {
-          title
-          resize (height: 400) {
-            src
-          }
-        }
+      #   eventGallery {
+      #     title
+      #     resize (height: 500) {
+      #       src
+      #     }
+      #   }
+      #   title2
+      #   sponsorshipText {
+      #     childMarkdownRemark {
+      #       html
+      #     }
+      #   }
+      #   title3
+      #   gallerySponsors {
+      #     title
+      #     resize (height: 400) {
+      #       src
+      #     }
+      #   }
       }
     }
   `)
@@ -73,8 +73,7 @@ const EventPage = () => {
                   <iframe title="event" src={data.contentfulEventPage.givebutterLink} className={eventStyles.eventForm} name="givebutter" frameborder="0" scrolling="no" seamless allowpaymentrequest />
                 </div>
               </div>
-              {/* Current Sponsors Text */}
-              <div className={eventStyles.title}>
+              {/* <div id="Current Sponsors Text" className={eventStyles.title}>
                 <h1>{data.contentfulEventPage.title3}</h1>
               </div>  
               <div className={eventStyles.partnerImages}>
@@ -84,8 +83,7 @@ const EventPage = () => {
                   )
                 })}
               </div>
-              {/* Sponsorship Text */}
-              <div className={eventStyles.title}>
+              <div id="Sponsorship Text" className={eventStyles.title}>
                 <h1>{data.contentfulEventPage.title2}</h1>
               </div>  
               <div className={eventStyles.sectionPartners}>
@@ -101,7 +99,7 @@ const EventPage = () => {
                     <img url={""} alt={sponsor.title} src={sponsor.resize.src} />
                   )
                 })}
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
