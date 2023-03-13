@@ -128,10 +128,7 @@ const EventPage = () => {
               </div> */}
 
               <div className={eventStyles.pastEventsWrapper}>
-                <div
-                  className={eventStyles.title}
-                  style={{ justifyContent: "center" }}
-                >
+                <div>
                   <h1 className={eventStyles.title}>Past Events</h1>
                 </div>
                 <div className={eventStyles.carousel}>
