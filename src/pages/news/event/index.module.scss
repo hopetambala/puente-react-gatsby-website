@@ -23,6 +23,12 @@ $blue: #3d80fc;
         margin: 0;
       }
     }
+    .carousel {
+      width: 100%;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
     .title {
       width: 100%;
       h1 {
@@ -104,6 +110,12 @@ $blue: #3d80fc;
       }
     }
   }
+}
+
+.pastEventsWrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: #3d80fc;
 }
 
 @media (min-width: 1024px) {
