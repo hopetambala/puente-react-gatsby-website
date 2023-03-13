@@ -476,3 +476,10 @@ $blue: #3d80fc;
     }
   }
 }
+
+/**
+* Huge hack, no clue what's going on
+*/
+* > h2,h3 {
+  font-weight: 700 !important;
+}

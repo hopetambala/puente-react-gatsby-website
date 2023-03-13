@@ -25,6 +25,7 @@ $blue: #3d80fc;
     }
     .title {
       width: 100%;
+
       h1 {
         padding: 3vmax 0 0 6vmax;
         font-size: 48px;
@@ -34,11 +35,19 @@ $blue: #3d80fc;
         text-shadow: 2.5px 2.5px $yellow;
         margin: 0;
       }
+
       p {
         padding: 3vmax 0 0 6vmax;
         margin: 0;
       }
     }
+    .carousel {
+      width: 100%;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    
     .event-section {
       padding: 0 3vmax 0 0;
       .event-form {
@@ -104,6 +113,19 @@ $blue: #3d80fc;
       }
     }
   }
+}
+
+.pastEventsWrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: #3d80fc;
+  h1 {
+    padding: 24px;
+      color: $yellow;
+      text-shadow: 2px 2px $black;
+      text-transform: uppercase;
+      text-align: center;
+    }
 }
 
 @media (min-width: 1024px) {

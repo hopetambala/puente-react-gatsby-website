@@ -1,76 +1,102 @@
-import React from "react"
+import React from "react";
 import {
   // Link,
   graphql,
   useStaticQuery,
-} from "gatsby"
+} from "gatsby";
 
 // Component Imports
-import Layout from "../../../components/layout"
+import Layout from "../../../components/layout";
 
 // Style Imports
-import eventStyles from "./index.module.scss"
+import eventStyles from "./index.module.scss";
+import { Carousel } from "../../../components/carousel";
 
 const EventPage = () => {
   const data = useStaticQuery(
     graphql`
-    query {
-      contentfulEventPage {
-        logo {
+      query {
+        contentfulEventPage {
+          logo {
+            title
+            resize(height: 1000) {
+              src
+            }
+          }
           title
-          resize (height: 1000) {
-            src            
+          pageText {
+            childMarkdownRemark {
+              html
+            }
           }
-        }
-        title
-        pageText {
-          childMarkdownRemark {
-            html
+          pastPhotos {
+            file {
+              url
+            }
           }
+          givebutterLink
+          #   eventGallery {
+          #     title
+          #     resize (height: 500) {
+          #       src
+          #     }
+          #   }
+          #   title2
+          #   sponsorshipText {
+          #     childMarkdownRemark {
+          #       html
+          #     }
+          #   }
+          #   title3
+          #   gallerySponsors {
+          #     title
+          #     resize (height: 400) {
+          #       src
+          #     }
+          #   }
         }
-        givebutterLink
-      #   eventGallery {
-      #     title
-      #     resize (height: 500) {
-      #       src
-      #     }
-      #   }
-      #   title2
-      #   sponsorshipText {
-      #     childMarkdownRemark {
-      #       html
-      #     }
-      #   }
-      #   title3
-      #   gallerySponsors {
-      #     title
-      #     resize (height: 400) {
-      #       src
-      #     }
-      #   }
       }
-    }
-  `)
-  return (  
+    `
+  );
+  const { pastPhotos } = data.contentfulEventPage;
+
+  const photoUrls = pastPhotos.map((photo) => photo.file.url);
+
+  return (
     <div>
       <Layout>
         <div className={eventStyles.container}>
           <div className={eventStyles.banner}>
             <div className={eventStyles.bannerImage}>
-              <img alt={data.contentfulEventPage.logo.title} src={data.contentfulEventPage.logo.resize.src} fluid />
+              <img
+                alt={data.contentfulEventPage.logo.title}
+                src={data.contentfulEventPage.logo.resize.src}
+                fluid
+              />
               {/* Latest Event Text */}
               <div className={eventStyles.title}>
                 <h1>{data.contentfulEventPage.title}</h1>
-              </div>  
+              </div>
               <div className={eventStyles.sectionPartners}>
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: data.contentfulEventPage.pageText.childMarkdownRemark.html,
+                    __html:
+                      data.contentfulEventPage.pageText.childMarkdownRemark
+                        .html,
                   }}
                   className={eventStyles.eventSection}
                 />
                 <div className={eventStyles.eventSection}>
-                  <iframe title="event" src={data.contentfulEventPage.givebutterLink} className={eventStyles.eventForm} name="givebutter" frameborder="0" scrolling="no" seamless allowpaymentrequest />
+                  <iframe
+                    title="event"
+                    src={data.contentfulEventPage.givebutterLink}
+                    className={eventStyles.eventForm}
+                    name="givebutter"
+                    frameborder="0"
+                    scrolling="no"
+                    seamless
+                    allowpaymentrequest
+                  />
                 </div>
               </div>
               {/* <div id="Current Sponsors Text" className={eventStyles.title}>
@@ -100,12 +126,21 @@ const EventPage = () => {
                   )
                 })}
               </div> */}
+
+              <div className={eventStyles.pastEventsWrapper}>
+                <div>
+                  <h1 className={eventStyles.title}>Past Events</h1>
+                </div>
+                <div className={eventStyles.carousel}>
+                  <Carousel imagesURLs={photoUrls} />
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </Layout>
     </div>
-  )
-}
+  );
+};
 
-export default EventPage
+export default EventPage;
