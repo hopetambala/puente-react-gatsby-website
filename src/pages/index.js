@@ -1,108 +1,105 @@
-import React, {useEffect, createRef} from "react"
-import lottie from "lottie-web"
-import heroAnimation from '../animations/puente_hero.json'
-import bridgeAnimation from '../animations/bridge.json'
-import dataAnimation from '../animations/data.json'
-import serviceAnimation from '../animations/service.json'
-import {
-  Link,
-  graphql,
-  useStaticQuery,
-} from "gatsby"
-import Carousel from 'react-bootstrap/Carousel'
+import React, { useEffect, createRef } from "react";
+import lottie from "lottie-web";
+import heroAnimation from "../animations/puente_hero.json";
+import bridgeAnimation from "../animations/bridge.json";
+import dataAnimation from "../animations/data.json";
+import serviceAnimation from "../animations/service.json";
+import { Link, graphql, useStaticQuery } from "gatsby";
+import Carousel from "react-bootstrap/Carousel";
 
 // Component Imports
-import Layout from "../components/layout"
+import Layout from "../components/layout";
 
 // Style Imports
-import styles from "./index.module.scss"
+import styles from "./index.module.scss";
 
 const IndexPage = () => {
   const data = useStaticQuery(
     graphql`
-    query {
-      image: file(relativePath: { eq: "placeholder.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 1000) {
-            ...GatsbyImageSharpFluid
+      query {
+        image: file(relativePath: { eq: "placeholder.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 1000) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        contentfulLandingPage(node_locale: { eq: "en-US" }) {
+          hero
+          firstSectionTitle
+          firstSectionParagraph {
+            childMarkdownRemark {
+              html
+            }
+          }
+          secondSectionTitle
+          secondSectionParagraph {
+            childMarkdownRemark {
+              html
+            }
+          }
+          impactNumbers
+          impactDescriptions
+          thirdSectionTitle
+          thirdSectionParagraph {
+            childMarkdownRemark {
+              html
+            }
+          }
+          fourthSectionTitle
+          fourthSectionParagraph {
+            childMarkdownRemark {
+              html
+            }
+          }
+          ourPartnersText {
+            childMarkdownRemark {
+              html
+            }
+          }
+          partnerships {
+            title
+            resize(height: 150) {
+              src
+            }
+          }
+        }
+        contentfulProjectTypes(node_locale: { eq: "en-US" }) {
+          projectTypeOne
+          projectOneLongDescription {
+            childMarkdownRemark {
+              html
+            }
+          }
+          projectTypeTwo
+          projectTwoLongDescription {
+            childMarkdownRemark {
+              html
+            }
+          }
+          projectTypeThree
+          projectThreeLongDescription {
+            childMarkdownRemark {
+              html
+            }
+          }
+          projectTypeFour
+          projectFourLongDescription {
+            childMarkdownRemark {
+              html
+            }
+          }
+          projectTypeFive
+          projectFiveLongDescription {
+            childMarkdownRemark {
+              html
+            }
           }
         }
       }
-      contentfulLandingPage(node_locale: { eq: "en-US" }) {
-        hero
-        firstSectionTitle
-        firstSectionParagraph {
-          childMarkdownRemark {
-            html
-          }
-        }
-        secondSectionTitle
-        secondSectionParagraph {
-          childMarkdownRemark {
-            html
-          }
-        }
-        impactNumbers
-        impactDescriptions
-        thirdSectionTitle
-        thirdSectionParagraph {
-          childMarkdownRemark {
-            html
-          }
-        }
-        fourthSectionTitle
-        fourthSectionParagraph {
-          childMarkdownRemark {
-            html
-          }
-        }
-        ourPartnersText {
-          childMarkdownRemark {
-            html
-          }
-        }
-        partnerships {
-          title
-          resize (height: 150) {
-            src
-          }
-        }
-      }
-      contentfulProjectTypes(node_locale: { eq: "en-US" }) {
-        projectTypeOne
-        projectOneLongDescription {
-          childMarkdownRemark {
-            html
-          }
-        }
-        projectTypeTwo
-        projectTwoLongDescription {
-          childMarkdownRemark {
-            html
-          }
-        }
-        projectTypeThree
-        projectThreeLongDescription {
-          childMarkdownRemark {
-            html
-          }
-        }
-        projectTypeFour
-        projectFourLongDescription {
-          childMarkdownRemark {
-            html
-          }
-        }
-        projectTypeFive
-        projectFiveLongDescription {
-          childMarkdownRemark {
-            html
-          }
-        }
-      }
-    }
-  `)
-  
+    `
+  );
+
   let animationContainer = createRef();
 
   useEffect(() => {
@@ -111,7 +108,7 @@ const IndexPage = () => {
       renderer: "svg",
       loop: true,
       autoplay: true,
-      animationData: heroAnimation
+      animationData: heroAnimation,
     });
     return () => anim.destroy(); // optional clean up for unmounting
   }, []); // eslint-disable-line
@@ -123,11 +120,11 @@ const IndexPage = () => {
       renderer: "svg",
       loop: true,
       autoplay: true,
-      animationData: bridgeAnimation
+      animationData: bridgeAnimation,
     });
     return () => anim.destroy(); // optional clean up for unmounting
   }, []); // eslint-disable-line
-  
+
   let dataContainer = createRef();
   useEffect(() => {
     const anim = lottie.loadAnimation({
@@ -135,11 +132,11 @@ const IndexPage = () => {
       renderer: "svg",
       loop: true,
       autoplay: true,
-      animationData: dataAnimation
+      animationData: dataAnimation,
     });
     return () => anim.destroy(); // optional clean up for unmounting
   }, []); // eslint-disable-line
-  
+
   let serviceContainer = createRef();
   useEffect(() => {
     const anim = lottie.loadAnimation({
@@ -147,17 +144,17 @@ const IndexPage = () => {
       renderer: "svg",
       loop: true,
       autoplay: true,
-      animationData: serviceAnimation
+      animationData: serviceAnimation,
     });
     return () => anim.destroy(); // optional clean up for unmounting
   }, []); // eslint-disable-line
-  
+
   return (
     <div>
       <Layout>
         <div className={styles.container}>
           <div className={styles.banner}>
-            <div className = {styles.heroImage}>
+            <div className={styles.heroImage}>
               <div className="animation-container" ref={animationContainer} />
             </div>
             <div className={styles.hero}>
@@ -169,7 +166,9 @@ const IndexPage = () => {
               <h2>{data.contentfulLandingPage.firstSectionTitle}</h2>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: data.contentfulLandingPage.firstSectionParagraph.childMarkdownRemark.html,
+                  __html:
+                    data.contentfulLandingPage.firstSectionParagraph
+                      .childMarkdownRemark.html,
                 }}
               />
             </div>
@@ -196,12 +195,18 @@ const IndexPage = () => {
                 <h2>{data.contentfulLandingPage.impactNumbers[3]}</h2>
                 <h3>{data.contentfulLandingPage.impactDescriptions[3]}</h3>
               </div>
+              <div className={styles.impactNumber}>
+                <h2>{data.contentfulLandingPage.impactNumbers[4]}</h2>
+                <h3>{data.contentfulLandingPage.impactDescriptions[4]}</h3>
+              </div>
             </div>
             <div className={styles.sectionText}>
               <h2>{data.contentfulLandingPage.secondSectionTitle}</h2>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: data.contentfulLandingPage.secondSectionParagraph.childMarkdownRemark.html,
+                  __html:
+                    data.contentfulLandingPage.secondSectionParagraph
+                      .childMarkdownRemark.html,
                 }}
               />
             </div>
@@ -212,7 +217,9 @@ const IndexPage = () => {
                 <h2>{data.contentfulProjectTypes.projectTypeOne}</h2>
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: data.contentfulProjectTypes.projectOneLongDescription.childMarkdownRemark.html,
+                    __html:
+                      data.contentfulProjectTypes.projectOneLongDescription
+                        .childMarkdownRemark.html,
                   }}
                 />
               </Carousel.Item>
@@ -220,7 +227,9 @@ const IndexPage = () => {
                 <h2>{data.contentfulProjectTypes.projectTypeTwo}</h2>
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: data.contentfulProjectTypes.projectTwoLongDescription.childMarkdownRemark.html,
+                    __html:
+                      data.contentfulProjectTypes.projectTwoLongDescription
+                        .childMarkdownRemark.html,
                   }}
                 />
               </Carousel.Item>
@@ -228,7 +237,9 @@ const IndexPage = () => {
                 <h2>{data.contentfulProjectTypes.projectTypeThree}</h2>
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: data.contentfulProjectTypes.projectThreeLongDescription.childMarkdownRemark.html,
+                    __html:
+                      data.contentfulProjectTypes.projectThreeLongDescription
+                        .childMarkdownRemark.html,
                   }}
                 />
               </Carousel.Item>
@@ -236,7 +247,9 @@ const IndexPage = () => {
                 <h2>{data.contentfulProjectTypes.projectTypeFour}</h2>
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: data.contentfulProjectTypes.projectFourLongDescription.childMarkdownRemark.html,
+                    __html:
+                      data.contentfulProjectTypes.projectFourLongDescription
+                        .childMarkdownRemark.html,
                   }}
                 />
               </Carousel.Item>
@@ -244,7 +257,9 @@ const IndexPage = () => {
                 <h2>{data.contentfulProjectTypes.projectTypeFive}</h2>
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: data.contentfulProjectTypes.projectFiveLongDescription.childMarkdownRemark.html,
+                    __html:
+                      data.contentfulProjectTypes.projectFiveLongDescription
+                        .childMarkdownRemark.html,
                   }}
                 />
               </Carousel.Item>
@@ -260,7 +275,9 @@ const IndexPage = () => {
               <h2>{data.contentfulLandingPage.thirdSectionTitle}</h2>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: data.contentfulLandingPage.thirdSectionParagraph.childMarkdownRemark.html,
+                  __html:
+                    data.contentfulLandingPage.thirdSectionParagraph
+                      .childMarkdownRemark.html,
                 }}
               />
             </div>
@@ -278,7 +295,9 @@ const IndexPage = () => {
               <h2>{data.contentfulLandingPage.fourthSectionTitle}</h2>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: data.contentfulLandingPage.fourthSectionParagraph.childMarkdownRemark.html,
+                  __html:
+                    data.contentfulLandingPage.fourthSectionParagraph
+                      .childMarkdownRemark.html,
                 }}
               />
             </div>
@@ -287,21 +306,27 @@ const IndexPage = () => {
             <h2>Our Partners</h2>
             <div
               dangerouslySetInnerHTML={{
-                __html: data.contentfulLandingPage.ourPartnersText.childMarkdownRemark.html,
+                __html:
+                  data.contentfulLandingPage.ourPartnersText.childMarkdownRemark
+                    .html,
               }}
             />
             <div className={styles.partnerImages}>
               {data.contentfulLandingPage.partnerships.map((partnerships) => {
                 return (
-                  <img url={""} alt={partnerships.title} src={partnerships.resize.src} />
-                )
+                  <img
+                    url={""}
+                    alt={partnerships.title}
+                    src={partnerships.resize.src}
+                  />
+                );
               })}
             </div>
           </div>
         </div>
       </Layout>
     </div>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;
