@@ -58,9 +58,10 @@ const EventPage = () => {
       }
     `
   );
+
   const { pastPhotos } = data.contentfulEventPage;
 
-  const photoUrls = pastPhotos.map((photo) => photo.file.url);
+  const photoUrls = pastPhotos ? pastPhotos.map((photo) => photo.file.url) : [];
 
   return (
     <div>
@@ -127,14 +128,14 @@ const EventPage = () => {
                 })}
               </div> */}
 
-              <div className={eventStyles.pastEventsWrapper}>
+              {photoUrls.length > 0 && <div className={eventStyles.pastEventsWrapper}>
                 <div>
                   <h1 className={eventStyles.title}>Past Events</h1>
                 </div>
                 <div className={eventStyles.carousel}>
                   <Carousel imagesURLs={photoUrls} />
                 </div>
-              </div>
+              </div>}
             </div>
           </div>
         </div>
