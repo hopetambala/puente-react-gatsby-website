@@ -33,6 +33,8 @@ const Footer = () => {
     }
   `)
 
+  const badges = data.contentfulFooter.badgetGallery;
+  const badge = badges[badges.length - 1]
   const [person,setPerson] = useState({
     fName: '',
     lName: '',
@@ -63,19 +65,15 @@ const Footer = () => {
         <div className={footerStyles.footerMain}>
           <div className={footerStyles.section}>
             <Link to="/">
-              <Logo className={footerStyles.logo}/>
+              <Logo className={footerStyles.logo} />
             </Link>
             <p>
-              Puente is a 501(c)(3) nonprofit corporation fueled by forward-thinking,
-              passionate individuals. Founded in 2018, and based in Constanza, Dominican Republic,
-              with offices in Indiana.
+              Puente is a 501(c)(3) nonprofit corporation fueled by
+              forward-thinking, passionate individuals. Founded in 2018, and
+              based in Constanza, Dominican Republic, with offices in Indiana.
             </p>
             <div>
-              {data.contentfulFooter.badgetGallery.map((badges) => {
-                return (
-                  <img alt={badges.title} src={badges.resize.src} />
-                )
-              })}
+              {badges && <img alt={badge.title} src={badge.resize.src} />}
             </div>
           </div>
           <div className={footerStyles.section}>
@@ -83,25 +81,39 @@ const Footer = () => {
               <ul className={footerStyles.navList}>
                 <h1>Menu</h1>
                 <li>
-                  <Link className={footerStyles.navItem} to="/about">About Us</Link>
+                  <Link className={footerStyles.navItem} to="/about">
+                    About Us
+                  </Link>
                 </li>
                 <li>
-                  <Link className={footerStyles.navItem} to="/technology">Our Technology</Link>
+                  <Link className={footerStyles.navItem} to="/technology">
+                    Our Technology
+                  </Link>
                 </li>
                 <li>
-                  <Link className={footerStyles.navItem} to="/programs">Our Work</Link>
+                  <Link className={footerStyles.navItem} to="/programs">
+                    Our Work
+                  </Link>
                 </li>
                 <li>
-                  <Link className={footerStyles.navItem} to="/volunteer">Get Involved</Link>
+                  <Link className={footerStyles.navItem} to="/volunteer">
+                    Get Involved
+                  </Link>
                 </li>
                 <li>
-                  <Link className={footerStyles.navItem} to="/news">News</Link>
+                  <Link className={footerStyles.navItem} to="/news">
+                    News
+                  </Link>
                 </li>
                 <li>
-                  <Link className={footerStyles.navItem} to="/merchandise">Merchandise</Link>
+                  <Link className={footerStyles.navItem} to="/merchandise">
+                    Merchandise
+                  </Link>
                 </li>
                 <li>
-                  <Link className={footerStyles.navItem} to="/donate">Donate</Link>
+                  <Link className={footerStyles.navItem} to="/donate">
+                    Donate
+                  </Link>
                 </li>
               </ul>
             </nav>
@@ -115,10 +127,38 @@ const Footer = () => {
             <h2>Phone:</h2>
             <p>1-574-302-7756</p>
             <div className={footerStyles.icons}>
-              <a aria-label="facebook" href="https://www.facebook.com/puentedr/" target="_blank" rel="noopener noreferrer"><Icon size={25} icon={facebook} /></a>
-              <a aria-label="instagram" href="https://www.instagram.com/puentedr/" target="_blank" rel="noopener noreferrer"><Icon size={25} icon={instagram} /></a>
-              <a aria-label="youtube" href="https://www.youtube.com/channel/UCDcD_DYPeLt4NZdVwKX8gDw"target="_blank" rel="noopener noreferrer" ><Icon size={25} icon={youtubePlay} /></a>
-              <a aria-label="linkedin" href="https://www.linkedin.com/company/18499313/admin/" target="_blank" rel="noopener noreferrer"><Icon size={25} icon={linkedin} /></a>
+              <a
+                aria-label="facebook"
+                href="https://www.facebook.com/puentedr/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon size={25} icon={facebook} />
+              </a>
+              <a
+                aria-label="instagram"
+                href="https://www.instagram.com/puentedr/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon size={25} icon={instagram} />
+              </a>
+              <a
+                aria-label="youtube"
+                href="https://www.youtube.com/channel/UCDcD_DYPeLt4NZdVwKX8gDw"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon size={25} icon={youtubePlay} />
+              </a>
+              <a
+                aria-label="linkedin"
+                href="https://www.linkedin.com/company/18499313/admin/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon size={25} icon={linkedin} />
+              </a>
             </div>
           </div>
           <div className={footerStyles.section}>
@@ -131,38 +171,59 @@ const Footer = () => {
                     className={footerStyles.input}
                     type="textarea"
                     placeholder={"First Name"}
-                    onChange={(e) => setPerson({ ...person, fName: e.target.value })}
+                    onChange={(e) =>
+                      setPerson({ ...person, fName: e.target.value })
+                    }
                   />
                   <Form.Control
                     size="sm"
                     className={footerStyles.input}
                     type="textarea"
                     placeholder={"Last Name"}
-                    onChange={(e) => setPerson({ ...person, lName: e.target.value })}
+                    onChange={(e) =>
+                      setPerson({ ...person, lName: e.target.value })
+                    }
                   />
                   <Form.Control
                     size="sm"
                     className={footerStyles.input}
                     type="email"
                     placeholder={"Enter email..."}
-                    onChange={(e) => setPerson({ ...person, email: e.target.value })} />
-                  <div tabIndex={0} onClick={handleSubmit} onKeyDown={handleSubmit}
-                    role="button" className={footerStyles.button}>
+                    onChange={(e) =>
+                      setPerson({ ...person, email: e.target.value })
+                    }
+                  />
+                  <div
+                    tabIndex={0}
+                    onClick={handleSubmit}
+                    onKeyDown={handleSubmit}
+                    role="button"
+                    className={footerStyles.button}
+                  >
                     <p>Sign Up</p>
                   </div>
                 </div>
-                <p className={footerStyles.message} dangerouslySetInnerHTML={{ __html: person.message }}></p>
+                <p
+                  className={footerStyles.message}
+                  dangerouslySetInnerHTML={{ __html: person.message }}
+                ></p>
               </Form.Group>
             </Form>
           </div>
         </div>
         <div className={footerStyles.tos}>
-          <Link className={footerStyles.tosText} to="/terms-of-service">Terms of Service</Link>
-          <Link className={footerStyles.tosText} to="/acceptable-use">Acceptable Use</Link>
-          <Link className={footerStyles.tosTextLast} to="/privacy-policy">Privacy Policy</Link>
+          <Link className={footerStyles.tosText} to="/terms-of-service">
+            Terms of Service
+          </Link>
+          <Link className={footerStyles.tosText} to="/acceptable-use">
+            Acceptable Use
+          </Link>
+          <Link className={footerStyles.tosTextLast} to="/privacy-policy">
+            Privacy Policy
+          </Link>
         </div>
       </footer>
-    )
+    );
 }
 
 export default Footer
