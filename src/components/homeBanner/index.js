@@ -5,7 +5,7 @@ import React from 'react'
 
 // Style Imports
 import '../styles/styles.scss'
-import styles from './homeBanner.module.scss'
+import * as styles from './homeBanner.module.scss'
 
 class Footer extends React.Component {
   constructor(props) {

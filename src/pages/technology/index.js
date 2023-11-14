@@ -18,7 +18,7 @@ import Layout from "../../components/layout"
 import dataAnimation from '../../animations/data.json'
 
 // Styles Import
-import styles from './index.module.scss'
+import * as styles from './index.module.scss'
 
 const TechnologyPage = () => {
   const data = useStaticQuery(
@@ -138,14 +138,15 @@ const TechnologyPage = () => {
               <img alt={data.contentfulTechnologyPage.heroImage.title} src={data.contentfulTechnologyPage.heroImage.resize.src} fluid />
             </div> */}
             <div className="data-container" ref={dataContainer} />
-
           </div>
         </div>
         <div className={styles.divider}>
           {/* <p>{data.contentfulTechnologyPage.dividerText}</p> */}
           <div
             dangerouslySetInnerHTML={{
-              __html: data.contentfulTechnologyPage.dividerTextLong.childMarkdownRemark.html,
+              __html:
+                data.contentfulTechnologyPage.dividerTextLong
+                  .childMarkdownRemark.html,
             }}
           />
         </div>
@@ -154,34 +155,44 @@ const TechnologyPage = () => {
           <div className={styles.collectionContent}>
             <div className={styles.collectionImage}>
               <div className={styles.placeholder}>
-                <img alt={data.contentfulTechnologyPage.sectionOneGif.title} src={data.contentfulTechnologyPage.sectionOneGif.resize.src} fluid />
+                <img
+                  alt={data.contentfulTechnologyPage.sectionOneGif.title}
+                  src={data.contentfulTechnologyPage.sectionOneGif.resize.src}
+                  fluid
+                />
               </div>
             </div>
             <div className={styles.collectionText}>
               <h3>{data.contentfulTechnologyPage.sectionOneHeaderOne}</h3>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: data.contentfulTechnologyPage.sectionOneParagraphOne.childMarkdownRemark.html,
+                  __html:
+                    data.contentfulTechnologyPage.sectionOneParagraphOne
+                      .childMarkdownRemark.html,
                 }}
               />
               <h3>{data.contentfulTechnologyPage.sectionOneHeaderTwo}</h3>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: data.contentfulTechnologyPage.sectionOneParagraphTwo.childMarkdownRemark.html,
+                  __html:
+                    data.contentfulTechnologyPage.sectionOneParagraphTwo
+                      .childMarkdownRemark.html,
                 }}
               />
               <h3>{data.contentfulTechnologyPage.sectionOneHeaderThree}</h3>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: data.contentfulTechnologyPage.sectionOneParagraphThree.childMarkdownRemark.html,
+                  __html:
+                    data.contentfulTechnologyPage.sectionOneParagraphThree
+                      .childMarkdownRemark.html,
                 }}
               />
               <h3>{data.contentfulTechnologyPage.sectionOneKeyFeatures}</h3>
-              {data.contentfulTechnologyPage.sectionOneKeyFeaturesList.map((feature) => {
-                return (
-                  <p>{feature}</p>
-                )
-              })}
+              {data.contentfulTechnologyPage.sectionOneKeyFeaturesList.map(
+                (feature) => {
+                  return <p>{feature}</p>;
+                }
+              )}
             </div>
           </div>
         </div>
@@ -190,47 +201,66 @@ const TechnologyPage = () => {
           <div className={styles.analysisContent}>
             <div className={styles.analysisImage}>
               <div className={styles.placeholder}>
-                <img alt={data.contentfulTechnologyPage.sectionTwoGif.title} src={data.contentfulTechnologyPage.sectionTwoGif.resize.src} fluid />
+                <img
+                  alt={data.contentfulTechnologyPage.sectionTwoGif.title}
+                  src={data.contentfulTechnologyPage.sectionTwoGif.resize.src}
+                  fluid
+                />
               </div>
             </div>
             <div className={styles.analysisText}>
               <h3>{data.contentfulTechnologyPage.sectionTwoHeaderOne}</h3>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: data.contentfulTechnologyPage.sectionTwoParagraphOne.childMarkdownRemark.html,
+                  __html:
+                    data.contentfulTechnologyPage.sectionTwoParagraphOne
+                      .childMarkdownRemark.html,
                 }}
               />
               <h3>{data.contentfulTechnologyPage.sectionTwoHeaderTwo}</h3>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: data.contentfulTechnologyPage.sectionTwoParagraphTwo.childMarkdownRemark.html,
+                  __html:
+                    data.contentfulTechnologyPage.sectionTwoParagraphTwo
+                      .childMarkdownRemark.html,
                 }}
               />
               <h3>{data.contentfulTechnologyPage.sectionTwoHeaderThree}</h3>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: data.contentfulTechnologyPage.sectionTwoParagraphThree.childMarkdownRemark.html,
+                  __html:
+                    data.contentfulTechnologyPage.sectionTwoParagraphThree
+                      .childMarkdownRemark.html,
                 }}
               />
               <h3>{data.contentfulTechnologyPage.sectionTwoKeyFeatures}</h3>
-              {data.contentfulTechnologyPage.sectionTwoKeyFeaturesList.map((feature) => {
-                return (
-                  <p>{feature}</p>
-                )
-              })}
+              {data.contentfulTechnologyPage.sectionTwoKeyFeaturesList.map(
+                (feature) => {
+                  return <p>{feature}</p>;
+                }
+              )}
             </div>
           </div>
         </div>
         <div id="interactive-map" className={styles.sectionTwo}>
           <h2>{data.contentfulTechnologyPage.sectionTwoHeader}</h2>
-          <iframe width="100%" height="800px" frameBorder="0" className={styles.analysisContent} src="https://d2k82nkbrja4ga.cloudfront.net" title="Puente Maps"></iframe>
+          <iframe
+            width="100%"
+            height="800px"
+            frameBorder="0"
+            className={styles.analysisContent}
+            src="https://d2k82nkbrja4ga.cloudfront.net"
+            title="Puente Maps"
+          ></iframe>
         </div>
         <div id="testimonials" className={styles.testimonials}>
           <div className={styles.testimonial}>
             <h3 className={styles.openQuote}>"</h3>
             <div
               dangerouslySetInnerHTML={{
-                __html: data.contentfulTechnologyPage.testimonialOne.childMarkdownRemark.html,
+                __html:
+                  data.contentfulTechnologyPage.testimonialOne
+                    .childMarkdownRemark.html,
               }}
             />
             <h3 className={styles.closeQuote}>"</h3>
@@ -239,7 +269,9 @@ const TechnologyPage = () => {
             <h3 className={styles.openQuote}>"</h3>
             <div
               dangerouslySetInnerHTML={{
-                __html: data.contentfulTechnologyPage.testimonialTwo.childMarkdownRemark.html,
+                __html:
+                  data.contentfulTechnologyPage.testimonialTwo
+                    .childMarkdownRemark.html,
               }}
             />
             <h3 className={styles.closeQuote}>"</h3>
@@ -251,89 +283,311 @@ const TechnologyPage = () => {
             <Row>
               <Col>
                 <Card className={styles.card}>
-                  <Card.Body className={styles.cardBody}>
-                    <Card.Title className={[styles.cardTitle,"text-muted text-uppercase text-center"]}>Start</Card.Title>
-                    <h6 className={styles.cardPrice}>$50<span className={styles.period}>/month</span></h6>
+                  <Card.Body>
+                    <Card.Title
+                      className={[
+                        styles.cardTitle,
+                        "text-muted text-uppercase text-center",
+                      ]}
+                    >
+                      Start
+                    </Card.Title>
+                    <h6 className={styles.cardPrice}>
+                      $50<span className={styles.period}>/month</span>
+                    </h6>
                     <hr />
                     <ul className="fa-ul">
-                      <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Up to <strong>3</strong> active users</li>
-                      <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span><strong>Unlimited</strong> Storage</li>
-                      <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Access to pre-built out forms</li>
-                      <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Offline Capability*</li>
-                      <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Excel/CSV exports</li>
-                      <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>Custom Forms</li>
-                      <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>Dedicated Staff Support</li>
-                      <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>On-the-ground training</li>
-                      <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>Automated Monthly Status Reports</li>
-                      <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>SMS Monitoring and Evaluation</li>
-                      <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>Open API Access</li>
+                      <li>
+                        <span className="fa-li">
+                          <FontAwesomeIcon icon={faCheck} />
+                        </span>
+                        Up to <strong>3</strong> active users
+                      </li>
+                      <li>
+                        <span className="fa-li">
+                          <FontAwesomeIcon icon={faCheck} />
+                        </span>
+                        <strong>Unlimited</strong> Storage
+                      </li>
+                      <li>
+                        <span className="fa-li">
+                          <FontAwesomeIcon icon={faCheck} />
+                        </span>
+                        Access to pre-built out forms
+                      </li>
+                      <li>
+                        <span className="fa-li">
+                          <FontAwesomeIcon icon={faCheck} />
+                        </span>
+                        Offline Capability*
+                      </li>
+                      <li>
+                        <span className="fa-li">
+                          <FontAwesomeIcon icon={faCheck} />
+                        </span>
+                        Excel/CSV exports
+                      </li>
+                      <li className="text-muted">
+                        <span className="fa-li">
+                          <FontAwesomeIcon icon={faTimes} />
+                        </span>
+                        Custom Forms
+                      </li>
+                      <li className="text-muted">
+                        <span className="fa-li">
+                          <FontAwesomeIcon icon={faTimes} />
+                        </span>
+                        Dedicated Staff Support
+                      </li>
+                      <li className="text-muted">
+                        <span className="fa-li">
+                          <FontAwesomeIcon icon={faTimes} />
+                        </span>
+                        On-the-ground training
+                      </li>
+                      <li className="text-muted">
+                        <span className="fa-li">
+                          <FontAwesomeIcon icon={faTimes} />
+                        </span>
+                        Automated Monthly Status Reports
+                      </li>
+                      <li className="text-muted">
+                        <span className="fa-li">
+                          <FontAwesomeIcon icon={faTimes} />
+                        </span>
+                        SMS Monitoring and Evaluation
+                      </li>
+                      <li className="text-muted">
+                        <span className="fa-li">
+                          <FontAwesomeIcon icon={faTimes} />
+                        </span>
+                        Open API Access
+                      </li>
                     </ul>
-                    <Button href="#" primary block className={[styles.btn,"text-uppercase"]}>Contact for Details</Button>
+                    <Button
+                      href="#"
+                      primary
+                      block
+                      className={[styles.btn, "text-uppercase"]}
+                    >
+                      Contact for Details
+                    </Button>
                   </Card.Body>
                 </Card>
               </Col>
               <Col>
                 <Card className={styles.card}>
-                  <Card.Body className={styles.cardBody}>
-                    <Card.Title className={[styles.cardTitle,"text-muted text-uppercase text-center"]}>Grow</Card.Title>
-                    <h6 className={styles.cardPrice}>$150<span className={styles.period}>/month</span></h6>
+                  <Card.Body>
+                    <Card.Title
+                      className={[
+                        styles.cardTitle,
+                        "text-muted text-uppercase text-center",
+                      ]}
+                    >
+                      Grow
+                    </Card.Title>
+                    <h6 className={styles.cardPrice}>
+                      $150<span className={styles.period}>/month</span>
+                    </h6>
                     <hr />
-                    <Card.Subtitle className={styles.cardTitle}>Everything in "Start" plus!</Card.Subtitle>
+                    <Card.Subtitle className={styles.cardTitle}>
+                      Everything in "Start" plus!
+                    </Card.Subtitle>
                     <ul className="fa-ul">
-                      <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Up to <strong>10</strong> active users</li>
-                      <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Up to <strong>3</strong> custom forms</li>
-                      <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Up to <strong>1 hour</strong> of dedicated staff support</li>
-                      <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>On-the-ground training</li>
-                      <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>Automated Monthly Status Reports</li>
-                      <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>SMS Monitoring and Evaluation</li>
-                      <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>Open API Access</li>
+                      <li>
+                        <span className="fa-li">
+                          <FontAwesomeIcon icon={faCheck} />
+                        </span>
+                        Up to <strong>10</strong> active users
+                      </li>
+                      <li>
+                        <span className="fa-li">
+                          <FontAwesomeIcon icon={faCheck} />
+                        </span>
+                        Up to <strong>3</strong> custom forms
+                      </li>
+                      <li>
+                        <span className="fa-li">
+                          <FontAwesomeIcon icon={faCheck} />
+                        </span>
+                        Up to <strong>1 hour</strong> of dedicated staff support
+                      </li>
+                      <li className="text-muted">
+                        <span className="fa-li">
+                          <FontAwesomeIcon icon={faTimes} />
+                        </span>
+                        On-the-ground training
+                      </li>
+                      <li className="text-muted">
+                        <span className="fa-li">
+                          <FontAwesomeIcon icon={faTimes} />
+                        </span>
+                        Automated Monthly Status Reports
+                      </li>
+                      <li className="text-muted">
+                        <span className="fa-li">
+                          <FontAwesomeIcon icon={faTimes} />
+                        </span>
+                        SMS Monitoring and Evaluation
+                      </li>
+                      <li className="text-muted">
+                        <span className="fa-li">
+                          <FontAwesomeIcon icon={faTimes} />
+                        </span>
+                        Open API Access
+                      </li>
                     </ul>
-                    <Button href="mailto:info@puente-dr.org" primary block className={[styles.btn,"text-uppercase"]}>Contact for Details</Button>
+                    <Button
+                      href="mailto:info@puente-dr.org"
+                      primary
+                      block
+                      className={[styles.btn, "text-uppercase"]}
+                    >
+                      Contact for Details
+                    </Button>
                   </Card.Body>
                 </Card>
               </Col>
               <Col>
                 <Card className={styles.card}>
-                    <Card.Body className={styles.cardBody}>
-                      <Card.Title className={[styles.cardTitle,"text-muted text-uppercase text-center"]}>Expand</Card.Title>
-                      <h6 className={styles.cardPrice}>$350<span className={styles.period}>/month</span></h6>
-                      <hr />
-                      <Card.Subtitle className={styles.cardTitle}>Everything in "Grow" plus!</Card.Subtitle>
-                      <ul className="fa-ul">
-                        <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Up to <strong>20</strong> active users</li>
-                        <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Up to <strong>6</strong> custom forms</li>
-                        <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Up to <strong>3 hours</strong> of dedicated staff support</li>
-                        <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>On-the-ground training</li>
-                        <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Automated Monthly Status Reports</li>
-                        <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>SMS Monitoring and Evaluation</li>
-                        <li className="text-muted"><span className="fa-li"><FontAwesomeIcon icon={faTimes} /></span>Open API Access</li>
-                      </ul>
-                      <Button href="#" primary block className={[styles.btn,"text-uppercase"]}>Contact for Details</Button>
-                    </Card.Body>
-                  </Card>
+                  <Card.Body>
+                    <Card.Title
+                      className={[
+                        styles.cardTitle,
+                        "text-muted text-uppercase text-center",
+                      ]}
+                    >
+                      Expand
+                    </Card.Title>
+                    <h6 className={styles.cardPrice}>
+                      $350<span className={styles.period}>/month</span>
+                    </h6>
+                    <hr />
+                    <Card.Subtitle className={styles.cardTitle}>
+                      Everything in "Grow" plus!
+                    </Card.Subtitle>
+                    <ul className="fa-ul">
+                      <li>
+                        <span className="fa-li">
+                          <FontAwesomeIcon icon={faCheck} />
+                        </span>
+                        Up to <strong>20</strong> active users
+                      </li>
+                      <li>
+                        <span className="fa-li">
+                          <FontAwesomeIcon icon={faCheck} />
+                        </span>
+                        Up to <strong>6</strong> custom forms
+                      </li>
+                      <li>
+                        <span className="fa-li">
+                          <FontAwesomeIcon icon={faCheck} />
+                        </span>
+                        Up to <strong>3 hours</strong> of dedicated staff
+                        support
+                      </li>
+                      <li>
+                        <span className="fa-li">
+                          <FontAwesomeIcon icon={faCheck} />
+                        </span>
+                        On-the-ground training
+                      </li>
+                      <li>
+                        <span className="fa-li">
+                          <FontAwesomeIcon icon={faCheck} />
+                        </span>
+                        Automated Monthly Status Reports
+                      </li>
+                      <li className="text-muted">
+                        <span className="fa-li">
+                          <FontAwesomeIcon icon={faTimes} />
+                        </span>
+                        SMS Monitoring and Evaluation
+                      </li>
+                      <li className="text-muted">
+                        <span className="fa-li">
+                          <FontAwesomeIcon icon={faTimes} />
+                        </span>
+                        Open API Access
+                      </li>
+                    </ul>
+                    <Button
+                      href="#"
+                      primary
+                      block
+                      className={[styles.btn, "text-uppercase"]}
+                    >
+                      Contact for Details
+                    </Button>
+                  </Card.Body>
+                </Card>
               </Col>
               <Col>
                 <Card className={styles.card}>
-                    <Card.Body className={styles.cardBody}>
-                      <Card.Title className={[styles.cardTitle,"text-muted text-uppercase text-center"]}>Establish</Card.Title>
-                      <h6 className={styles.cardPrice}>$750<span className={styles.period}>/month</span></h6>
-                      <hr />
-                      <Card.Subtitle className={styles.cardTitle}>Everything in "Expand" plus!</Card.Subtitle>
-                      <ul className="fa-ul">
-                        <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span><strong>Unlimited</strong> active users</li>
-                        <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span><strong>Unlimited</strong> custom forms</li>
-                        <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Up to <strong>8 hours</strong> of dedicated staff support</li>
-                        <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>SMS Monitoring and Evaluation</li>
-                        <li><span className="fa-li"><FontAwesomeIcon icon={faCheck} /></span>Open API Access</li>
-                      </ul>
-                      <Button href="#" primary block className={[styles.btn,"text-uppercase"]}>Contact for Details</Button>
-                    </Card.Body>
-                  </Card>
+                  <Card.Body>
+                    <Card.Title
+                      className={[
+                        styles.cardTitle,
+                        "text-muted text-uppercase text-center",
+                      ]}
+                    >
+                      Establish
+                    </Card.Title>
+                    <h6 className={styles.cardPrice}>
+                      $750<span className={styles.period}>/month</span>
+                    </h6>
+                    <hr />
+                    <Card.Subtitle className={styles.cardTitle}>
+                      Everything in "Expand" plus!
+                    </Card.Subtitle>
+                    <ul className="fa-ul">
+                      <li>
+                        <span className="fa-li">
+                          <FontAwesomeIcon icon={faCheck} />
+                        </span>
+                        <strong>Unlimited</strong> active users
+                      </li>
+                      <li>
+                        <span className="fa-li">
+                          <FontAwesomeIcon icon={faCheck} />
+                        </span>
+                        <strong>Unlimited</strong> custom forms
+                      </li>
+                      <li>
+                        <span className="fa-li">
+                          <FontAwesomeIcon icon={faCheck} />
+                        </span>
+                        Up to <strong>8 hours</strong> of dedicated staff
+                        support
+                      </li>
+                      <li>
+                        <span className="fa-li">
+                          <FontAwesomeIcon icon={faCheck} />
+                        </span>
+                        SMS Monitoring and Evaluation
+                      </li>
+                      <li>
+                        <span className="fa-li">
+                          <FontAwesomeIcon icon={faCheck} />
+                        </span>
+                        Open API Access
+                      </li>
+                    </ul>
+                    <Button
+                      href="#"
+                      primary
+                      block
+                      className={[styles.btn, "text-uppercase"]}
+                    >
+                      Contact for Details
+                    </Button>
+                  </Card.Body>
+                </Card>
               </Col>
             </Row>
           </div>
         </div>
-        <div id="request-demo" className={styles.demo} >
+        <div id="request-demo" className={styles.demo}>
           <h2>Request a Demo</h2>
           <Form className={styles.requestForm}>
             <Form.Group controlId="formBasicEmail">
@@ -350,12 +604,12 @@ const TechnologyPage = () => {
             </Form.Group>
             <Button variant="primary" type="submit">
               Submit
-          </Button>
+            </Button>
           </Form>
         </div>
-      </div >
+      </div>
     </Layout>
-  )
+  );
 }
 
 export default TechnologyPage

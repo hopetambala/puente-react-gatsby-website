@@ -9,7 +9,7 @@ import {
 import Layout from "../../components/layout"
 
 // Style imports
-import styles from "./index.module.scss"
+import * as styles from "./index.module.scss"
 
 const AcceptableUse = () => {
   const data = useStaticQuery(

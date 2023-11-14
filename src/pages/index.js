@@ -11,7 +11,7 @@ import Carousel from "react-bootstrap/Carousel";
 import Layout from "../components/layout";
 
 // Style Imports
-import styles from "./index.module.scss";
+import * as styles from "./index.module.scss";
 
 const IndexPage = () => {
   const data = useStaticQuery(

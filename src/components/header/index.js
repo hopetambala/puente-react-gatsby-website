@@ -7,7 +7,7 @@ import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 
 // Style imports
-import styles from "./index.module.scss"
+import * as styles from "./index.module.scss"
 
 //Logo imports
 import Logo from '../logo'

@@ -5,7 +5,7 @@ import {
 import Button from 'react-bootstrap/Button'
 
 // Style Imports
-import styles from '../volunteerCTA/index.module.scss'
+import * as styles from '../volunteerCTA/index.module.scss'
 
 const DonateCTA = () => {
   return (

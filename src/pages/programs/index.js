@@ -11,7 +11,7 @@ import Tab from 'react-bootstrap/Tab'
 import Layout from "../../components/layout"
 
 // Style/Icon Imports
-import styles from "./index.module.scss"
+import * as styles from "./index.module.scss"
 
 const ProgramsPage = () => {
   const data = useStaticQuery(

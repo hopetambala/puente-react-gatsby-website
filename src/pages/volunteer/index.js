@@ -11,7 +11,7 @@ import VolunteerCTA from "../../components/volunteerCTA"
 import PartnerContactCTA from "../../components/PartnerContactCTA"
 
 // Style Imports
-import volunteerStyles from "./index.module.scss"
+import * as volunteerStyles from "./index.module.scss"
 
 const VolunteerPage = () => {
   const data = useStaticQuery(

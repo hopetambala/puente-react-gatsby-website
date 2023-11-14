@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import aboutStyles from "../index.module.scss"
+import * as aboutStyles from "../index.module.scss"
 import BioModal from './Modal'
 
 

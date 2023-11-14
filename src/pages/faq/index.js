@@ -12,7 +12,7 @@ import Layout from "../../components/layout"
 import FaqCTA from "../../components/faqCTA"
 
 // Style Imports
-import faqStyles from "./index.module.scss"
+import * as faqStyles from "./index.module.scss"
 
 const FAQPage = () => {
   const data = useStaticQuery(
