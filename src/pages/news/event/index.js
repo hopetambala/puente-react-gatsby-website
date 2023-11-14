@@ -9,7 +9,7 @@ import {
 import Layout from "../../../components/layout";
 
 // Style Imports
-import eventStyles from "./index.module.scss";
+import * as eventStyles from "./index.module.scss";
 import { Carousel } from "../../../components/carousel";
 
 const EventPage = () => {
@@ -67,7 +67,7 @@ const EventPage = () => {
     <div>
       <Layout>
         <div className={eventStyles.container}>
-          <div className={eventStyles.banner}>
+          <div className={eventStyles.event}>
             <div className={eventStyles.bannerImage}>
               <img
                 alt={data.contentfulEventPage.logo.title}

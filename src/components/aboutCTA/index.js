@@ -7,7 +7,7 @@ import {
 import Button from 'react-bootstrap/Button'
 
 // Style Imports
-import styles from './index.module.scss'
+import * as styles from './index.module.scss'
 
 const AboutCTA = () => {
   // const data = useStaticQuery(

@@ -9,7 +9,7 @@ import {
 import Layout from "../../components/layout"
 
 // Style Imports
-import donateStyles from "./index.module.scss"
+import * as donateStyles from "./index.module.scss"
 
 const DonatePage = () => {
   const data = useStaticQuery(

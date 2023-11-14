@@ -2,7 +2,7 @@ import React from "react"
 
 // Component Imports
 import Layout from "../../components/layout"
-import styles from "./index.module.scss"
+import * as styles from "./index.module.scss"
 
 const ErrorPage = () => {
   return (

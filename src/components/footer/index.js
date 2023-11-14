@@ -15,7 +15,7 @@ import { linkedin } from 'react-icons-kit/fa/linkedin'
 
 // Style Imports
 import '../../styles/styles.scss'
-import footerStyles from './index.module.scss'
+import * as footerStyles from './index.module.scss'
 
 const Footer = () => {
   const data = useStaticQuery(

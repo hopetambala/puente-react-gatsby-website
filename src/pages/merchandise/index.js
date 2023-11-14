@@ -9,7 +9,7 @@ import Layout from "../../components/layout"
 import DonateCTA from "../../components/DonateCTA"
 
 // Style Imports
-import merchStyles from "./index.module.scss"
+import * as merchStyles from "./index.module.scss"
 
 const MerchandisePage = () => {
   const data = useStaticQuery(

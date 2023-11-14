@@ -11,7 +11,7 @@ import Layout from "../../components/layout"
 import MemberBio from './MemberBio'
 
 // Style/Icon Imports
-import aboutStyles from "./index.module.scss"
+import * as aboutStyles from "./index.module.scss"
 
 const AboutPage = () => {
   const data = useStaticQuery(
