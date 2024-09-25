@@ -31,6 +31,7 @@ const Layout = (props) => {
         <title>{data.site.siteMetadata.title}</title>
         <link rel="icon" href={favicon} />
         <script src="https://givebutter.com/js/widget.js" type="text/javascript" />
+        <meta name="google-adsense-account" content="ca-pub-2020500067387547"></meta>
       </Helmet>
       <div className={layoutStyles.header}>
         <Header />
