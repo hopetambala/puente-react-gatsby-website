@@ -40,6 +40,8 @@ Get this React App working on AWS by [installing the AWS CLI](https://docs.aws.a
 $ yarn run deploy-dev
 ```
 
+[Takes you here](http://website-react-gatsby.s3-website-us-east-1.amazonaws.com/) 
+
 #### Permissions and Settings
 There's a decent amount that'll be necessary to get this publically consumed on the AWS website itself. Follow [this](https://www.newline.co/fullstack-react/articles/deploying-a-react-app-to-s3/) guide to get those hammered out.
 
