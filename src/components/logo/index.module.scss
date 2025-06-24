@@ -1,0 +1,13 @@
+.logo {
+  margin-top: 2vh;
+  width: 75%;
+}
+
+@media (max-width: 896px) {
+  .logo {
+    width: 40%;
+    margin: 0;
+    padding: 0;
+    background-color: salmon;
+  }
+}

@@ -59,7 +59,7 @@
     "start": "yarn run develop",
     "build-dev": "env-cmd -f .env.development gatsby build",
     "build-prod": "env-cmd -f .env.production gatsby build",
-    "heroku-postbuild": "gatsby build",
+    "build": "gatsby build",
     "serve": "gatsby serve",
     "cache-clear": "gatsby clean",
     "reinstall": "yarn run cache-clear && rm -rf yarn.lock && rm -rf node_modules/ && yarn install",
