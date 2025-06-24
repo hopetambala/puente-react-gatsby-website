@@ -1,6 +1,5 @@
 # Puente Website
 
-[![Build Status](https://travis-ci.com/hopetambala/puente-react-gatsby-website.svg?branch=master)](https://travis-ci.com/hopetambala/puente-react-gatsby-website)
 ![](https://img.shields.io/badge/react-✓-blue.svg)
 
 
