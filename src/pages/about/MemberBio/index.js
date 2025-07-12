@@ -17,7 +17,7 @@ const MemberBio = (props) =>{
         <div className={aboutStyles.employee}>
             <div className={aboutStyles.imgContainer}>
                 <img alt={profile.image.title} src={profile.image.resize.src} fluid />
-                {props.linkedin && profile.linkedin !== '_' && <a aria-label="linkedin" href={profile.linkedin}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>}
+                {props.linkedin && profile.linkedin !== '_' && <a target="_blank" aria-label="linkedin" href={profile.linkedin}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>}
                 <Icon onClick={() => setShow(true)} className={aboutStyles.iconTwo} size={24} icon={plus} />
                 <BioModal
                     show={show}

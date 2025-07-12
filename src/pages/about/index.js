@@ -98,19 +98,29 @@ const AboutPage = () => {
         <div className={aboutStyles.container}>
           <div className={aboutStyles.banner}>
             <div className={aboutStyles.bannerImage}>
-              <img alt={data.contentfulAboutPage.heroImage.title} src={data.contentfulAboutPage.heroImage.resize.src} fluid />
+              <img
+                alt={data.contentfulAboutPage.heroImage.title}
+                src={data.contentfulAboutPage.heroImage.resize.src}
+                fluid
+              />
               <div id="who-we-are" className={aboutStyles.title}>
                 <div className={aboutStyles.about}>
                   <div className={aboutStyles.aboutText}>
                     <h1>{data.contentfulAboutPage.heroText}</h1>
                     <div
                       dangerouslySetInnerHTML={{
-                        __html: data.contentfulAboutPage.heroSubText.childMarkdownRemark.html,
+                        __html:
+                          data.contentfulAboutPage.heroSubText
+                            .childMarkdownRemark.html,
                       }}
                     />
                   </div>
                   <div className={aboutStyles.aboutVideo}>
-                    <ReactPlayer width='100%' controls='true' url='https://www.youtube.com/watch?v=0XwQzkQjF1s.' />
+                    <ReactPlayer
+                      width="100%"
+                      controls="true"
+                      url="https://www.youtube.com/watch?v=0XwQzkQjF1s."
+                    />
                   </div>
                 </div>
               </div>
@@ -121,7 +131,9 @@ const AboutPage = () => {
               <h2>{data.contentfulAboutPage.missionHeader}</h2>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: data.contentfulAboutPage.missionText.childMarkdownRemark.html,
+                  __html:
+                    data.contentfulAboutPage.missionText.childMarkdownRemark
+                      .html,
                 }}
               />
             </div>
@@ -129,58 +141,76 @@ const AboutPage = () => {
               <h2>{data.contentfulAboutPage.visionHeader}</h2>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: data.contentfulAboutPage.visionText.childMarkdownRemark.html,
+                  __html:
+                    data.contentfulAboutPage.visionText.childMarkdownRemark
+                      .html,
                 }}
               />
             </div>
             <div id="executive-staff" className={aboutStyles.staffSection}>
               <h2>Our Executive Team</h2>
-              <div className={aboutStyles.employeeRow}> 
-              {profiles && byTeam(profiles, 'Executive').map((employee)=>
-                  <div className={aboutStyles.employee}>
-                    <MemberBio linkedin profile={employee} />
-                  </div>
-              )}
+              <div className={aboutStyles.employeeRow}>
+                {profiles &&
+                  byTeam(profiles, "Executive").map((employee) => (
+                    <div className={aboutStyles.employee}>
+                      <MemberBio linkedin profile={employee} />
+                    </div>
+                  ))}
               </div>
             </div>
-            <div id="wash-staff" className={aboutStyles.staffSection}>
+            {/* <div id="wash-staff" className={aboutStyles.staffSection}>
               <h2>Our WASH Team</h2>
-              <div className={aboutStyles.employeeRow}> 
-              {profiles && byTeam(profiles, 'WASH').map((employee)=>
-                  <div className={aboutStyles.employee}>
-                    <MemberBio linkedin profile={employee} />
-                  </div>
-              )}
+              <div className={aboutStyles.employeeRow}>
+                {profiles &&
+                  byTeam(profiles, "WASH").map((employee) => (
+                    <div className={aboutStyles.employee}>
+                      <MemberBio linkedin profile={employee} />
+                    </div>
+                  ))}
               </div>
-            </div>
-            <div id="tech-staff" className={aboutStyles.staffSection}>
+            </div> */}
+            {/* <div id="tech-staff" className={aboutStyles.staffSection}>
               <h2>Our Engineering Team</h2>
-              <div className={aboutStyles.employeeRow}> 
-              {profiles && byTeam(profiles, 'Technology').map((employee)=>
-                  <div className={aboutStyles.employee}>
-                    <MemberBio linkedin profile={employee} />
-                  </div>
-              )}
+              <div className={aboutStyles.employeeRow}>
+                {profiles &&
+                  byTeam(profiles, "Technology").map((employee) => (
+                    <div className={aboutStyles.employee}>
+                      <MemberBio linkedin profile={employee} />
+                    </div>
+                  ))}
+              </div>
+            </div> */}
+            {/* <div id="health-staff" className={aboutStyles.staffSection}>
+              <h2>Our Community Health, Projects, and Programming Team</h2>
+              <div className={aboutStyles.employeeRow}>
+                {profiles &&
+                  byTeam(profiles, "Health").map((employee) => (
+                    <div className={aboutStyles.employee}>
+                      <MemberBio linkedin profile={employee} />
+                    </div>
+                  ))}
+              </div>
+            </div> */}
+            <div id="community-staff" className={aboutStyles.staffSection}>
+              <h2>Our Community Health, Projects, and Programming Team</h2>
+              <div className={aboutStyles.employeeRow}>
+                {profiles &&
+                  byTeam(profiles, "Community").map((employee) => (
+                    <div className={aboutStyles.employee}>
+                      <MemberBio linkedin profile={employee} />
+                    </div>
+                  ))}
               </div>
             </div>
-            <div id="health-staff" className={aboutStyles.staffSection}>
-              <h2>Our Community Health Team</h2>
-              <div className={aboutStyles.employeeRow}> 
-              {profiles && byTeam(profiles, 'Health').map((employee)=>
-                  <div className={aboutStyles.employee}>
-                    <MemberBio linkedin profile={employee} />
-                  </div>
-              )}
-              </div>
-            </div>
-            <div id="projects-staff" className={aboutStyles.staffSection}>
-              <h2>Our Community Projects and Programming Team</h2>
-              <div className={aboutStyles.employeeRow}> 
-              {profiles && byTeam(profiles, 'Projects').map((employee)=>
-                  <div className={aboutStyles.employee}>
-                    <MemberBio linkedin profile={employee} />
-                  </div>
-              )}
+            <div id="board-staff" className={aboutStyles.staffSection}>
+              <h2>Our Board of Directors</h2>
+              <div className={aboutStyles.employeeRow}>
+                {profiles &&
+                  byTeam(profiles, "Board").map((employee) => (
+                    <div className={aboutStyles.employee}>
+                      <MemberBio linkedin profile={employee} />
+                    </div>
+                  ))}
               </div>
             </div>
             {/* <div id="partners" className={aboutStyles.sectionPartners}>
@@ -197,16 +227,26 @@ const AboutPage = () => {
               <h2 id="report">{data.contentfulAboutPage.annualReport}</h2>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: data.contentfulAboutPage.annualReportText.childMarkdownRemark.html,
+                  __html:
+                    data.contentfulAboutPage.annualReportText
+                      .childMarkdownRemark.html,
                 }}
               />
-              <p className={aboutStyles.reportLink}><a target="_blank" rel="noopener noreferrer" href="https://puente-dr.github.io/annual-report/">Read Annual Reports</a></p>
+              <p className={aboutStyles.reportLink}>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://puente-dr.github.io/annual-report/"
+                >
+                  Read Annual Reports
+                </a>
+              </p>
             </div>
           </div>
         </div>
       </Layout>
     </div>
-  )
+  );
 }
 
 export default AboutPage
