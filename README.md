@@ -21,11 +21,10 @@ This project is a bootstrapped using Gatsby
 
 Here are some quick commands to get started:
 
-- `yarn install`: Install Node dependencies
-- `yarn run develop`: Start the gatsby development server.
-- `yarn setup`: Run's a setup script that connects this application to the Contentful CMS. Needs system arguments
-- `yarn run build`: Build a production optimized bundle of the app.
-- `yarn run deploy`: Deploy a production optimized bundle of the app to AWS s3
+- `yarnpkg install`: Install Node dependencies
+- `yarnpkg run develop`: Start the gatsby development server.
+- `yarnpkg run build`: Build a production optimized bundle of the app.
+- `yarnpkg run deploy`: Deploy a production optimized bundle of the app to AWS s3
 
 ### AWS + s3
 
