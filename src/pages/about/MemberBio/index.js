@@ -13,27 +13,37 @@ const MemberBio = (props) =>{
 
     if(!profile) return null
 
-    return(
-        <div className={aboutStyles.employee}>
-            <div className={aboutStyles.imgContainer}>
-                <img alt={profile.image.title} src={profile.image.resize.src} fluid />
-                {props.linkedin && profile.linkedin !== '_' && <a target="_blank" aria-label="linkedin" href={profile.linkedin}><Icon className={aboutStyles.icon} size={24} icon={linkedin} /></a>}
-                <Icon onClick={() => setShow(true)} className={aboutStyles.iconTwo} size={24} icon={plus} />
-                <BioModal
-                    show={show}
-                    onHide={() => setShow(false)}
-                >
-                <div
-                    dangerouslySetInnerHTML={{
-                    __html: profile.bio.childMarkdownRemark.html,
-                    }}
-                />
-                </BioModal>
-            </div>
-            <h2>{profile.name}</h2>
-            <h3>{profile.position}</h3>
+    return (
+      <div className={aboutStyles.employee}>
+        <div className={aboutStyles.imgContainer}>
+          <img
+            alt={profile?.image?.title || "Team Member"}
+            src={profile?.image?.resize?.src || "https://placecats.com/333/250"}
+            fluid
+          />
+          {props.linkedin && profile.linkedin !== "_" && (
+            <a target="_blank" aria-label="linkedin" href={profile.linkedin}>
+              <Icon className={aboutStyles.icon} size={24} icon={linkedin} />
+            </a>
+          )}
+          <Icon
+            onClick={() => setShow(true)}
+            className={aboutStyles.iconTwo}
+            size={24}
+            icon={plus}
+          />
+          <BioModal show={show} onHide={() => setShow(false)}>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: profile.bio.childMarkdownRemark.html,
+              }}
+            />
+          </BioModal>
         </div>
-    )
+        <h2>{profile.name}</h2>
+        <h3>{profile.position}</h3>
+      </div>
+    );
 }
 
 export default MemberBio

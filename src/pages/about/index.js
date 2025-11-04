@@ -147,8 +147,8 @@ const AboutPage = () => {
                 }}
               />
             </div>
-            <div id="executive-staff" className={aboutStyles.staffSection}>
-              <h2>Our Executive Team</h2>
+            <div id="leadership-staff" className={aboutStyles.staffSection}>
+              <h2>Our Leadership</h2>
               <div className={aboutStyles.employeeRow}>
                 {profiles &&
                   byTeam(profiles, "Executive").map((employee) => (
@@ -158,30 +158,9 @@ const AboutPage = () => {
                   ))}
               </div>
             </div>
-            {/* <div id="wash-staff" className={aboutStyles.staffSection}>
-              <h2>Our WASH Team</h2>
-              <div className={aboutStyles.employeeRow}>
-                {profiles &&
-                  byTeam(profiles, "WASH").map((employee) => (
-                    <div className={aboutStyles.employee}>
-                      <MemberBio linkedin profile={employee} />
-                    </div>
-                  ))}
-              </div>
-            </div> */}
-            {/* <div id="tech-staff" className={aboutStyles.staffSection}>
-              <h2>Our Engineering Team</h2>
-              <div className={aboutStyles.employeeRow}>
-                {profiles &&
-                  byTeam(profiles, "Technology").map((employee) => (
-                    <div className={aboutStyles.employee}>
-                      <MemberBio linkedin profile={employee} />
-                    </div>
-                  ))}
-              </div>
-            </div> */}
-            {/* <div id="health-staff" className={aboutStyles.staffSection}>
-              <h2>Our Community Health, Projects, and Programming Team</h2>
+
+            <div id="health-staff" className={aboutStyles.staffSection}>
+              <h2>Our Health Team</h2>
               <div className={aboutStyles.employeeRow}>
                 {profiles &&
                   byTeam(profiles, "Health").map((employee) => (
@@ -190,12 +169,12 @@ const AboutPage = () => {
                     </div>
                   ))}
               </div>
-            </div> */}
-            <div id="community-staff" className={aboutStyles.staffSection}>
-              <h2>Our Community Health, Projects, and Programming Team</h2>
+            </div>
+            <div id="projects-staff" className={aboutStyles.staffSection}>
+              <h2>Our Projects & Programming Team</h2>
               <div className={aboutStyles.employeeRow}>
                 {profiles &&
-                  byTeam(profiles, "Community").map((employee) => (
+                  byTeam(profiles, "Projects").map((employee) => (
                     <div className={aboutStyles.employee}>
                       <MemberBio linkedin profile={employee} />
                     </div>
