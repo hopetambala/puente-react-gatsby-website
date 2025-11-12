@@ -39,135 +39,231 @@ const Header = () => {
   if (width > 768) {
     return (
       <>
-      <BannerAd />
-      <Navbar className={styles.navBackground} collapseOnSelect expand="lg" onScroll>
-        <Navbar.Brand className={styles.logo}>
-          <Link to="/">
-            <Logo />
-          </Link>
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav">
-          <Icon className={styles.icon} size={32} icon={ic_menu} />
-        </Navbar.Toggle>
-        <Navbar.Collapse className={styles.navMenu} id="responsive-navbar-nav">
-          <Nav className="ml-auto">
-            <Nav.Item className={styles.navContact}>
-              <Icon className={styles.iconHeader} size={18} icon={ic_local_phone} />
-              <Nav.Link href="tel:+15743027756">
-                1-574-302-7756
-            </Nav.Link>
-            </Nav.Item>
-            <Nav.Item className={styles.navContact}>
-              <Icon className={styles.iconHeader} size={18} icon={ic_email} />
-              <Nav.Link href="mailto:info@puente-dr.org">
-                info@puente-dr.org
-            </Nav.Link>
-            </Nav.Item>
-          </Nav>
-          <Nav className="ml-auto">
-            <Nav.Item className={styles.nav}>
-              <NavDropdown className={styles.navItem} href="/about" title={
-                <Link style={{ color: "#000" }} to="/about">About Us</Link>
-              } id="menu-nav-dropdown"
-              >
-                <NavDropdown.Item className={styles.dropdownItem}>
-                  <Link style={{ color: "#000" }} to="/about#who-we-are">Who We Are</Link>
-                </NavDropdown.Item>
-                <NavDropdown.Item className={styles.dropdownItem}>
-                  <Link style={{ color: "#000" }} to="/about#staff">Our U.S. Staff</Link>
-                </NavDropdown.Item>
-                <NavDropdown.Item className={styles.dropdownItem}>
-                  <Link style={{ color: "#000" }} to="/about#dominican-staff">Our D.R. Staff</Link>
-                </NavDropdown.Item>
-                <NavDropdown.Item className={styles.dropdownItem}>
-                  <Link style={{ color: "#000" }} to="/about#partners">Our Partners</Link>
-                </NavDropdown.Item>
-                <NavDropdown.Item className={styles.dropdownItem}>
-                  <Link style={{ color: "#000" }} to="/about#reports">Annual Report</Link>
-                </NavDropdown.Item>
-              </NavDropdown>
-            </Nav.Item>
-            <Nav.Item className={styles.nav}>
-              <NavDropdown className={styles.navItem} href="/about" title={
-                <Link style={{ color: "#000" }} to="/technology">Our Technology</Link>
-              } id="menu-nav-dropdown"
-              >
-                <NavDropdown.Item className={styles.dropdownItem}>
-                  <Link style={{ color: "#000" }} to="/technology#mobile-data-collection">Mobile Data Collection</Link>
-                </NavDropdown.Item>
-                <NavDropdown.Item className={styles.dropdownItem}>
-                  <Link style={{ color: "#000" }} to="/technology#data-analysis">Data Analysis & Management</Link>
-                </NavDropdown.Item>
-                <NavDropdown.Item className={styles.dropdownItem}>
-                  <Link style={{ color: "#000" }} to="/technology#testimonials">Testimonials</Link>
-                </NavDropdown.Item>
-                <NavDropdown.Item className={styles.dropdownItem}>
-                  <Link style={{ color: "#000" }} to="/technology#pricing">Pricing</Link>
-                </NavDropdown.Item>
-                <NavDropdown.Item className={styles.dropdownItem}>
-                  <Link style={{ color: "#000" }} to="/technology#request-demo">Request a Demo</Link>
-                </NavDropdown.Item>
-              </NavDropdown>
-            </Nav.Item>
-            <Nav.Item className={styles.nav}>
-              <NavDropdown className={styles.navItem} href="/about" title={
-                <Link style={{ color: "#000" }} to="/programs">Our Work</Link>
-              } id="menu-nav-dropdown"
-              >
-                <NavDropdown.Item className={styles.dropdownItem}>
-                  <Link style={{ color: "#000" }} to="/programs#model">The Puente Model</Link>
-                </NavDropdown.Item>
-                <NavDropdown.Item className={styles.dropdownItem}>
-                  <Link style={{ color: "#000" }} to="/programs#signature">Signature Projects</Link>
-                </NavDropdown.Item>
-                <NavDropdown.Item className={styles.dropdownItem}>
-                  <Link style={{ color: "#000" }} to="/programs#impact">Our Impact</Link>
-                </NavDropdown.Item>
-                <NavDropdown.Item className={styles.dropdownItem}>
-                  <Link style={{ color: "#000" }} to="/programs#covid">COVID-19 Response</Link>
-                </NavDropdown.Item>
-              </NavDropdown>
-            </Nav.Item>
-            <Nav.Item className={styles.nav}>
-              <NavDropdown className={styles.navItem} href="/about" title={
-                <Link style={{ color: "#000" }} to="/volunteer">Get Involved</Link>
-              } id="menu-nav-dropdown"
-              >
-                <NavDropdown.Item className={styles.dropdownItem}>
-                  <Link style={{ color: "#000" }} to="/volunteer#volunteer">Volunteer</Link>
-                </NavDropdown.Item>
-                <NavDropdown.Item className={styles.dropdownItem}>
-                  <Link style={{ color: "#000" }} to="/volunteer#partner">Become a Partner</Link>
-                </NavDropdown.Item>
-                <NavDropdown.Item className={styles.dropdownItem}>
-                  <Link style={{ color: "#000" }} to="/donate-monthly">Join our monthly donor program</Link>
-                </NavDropdown.Item>
-              </NavDropdown>
-            </Nav.Item>
-            <Nav.Item className={styles.nav}>
-              <NavDropdown className={styles.navItem} href="/news" title={
-                <Link style={{ color: "#000" }} to="/news">News</Link>
-              } id="menu-nav-dropdown"
-              >
-                <NavDropdown.Item className={styles.dropdownItem}>
-                  <Link style={{ color: "#000" }} to="/news/event">See our latest event!</Link>
-                </NavDropdown.Item>
-              </NavDropdown>
-            </Nav.Item>
-            {/* <Nav.Item className={styles.nav}>
+        <BannerAd />
+        <Navbar
+          className={styles.navBackground}
+          collapseOnSelect
+          expand="lg"
+          onScroll
+        >
+          <Navbar.Brand className={styles.logo}>
+            <Link to="/">
+              <Logo />
+            </Link>
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav">
+            <Icon className={styles.icon} size={32} icon={ic_menu} />
+          </Navbar.Toggle>
+          <Navbar.Collapse
+            className={styles.navMenu}
+            id="responsive-navbar-nav"
+          >
+            <Nav className="ml-auto">
+              <Nav.Item className={styles.navContact}>
+                <Icon
+                  className={styles.iconHeader}
+                  size={18}
+                  icon={ic_local_phone}
+                />
+                <Nav.Link href="tel:+15743027756">1-574-302-7756</Nav.Link>
+              </Nav.Item>
+              <Nav.Item className={styles.navContact}>
+                <Icon className={styles.iconHeader} size={18} icon={ic_email} />
+                <Nav.Link href="mailto:info@puente-dr.org">
+                  info@puente-dr.org
+                </Nav.Link>
+              </Nav.Item>
+            </Nav>
+            <Nav className="ml-auto">
+              <Nav.Item className={styles.nav}>
+                <NavDropdown
+                  className={styles.navItem}
+                  href="/about"
+                  title={
+                    <Link style={{ color: "#000" }} to="/about">
+                      About Us
+                    </Link>
+                  }
+                  id="menu-nav-dropdown"
+                >
+                  <NavDropdown.Item className={styles.dropdownItem}>
+                    <Link style={{ color: "#000" }} to="/about#who-we-are">
+                      Who We Are
+                    </Link>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item className={styles.dropdownItem}>
+                    <Link
+                      style={{ color: "#000" }}
+                      to="/about#leadership-staff"
+                    >
+                      Our Team
+                    </Link>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item className={styles.dropdownItem}>
+                    <Link style={{ color: "#000" }} to="/about#partners">
+                      Our Partners
+                    </Link>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item className={styles.dropdownItem}>
+                    <Link style={{ color: "#000" }} to="/about#reports">
+                      Annual Report
+                    </Link>
+                  </NavDropdown.Item>
+                </NavDropdown>
+              </Nav.Item>
+              <Nav.Item className={styles.nav}>
+                <NavDropdown
+                  className={styles.navItem}
+                  href="/about"
+                  title={
+                    <Link style={{ color: "#000" }} to="/technology">
+                      Our Technology
+                    </Link>
+                  }
+                  id="menu-nav-dropdown"
+                >
+                  <NavDropdown.Item className={styles.dropdownItem}>
+                    <Link
+                      style={{ color: "#000" }}
+                      to="/technology#mobile-data-collection"
+                    >
+                      Mobile Data Collection
+                    </Link>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item className={styles.dropdownItem}>
+                    <Link
+                      style={{ color: "#000" }}
+                      to="/technology#data-analysis"
+                    >
+                      Data Analysis & Management
+                    </Link>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item className={styles.dropdownItem}>
+                    <Link
+                      style={{ color: "#000" }}
+                      to="/technology#testimonials"
+                    >
+                      Testimonials
+                    </Link>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item className={styles.dropdownItem}>
+                    <Link style={{ color: "#000" }} to="/technology#pricing">
+                      Pricing
+                    </Link>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item className={styles.dropdownItem}>
+                    <Link
+                      style={{ color: "#000" }}
+                      to="/technology#request-demo"
+                    >
+                      Request a Demo
+                    </Link>
+                  </NavDropdown.Item>
+                </NavDropdown>
+              </Nav.Item>
+              <Nav.Item className={styles.nav}>
+                <NavDropdown
+                  className={styles.navItem}
+                  href="/about"
+                  title={
+                    <Link style={{ color: "#000" }} to="/programs">
+                      Our Work
+                    </Link>
+                  }
+                  id="menu-nav-dropdown"
+                >
+                  <NavDropdown.Item className={styles.dropdownItem}>
+                    <Link style={{ color: "#000" }} to="/programs#model">
+                      The Puente Model
+                    </Link>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item className={styles.dropdownItem}>
+                    <Link style={{ color: "#000" }} to="/programs#impact">
+                      Our Impact
+                    </Link>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item className={styles.dropdownItem}>
+                    <Link
+                      style={{ color: "#000" }}
+                      to="/programs#signature-projects"
+                    >
+                      Signature Projects
+                    </Link>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item className={styles.dropdownItem}>
+                    <Link
+                      style={{ color: "#000" }}
+                      to="/programs#signature-programs"
+                    >
+                      Signature Programs
+                    </Link>
+                  </NavDropdown.Item>
+                </NavDropdown>
+              </Nav.Item>
+              <Nav.Item className={styles.nav}>
+                <NavDropdown
+                  className={styles.navItem}
+                  href="/about"
+                  title={
+                    <Link style={{ color: "#000" }} to="/volunteer">
+                      Get Involved
+                    </Link>
+                  }
+                  id="menu-nav-dropdown"
+                >
+                  <NavDropdown.Item className={styles.dropdownItem}>
+                    <Link style={{ color: "#000" }} to="/volunteer#volunteer">
+                      Volunteer
+                    </Link>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item className={styles.dropdownItem}>
+                    <Link style={{ color: "#000" }} to="/volunteer#partner">
+                      Become a Partner
+                    </Link>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item className={styles.dropdownItem}>
+                    <Link style={{ color: "#000" }} to="/donate-monthly">
+                      Join our monthly donor program
+                    </Link>
+                  </NavDropdown.Item>
+                </NavDropdown>
+              </Nav.Item>
+              <Nav.Item className={styles.nav}>
+                <NavDropdown
+                  className={styles.navItem}
+                  href="/news"
+                  title={
+                    <Link style={{ color: "#000" }} to="/news">
+                      News
+                    </Link>
+                  }
+                  id="menu-nav-dropdown"
+                >
+                  <NavDropdown.Item className={styles.dropdownItem}>
+                    <Link style={{ color: "#000" }} to="/news/event">
+                      See our latest event!
+                    </Link>
+                  </NavDropdown.Item>
+                </NavDropdown>
+              </Nav.Item>
+              {/* <Nav.Item className={styles.nav}>
               <Nav.Link className={styles.navItem} href="/news">News</Nav.Link>
             </Nav.Item> */}
-            <Nav.Item className={styles.nav}>
-              <Nav.Link className={styles.navItem} href="/merchandise">Merchandise</Nav.Link>
-            </Nav.Item>
-            <Nav.Item className={styles.nav}>
-              <Nav.Link className={styles.navDonate} href="/donate">Donate</Nav.Link>
-            </Nav.Item>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+              <Nav.Item className={styles.nav}>
+                <Nav.Link className={styles.navItem} href="/merchandise">
+                  Merchandise
+                </Nav.Link>
+              </Nav.Item>
+              <Nav.Item className={styles.nav}>
+                <Nav.Link className={styles.navDonate} href="/donate">
+                  Donate
+                </Nav.Link>
+              </Nav.Item>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
       </>
-    )
+    );
   } else {
     return (
       <>      
