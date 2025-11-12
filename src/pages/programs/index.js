@@ -106,6 +106,12 @@ const ProgramsPage = () => {
               html
             }
           }
+          signatureProgramsHeader
+          signatureProgramsParagraph {
+            childMarkdownRemark {
+              html
+            }
+          }
           impactNumbers
           impactDescriptions
           sectionTwoHeader
@@ -350,12 +356,12 @@ const ProgramsPage = () => {
               </div>
             </div>
           </div>
-          <div id="signature" className={styles.projects}>
-            <h2>{data.contentfulProjectPage.signatureProjectsHeader}</h2>
+          <div id="signature-programs" className={styles.projects}>
+            <h2>{data.contentfulProjectPage.signatureProgramsHeader}</h2>
             <div
               dangerouslySetInnerHTML={{
                 __html:
-                  data.contentfulProjectPage.signatureProjectsParagraph
+                  data.contentfulProjectPage.signatureProgramsParagraph
                     .childMarkdownRemark.html,
               }}
             />
