@@ -64,35 +64,67 @@ const IndexPage = () => {
             }
           }
         }
-        contentfulProjectTypes(node_locale: { eq: "en-US" }) {
-          projectTypeOne
-          projectOneLongDescription {
-            childMarkdownRemark {
-              html
+        allContentfulProjectTypes {
+          nodes {
+            projectTypeOne
+            projectOneLongDescription {
+              childMarkdownRemark {
+                html
+              }
             }
-          }
-          projectTypeTwo
-          projectTwoLongDescription {
-            childMarkdownRemark {
-              html
+            projectOneImage {
+              title
+              resize(height: 1000) {
+                src
+              }
             }
-          }
-          projectTypeThree
-          projectThreeLongDescription {
-            childMarkdownRemark {
-              html
+            projectTypeTwo
+            projectTwoLongDescription {
+              childMarkdownRemark {
+                html
+              }
             }
-          }
-          projectTypeFour
-          projectFourLongDescription {
-            childMarkdownRemark {
-              html
+            projectTwoImage {
+              title
+              resize(height: 1000) {
+                src
+              }
             }
-          }
-          projectTypeFive
-          projectFiveLongDescription {
-            childMarkdownRemark {
-              html
+            projectTypeThree
+            projectThreeLongDescription {
+              childMarkdownRemark {
+                html
+              }
+            }
+            projectThreeImage {
+              title
+              resize(height: 1000) {
+                src
+              }
+            }
+            projectTypeFour
+            projectFourLongDescription {
+              childMarkdownRemark {
+                html
+              }
+            }
+            projectFourImage {
+              title
+              resize(height: 1000) {
+                src
+              }
+            }
+            projectTypeFive
+            projectFiveLongDescription {
+              childMarkdownRemark {
+                html
+              }
+            }
+            projectFiveImage {
+              title
+              resize(height: 1000) {
+                src
+              }
             }
           }
         }
@@ -148,6 +180,10 @@ const IndexPage = () => {
     });
     return () => anim.destroy(); // optional clean up for unmounting
   }, []); // eslint-disable-line
+
+  const { nodes: projectTypes } = data.allContentfulProjectTypes;
+  const programsData = projectTypes[0];
+  const projectsData = projectTypes[1];
 
   return (
     <div>
@@ -212,53 +248,84 @@ const IndexPage = () => {
             </div>
           </div>
           <div className={styles.sectionBlue}>
-            <Carousel controls={false} indicators={false}>
+            <Carousel interval={2000} controls={false} indicators={false}>
               <Carousel.Item>
-                <h2>{data.contentfulProjectTypes.projectTypeOne}</h2>
+                <h2>{projectsData.projectTypeOne}</h2>
                 <div
                   dangerouslySetInnerHTML={{
                     __html:
-                      data.contentfulProjectTypes.projectOneLongDescription
+                      projectsData.projectOneLongDescription.childMarkdownRemark
+                        .html,
+                  }}
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <h2>{projectsData.projectTypeTwo}</h2>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html:
+                      projectsData.projectTwoLongDescription.childMarkdownRemark
+                        .html,
+                  }}
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <h2>{projectsData.projectTypeThree}</h2>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html:
+                      projectsData.projectThreeLongDescription
                         .childMarkdownRemark.html,
                   }}
                 />
               </Carousel.Item>
               <Carousel.Item>
-                <h2>{data.contentfulProjectTypes.projectTypeTwo}</h2>
+                <h2>{projectsData.projectTypeFour}</h2>
                 <div
                   dangerouslySetInnerHTML={{
                     __html:
-                      data.contentfulProjectTypes.projectTwoLongDescription
+                      projectsData.projectFourLongDescription
                         .childMarkdownRemark.html,
                   }}
                 />
               </Carousel.Item>
               <Carousel.Item>
-                <h2>{data.contentfulProjectTypes.projectTypeThree}</h2>
+                <h2>{projectsData.projectTypeFive}</h2>
                 <div
                   dangerouslySetInnerHTML={{
                     __html:
-                      data.contentfulProjectTypes.projectThreeLongDescription
+                      projectsData.projectFiveLongDescription
                         .childMarkdownRemark.html,
                   }}
                 />
               </Carousel.Item>
+              {/* Programs */}
               <Carousel.Item>
-                <h2>{data.contentfulProjectTypes.projectTypeFour}</h2>
+                <h2>{programsData.projectTypeOne}</h2>
                 <div
                   dangerouslySetInnerHTML={{
                     __html:
-                      data.contentfulProjectTypes.projectFourLongDescription
-                        .childMarkdownRemark.html,
+                      programsData.projectOneLongDescription.childMarkdownRemark
+                        .html,
                   }}
                 />
               </Carousel.Item>
               <Carousel.Item>
-                <h2>{data.contentfulProjectTypes.projectTypeFive}</h2>
+                <h2>{programsData.projectTypeTwo}</h2>
                 <div
                   dangerouslySetInnerHTML={{
                     __html:
-                      data.contentfulProjectTypes.projectFiveLongDescription
+                      programsData.projectTwoLongDescription.childMarkdownRemark
+                        .html,
+                  }}
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <h2>{programsData.projectTypeThree}</h2>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html:
+                      programsData.projectThreeLongDescription
                         .childMarkdownRemark.html,
                   }}
                 />

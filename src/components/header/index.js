@@ -92,13 +92,11 @@ const Header = () => {
                     </Link>
                   </NavDropdown.Item>
                   <NavDropdown.Item className={styles.dropdownItem}>
-                    <Link style={{ color: "#000" }} to="/about#staff">
-                      Our U.S. Staff
-                    </Link>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item className={styles.dropdownItem}>
-                    <Link style={{ color: "#000" }} to="/about#dominican-staff">
-                      Our D.R. Staff
+                    <Link
+                      style={{ color: "#000" }}
+                      to="/about#leadership-staff"
+                    >
+                      Our Team
                     </Link>
                   </NavDropdown.Item>
                   <NavDropdown.Item className={styles.dropdownItem}>
