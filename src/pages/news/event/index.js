@@ -29,6 +29,7 @@ const EventPage = () => {
               html
             }
           }
+          titleOfPhotoSection
           pastPhotos {
             file {
               url
@@ -129,9 +130,11 @@ const EventPage = () => {
               </div> */}
 
               {photoUrls.length > 0 && <div className={eventStyles.pastEventsWrapper}>
-                <div>
-                  <h1 className={eventStyles.title}>Past Events</h1>
-                </div>
+                {data.contentfulEventPage.titleOfPhotoSection && (
+                  <div>
+                    <h1 className={eventStyles.title}>{data.contentfulEventPage.titleOfPhotoSection}</h1>
+                  </div>
+                )}
                 <div className={eventStyles.carousel}>
                   <Carousel imagesURLs={photoUrls} />
                 </div>
