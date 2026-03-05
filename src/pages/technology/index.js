@@ -35,8 +35,8 @@ const TechnologyPage = () => {
         pageHeroText
         heroImage {
           title
-          resize (height: 1000) {
-            src            
+          file {
+            url
           }
         }
         heroSubText
@@ -47,8 +47,8 @@ const TechnologyPage = () => {
         }
         sectionOneGif {
           title
-          resize (height: 750) {
-            src            
+          file {
+            url
           }
         }
         sectionOneHeader
@@ -74,8 +74,8 @@ const TechnologyPage = () => {
         sectionOneKeyFeaturesList
         sectionTwoGif {
           title
-          resize (height: 1000) {
-            src            
+          file {
+            url
           }
         }
         sectionTwoHeader
@@ -157,7 +157,7 @@ const TechnologyPage = () => {
               <div className={styles.placeholder}>
                 <img
                   alt={data.contentfulTechnologyPage.sectionOneGif.title}
-                  src={data.contentfulTechnologyPage.sectionOneGif.resize.src}
+                  src={`${data.contentfulTechnologyPage.sectionOneGif.file.url}?h=750`}
                   fluid
                 />
               </div>
@@ -203,7 +203,7 @@ const TechnologyPage = () => {
               <div className={styles.placeholder}>
                 <img
                   alt={data.contentfulTechnologyPage.sectionTwoGif.title}
-                  src={data.contentfulTechnologyPage.sectionTwoGif.resize.src}
+                  src={`${data.contentfulTechnologyPage.sectionTwoGif.file.url}?h=1000`}
                   fluid
                 />
               </div>
@@ -241,17 +241,6 @@ const TechnologyPage = () => {
               )}
             </div>
           </div>
-        </div>
-        <div id="interactive-map" className={styles.sectionTwo}>
-          <h2>{data.contentfulTechnologyPage.sectionTwoHeader}</h2>
-          <iframe
-            width="100%"
-            height="800px"
-            frameBorder="0"
-            className={styles.analysisContent}
-            src="https://d2k82nkbrja4ga.cloudfront.net"
-            title="Puente Maps"
-          ></iframe>
         </div>
         <div id="testimonials" className={styles.testimonials}>
           <div className={styles.testimonial}>

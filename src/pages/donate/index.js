@@ -18,8 +18,8 @@ const DonatePage = () => {
       contentfulDonationPage {
         logo {
           title
-          resize (height: 1000) {
-            src            
+          file {
+            url
           }
         }
         title
@@ -37,7 +37,7 @@ const DonatePage = () => {
         <div className={donateStyles.container}>
           <div className={donateStyles.banner}>
             <div className={donateStyles.bannerImage}>
-              <img alt={data.contentfulDonationPage.logo.title} src={data.contentfulDonationPage.logo.resize.src} fluid />
+              <img alt={data.contentfulDonationPage.logo.title} src={`${data.contentfulDonationPage.logo.file.url}?h=1000`} fluid />
               <div className={donateStyles.body}>
                 <div className={donateStyles.title}>
                   <h1>{data.contentfulDonationPage.title}</h1>

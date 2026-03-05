@@ -29,92 +29,92 @@ const MerchandisePage = () => {
         sectionFour
         snapbackImage {
           title
-          resize (height: 250) {
-      	    src
+          file {
+      	    url
           }
         }
         blackLongsleeve {
           title
-          resize (height: 250) {
-      	    src
+          file {
+      	    url
           }
         }
         blackPullover {
           title
-          resize (height: 250) {
-      	    src
+          file {
+      	    url
           }
         }
         blackTank {
           title
-          resize (height: 250) {
-      	    src
+          file {
+      	    url
           }
         }
         blackTee {
           title
-          resize (height: 250) {
-      	    src
+          file {
+      	    url
           }
         }
         womensBlackTee {
           title
-          resize (height: 250) {
-      	    src
+          file {
+      	    url
           }
         }
         blueBaseball {
           title
-          resize (height: 250) {
-      	    src
+          file {
+      	    url
           }
         }
         bluePullover {
           title
-          resize (height: 250) {
-      	    src
+          file {
+      	    url
           }
         }
         blueTank {
           title
-          resize (height: 250) {
-      	    src
+          file {
+      	    url
           }
         }
         blueTee {
           title
-          resize (height: 250) {
-      	    src
+          file {
+      	    url
           }
         }
         womensBlueTank {
           title
-          resize (height: 250) {
-      	    src
+          file {
+      	    url
           }
         }
         yellowCrew {
           title
-          resize (height: 250) {
-      	    src
+          file {
+      	    url
           }
         }
         yellowTee {
           title
-          resize (height: 250) {
-      	    src
+          file {
+      	    url
           }
         }
         whiteTee {
           title
-          resize (height: 250) {
-      	    src
+          file {
+      	    url
           }
         }
         womensYellowTank {
           title
-          resize (height: 250) {
-      	    src
+          file {
+      	    url
           }
         }
         pullover
@@ -153,7 +153,7 @@ const MerchandisePage = () => {
               <div className={merchStyles.sectionProducts}>
                 <div className={merchStyles.product}>
                   <a className={merchStyles.img} href="https://www.bonfire.com/store/puente-merch/" target="_blank" rel="noopener noreferrer" >
-                    <img alt={data.contentfulMerchandisePage.blackTee.title} src={data.contentfulMerchandisePage.blackTee.resize.src} />
+                    <img alt={data.contentfulMerchandisePage.blackTee.title} src={data.contentfulMerchandisePage.blackTee.file.url} />
                   </a>
                   <div className={merchStyles.productInfo}>
                     <h3>{data.contentfulMerchandisePage.tee}</h3>
@@ -162,7 +162,7 @@ const MerchandisePage = () => {
                 </div>
                 <div className={merchStyles.product}>
                   <a className={merchStyles.img} href="https://www.bonfire.com/store/puente-merch/" target="_blank" rel="noopener noreferrer" >
-                    <img alt={data.contentfulMerchandisePage.blueTee.title} src={data.contentfulMerchandisePage.blueTee.resize.src} />
+                    <img alt={data.contentfulMerchandisePage.blueTee.title} src={data.contentfulMerchandisePage.blueTee.file.url} />
                   </a>
                   <div className={merchStyles.productInfo}>
                     <h3>{data.contentfulMerchandisePage.tee}</h3>
@@ -171,7 +171,7 @@ const MerchandisePage = () => {
                 </div>
                 <div className={merchStyles.product}>
                   <a className={merchStyles.img} href="https://www.bonfire.com/store/puente-merch/" target="_blank" rel="noopener noreferrer" >
-                    <img alt={data.contentfulMerchandisePage.whiteTee.title} src={data.contentfulMerchandisePage.whiteTee.resize.src} />
+                    <img alt={data.contentfulMerchandisePage.whiteTee.title} src={data.contentfulMerchandisePage.whiteTee.file.url} />
                   </a>
                   <div className={merchStyles.productInfo}>
                     <h3>{data.contentfulMerchandisePage.tee}</h3>
@@ -180,7 +180,7 @@ const MerchandisePage = () => {
                 </div>
                 <div className={merchStyles.product}>
                   <a className={merchStyles.img} href="https://www.bonfire.com/store/puente-merch/" target="_blank" rel="noopener noreferrer" >
-                    <img alt={data.contentfulMerchandisePage.yellowTee.title} src={data.contentfulMerchandisePage.yellowTee.resize.src} />
+                    <img alt={data.contentfulMerchandisePage.yellowTee.title} src={data.contentfulMerchandisePage.yellowTee.file.url} />
                   </a>
                   <div className={merchStyles.productInfo}>
                     <h3>{data.contentfulMerchandisePage.tee}</h3>
@@ -191,7 +191,7 @@ const MerchandisePage = () => {
               <div className={merchStyles.sectionProducts}>
                 <div className={merchStyles.product}>
                   <a className={merchStyles.img} href="https://www.bonfire.com/store/puente-merch/" target="_blank" rel="noopener noreferrer" >
-                    <img alt={data.contentfulMerchandisePage.womensBlackTee.title} src={data.contentfulMerchandisePage.womensBlackTee.resize.src} />
+                    <img alt={data.contentfulMerchandisePage.womensBlackTee.title} src={data.contentfulMerchandisePage.womensBlackTee.file.url} />
                   </a>
                   <div className={merchStyles.productInfo}>
                     <h3>{data.contentfulMerchandisePage.womensTee}</h3>
@@ -200,7 +200,7 @@ const MerchandisePage = () => {
                 </div>
                 <div className={merchStyles.product}>
                   <a className={merchStyles.img} href="https://www.bonfire.com/store/puente-merch/" target="_blank" rel="noopener noreferrer" >
-                    <img alt={data.contentfulMerchandisePage.blueBaseball.title} src={data.contentfulMerchandisePage.blueBaseball.resize.src} />
+                    <img alt={data.contentfulMerchandisePage.blueBaseball.title} src={data.contentfulMerchandisePage.blueBaseball.file.url} />
                   </a>
                   <div className={merchStyles.productInfo}>
                     <h3>3/4 Sleeve Baseball Tee</h3>
@@ -209,7 +209,7 @@ const MerchandisePage = () => {
                 </div>
                 <div className={merchStyles.product}>
                   <a className={merchStyles.img} href="https://www.bonfire.com/store/puente-merch/" target="_blank" rel="noopener noreferrer" >
-                    <img alt={data.contentfulMerchandisePage.blackLongsleeve.title} src={data.contentfulMerchandisePage.blackLongsleeve.resize.src} />
+                    <img alt={data.contentfulMerchandisePage.blackLongsleeve.title} src={data.contentfulMerchandisePage.blackLongsleeve.file.url} />
                   </a>
                   <div className={merchStyles.productInfo}>
                     <h3>{data.contentfulMerchandisePage.longsleeve}</h3>
@@ -226,7 +226,7 @@ const MerchandisePage = () => {
               <div className={merchStyles.sectionProducts}>
                 <div className={merchStyles.product}>
                   <a className={merchStyles.img} href="https://www.bonfire.com/store/puente-merch/" target="_blank" rel="noopener noreferrer" >
-                    <img alt={data.contentfulMerchandisePage.blackPullover.title} src={data.contentfulMerchandisePage.blackPullover.resize.src} />
+                    <img alt={data.contentfulMerchandisePage.blackPullover.title} src={data.contentfulMerchandisePage.blackPullover.file.url} />
                   </a>
                   <div className={merchStyles.productInfo}>
                     <h3>{data.contentfulMerchandisePage.pullover}</h3>
@@ -235,7 +235,7 @@ const MerchandisePage = () => {
                 </div>
                 <div className={merchStyles.product}>
                   <a className={merchStyles.img} href="https://www.bonfire.com/store/puente-merch/" target="_blank" rel="noopener noreferrer" >
-                    <img alt={data.contentfulMerchandisePage.bluePullover.title} src={data.contentfulMerchandisePage.bluePullover.resize.src} />
+                    <img alt={data.contentfulMerchandisePage.bluePullover.title} src={data.contentfulMerchandisePage.bluePullover.file.url} />
                   </a>
                   <div className={merchStyles.productInfo}>
                     <h3>{data.contentfulMerchandisePage.pullover}</h3>
@@ -244,7 +244,7 @@ const MerchandisePage = () => {
                 </div>
                 <div className={merchStyles.product}>
                   <a className={merchStyles.img} href="https://www.bonfire.com/store/puente-merch/" target="_blank" rel="noopener noreferrer" >
-                    <img alt={data.contentfulMerchandisePage.yellowCrew.title} src={data.contentfulMerchandisePage.yellowCrew.resize.src} />
+                    <img alt={data.contentfulMerchandisePage.yellowCrew.title} src={data.contentfulMerchandisePage.yellowCrew.file.url} />
                   </a>
                   <div className={merchStyles.productInfo}>
                     <h3>{data.contentfulMerchandisePage.crew}</h3>
@@ -261,7 +261,7 @@ const MerchandisePage = () => {
               <div className={merchStyles.sectionProducts}>
                 <div className={merchStyles.product}>
                   <a className={merchStyles.img} href="https://www.bonfire.com/store/puente-merch/" target="_blank" rel="noopener noreferrer" >
-                    <img alt={data.contentfulMerchandisePage.blackTank.title} src={data.contentfulMerchandisePage.blackTank.resize.src} />
+                    <img alt={data.contentfulMerchandisePage.blackTank.title} src={data.contentfulMerchandisePage.blackTank.file.url} />
                   </a>
                   <div className={merchStyles.productInfo}>
                     <h3>{data.contentfulMerchandisePage.tank}</h3>
@@ -270,7 +270,7 @@ const MerchandisePage = () => {
                 </div>
                 <div className={merchStyles.product}>
                   <a className={merchStyles.img} href="https://www.bonfire.com/store/puente-merch/" target="_blank" rel="noopener noreferrer" >
-                    <img alt={data.contentfulMerchandisePage.blueTank.title} src={data.contentfulMerchandisePage.blueTank.resize.src} />
+                    <img alt={data.contentfulMerchandisePage.blueTank.title} src={data.contentfulMerchandisePage.blueTank.file.url} />
                   </a>
                   <div className={merchStyles.productInfo}>
                     <h3>{data.contentfulMerchandisePage.tank}</h3>
@@ -279,7 +279,7 @@ const MerchandisePage = () => {
                 </div>
                 <div className={merchStyles.product}>
                   <a className={merchStyles.img} href="https://www.bonfire.com/store/puente-merch/" target="_blank" rel="noopener noreferrer" >
-                    <img alt={data.contentfulMerchandisePage.womensBlueTank.title} src={data.contentfulMerchandisePage.womensBlueTank.resize.src} />
+                    <img alt={data.contentfulMerchandisePage.womensBlueTank.title} src={data.contentfulMerchandisePage.womensBlueTank.file.url} />
                   </a>
                   <div className={merchStyles.productInfo}>
                     <h3>{data.contentfulMerchandisePage.womensTank}</h3>
@@ -288,7 +288,7 @@ const MerchandisePage = () => {
                 </div>
                 <div className={merchStyles.product}>
                   <a className={merchStyles.img} href="https://www.bonfire.com/store/puente-merch/" target="_blank" rel="noopener noreferrer" >
-                    <img alt={data.contentfulMerchandisePage.womensYellowTank.title} src={data.contentfulMerchandisePage.womensYellowTank.resize.src} />
+                    <img alt={data.contentfulMerchandisePage.womensYellowTank.title} src={data.contentfulMerchandisePage.womensYellowTank.file.url} />
                   </a>
                   <div className={merchStyles.productInfo}>
                     <h3>{data.contentfulMerchandisePage.womensTank}</h3>
@@ -305,7 +305,7 @@ const MerchandisePage = () => {
               <div className={merchStyles.sectionProducts}>
                 <div className={merchStyles.product}>
                   <a className={merchStyles.img} href="https://www.bonfire.com/store/puente-merch/" target="_blank" rel="noopener noreferrer" >
-                    <img alt={data.contentfulMerchandisePage.snapbackImage.title} src={data.contentfulMerchandisePage.snapbackImage.resize.src} />
+                    <img alt={data.contentfulMerchandisePage.snapbackImage.title} src={data.contentfulMerchandisePage.snapbackImage.file.url} />
                   </a>
                   <div className={merchStyles.productInfo}>
                     <h3>{data.contentfulMerchandisePage.snapback}</h3>
