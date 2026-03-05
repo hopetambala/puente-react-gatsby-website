@@ -242,17 +242,6 @@ const TechnologyPage = () => {
             </div>
           </div>
         </div>
-        <div id="interactive-map" className={styles.sectionTwo}>
-          <h2>{data.contentfulTechnologyPage.sectionTwoHeader}</h2>
-          <iframe
-            width="100%"
-            height="800px"
-            frameBorder="0"
-            className={styles.analysisContent}
-            src="https://d2k82nkbrja4ga.cloudfront.net"
-            title="Puente Maps"
-          ></iframe>
-        </div>
         <div id="testimonials" className={styles.testimonials}>
           <div className={styles.testimonial}>
             <h3 className={styles.openQuote}>"</h3>
