@@ -34,8 +34,8 @@ const VolunteerPage = () => {
       contentfulVolunteerPage {
         heroImage {
           title
-          resize (height: 1000) {
-            src            
+          file {
+            url
           }
         }
         heroText
@@ -50,8 +50,8 @@ const VolunteerPage = () => {
         }
         sectionOneImage {
           title
-          resize (height: 500){
-            src
+          file {
+            url
           }
         }
         sectionTwoHeader
@@ -60,8 +60,8 @@ const VolunteerPage = () => {
         }
         sectionTwoImage {
           title
-          resize (height: 500){
-             src
+          file {
+            url
           }
         }
         sectionThreeHeader
@@ -96,7 +96,7 @@ const VolunteerPage = () => {
         <div className={volunteerStyles.container}>
           <div className={volunteerStyles.banner}>
             <div className={volunteerStyles.bannerImage}>
-              <img alt={data.contentfulVolunteerPage.heroImage.title} src={data.contentfulVolunteerPage.heroImage.resize.src} fluid />
+              <img alt={data.contentfulVolunteerPage.heroImage.title} src={`${data.contentfulVolunteerPage.heroImage.file.url}?h=1000`} fluid />
               <div className={volunteerStyles.title}>
                 <h1>{data.contentfulVolunteerPage.heroText}</h1>
                 <p>{data.contentfulVolunteerPage.heroSubText.heroSubText}</p>
@@ -114,7 +114,7 @@ const VolunteerPage = () => {
               />
               </div>
               <div className={volunteerStyles.sectionImage}>
-                <img alt={data.contentfulVolunteerPage.sectionOneImage.title} src={data.contentfulVolunteerPage.sectionOneImage.resize.src} fluid />
+                <img alt={data.contentfulVolunteerPage.sectionOneImage.title} src={`${data.contentfulVolunteerPage.sectionOneImage.file.url}?h=500`} fluid />
               </div>
             </div>
             <VolunteerCTA />
@@ -124,7 +124,7 @@ const VolunteerPage = () => {
                 <p>{data.contentfulVolunteerPage.sectionTwoParagraph.sectionTwoParagraph}</p>
               </div>
               <div className={volunteerStyles.sectionImage}>
-                <img alt={data.contentfulVolunteerPage.sectionTwoImage.title} src={data.contentfulVolunteerPage.sectionTwoImage.resize.src} fluid />
+                <img alt={data.contentfulVolunteerPage.sectionTwoImage.title} src={`${data.contentfulVolunteerPage.sectionTwoImage.file.url}?h=500`} fluid />
               </div>
             </div>
             <PartnerContactCTA />

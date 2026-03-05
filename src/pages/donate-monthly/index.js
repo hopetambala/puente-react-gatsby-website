@@ -18,14 +18,14 @@ const DonatePage = () => {
       contentfulDonationPage {
         logo {
           title
-          resize(height: 1000) {
-            src
+          file {
+            url
           }
         }
         logoMonthly {
           title
-          resize(height: 1000) {
-            src
+          file {
+            url
           }
         }
         title
@@ -42,8 +42,8 @@ const DonatePage = () => {
     
         monthlyDonorTiers {
           title
-          resize(height: 300) {
-            src
+          file {
+            url
           }
         }
         monthlyDonorTiersList {
@@ -65,7 +65,7 @@ const DonatePage = () => {
         <div className={donateStyles.container}>
           <div className={donateStyles.banner}>
             <div className={donateStyles.bannerImage}>
-              <img alt={data.contentfulDonationPage.logo.title} src={data.contentfulDonationPage.logoMonthly.resize.src} fluid />
+              <img alt={data.contentfulDonationPage.logo.title} src={`${data.contentfulDonationPage.logoMonthly.file.url}?h=1000`} fluid />
               <div className={donateStyles.body}>
                 <div className={donateStyles.donateSection}>
                   <iframe title="donate" src="https://givebutter.com/embed/c/yuDENI" className={donateStyles.donateForm} name="givebutter" frameborder="0" scrolling="no" seamless allowpaymentrequest />
@@ -85,7 +85,7 @@ const DonatePage = () => {
             <div className={donateStyles.bodyMonthly} >
               <div className={donateStyles.tierImages}>
                 {data.contentfulDonationPage.monthlyDonorTiers.map((image)=>
-                    <img alt={data.contentfulDonationPage.logo.title} src={image.resize.src} fluid />)
+                    <img alt={data.contentfulDonationPage.logo.title} src={`${image.file.url}?h=300`} fluid />)
                 }
               </div>
             </div>

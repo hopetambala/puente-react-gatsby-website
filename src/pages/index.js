@@ -59,8 +59,8 @@ const IndexPage = () => {
           }
           partnerships {
             title
-            resize(height: 150) {
-              src
+            file {
+              url
             }
           }
         }
@@ -74,8 +74,8 @@ const IndexPage = () => {
             }
             projectOneImage {
               title
-              resize(height: 1000) {
-                src
+              file {
+                url
               }
             }
             projectTypeTwo
@@ -86,8 +86,8 @@ const IndexPage = () => {
             }
             projectTwoImage {
               title
-              resize(height: 1000) {
-                src
+              file {
+                url
               }
             }
             projectTypeThree
@@ -98,8 +98,8 @@ const IndexPage = () => {
             }
             projectThreeImage {
               title
-              resize(height: 1000) {
-                src
+              file {
+                url
               }
             }
             projectTypeFour
@@ -110,8 +110,8 @@ const IndexPage = () => {
             }
             projectFourImage {
               title
-              resize(height: 1000) {
-                src
+              file {
+                url
               }
             }
             projectTypeFive
@@ -122,8 +122,8 @@ const IndexPage = () => {
             }
             projectFiveImage {
               title
-              resize(height: 1000) {
-                src
+              file {
+                url
               }
             }
           }
@@ -384,7 +384,7 @@ const IndexPage = () => {
                   <img
                     url={""}
                     alt={partnerships.title}
-                    src={partnerships.resize.src}
+                    src={`${partnerships.file.url}?h=150`}
                   />
                 );
               })}

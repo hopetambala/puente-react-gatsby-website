@@ -27,8 +27,8 @@ const ProgramsPage = () => {
             }
             projectOneImage {
               title
-              resize(height: 1000) {
-                src
+              file {
+                url
               }
             }
             projectTypeTwo
@@ -39,8 +39,8 @@ const ProgramsPage = () => {
             }
             projectTwoImage {
               title
-              resize(height: 1000) {
-                src
+              file {
+                url
               }
             }
             projectTypeThree
@@ -51,8 +51,8 @@ const ProgramsPage = () => {
             }
             projectThreeImage {
               title
-              resize(height: 1000) {
-                src
+              file {
+                url
               }
             }
             projectTypeFour
@@ -63,8 +63,8 @@ const ProgramsPage = () => {
             }
             projectFourImage {
               title
-              resize(height: 1000) {
-                src
+              file {
+                url
               }
             }
             projectTypeFive
@@ -75,8 +75,8 @@ const ProgramsPage = () => {
             }
             projectFiveImage {
               title
-              resize(height: 1000) {
-                src
+              file {
+                url
               }
             }
           }
@@ -84,8 +84,8 @@ const ProgramsPage = () => {
         contentfulProjectPage {
           heroImage {
             title
-            resize(height: 1000) {
-              src
+            file {
+              url
             }
           }
           heroText
@@ -122,8 +122,8 @@ const ProgramsPage = () => {
           }
           puenteModelImage {
             title
-            resize(height: 1000) {
-              src
+            file {
+              url
             }
           }
           puenteModelText {
@@ -149,7 +149,7 @@ const ProgramsPage = () => {
             <div className={styles.bannerImage}>
               <img
                 alt={data.contentfulProjectPage.heroImage.title}
-                src={data.contentfulProjectPage.heroImage.resize.src}
+                src={`${data.contentfulProjectPage.heroImage.file.url}?h=1000`}
                 fluid
               />
               <div id="model" className={styles.title}>
@@ -164,7 +164,7 @@ const ProgramsPage = () => {
                 <div className={styles.puenteModel}>
                   <img
                     alt={data.contentfulProjectPage.puenteModelImage.title}
-                    src={data.contentfulProjectPage.puenteModelImage.resize.src}
+                    src={`${data.contentfulProjectPage.puenteModelImage.file.url}?h=1000`}
                     fluid
                   />
                   <div
@@ -212,7 +212,7 @@ const ProgramsPage = () => {
                     <img
                       alt={projectsData.projectOneImage.title}
                       src={
-                        projectsData.projectOneImage.resize.src
+                        `${projectsData.projectOneImage.file.url}?h=1000`
                       }
                       fluid
                     />
@@ -238,7 +238,7 @@ const ProgramsPage = () => {
                     <img
                       alt={projectsData.projectTwoImage.title}
                       src={
-                        projectsData.projectTwoImage.resize.src
+                        `${projectsData.projectTwoImage.file.url}?h=1000`
                       }
                       fluid
                     />
@@ -265,7 +265,7 @@ const ProgramsPage = () => {
                     <img
                       alt={projectsData.projectThreeImage.title}
                       src={
-                        projectsData.projectThreeImage.resize.src
+                        `${projectsData.projectThreeImage.file.url}?h=1000`
                       }
                       fluid
                     />
@@ -291,7 +291,7 @@ const ProgramsPage = () => {
                     <img
                       alt={projectsData.projectFourImage.title}
                       src={
-                        projectsData.projectFourImage.resize.src
+                        `${projectsData.projectFourImage.file.url}?h=1000`
                       }
                       fluid
                     />
@@ -317,7 +317,7 @@ const ProgramsPage = () => {
                     <img
                       alt={projectsData.projectFiveImage.title}
                       src={
-                        projectsData.projectFiveImage.resize.src
+                        `${projectsData.projectFiveImage.file.url}?h=1000`
                       }
                       fluid
                     />
@@ -390,7 +390,7 @@ const ProgramsPage = () => {
                     <img
                       alt={programsData.projectOneImage.title}
                       src={
-                        programsData.projectOneImage.resize.src
+                        `${programsData.projectOneImage.file.url}?h=1000`
                       }
                       fluid
                     />
@@ -416,7 +416,7 @@ const ProgramsPage = () => {
                     <img
                       alt={programsData.projectTwoImage.title}
                       src={
-                        programsData.projectTwoImage.resize.src
+                        `${programsData.projectTwoImage.file.url}?h=1000`
                       }
                       fluid
                     />
@@ -443,7 +443,7 @@ const ProgramsPage = () => {
                     <img
                       alt={programsData.projectThreeImage.title}
                       src={
-                        programsData.projectThreeImage.resize.src
+                        `${programsData.projectThreeImage.file.url}?h=1000`
                       }
                       fluid
                     />

@@ -18,7 +18,7 @@ const MemberBio = (props) =>{
         <div className={aboutStyles.imgContainer}>
           <img
             alt={profile?.image?.title || "Team Member"}
-            src={profile?.image?.resize?.src || "https://placecats.com/333/250"}
+            src={profile?.image?.file?.url ? `${profile.image.file.url}?h=250` : "https://placecats.com/333/250"}
             fluid
           />
           {props.linkedin && profile.linkedin !== "_" && (

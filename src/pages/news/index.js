@@ -27,8 +27,8 @@ const ReportsPage = () => {
       contentfulNewsPage {
         headerImage {
           title
-          resize (height: 1000) {
-            src            
+          file {
+            url
           }
         }
         headerText
@@ -66,7 +66,7 @@ const ReportsPage = () => {
         <div className={styles.container}>
           <div className={styles.banner}>
             <div className={styles.bannerImage}>
-              <img alt={data.contentfulNewsPage.headerImage.title} src={data.contentfulNewsPage.headerImage.resize.src} fluid />
+              <img alt={data.contentfulNewsPage.headerImage.title} src={`${data.contentfulNewsPage.headerImage.file.url}?h=1000`} fluid />
               <h1>{data.contentfulNewsPage.headerText}</h1>
             </div>
           </div>

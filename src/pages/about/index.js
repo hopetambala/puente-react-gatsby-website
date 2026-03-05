@@ -20,8 +20,8 @@ const AboutPage = () => {
       contentfulAboutPage {
         heroImage {
           title
-          resize (height: 1000) {
-            src            
+          file {
+            url
           }
         }
         heroText
@@ -61,8 +61,8 @@ const AboutPage = () => {
         }
         image {
           title
-          resize (height: 250) {
-            src            
+          file {
+            url
           }
         }
         team
@@ -77,8 +77,8 @@ const AboutPage = () => {
       }
       partnerships {
         title
-        resize (height: 200) {
-          src
+        file {
+          url
         }
       }
     }
@@ -100,7 +100,7 @@ const AboutPage = () => {
             <div className={aboutStyles.bannerImage}>
               <img
                 alt={data.contentfulAboutPage.heroImage.title}
-                src={data.contentfulAboutPage.heroImage.resize.src}
+                src={`${data.contentfulAboutPage.heroImage.file.url}?h=1000`}
                 fluid
               />
               <div id="who-we-are" className={aboutStyles.title}>

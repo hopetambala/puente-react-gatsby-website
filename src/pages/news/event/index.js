@@ -19,8 +19,8 @@ const EventPage = () => {
         contentfulEventPage {
           logo {
             title
-            resize(height: 1000) {
-              src
+            file {
+              url
             }
           }
           title
@@ -72,7 +72,7 @@ const EventPage = () => {
             <div className={eventStyles.bannerImage}>
               <img
                 alt={data.contentfulEventPage.logo.title}
-                src={data.contentfulEventPage.logo.resize.src}
+                src={`${data.contentfulEventPage.logo.file.url}?h=1000`}
                 fluid
               />
               {/* Latest Event Text */}
