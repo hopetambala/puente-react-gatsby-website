@@ -3,12 +3,10 @@ import { Link } from "gatsby"
 import * as styles from "./index.module.scss"
 
 const EventCard = ({ event }) => {
-  // Extract text content from HTML to create preview
+  // SSR-safe HTML stripping using regex (document is not available at build time)
   const stripHtml = (html) => {
     if (!html) return ""
-    const tmp = document.createElement("DIV")
-    tmp.innerHTML = html
-    return tmp.textContent || tmp.innerText || ""
+    return html.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim()
   }
 
   const description = event.pageText?.childMarkdownRemark?.html
