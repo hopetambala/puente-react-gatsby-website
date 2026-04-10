@@ -231,10 +231,10 @@ const Header = () => {
               <Nav.Item className={styles.nav}>
                 <NavDropdown
                   className={styles.navItem}
-                  href="/news"
+                  href="/events"
                   title={
                     <Link style={{ color: "#000" }} to="/news">
-                      News
+                      Events
                     </Link>
                   }
                   id="menu-nav-dropdown"
@@ -306,7 +306,7 @@ const Header = () => {
               <Nav.Link className={styles.navItem} href="/volunteer">Get Involved</Nav.Link>
             </Nav.Item>
             <Nav.Item className={styles.nav}>
-              <Nav.Link className={styles.navItem} href="/news">News</Nav.Link>
+              <Nav.Link className={styles.navItem} href="/news">Events</Nav.Link>
             </Nav.Item>
             <Nav.Item className={styles.nav}>
               <Nav.Link className={styles.navItem} href="/merchandise">Merchandise</Nav.Link>
