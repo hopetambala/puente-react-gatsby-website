@@ -4,6 +4,7 @@ import {
   graphql,
   useStaticQuery,
 } from "gatsby";
+import { useLocation } from "@reach/router";
 
 // Component Imports
 import Layout from "../../../components/layout";
@@ -13,54 +14,59 @@ import * as eventStyles from "./index.module.scss";
 import { Carousel } from "../../../components/carousel";
 
 const EventPage = () => {
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const eventId = queryParams.get("id");
+
   const data = useStaticQuery(
     graphql`
       query {
-        contentfulEventPage {
-          logo {
+        allContentfulEventPage {
+          nodes {
+            id
+            logo {
+              title
+              file {
+                url
+              }
+            }
             title
-            file {
-              url
+            pageText {
+              childMarkdownRemark {
+                html
+              }
             }
-          }
-          title
-          pageText {
-            childMarkdownRemark {
-              html
+            titleOfPhotoSection
+            pastPhotos {
+              file {
+                url
+              }
             }
+            givebutterLink
           }
-          titleOfPhotoSection
-          pastPhotos {
-            file {
-              url
-            }
-          }
-          givebutterLink
-          #   eventGallery {
-          #     title
-          #     resize (height: 500) {
-          #       src
-          #     }
-          #   }
-          #   title2
-          #   sponsorshipText {
-          #     childMarkdownRemark {
-          #       html
-          #     }
-          #   }
-          #   title3
-          #   gallerySponsors {
-          #     title
-          #     resize (height: 400) {
-          #       src
-          #     }
-          #   }
         }
       }
     `
   );
 
-  const { pastPhotos } = data.contentfulEventPage;
+  // Find the selected event by ID, or default to first event
+  const selectedEvent = eventId 
+    ? data.allContentfulEventPage.nodes.find(e => e.id === eventId)
+    : data.allContentfulEventPage.nodes[0];
+
+  if (!selectedEvent) {
+    return (
+      <div>
+        <Layout>
+          <div className={eventStyles.container}>
+            <p>Event not found.</p>
+          </div>
+        </Layout>
+      </div>
+    );
+  }
+
+  const { pastPhotos } = selectedEvent;
 
   const photoUrls = pastPhotos ? pastPhotos.map((photo) => photo.file.url) : [];
 
@@ -71,27 +77,26 @@ const EventPage = () => {
           <div className={eventStyles.event}>
             <div className={eventStyles.bannerImage}>
               <img
-                alt={data.contentfulEventPage.logo.title}
-                src={`${data.contentfulEventPage.logo.file.url}?h=1000`}
+                alt={selectedEvent.logo.title}
+                src={`${selectedEvent.logo.file.url}?h=1000`}
                 fluid
               />
               {/* Latest Event Text */}
               <div className={eventStyles.title}>
-                <h1>{data.contentfulEventPage.title}</h1>
+                <h1>{selectedEvent.title}</h1>
               </div>
               <div className={eventStyles.sectionPartners}>
                 <div
                   dangerouslySetInnerHTML={{
                     __html:
-                      data.contentfulEventPage.pageText.childMarkdownRemark
-                        .html,
+                      selectedEvent.pageText.childMarkdownRemark.html,
                   }}
                   className={eventStyles.eventSection}
                 />
                 <div className={eventStyles.eventSection}>
                   <iframe
                     title="event"
-                    src={data.contentfulEventPage.givebutterLink}
+                    src={selectedEvent.givebutterLink}
                     className={eventStyles.eventForm}
                     name="givebutter"
                     frameborder="0"
@@ -130,9 +135,9 @@ const EventPage = () => {
               </div> */}
 
               {photoUrls.length > 0 && <div className={eventStyles.pastEventsWrapper}>
-                {data.contentfulEventPage.titleOfPhotoSection && (
+                {selectedEvent.titleOfPhotoSection && (
                   <div>
-                    <h1 className={eventStyles.title}>{data.contentfulEventPage.titleOfPhotoSection}</h1>
+                    <h1 className={eventStyles.title}>{selectedEvent.titleOfPhotoSection}</h1>
                   </div>
                 )}
                 <div className={eventStyles.carousel}>
