@@ -1,5 +1,4 @@
 import React, { useEffect, createRef } from "react";
-import lottie from "lottie-web";
 import heroAnimation from "../animations/puente_hero.json";
 import bridgeAnimation from "../animations/bridge.json";
 import dataAnimation from "../animations/data.json";
@@ -135,50 +134,62 @@ const IndexPage = () => {
   let animationContainer = createRef();
 
   useEffect(() => {
-    const anim = lottie.loadAnimation({
-      container: animationContainer.current,
-      renderer: "svg",
-      loop: true,
-      autoplay: true,
-      animationData: heroAnimation,
+    let anim;
+    import("lottie-web").then((lottie) => {
+      anim = lottie.default.loadAnimation({
+        container: animationContainer.current,
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        animationData: heroAnimation,
+      });
     });
-    return () => anim.destroy(); // optional clean up for unmounting
+    return () => anim && anim.destroy();
   }, []); // eslint-disable-line
 
   let bridgeContainer = createRef();
   useEffect(() => {
-    const anim = lottie.loadAnimation({
-      container: bridgeContainer.current,
-      renderer: "svg",
-      loop: true,
-      autoplay: true,
-      animationData: bridgeAnimation,
+    let anim;
+    import("lottie-web").then((lottie) => {
+      anim = lottie.default.loadAnimation({
+        container: bridgeContainer.current,
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        animationData: bridgeAnimation,
+      });
     });
-    return () => anim.destroy(); // optional clean up for unmounting
+    return () => anim && anim.destroy();
   }, []); // eslint-disable-line
 
   let dataContainer = createRef();
   useEffect(() => {
-    const anim = lottie.loadAnimation({
-      container: dataContainer.current,
-      renderer: "svg",
-      loop: true,
-      autoplay: true,
-      animationData: dataAnimation,
+    let anim;
+    import("lottie-web").then((lottie) => {
+      anim = lottie.default.loadAnimation({
+        container: dataContainer.current,
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        animationData: dataAnimation,
+      });
     });
-    return () => anim.destroy(); // optional clean up for unmounting
+    return () => anim && anim.destroy();
   }, []); // eslint-disable-line
 
   let serviceContainer = createRef();
   useEffect(() => {
-    const anim = lottie.loadAnimation({
-      container: serviceContainer.current,
-      renderer: "svg",
-      loop: true,
-      autoplay: true,
-      animationData: serviceAnimation,
+    let anim;
+    import("lottie-web").then((lottie) => {
+      anim = lottie.default.loadAnimation({
+        container: serviceContainer.current,
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        animationData: serviceAnimation,
+      });
     });
-    return () => anim.destroy(); // optional clean up for unmounting
+    return () => anim && anim.destroy();
   }, []); // eslint-disable-line
 
   const { nodes: projectTypes } = data.allContentfulProjectTypes;

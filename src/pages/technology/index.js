@@ -1,5 +1,4 @@
 import React, {useEffect, createRef} from "react"
-import lottie from "lottie-web"
 import {
   // Link,
   graphql,
@@ -115,14 +114,17 @@ const TechnologyPage = () => {
 
   let dataContainer = createRef();
   useEffect(() => {
-    const anim = lottie.loadAnimation({
-      container: dataContainer.current,
-      renderer: "svg",
-      loop: true,
-      autoplay: true,
-      animationData: dataAnimation
+    let anim;
+    import("lottie-web").then((lottie) => {
+      anim = lottie.default.loadAnimation({
+        container: dataContainer.current,
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        animationData: dataAnimation,
+      });
     });
-    return () => anim.destroy(); // optional clean up for unmounting
+    return () => anim && anim.destroy();
   }, []); // eslint-disable-line
 
   return (
