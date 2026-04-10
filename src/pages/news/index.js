@@ -34,7 +34,7 @@ const EventsPage = () => {
           }
         }
       }
-      allContentfulEventPage {
+      allContentfulEventPage(filter: { node_locale: { eq: "en-US" } }) {
         nodes {
           id
           title
@@ -59,7 +59,7 @@ const EventsPage = () => {
   // Group and sort events
   const grouped = useMemo(() => {
     const allEvents = data.allContentfulEventPage.nodes
-    
+
     const upcoming = allEvents.filter((e) => e.status === "upcoming")
     const current = allEvents.filter((e) => e.status === "current")
     // All events that aren't current or upcoming are "past"

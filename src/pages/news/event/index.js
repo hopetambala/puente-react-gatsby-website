@@ -21,7 +21,7 @@ const EventPage = () => {
   const data = useStaticQuery(
     graphql`
       query {
-        allContentfulEventPage {
+        allContentfulEventPage(filter: { node_locale: { eq: "en-US" } }) {
           nodes {
             id
             logo {
