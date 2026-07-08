@@ -72,3 +72,7 @@ setup_command.txt
 test.js
 test.module.scss
 .env.production
+
+# Claude Code visual-qa screenshots (local artifacts, not source)
+.claude/screenshots/
+.claude/handoff/
