@@ -58,12 +58,16 @@ $font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, 
 }
 
 .explore-section {
+  width: 100%;
+  background-color: var(--tk-dlite-primitive-color-white);
+}
+
+.explore-section-inner {
   display: flex;
   gap: var(--tk-dlite-semantic-spacing-xl);
   max-width: 1100px;
   margin: 0 auto;
   padding: var(--tk-dlite-semantic-spacing-xxl) var(--tk-dlite-semantic-spacing-lg);
-  background-color: var(--tk-dlite-primitive-color-white);
 }
 
 .explore-card {
@@ -151,7 +155,7 @@ $font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, 
     }
   }
 
-  .explore-section {
+  .explore-section-inner {
     flex-direction: column;
   }
 }

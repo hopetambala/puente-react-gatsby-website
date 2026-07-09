@@ -143,12 +143,14 @@ const ProjectsPage = () => {
         </div>
 
         <div className={styles.statsStrip}>
-          {page.additionalStatsValues.map((value, i) => (
-            <div className={styles.stat} key={value + i}>
-              <h2>{value}</h2>
-              <p>{page.additionalStatsLabels[i]}</p>
-            </div>
-          ))}
+          <div className={styles.statsStripInner}>
+            {page.additionalStatsValues.map((value, i) => (
+              <div className={styles.stat} key={value + i}>
+                <h2>{value}</h2>
+                <p>{page.additionalStatsLabels[i]}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className={styles.projectsList}>

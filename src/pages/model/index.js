@@ -98,33 +98,35 @@ const ModelPage = () => {
         </div>
 
         <div className={styles.exploreSection}>
-          <div className={styles.exploreCard}>
-            <img
-              alt={data.projectsCardImage.title}
-              src={`${data.projectsCardImage.file.url}?w=800&h=500&fit=fill&fm=jpg&q=80`}
-            />
-            <h3>Signature Projects</h3>
-            <p>
-              Data-driven infrastructure — latrines, water filters, cement floors, and more — that
-              transform health outcomes for families in need.
-            </p>
-            <Link to="/model/projects/" className={styles.exploreLink}>
-              Learn More →
-            </Link>
-          </div>
-          <div className={styles.exploreCard}>
-            <img
-              alt={data.healthCardImage.title}
-              src={`${data.healthCardImage.file.url}?w=800&h=500&fit=fill&fm=jpg&q=80`}
-            />
-            <h3>Puente Health</h3>
-            <p>
-              Ongoing health programs in Constanza — monthly home visits, mobile clinics, and
-              maternal care — bringing consistent support to underserved families.
-            </p>
-            <Link to="/model/health/" className={styles.exploreLink}>
-              Learn More →
-            </Link>
+          <div className={styles.exploreSectionInner}>
+            <div className={styles.exploreCard}>
+              <img
+                alt={data.projectsCardImage.title}
+                src={`${data.projectsCardImage.file.url}?w=800&h=500&fit=fill&fm=jpg&q=80`}
+              />
+              <h3>Signature Projects</h3>
+              <p>
+                Data-driven infrastructure — latrines, water filters, cement floors, and more — that
+                transform health outcomes for families in need.
+              </p>
+              <Link to="/model/projects/" className={styles.exploreLink}>
+                Learn More →
+              </Link>
+            </div>
+            <div className={styles.exploreCard}>
+              <img
+                alt={data.healthCardImage.title}
+                src={`${data.healthCardImage.file.url}?w=800&h=500&fit=fill&fm=jpg&q=80`}
+              />
+              <h3>Puente Health</h3>
+              <p>
+                Ongoing health programs in Constanza — monthly home visits, mobile clinics, and
+                maternal care — bringing consistent support to underserved families.
+              </p>
+              <Link to="/model/health/" className={styles.exploreLink}>
+                Learn More →
+              </Link>
+            </div>
           </div>
         </div>
       </div>

@@ -15,7 +15,8 @@ $font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, 
 }
 
 .title {
-  padding: var(--tk-dlite-semantic-spacing-xl) var(--tk-dlite-semantic-spacing-xxl);
+  padding: var(--tk-dlite-semantic-spacing-xl) var(--tk-dlite-semantic-spacing-xxl)
+    var(--tk-dlite-semantic-spacing-md);
   background-color: var(--tk-dlite-primitive-color-white);
   max-width: 900px;
   margin: 0 auto;
@@ -50,7 +51,8 @@ $font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, 
 .intro {
   max-width: 900px;
   margin: 0 auto;
-  padding: var(--tk-dlite-semantic-spacing-xxl) var(--tk-dlite-semantic-spacing-lg);
+  padding: var(--tk-dlite-semantic-spacing-md) var(--tk-dlite-semantic-spacing-lg)
+    var(--tk-dlite-semantic-spacing-xxl);
   text-align: center;
   color: var(--tk-dlite-semantic-color-text-primary);
 
