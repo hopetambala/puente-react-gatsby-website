@@ -16,6 +16,7 @@ $font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, 
 
 .title {
   padding: 3vmax 6vmax;
+  background-color: var(--tk-dlite-primitive-color-white);
 
   h1 {
     font-size: 48px;
