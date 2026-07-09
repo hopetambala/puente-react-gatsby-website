@@ -342,7 +342,7 @@ const IndexPage = () => {
                 />
               </Carousel.Item>
             </Carousel>
-            <Link className={styles.button} to="/programs">
+            <Link className={styles.button} to="/model">
               <div className={styles.buttonBackground}>
                 <p>Read More</p>
               </div>

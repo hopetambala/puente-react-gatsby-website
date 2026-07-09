@@ -26,7 +26,9 @@ const BASE_URL = process.argv.find((a) => a.startsWith('--url='))?.split('=')[1]
 const PAGES = [
   { name: '00-landing', path: '/' },
   { name: '01-about', path: '/about' },
-  { name: '02-programs', path: '/programs' },
+  { name: '02a-model', path: '/model' },
+  { name: '02b-model-projects', path: '/model/projects' },
+  { name: '02c-model-health', path: '/model/health' },
   { name: '03-technology', path: '/technology' },
   { name: '04-donate', path: '/donate' },
   { name: '05-donate-monthly', path: '/donate-monthly' },

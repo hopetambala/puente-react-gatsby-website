@@ -38,7 +38,9 @@ description: >
 |---|---|
 | 00-landing | / |
 | 01-about | /about |
-| 02-programs | /programs |
+| 02a-model | /model |
+| 02b-model-projects | /model/projects |
+| 02c-model-health | /model/health |
 | 03-technology | /technology |
 | 04-donate | /donate |
 | 05-donate-monthly | /donate-monthly |

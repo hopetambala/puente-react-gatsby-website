@@ -164,38 +164,27 @@ const Header = () => {
               <Nav.Item className={styles.nav}>
                 <NavDropdown
                   className={styles.navItem}
-                  href="/about"
+                  href="/model"
                   title={
-                    <Link style={{ color: "#000" }} to="/programs">
+                    <Link style={{ color: "#000" }} to="/model">
                       Our Work
                     </Link>
                   }
                   id="menu-nav-dropdown"
                 >
                   <NavDropdown.Item className={styles.dropdownItem}>
-                    <Link style={{ color: "#000" }} to="/programs#model">
+                    <Link style={{ color: "#000" }} to="/model">
                       The Puente Model
                     </Link>
                   </NavDropdown.Item>
                   <NavDropdown.Item className={styles.dropdownItem}>
-                    <Link style={{ color: "#000" }} to="/programs#impact">
-                      Our Impact
-                    </Link>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item className={styles.dropdownItem}>
-                    <Link
-                      style={{ color: "#000" }}
-                      to="/programs#signature-projects"
-                    >
+                    <Link style={{ color: "#000" }} to="/model/projects">
                       Signature Projects
                     </Link>
                   </NavDropdown.Item>
                   <NavDropdown.Item className={styles.dropdownItem}>
-                    <Link
-                      style={{ color: "#000" }}
-                      to="/programs#signature-programs"
-                    >
-                      Signature Programs
+                    <Link style={{ color: "#000" }} to="/model/health">
+                      Puente Health
                     </Link>
                   </NavDropdown.Item>
                 </NavDropdown>
@@ -300,7 +289,7 @@ const Header = () => {
               <Nav.Link className={styles.navItem} href="/technology">Our Technology</Nav.Link>
             </Nav.Item>
             <Nav.Item className={styles.nav}>
-              <Nav.Link className={styles.navItem} href="/programs">Our Work</Nav.Link>
+              <Nav.Link className={styles.navItem} href="/model">Our Work</Nav.Link>
             </Nav.Item>
             <Nav.Item className={styles.nav}>
               <Nav.Link className={styles.navItem} href="/volunteer">Get Involved</Nav.Link>
