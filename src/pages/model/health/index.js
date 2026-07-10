@@ -79,7 +79,7 @@ const HealthPage = () => {
           }
         }
       }
-      allContentfulHealthStat(filter: { node_locale: { eq: "en-US" } }) {
+      allContentfulHealthStat(filter: { context: { eq: "health" }, node_locale: { eq: "en-US" } }) {
         nodes {
           value
           description
@@ -87,7 +87,7 @@ const HealthPage = () => {
           order
         }
       }
-      allContentfulHealthStory(filter: { node_locale: { eq: "en-US" } }) {
+      allContentfulHealthStory(filter: { context: { eq: "health" }, node_locale: { eq: "en-US" } }) {
         nodes {
           quote {
             childMarkdownRemark {
@@ -105,39 +105,18 @@ const HealthPage = () => {
           }
         }
       }
-      allContentfulProjectTypes(filter: { projectTypeFour: { eq: null }, node_locale: { eq: "en-US" } }) {
+      allContentfulProject(
+        filter: { category: { eq: "program" }, node_locale: { eq: "en-US" } }
+        sort: { order: ASC }
+      ) {
         nodes {
-          projectTypeOne
-          projectOneLongDescription {
+          name
+          longDescription {
             childMarkdownRemark {
               html
             }
           }
-          projectOneImage {
-            title
-            file {
-              url
-            }
-          }
-          projectTypeTwo
-          projectTwoLongDescription {
-            childMarkdownRemark {
-              html
-            }
-          }
-          projectTwoImage {
-            title
-            file {
-              url
-            }
-          }
-          projectTypeThree
-          projectThreeLongDescription {
-            childMarkdownRemark {
-              html
-            }
-          }
-          projectThreeImage {
+          image {
             title
             file {
               url
@@ -149,27 +128,14 @@ const HealthPage = () => {
   `)
 
   const page = data.contentfulHealthPage
-  const programsEntry = data.allContentfulProjectTypes.nodes[0]
   const stats = [...data.allContentfulHealthStat.nodes].sort((a, b) => a.order - b.order)
   const stories = [...data.allContentfulHealthStory.nodes].sort((a, b) => a.order - b.order)
 
-  const programs = [
-    {
-      name: programsEntry.projectTypeOne,
-      description: programsEntry.projectOneLongDescription,
-      image: programsEntry.projectOneImage,
-    },
-    {
-      name: programsEntry.projectTypeTwo,
-      description: programsEntry.projectTwoLongDescription,
-      image: programsEntry.projectTwoImage,
-    },
-    {
-      name: programsEntry.projectTypeThree,
-      description: programsEntry.projectThreeLongDescription,
-      image: programsEntry.projectThreeImage,
-    },
-  ]
+  const programs = data.allContentfulProject.nodes.map((program) => ({
+    name: program.name,
+    description: program.longDescription,
+    image: program.image,
+  }))
 
   return (
     <Layout>

@@ -15,7 +15,7 @@ const AcceptableUse = () => {
   const data = useStaticQuery(
     graphql`
     query {
-      contentfulAcceptableUsePage {
+      contentfulLegalPage(slug: { eq: "acceptable-use" }, node_locale: { eq: "en-US" }) {
         heroText
         bodyText {
           childMarkdownRemark {
@@ -29,12 +29,12 @@ const AcceptableUse = () => {
     <Layout>
       <div className={styles.container}>
         <div className={styles.header}>
-          <h1>{data.contentfulAcceptableUsePage.heroText}</h1>
+          <h1>{data.contentfulLegalPage.heroText}</h1>
         </div>
         <div className={styles.body}>
           <div
             dangerouslySetInnerHTML={{
-              __html: data.contentfulAcceptableUsePage.bodyText.childMarkdownRemark.html,
+              __html: data.contentfulLegalPage.bodyText.childMarkdownRemark.html,
             }}
           />
         </div>

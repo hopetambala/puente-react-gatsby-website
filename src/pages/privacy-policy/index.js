@@ -11,11 +11,11 @@ import Layout from "../../components/layout"
 // Style imports
 import * as styles from "./index.module.scss"
 
-const AcceptableUse = () => {
+const PrivacyPolicy = () => {
   const data = useStaticQuery(
     graphql`
     query {
-      contentfulPrivacyPolicy {
+      contentfulLegalPage(slug: { eq: "privacy-policy" }, node_locale: { eq: "en-US" }) {
         heroText
         bodyText {
           childMarkdownRemark {
@@ -29,12 +29,12 @@ const AcceptableUse = () => {
     <Layout>
       <div className={styles.container}>
         <div className={styles.header}>
-          <h1>{data.contentfulPrivacyPolicy.heroText}</h1>
+          <h1>{data.contentfulLegalPage.heroText}</h1>
         </div>
         <div className={styles.body}>
           <div
             dangerouslySetInnerHTML={{
-              __html: data.contentfulPrivacyPolicy.bodyText.childMarkdownRemark.html,
+              __html: data.contentfulLegalPage.bodyText.childMarkdownRemark.html,
             }}
           />
         </div>
@@ -43,4 +43,4 @@ const AcceptableUse = () => {
   )
 }
 
-export default AcceptableUse
+export default PrivacyPolicy

@@ -28,63 +28,18 @@ const ProjectsPage = () => {
         additionalStatsValues
         additionalStatsLabels
       }
-      allContentfulProjectTypes(filter: { projectTypeFour: { ne: null }, node_locale: { eq: "en-US" } }) {
+      allContentfulProject(
+        filter: { category: { eq: "signature-project" }, node_locale: { eq: "en-US" } }
+        sort: { order: ASC }
+      ) {
         nodes {
-          projectTypeOne
-          projectOneLongDescription {
+          name
+          longDescription {
             childMarkdownRemark {
               html
             }
           }
-          projectOneImage {
-            title
-            file {
-              url
-            }
-          }
-          projectTypeTwo
-          projectTwoLongDescription {
-            childMarkdownRemark {
-              html
-            }
-          }
-          projectTwoImage {
-            title
-            file {
-              url
-            }
-          }
-          projectTypeThree
-          projectThreeLongDescription {
-            childMarkdownRemark {
-              html
-            }
-          }
-          projectThreeImage {
-            title
-            file {
-              url
-            }
-          }
-          projectTypeFour
-          projectFourLongDescription {
-            childMarkdownRemark {
-              html
-            }
-          }
-          projectFourImage {
-            title
-            file {
-              url
-            }
-          }
-          projectTypeFive
-          projectFiveLongDescription {
-            childMarkdownRemark {
-              html
-            }
-          }
-          projectFiveImage {
+          image {
             title
             file {
               url
@@ -96,15 +51,14 @@ const ProjectsPage = () => {
   `)
 
   const page = data.contentfulProjectPage
-  const projects = data.allContentfulProjectTypes.nodes[0]
 
-  const projectList = [
-    { title: projects.projectTypeOne, description: projects.projectOneLongDescription, image: projects.projectOneImage },
-    { title: projects.projectTypeTwo, description: projects.projectTwoLongDescription, image: projects.projectTwoImage },
-    { title: projects.projectTypeThree, description: projects.projectThreeLongDescription, image: projects.projectThreeImage },
-    { title: projects.projectTypeFour, description: projects.projectFourLongDescription, image: projects.projectFourImage },
-    { title: projects.projectTypeFive, description: projects.projectFiveLongDescription, image: projects.projectFiveImage },
-  ]
+  const projectList = data.allContentfulProject.nodes.map((project) => ({
+    title: project.name,
+    description: project.longDescription,
+    image: project.image,
+  }))
+
+  const bannerImage = projectList[2].image
 
   return (
     <Layout>
@@ -120,8 +74,8 @@ const ProjectsPage = () => {
         <div className="cl-dlite-w-full">
           <div className={styles.bannerImage}>
             <img
-              alt={projects.projectThreeImage.title}
-              src={`${projects.projectThreeImage.file.url}?w=1800&h=700&fit=fill&fm=jpg&q=80`}
+              alt={bannerImage.title}
+              src={`${bannerImage.file.url}?w=1800&h=700&fit=fill&fm=jpg&q=80`}
             />
           </div>
           <div className={styles.title}>

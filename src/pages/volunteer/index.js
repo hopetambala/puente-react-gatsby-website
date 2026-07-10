@@ -71,23 +71,6 @@ const VolunteerPage = () => {
         impactNumbers
         impactDescriptions
       }
-      contentfulFeaturedVolunteers {
-        volunteerName
-        volunteerOneRole
-        volunteerOneBio {
-          volunteerOneBio
-        }
-        volunteerTwoName
-        volunteerTwoRole
-        volunteerTwoBio {
-          volunteerTwoBio
-        }
-        volunteerThreeName
-        volunteerThreeRole
-        volunteerThreeBio {
-          volunteerThreeBio
-        } 
-      }
     }
   `)
   return (

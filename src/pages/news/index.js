@@ -26,12 +26,13 @@ const EventsPage = () => {
           }
         }
       }
-      contentfulNewsPage {
-        headerImage {
-          title
-          file {
-            url
-          }
+      headerImage: contentfulAsset(
+        contentful_id: { eq: "3zlyFSsZ2M8L09H1ksxORq" }
+        node_locale: { eq: "en-US" }
+      ) {
+        title
+        file {
+          url
         }
       }
       allContentfulEventPage(filter: { node_locale: { eq: "en-US" } }) {
@@ -95,7 +96,7 @@ const EventsPage = () => {
         <div className={styles.container}>
           <div className={styles.banner}>
             <div className={styles.bannerImage}>
-              <img alt={data.contentfulNewsPage.headerImage.title} src={`${data.contentfulNewsPage.headerImage.file.url}?h=1000`} fluid />
+              <img alt={data.headerImage.title} src={`${data.headerImage.file.url}?h=1000`} fluid />
               <h1>Puente Events</h1>
             </div>
           </div>

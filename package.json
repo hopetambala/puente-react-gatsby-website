@@ -65,9 +65,14 @@
     "clean": "gatsby clean && mkdir -p .cache",
     "cache-clear": "gatsby clean",
     "reinstall": "yarn run clean && rm -rf yarn.lock && rm -rf node_modules/ && yarn install",
-    "setup": "yarn install --no-save contentful-import yargs-parser axios chalk && node ./setup.js"
+    "setup": "yarn install --no-save contentful-import yargs-parser axios chalk && node ./setup.js",
+    "contentful:audit": "node contentful/audit.mjs",
+    "contentful:create-types": "node contentful/create-types.mjs",
+    "contentful:migrate-entries": "node contentful/migrate-entries.mjs",
+    "contentful:delete-types": "node contentful/delete-types.mjs"
   },
   "devDependencies": {
-    "@playwright/test": "^1.61.1"
+    "@playwright/test": "^1.61.1",
+    "contentful-management": "^12.8.0"
   }
 }
