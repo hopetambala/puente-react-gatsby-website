@@ -63,66 +63,16 @@ const IndexPage = () => {
             }
           }
         }
-        allContentfulProjectTypes {
+        allContentfulProject(
+          filter: { node_locale: { eq: "en-US" } }
+          sort: { order: ASC }
+        ) {
           nodes {
-            projectTypeOne
-            projectOneLongDescription {
+            name
+            category
+            longDescription {
               childMarkdownRemark {
                 html
-              }
-            }
-            projectOneImage {
-              title
-              file {
-                url
-              }
-            }
-            projectTypeTwo
-            projectTwoLongDescription {
-              childMarkdownRemark {
-                html
-              }
-            }
-            projectTwoImage {
-              title
-              file {
-                url
-              }
-            }
-            projectTypeThree
-            projectThreeLongDescription {
-              childMarkdownRemark {
-                html
-              }
-            }
-            projectThreeImage {
-              title
-              file {
-                url
-              }
-            }
-            projectTypeFour
-            projectFourLongDescription {
-              childMarkdownRemark {
-                html
-              }
-            }
-            projectFourImage {
-              title
-              file {
-                url
-              }
-            }
-            projectTypeFive
-            projectFiveLongDescription {
-              childMarkdownRemark {
-                html
-              }
-            }
-            projectFiveImage {
-              title
-              file {
-                url
               }
             }
           }
@@ -192,9 +142,11 @@ const IndexPage = () => {
     return () => anim && anim.destroy();
   }, []); // eslint-disable-line
 
-  const { nodes: projectTypes } = data.allContentfulProjectTypes;
-  const programsData = projectTypes[0];
-  const projectsData = projectTypes[1];
+  const { nodes: projects } = data.allContentfulProject;
+  const carouselItems = [
+    ...projects.filter((p) => p.category === "signature-project"),
+    ...projects.filter((p) => p.category === "program"),
+  ];
 
   return (
     <div>
@@ -260,89 +212,19 @@ const IndexPage = () => {
           </div>
           <div className={styles.sectionBlue}>
             <Carousel interval={2000} controls={false} indicators={false}>
-              <Carousel.Item>
-                <h2>{projectsData.projectTypeOne}</h2>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html:
-                      projectsData.projectOneLongDescription.childMarkdownRemark
-                        .html,
-                  }}
-                />
-              </Carousel.Item>
-              <Carousel.Item>
-                <h2>{projectsData.projectTypeTwo}</h2>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html:
-                      projectsData.projectTwoLongDescription.childMarkdownRemark
-                        .html,
-                  }}
-                />
-              </Carousel.Item>
-              <Carousel.Item>
-                <h2>{projectsData.projectTypeThree}</h2>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html:
-                      projectsData.projectThreeLongDescription
-                        .childMarkdownRemark.html,
-                  }}
-                />
-              </Carousel.Item>
-              <Carousel.Item>
-                <h2>{projectsData.projectTypeFour}</h2>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html:
-                      projectsData.projectFourLongDescription
-                        .childMarkdownRemark.html,
-                  }}
-                />
-              </Carousel.Item>
-              <Carousel.Item>
-                <h2>{projectsData.projectTypeFive}</h2>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html:
-                      projectsData.projectFiveLongDescription
-                        .childMarkdownRemark.html,
-                  }}
-                />
-              </Carousel.Item>
-              {/* Programs */}
-              <Carousel.Item>
-                <h2>{programsData.projectTypeOne}</h2>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html:
-                      programsData.projectOneLongDescription.childMarkdownRemark
-                        .html,
-                  }}
-                />
-              </Carousel.Item>
-              <Carousel.Item>
-                <h2>{programsData.projectTypeTwo}</h2>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html:
-                      programsData.projectTwoLongDescription.childMarkdownRemark
-                        .html,
-                  }}
-                />
-              </Carousel.Item>
-              <Carousel.Item>
-                <h2>{programsData.projectTypeThree}</h2>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html:
-                      programsData.projectThreeLongDescription
-                        .childMarkdownRemark.html,
-                  }}
-                />
-              </Carousel.Item>
+              {carouselItems.map((project) => (
+                <Carousel.Item key={`${project.category}-${project.name}`}>
+                  <h2>{project.name}</h2>
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html:
+                        project.longDescription.childMarkdownRemark.html,
+                    }}
+                  />
+                </Carousel.Item>
+              ))}
             </Carousel>
-            <Link className={styles.button} to="/programs">
+            <Link className={styles.button} to="/model">
               <div className={styles.buttonBackground}>
                 <p>Read More</p>
               </div>

@@ -91,7 +91,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link className={footerStyles.navItem} to="/programs">
+                  <Link className={footerStyles.navItem} to="/model">
                     Our Work
                   </Link>
                 </li>
