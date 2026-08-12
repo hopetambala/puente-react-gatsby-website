@@ -69,7 +69,8 @@
     "contentful:audit": "node contentful/audit.mjs",
     "contentful:create-types": "node contentful/create-types.mjs",
     "contentful:migrate-entries": "node contentful/migrate-entries.mjs",
-    "contentful:delete-types": "node contentful/delete-types.mjs"
+    "contentful:delete-types": "node contentful/delete-types.mjs",
+    "contentful:apply-health-edits": "node contentful/apply-health-edits.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.61.1",

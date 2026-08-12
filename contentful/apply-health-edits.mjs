@@ -133,17 +133,21 @@ async function commit(entry, label) {
 // healthPage singleton
 {
   const ct = await findTypeByGraphqlName(env, "healthPage");
-  const [page] = await getAllEntries(env, ct.sys.id);
-  console.log(`healthPage ${page.sys.id}`);
-  let dirty = false;
-  for (const [name, next] of Object.entries(HEALTH_PAGE_EDITS)) {
-    if (stage(page, "healthPage", name, next)) dirty = true;
-  }
-  if (dirty) {
-    changedCount++;
-    await commit(page, "healthPage");
+  const page = ct ? (await getAllEntries(env, ct.sys.id))[0] : undefined;
+  if (!page) {
+    console.log("healthPage: entry NOT FOUND (skipping)\n");
   } else {
-    console.log("  (no changes)\n");
+    console.log(`healthPage ${page.sys.id}`);
+    let dirty = false;
+    for (const [name, next] of Object.entries(HEALTH_PAGE_EDITS)) {
+      if (stage(page, "healthPage", name, next)) dirty = true;
+    }
+    if (dirty) {
+      changedCount++;
+      await commit(page, "healthPage");
+    } else {
+      console.log("  (no changes)\n");
+    }
   }
 }
 
