@@ -387,16 +387,12 @@ $font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, 
   }
 }
 
+// Darker brand blue so the two CTA panels read as an on-brand two-tone pair.
+// (Was green-100 — the only green anywhere in the site, and off the
+// blue/yellow donate motif the rest of the site uses; see DonateCTA.) The
+// heading, body, and base text colors are inherited from .cta-panel.
 .cta-panel-light {
-  background-color: var(--tk-dlite-primitive-color-green-100);
-
-  h3 {
-    color: var(--tk-dlite-primitive-color-black);
-  }
-
-  p {
-    color: var(--tk-dlite-semantic-color-text-secondary);
-  }
+  background-color: var(--tk-dlite-primitive-color-blue-700);
 }
 
 .eyebrow-small-dark {
@@ -404,7 +400,7 @@ $font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, 
   letter-spacing: var(--tk-dlite-primitive-dimension-letter-spacing-wide);
   font-size: 12px;
   font-weight: 700;
-  color: var(--tk-dlite-primitive-color-green-700);
+  color: var(--tk-dlite-semantic-color-text-on-dark-muted);
   margin: 0;
 }
 
@@ -424,7 +420,7 @@ $font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, 
   display: inline-block;
   margin-top: var(--tk-dlite-semantic-spacing-sm);
   font-weight: 700;
-  color: var(--tk-dlite-primitive-color-green-700);
+  color: var(--tk-dlite-primitive-color-yellow-200);
   text-decoration: none;
 }
 
