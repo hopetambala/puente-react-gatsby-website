@@ -11,8 +11,7 @@
 // is" typo in the stats.
 //
 // Deliberately NOT touched (the doc still carries "Placeholder: Greg/Emma to
-// supply..." for these, so there is no real content to apply yet):
-//   - healthPage byTheNumbers "Patients Seen at Operativos" (still placeholder)
+// supply..." here, so there is no real content to apply yet):
 //   - the 3 healthStory entries (patient/volunteer quotes)
 //
 // Idempotent: reads each entry, only updates+publishes fields that actually
@@ -45,14 +44,26 @@ const HEALTH_PAGE_EDITS = {
   specialPatientProgramText:
     "Some patients in our Casa a Casa program require a level of care that goes beyond our standard monthly visits: individuals managing complex chronic conditions who need more intensive monitoring, medication support, or specialist referrals.\n\nOur Special Patient Program provides this elevated, individualized care.",
 
-  // Volunteer CTA — the pre-med/pre-health comment thread is now resolved, so
-  // applying the doc's resolved paragraph ("pre-health students").
+  // Volunteer CTA — resolved doc paragraph. Per Emma's comment ("two words, no
+  // hyphen"), "pre health" is two words rather than the doc body's "pre-health".
   ctaStudentsBody:
-    "We work with pre-health students, researchers, public health and medical professionals, and anyone interested in supporting our mission. Whether you want field experience, data analysis work, or to just make a difference in the world, there's a meaningful role for you.",
+    "We work with pre health students, researchers, public health and medical professionals, and anyone interested in supporting our mission. Whether you want field experience, data analysis work, or to just make a difference in the world, there's a meaningful role for you.",
 
   // "Edited version:" line from the doc (Support Puente Health).
   ctaDonorsBody:
     "Your contribution keeps our work going, house by house, mom by mom, patient by patient. Donations fund our key programs that serve hundreds of families each year.",
+
+  // "By the Numbers" — the resolved doc dropped its "Operativos Conducted"
+  // figure and gives "300+" for patients seen (dropping the "(placeholder)"
+  // note from the label). Leaves three clean, non-placeholder stats. NOTE: the
+  // two "300+" values are coincidental (different metrics) — swap the operativos
+  // figure if Greg/Emma provide a distinct number.
+  byTheNumbersValues: ["300+", "50+", "300+"],
+  byTheNumbersLabels: [
+    "Active Casa a Casa Patients",
+    "Mothers Supported",
+    "Patients Seen at Operativos",
+  ],
 };
 
 // healthStat entries, matched by their `order`. The doc gives each statistic as
@@ -110,9 +121,15 @@ function preview(value, n = 140) {
 }
 
 // Stage a field change on an entry, logging the diff. Returns true if changed.
+// Uses a JSON compare for array/object fields (e.g. byTheNumbers*) so re-runs
+// stay idempotent; plain === for scalars.
 function stage(entry, label, name, next) {
   const cur = getField(entry, name);
-  if (cur === next) {
+  const unchanged =
+    next !== null && typeof next === "object"
+      ? JSON.stringify(cur) === JSON.stringify(next)
+      : cur === next;
+  if (unchanged) {
     console.log(`  = ${label}.${name} (unchanged)`);
     return false;
   }
