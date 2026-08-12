@@ -14,7 +14,7 @@ import * as styles from "./index.module.scss"
 const PROGRAM_META = {
   "Casa a Casa": { eyebrow: "Monthly Home Visits", subtitle: "“House to House” · Launched 2019" },
   "Maternal Health": { eyebrow: "Prenatal & Postnatal Care", subtitle: "Introduced 2023" },
-  Operativos: { eyebrow: "Mobile Community Clinics", subtitle: "Several times per year" },
+  Operativos: { eyebrow: "Community Clinics", subtitle: "Several times per year" },
 }
 
 // Greg/Emma sometimes ship CMS entries with a placeholder value (e.g. "[ X ]")
