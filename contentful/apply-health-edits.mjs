@@ -56,9 +56,10 @@ const HEALTH_PAGE_EDITS = {
 };
 
 // healthStat entries, matched by their `order`. The doc gives each statistic as
-// one sentence; split here into the entry's value / description / source shape,
-// matching the doc's claim verbatim — its "N/100,000" rate as the value, its
-// "Mortality Rate" wording, and its "Nx higher than the US" comparison.
+// one sentence; split here into the entry's value / description / source shape.
+// The headline `value` stays a clean number and the rate denominator ("per
+// 100,000" / "per 1,000") moves into the description, keeping the doc's
+// "Mortality Rate" wording and its "Nx higher than the US" comparison.
 const STAT_EDITS = {
   1: {
     value: "49%",
@@ -66,13 +67,13 @@ const STAT_EDITS = {
     source: "1.5× higher than the US",
   },
   2: {
-    value: "124/100k",
-    description: "Maternal Mortality Rate in the DR",
+    value: "124",
+    description: "Maternal Mortality Rate per 100,000 in the DR",
     source: "7× higher than the US",
   },
   3: {
-    value: "22/1k",
-    description: "Neonatal Mortality Rate in the DR",
+    value: "22",
+    description: "Neonatal Mortality Rate per 1,000 in the DR",
     source: "6× higher than the US",
   },
 };
