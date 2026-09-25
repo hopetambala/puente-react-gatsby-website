@@ -117,10 +117,51 @@ $font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, 
     margin: 0 0 var(--tk-dlite-semantic-spacing-sm);
   }
 
-  span {
-    font-size: 12px;
-    color: var(--tk-dlite-semantic-color-text-secondary);
+}
+
+.stat-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--tk-dlite-semantic-spacing-xs);
+  margin-top: var(--tk-dlite-semantic-spacing-md);
+  padding-top: var(--tk-dlite-semantic-spacing-md);
+  border-top: 1px solid var(--tk-dlite-semantic-color-border);
+}
+
+.stat-comparison {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--tk-dlite-semantic-color-text-secondary);
+}
+
+.stat-citation {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tk-dlite-semantic-spacing-xxs);
+  padding: var(--tk-dlite-semantic-spacing-xxxs) var(--tk-dlite-semantic-spacing-xs);
+  border: 1px solid var(--tk-dlite-primitive-color-blue-300);
+  background-color: var(--tk-dlite-primitive-color-blue-100);
+  color: var(--tk-dlite-primitive-color-blue-700);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
   }
+
+  &:focus-visible {
+    outline: 3px solid var(--tk-dlite-primitive-color-yellow-200);
+    outline-offset: 2px;
+  }
+}
+
+.stat-year {
+  padding-left: var(--tk-dlite-semantic-spacing-xxs);
+  border-left: 1px solid var(--tk-dlite-primitive-color-blue-300);
 }
 
 .stat-card-draft {
@@ -370,7 +411,7 @@ $font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, 
 .cta-panel {
   flex: 1;
   padding: var(--tk-dlite-semantic-spacing-xxl) var(--tk-dlite-semantic-spacing-xl);
-  background-color: var(--tk-dlite-semantic-color-action-primary);
+  background-color: var(--tk-dlite-primitive-color-blue-600);
   color: var(--tk-dlite-semantic-color-text-on-dark);
 
   h3 {
@@ -382,21 +423,15 @@ $font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, 
   }
 
   p {
-    color: var(--tk-dlite-semantic-color-text-on-dark-muted);
+    color: var(--tk-dlite-semantic-color-text-on-dark);
     line-height: 1.6;
   }
 }
 
+// Two sufficiently dark brand blues keep the panels visually distinct while
+// preserving AA contrast for their white body copy and yellow headings.
 .cta-panel-light {
-  background-color: var(--tk-dlite-primitive-color-green-100);
-
-  h3 {
-    color: var(--tk-dlite-primitive-color-black);
-  }
-
-  p {
-    color: var(--tk-dlite-semantic-color-text-secondary);
-  }
+  background-color: var(--tk-dlite-primitive-color-blue-700);
 }
 
 .eyebrow-small-dark {
@@ -404,7 +439,7 @@ $font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, 
   letter-spacing: var(--tk-dlite-primitive-dimension-letter-spacing-wide);
   font-size: 12px;
   font-weight: 700;
-  color: var(--tk-dlite-primitive-color-green-700);
+  color: var(--tk-dlite-semantic-color-text-on-dark);
   margin: 0;
 }
 
@@ -424,7 +459,7 @@ $font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, 
   display: inline-block;
   margin-top: var(--tk-dlite-semantic-spacing-sm);
   font-weight: 700;
-  color: var(--tk-dlite-primitive-color-green-700);
+  color: var(--tk-dlite-primitive-color-yellow-200);
   text-decoration: none;
 }
 
