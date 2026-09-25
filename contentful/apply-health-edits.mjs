@@ -74,18 +74,18 @@ const HEALTH_PAGE_EDITS = {
 const STAT_EDITS = {
   1: {
     value: "49%",
-    description: "of adults in the DR have hypertension",
-    source: "1.5× higher than the US",
+    description: "of adults ages 30–79 in the DR have hypertension",
+    source: "1.5× the U.S. rate",
   },
   2: {
     value: "124",
-    description: "Maternal Mortality Rate per 100,000 in the DR",
-    source: "7× higher than the US",
+    description: "Maternal mortality ratio per 100,000 live births in the DR",
+    source: "7× the U.S. rate",
   },
   3: {
     value: "22",
-    description: "Neonatal Mortality Rate per 1,000 in the DR",
-    source: "6× higher than the US",
+    description: "Neonatal mortality rate per 1,000 live births in the DR",
+    source: "6× the U.S. rate",
   },
 };
 
@@ -151,37 +151,83 @@ async function commit(entry, label) {
   console.log(`  ✓ updated & published ${label} (v${updated.sys.version})\n`);
 }
 
+// Resolve and validate every target before writing anything. A migration that
+// silently skips a missing/ambiguous entry can report success after publishing
+// only part of the copy, so preflight failures intentionally abort the run.
+const targetTypeNames = ["healthPage", "healthStat", "project"];
+const targetTypes = {};
+const preflightErrors = [];
+
+for (const name of targetTypeNames) {
+  const contentType = await findTypeByGraphqlName(env, name);
+  if (!contentType) {
+    preflightErrors.push(`content type "${name}" was not found`);
+  } else {
+    targetTypes[name] = contentType;
+  }
+}
+
+if (preflightErrors.length) {
+  throw new Error(`Preflight failed:\n- ${preflightErrors.join("\n- ")}`);
+}
+
+const [healthPages, healthStats, projects] = await Promise.all([
+  getAllEntries(env, targetTypes.healthPage.sys.id),
+  getAllEntries(env, targetTypes.healthStat.sys.id),
+  getAllEntries(env, targetTypes.project.sys.id),
+]);
+
+function requireExactlyOne(entries, label) {
+  if (entries.length !== 1) {
+    preflightErrors.push(`${label}: expected exactly 1 entry, found ${entries.length}`);
+    return undefined;
+  }
+  return entries[0];
+}
+
+const page = requireExactlyOne(healthPages, "healthPage singleton");
+const statsByOrder = new Map();
+for (const order of Object.keys(STAT_EDITS).map(Number)) {
+  const matches = healthStats.filter((entry) => getField(entry, "order") === order);
+  statsByOrder.set(order, requireExactlyOne(matches, `healthStat order=${order}`));
+}
+
+const programsByName = new Map();
+for (const name of Object.keys(PROGRAM_EDITS)) {
+  const matches = projects.filter(
+    (entry) => getField(entry, "name") === name && getField(entry, "category") === "program"
+  );
+  programsByName.set(
+    name,
+    requireExactlyOne(matches, `project name="${name}", category="program"`)
+  );
+}
+
+if (preflightErrors.length) {
+  throw new Error(`Preflight failed:\n- ${preflightErrors.join("\n- ")}`);
+}
+
+console.log("Preflight passed: all 7 target entries resolved uniquely.\n");
+
 // healthPage singleton
 {
-  const ct = await findTypeByGraphqlName(env, "healthPage");
-  const page = ct ? (await getAllEntries(env, ct.sys.id))[0] : undefined;
-  if (!page) {
-    console.log("healthPage: entry NOT FOUND (skipping)\n");
+  console.log(`healthPage ${page.sys.id}`);
+  let dirty = false;
+  for (const [name, next] of Object.entries(HEALTH_PAGE_EDITS)) {
+    if (stage(page, "healthPage", name, next)) dirty = true;
+  }
+  if (dirty) {
+    changedCount++;
+    await commit(page, "healthPage");
   } else {
-    console.log(`healthPage ${page.sys.id}`);
-    let dirty = false;
-    for (const [name, next] of Object.entries(HEALTH_PAGE_EDITS)) {
-      if (stage(page, "healthPage", name, next)) dirty = true;
-    }
-    if (dirty) {
-      changedCount++;
-      await commit(page, "healthPage");
-    } else {
-      console.log("  (no changes)\n");
-    }
+    console.log("  (no changes)\n");
   }
 }
 
 // healthStat entries, matched by order
 {
-  const ct = await findTypeByGraphqlName(env, "healthStat");
-  const entries = await getAllEntries(env, ct.sys.id);
   for (const [order, edit] of Object.entries(STAT_EDITS)) {
-    const entry = entries.find((e) => getField(e, "order") === Number(order));
-    if (!entry) {
-      console.log(`healthStat order=${order}: NOT FOUND (skipping)\n`);
-      continue;
-    }
+    const entry = statsByOrder.get(Number(order));
     console.log(`healthStat ${entry.sys.id} (order ${order})`);
     let dirty = false;
     for (const [name, next] of Object.entries(edit)) {
@@ -198,14 +244,8 @@ async function commit(entry, label) {
 
 // project (category program) longDescription, matched by name
 {
-  const ct = await findTypeByGraphqlName(env, "project");
-  const entries = await getAllEntries(env, ct.sys.id);
   for (const [name, next] of Object.entries(PROGRAM_EDITS)) {
-    const entry = entries.find((e) => getField(e, "name") === name);
-    if (!entry) {
-      console.log(`project "${name}": NOT FOUND (skipping)\n`);
-      continue;
-    }
+    const entry = programsByName.get(name);
     console.log(`project ${entry.sys.id} ("${name}")`);
     const dirty = stage(entry, `program "${name}"`, "longDescription", next);
     if (dirty) {

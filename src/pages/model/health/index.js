@@ -17,6 +17,31 @@ const PROGRAM_META = {
   Operativos: { eyebrow: "Community Clinics", subtitle: "Several times per year" },
 }
 
+// These references are paired with the three ordered Contentful stats. Keeping
+// the source link here lets the existing CMS `source` field stay concise while
+// still giving visitors a direct path to the underlying public-health data.
+const STAT_REFERENCES = {
+  1: {
+    label: "WHO Hypertension Profile",
+    year: "2019",
+    href: "https://www.who.int/docs/default-source/ncds/ncd-surveillance/hypertension-profiles-2023.pdf",
+  },
+  2: {
+    label: "WHO / UN MMEIG",
+    year: "2023",
+    href: "https://www.who.int/publications/i/item/9789240108462",
+  },
+  3: {
+    label: "WHO Global Health Observatory",
+    year: "2022",
+    href: "https://www.who.int/data/gho/data/countries/country-details/GHO/dominican-republic?countryProfileId=42c9fdd5-e27f-4d3d-94e4-d019f547c0e3",
+  },
+}
+
+// Keep the story query and markup ready, but do not expose placeholder quotes
+// publicly. Flip this to true after Greg/Emma replace all three draft stories.
+const SHOW_HEALTH_STORIES = false
+
 // Greg/Emma sometimes ship CMS entries with a placeholder value (e.g. "[ X ]")
 // while real numbers/stories are still being finalized. Flag those so they
 // read as "coming soon" rather than looking like broken content.
@@ -177,6 +202,7 @@ const HealthPage = () => {
           <div className={styles.statsGrid}>
             {stats.map((stat) => {
               const draft = isPlaceholder(stat.value) || isPlaceholder(stat.description)
+              const reference = STAT_REFERENCES[stat.order]
               return (
                 <div
                   className={`${styles.statCard} ${draft ? styles.statCardDraft : ""}`}
@@ -185,7 +211,22 @@ const HealthPage = () => {
                   {draft && <span className={styles.draftBadge}>Coming soon</span>}
                   <p className={styles.statValue}>{stat.value}</p>
                   <p>{stat.description}</p>
-                  <span>{stat.source}</span>
+                  <div className={styles.statMeta}>
+                    <span className={styles.statComparison}>{stat.source}</span>
+                    {reference && (
+                      <a
+                        className={styles.statCitation}
+                        href={reference.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`${reference.label}, ${reference.year} (opens in a new tab)`}
+                      >
+                        <span>{reference.label}</span>
+                        <span className={styles.statYear}>{reference.year}</span>
+                        <span aria-hidden="true">↗</span>
+                      </a>
+                    )}
+                  </div>
                 </div>
               )
             })}
@@ -249,29 +290,34 @@ const HealthPage = () => {
           </div>
         </div>
 
-        <div className={styles.storiesSection}>
-          <h2>Stories from the Field</h2>
-          <div className={styles.storiesGrid}>
-            {stories.map((story) => (
-              <div className={styles.storyCard} key={story.name + story.role}>
-                <div className={styles.storyPhoto}>
-                  {story.photo && (
-                    <img alt={story.photo.title} src={`${story.photo.file.url}?w=400&h=400&fit=fill&fm=jpg&q=80`} />
-                  )}
+        {SHOW_HEALTH_STORIES && (
+          <div className={styles.storiesSection}>
+            <h2>Stories from the Field</h2>
+            <div className={styles.storiesGrid}>
+              {stories.map((story) => (
+                <div className={styles.storyCard} key={story.name + story.role}>
+                  <div className={styles.storyPhoto}>
+                    {story.photo && (
+                      <img
+                        alt={story.photo.title}
+                        src={`${story.photo.file.url}?w=400&h=400&fit=fill&fm=jpg&q=80`}
+                      />
+                    )}
+                  </div>
+                  <div
+                    className={styles.storyQuote}
+                    dangerouslySetInnerHTML={{
+                      __html: story.quote.childMarkdownRemark.html,
+                    }}
+                  />
+                  <p className={styles.storyName}>
+                    {story.name}, <span>{story.role}</span>
+                  </p>
                 </div>
-                <div
-                  className={styles.storyQuote}
-                  dangerouslySetInnerHTML={{
-                    __html: story.quote.childMarkdownRemark.html,
-                  }}
-                />
-                <p className={styles.storyName}>
-                  {story.name}, <span>{story.role}</span>
-                </p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         <div className={`cl-dlite-flex ${styles.ctaSection}`}>
           <div className={styles.ctaPanel}>
