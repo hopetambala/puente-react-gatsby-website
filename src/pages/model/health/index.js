@@ -24,7 +24,7 @@ const STAT_REFERENCES = {
   1: {
     label: "WHO Hypertension Profile",
     year: "2019",
-    href: "https://www.who.int/docs/default-source/ncds/ncd-surveillance/hypertension-profiles-2023.pdf",
+    href: "https://www.who.int/publications/m/item/hypertension-dom-2023-country-profile",
   },
   2: {
     label: "WHO / UN MMEIG",
